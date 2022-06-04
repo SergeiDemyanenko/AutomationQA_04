@@ -10,8 +10,7 @@ public class FirstTest extends BaseTest {
     public void testSimple() {
         getDriver().get("http://www.99-bottles-of-beer.net/");
 
-        WebElement searchButton = getDriver().findElement(By.xpath("//*[@id='submenu']/li[2]/a"));
-        searchButton.click();
+        getDriver().findElement(By.xpath("//*[@id='submenu']/li[2]/a")).click();
 
         Assert.assertEquals(
                 getDriver().findElement(By.xpath("//*[@id='main']/h2")).getText(),
