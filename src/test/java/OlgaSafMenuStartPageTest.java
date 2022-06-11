@@ -13,8 +13,6 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
 
         String expectedResult = "Welcome to 99 Bottles of Beer";
 
-        getDriver().get(URL);
-
         WebElement menuStart = getDriver().findElement(
                 By.xpath("(//a[@href='/'])[1]"));
         menuStart.click();
