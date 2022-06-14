@@ -27,6 +27,6 @@ public class AbcPage {
 
     public void getCategoryJClick() {
 
-        getDriver().findElement(CATEGORY_J).click();
+        getCategoryJ().click();
     }
 }
