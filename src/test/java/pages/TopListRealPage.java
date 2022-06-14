@@ -10,4 +10,8 @@ public class TopListRealPage {
 
         this.driver = existingDriver;
     }
+    protected WebDriver getDriver() {
+
+        return driver;
+    }
 }
