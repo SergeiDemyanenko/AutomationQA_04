@@ -44,4 +44,8 @@ public class MainPage {
 
         return getDriver().findElement(BROWSE_LANGUAGES_MENU);
     }
+    
+    public void getBrowseLanguagesMenuClick() {
+        getBrowseLanguagesMenu().click();
+    }
 }
