@@ -29,4 +29,5 @@ public class JPage {
 
         return getDescriptionCategoryJ().getText();
     }
+
 }
