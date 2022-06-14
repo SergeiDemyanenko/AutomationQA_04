@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class TeamPage {
 
     private WebDriver driver;
@@ -20,8 +22,8 @@ public class TeamPage {
         return driver;
     }
 
-    public WebElement getH3TeamName() {
+    public List<WebElement> getListH3TeamName() {
 
-        return getDriver().findElement(H3_TEAM_NAME);
+        return getDriver().findElements(H3_TEAM_NAME);
     }
 }
