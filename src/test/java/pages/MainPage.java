@@ -10,6 +10,7 @@ public class MainPage {
 
     private final By H1_HEADER = By.xpath("//div[@id='header']/h1");
     private final By FOOTER_MENU_BAR = By.xpath("//div[@id='footer']");
+    private final By BROWSE_LANGUAGES_MENU = By.xpath("//ul[@id='menu']//a[@href='/abc.html']");
 
     public MainPage(WebDriver existingDriver) {
 
@@ -39,4 +40,8 @@ public class MainPage {
         return getFooterMenuBar().getText();
     }
 
+    public WebElement getBrowseLanguagesMenu() {
+
+        return getDriver().findElement(BROWSE_LANGUAGES_MENU);
+    }
 }
