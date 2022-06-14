@@ -27,6 +27,6 @@ public class JPage {
 
     public String getDescriptionCategoryJText() {
 
-        return getDriver().findElement(DESCRIPTION_J).getText();
+        return getDescriptionCategoryJ().getText();
     }
 }
