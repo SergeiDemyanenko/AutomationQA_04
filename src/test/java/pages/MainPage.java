@@ -9,6 +9,7 @@ public class MainPage {
     private WebDriver driver;
 
     private final By H1_HEADER = By.xpath("//div[@id='header']/h1");
+    private final By H2_HEADER = By.xpath("//div[@id='header']/h2");
     private final By FOOTER_MENU_BAR = By.xpath("//div[@id='footer']");
     private final By BROWSE_LANGUAGES_MENU = By.xpath("//ul[@id='menu']//a[@href='/abc.html']");
     private final By SUBMIT_NEW_LANGUAGE = By.xpath("//ul/li/a[@href='/submitnewlanguage.html']");
@@ -58,5 +59,14 @@ public class MainPage {
     public void getSubmitNewLanguageMenuText() {
 
         getSubmitNewLanguageMenu().getText();
+    }
+
+    public WebElement getH2Header() {
+
+        return getDriver().findElement(H2_HEADER);
+    }
+    public String getH2HeaderText() {
+
+        return getH2Header().getText();
     }
 }
