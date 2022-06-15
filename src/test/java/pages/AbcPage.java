@@ -10,6 +10,7 @@ public class AbcPage {
 
     private final By CATEGORY_J = By.xpath("//a[@href='j.html']");
     private final By CATEGORY_M = By.xpath("//a[@href='m.html']");
+    private final By LANGUAGE_MACROX =  By.xpath("//a[@href='language-macrox-371.html']");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -39,5 +40,15 @@ public class AbcPage {
     public void getCategoryMClick() {
 
         getCategoryM().click();
+    }
+
+    public WebElement getLanguageMacroX() {
+
+        return getDriver().findElement(LANGUAGE_MACROX);
+    }
+
+    public String getlanguageMacroXVerify() {
+
+       return getLanguageMacroX().getText();
     }
 }
