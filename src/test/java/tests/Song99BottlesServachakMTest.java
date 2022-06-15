@@ -2,6 +2,9 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
@@ -201,6 +204,11 @@ public class Song99BottlesServachakMTest extends BaseTest {
         ).click();
         getDriver().findElement(
                 By.xpath("//a[@title='reddit']")).click();
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@id='loginUsername']")));
 
         String actualResult = getDriver().getTitle();
 
