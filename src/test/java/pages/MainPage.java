@@ -13,6 +13,8 @@ public class MainPage {
     private final By FOOTER_MENU_BAR = By.xpath("//div[@id='footer']");
     private final By BROWSE_LANGUAGES_MENU = By.xpath("//ul[@id='menu']//a[@href='/abc.html']");
     private final By SUBMIT_NEW_LANGUAGE = By.xpath("//ul/li/a[@href='/submitnewlanguage.html']");
+    private final By SUBMIT_SEARCH_LANGUAGES = By.xpath("//ul[@id='menu']//a[@href='/search.html']");
+    private final By FOOTER_SEARCH_LANGUAGES = By.xpath("//div[@id='footer']/p/a[@href='/search.html']");
 
     public MainPage(WebDriver existingDriver) {
 
@@ -33,10 +35,12 @@ public class MainPage {
 
         return getH1Header().getText();
     }
+
     public WebElement getFooterMenuBar() {
 
         return getDriver().findElement(FOOTER_MENU_BAR);
     }
+
     public String getFooterMenuText() {
 
         return getFooterMenuBar().getText();
@@ -46,7 +50,7 @@ public class MainPage {
 
         return getDriver().findElement(BROWSE_LANGUAGES_MENU);
     }
-    
+
     public void getBrowseLanguagesMenuClick() {
         getBrowseLanguagesMenu().click();
     }
@@ -65,8 +69,29 @@ public class MainPage {
 
         return getDriver().findElement(H2_HEADER);
     }
+
     public String getH2HeaderText() {
 
         return getH2Header().getText();
+    }
+
+    public WebElement getSubmitSearchLanguagesMenu() {
+
+        return getDriver().findElement(SUBMIT_SEARCH_LANGUAGES);
+    }
+
+    public void getSubmitSearchLanguagesMenuText() {
+
+        getSubmitSearchLanguagesMenu().getText();
+    }
+
+    public WebElement getFooterSearchLanguagesMenu() {
+
+        return getDriver().findElement(FOOTER_SEARCH_LANGUAGES);
+    }
+
+    public void getFooterSearchLanguagesMenuText() {
+
+        getFooterSearchLanguagesMenu().getText();
     }
 }
