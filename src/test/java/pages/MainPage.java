@@ -11,6 +11,7 @@ public class MainPage {
     private final By H1_HEADER = By.xpath("//div[@id='header']/h1");
     private final By FOOTER_MENU_BAR = By.xpath("//div[@id='footer']");
     private final By BROWSE_LANGUAGES_MENU = By.xpath("//ul[@id='menu']//a[@href='/abc.html']");
+    private final By SUBMIT_NEW_LANGUAGE = By.xpath("//ul/li/a[@href='/submitnewlanguage.html']");
 
     public MainPage(WebDriver existingDriver) {
 
@@ -47,5 +48,15 @@ public class MainPage {
     
     public void getBrowseLanguagesMenuClick() {
         getBrowseLanguagesMenu().click();
+    }
+
+    public WebElement getSubmitNewLanguageMenu() {
+
+        return getDriver().findElement(SUBMIT_NEW_LANGUAGE);
+    }
+
+    public void getSubmitNewLanguageMenuText() {
+
+        getSubmitNewLanguageMenu().getText();
     }
 }
