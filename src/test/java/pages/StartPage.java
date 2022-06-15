@@ -3,21 +3,24 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import runner.BaseTest;
 
-public class StartPage extends BaseTest {
-
-    private final By START = By.xpath("//ul[@id='menu']/li/a[@href='/']");
-
+public class StartPage {
     private WebDriver driver;
+
+    private final By START_MENU = By.xpath("//ul[@id='menu']/li/a[@href='/']");
 
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
     }
 
-    public WebElement getSTART() {
+    protected WebDriver getDriver(){
 
-        return getDriver().findElement(START);
+        return driver;
+    }
+
+    public WebElement getSTART_MENU() {
+
+        return getDriver().findElement(START_MENU);
     }
 }
