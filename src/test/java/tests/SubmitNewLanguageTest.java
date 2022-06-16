@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class ShurikGSubmitNewLanguageTest extends BaseTest {
+public class SubmitNewLanguageTest extends BaseTest {
 
     @Test(description = "TC_700.001" )
     public void testErrorMessageSubmitLanguageButton() {
