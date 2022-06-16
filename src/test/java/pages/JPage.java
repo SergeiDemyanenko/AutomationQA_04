@@ -9,6 +9,7 @@ public class JPage {
     private WebDriver driver;
 
     private final By DESCRIPTION_J = By.xpath("//div[@id='main']/p[text()]");
+    private final By H2_TITLE_J = By.xpath("//div[@id='main']/h2");
 
     public JPage(WebDriver existingDriver) {
 
@@ -28,5 +29,14 @@ public class JPage {
     public String getDescriptionCategoryJText() {
 
         return getDescriptionCategoryJ().getText();
+    }
+    public WebElement getH2PageJ() {
+
+        return getDriver().findElement(H2_TITLE_J);
+    }
+
+    public String getH2PageJText() {
+
+        return getH2PageJ().getText();
     }
 }
