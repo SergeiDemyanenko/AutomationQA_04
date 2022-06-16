@@ -12,6 +12,7 @@ public class MPage {
     private final By MATHEMATICA_PAGE = By.xpath("//a[@href='language-mathematica-1090.html']");
     private final By BRENTON_BOSTICK = By.xpath("//table[@style='margin: 7px; padding: 0;;']/tbody[1]/tr[2]/td[2]");
     private final By LAST_LANGUAGE = By.xpath("//table[@id='category']/tbody/tr[last()]/td/a");
+    private final By LANGUAGE_MACROX =  By.xpath("//a[@href='language-macrox-371.html']");
 
     public MPage(WebDriver existingDriver) {
 
@@ -46,5 +47,15 @@ public class MPage {
     public String getLastLanguageInMText() {
 
         return getLastLanguageInM().getText();
+    }
+
+    public WebElement getLanguageMacroX() {
+
+        return getDriver().findElement(LANGUAGE_MACROX);
+    }
+
+    public String getlanguageMacroXVerify() {
+
+        return getLanguageMacroX().getText();
     }
 }
