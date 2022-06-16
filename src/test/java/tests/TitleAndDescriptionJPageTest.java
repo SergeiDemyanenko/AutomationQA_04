@@ -30,5 +30,4 @@ public class TitleAndDescriptionJPageTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
-
 }
