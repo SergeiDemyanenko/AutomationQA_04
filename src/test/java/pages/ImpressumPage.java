@@ -23,7 +23,7 @@ public class ImpressumPage {
         return getDriver().findElement(IMPRESSUM_SUBMENU);
     }
 
-    public String geImpressumSubmenuText() {
+    public String getImpressumSubmenuText() {
 
         return getImpressumSubmenu().getText();
     }
