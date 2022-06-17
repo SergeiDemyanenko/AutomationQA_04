@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
-
 import java.util.List;
 
 public class Song99BottlesEkaterinaKazakovaTest extends BaseTest {
@@ -73,7 +72,5 @@ public class Song99BottlesEkaterinaKazakovaTest extends BaseTest {
         }
 
         Assert.assertEquals(actualResult.toString(), expectedResult);
-
-        getDriver().quit();
     }
 }
