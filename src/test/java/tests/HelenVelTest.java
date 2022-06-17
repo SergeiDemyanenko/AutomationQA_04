@@ -2,9 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.MPage;
-import pages.MainPage;
+import pages.*;
 import runner.BaseTest;
 
 public class HelenVelTest extends BaseTest {
@@ -26,6 +24,22 @@ public class HelenVelTest extends BaseTest {
 
         MPage language_macroX = new MPage(getDriver());
         String actualResult = language_macroX.getlanguageMacroXVerify();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testStartHistoryOnTheHistoryPageConfirmTheHistoryHeader() {
+
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+
+        StartPage historyLink = new StartPage(getDriver());
+        historyLink.getHistoricInformationLinkClick();
+
+        HistoryPage H2Header = new HistoryPage(getDriver());
+        String actualResult = H2Header.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
