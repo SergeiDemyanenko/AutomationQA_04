@@ -11,6 +11,7 @@ public class SignGuestbookPage {
     private final By SIGN_GUESTBOOK = By.xpath("//a[@href='./signv2.html']");
     private final By SUBMIT = By.xpath("//input[@type='submit']");
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
+    private final By HOMEPAGE_FIELD = By.xpath("//input[@name='homepage']");
 
     public SignGuestbookPage(WebDriver existingDriver) {
 
@@ -48,5 +49,15 @@ public class SignGuestbookPage {
     public String getErrorMessageText() {
 
         return getErrorMessage().getText();
+    }
+
+    public WebElement getHomepageField() {
+
+        return getDriver().findElement(HOMEPAGE_FIELD);
+    }
+
+    public String getHomepageFieldAttribute() {
+
+        return getHomepageField().getAttribute("value");
     }
 }
