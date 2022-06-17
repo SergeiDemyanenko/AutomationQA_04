@@ -3,6 +3,8 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AbcPage;
+import pages.LanguageMathematicaPage;
 import pages.MPage;
 import pages.MainPage;
 import runner.BaseTest;
@@ -19,13 +21,16 @@ public class GalaKonTests extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage mainP = new MainPage(getDriver());
+        AbcPage abc = new AbcPage(getDriver());
         MPage mp = new MPage(getDriver());
+        LanguageMathematicaPage lmp = new LanguageMathematicaPage(getDriver());
 
         mainP.getBrowseLanguagesMenuClick();
-        mp.MLanguagesPage().click();
+        abc.getCategoryM().click();
         mp.mathematicaPage().click();
+        lmp.BrentonBostick();
 
-        String actualResult = mp.BrentonBostick().getText();
+        String actualResult = lmp.BrentonBostick().getText();
 
         Assert.assertEquals(expectedResult, actualResult);
 
