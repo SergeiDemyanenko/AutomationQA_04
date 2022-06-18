@@ -30,7 +30,7 @@ public class LyricsPage {
         lyrics.append(noMore).append(btl);
     }
 
-    private String createLyrics() {
+    public String createLyrics() {
         final String BOTTLES_WALL_CS = " bottles of beer on the wall, ";
         final String BOTTLES_DOT_LN = " bottles of beer.\n";
         final String BOTTLES_DOT = " bottles of beer on the wall.";
