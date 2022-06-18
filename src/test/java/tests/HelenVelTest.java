@@ -1,9 +1,15 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import runner.BaseTest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class HelenVelTest extends BaseTest {
 
@@ -41,6 +47,24 @@ public class HelenVelTest extends BaseTest {
         HistoryPage H2Header = new HistoryPage(getDriver());
         String actualResult = H2Header.getH2HeaderText();
 
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testH3NamesTeam() {
+
+        List<String> expectedResult = new ArrayList<>(
+                Arrays.asList("Oliver Schade", "Gregor Scheithauer", "Stefan Scheler"));
+
+        getDriver().get(BASE_URL);
+        getDriver().findElement(By.linkText("Team")).click();
+
+        TeamPage teamPage = new TeamPage(getDriver());
+
+        List<String> actualResult = new ArrayList<>();
+        for (WebElement namesTeam : teamPage.getListH3TeamName()) {
+            actualResult.add(namesTeam.getText());
+        }
         Assert.assertEquals(actualResult, expectedResult);
     }
 }
