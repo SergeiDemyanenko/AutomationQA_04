@@ -10,6 +10,7 @@ public class StartPage {
     private final By START_MENU = By.xpath("//ul[@id='menu']/li/a[@href='/']");
     private final By HISTORIC_INFORMATION_LINK = By.xpath("//a[@href='./info.html']");
     private final By HERE_LINK = By.xpath("//a[@href='./lyrics.html']");
+    private final By SONG_LYRICS_MENU = By.linkText("Song Lyrics");
 
     public StartPage(WebDriver existingDriver) {
 
@@ -44,5 +45,14 @@ public class StartPage {
     public void getHereLinkClick() {
 
         getHereLink().click();
+    }
+
+    public WebElement getMenuSongLyrics() {
+
+        return getDriver().findElement(SONG_LYRICS_MENU);
+    }
+
+    public void clickMenuSongLyrics() {
+        getMenuSongLyrics().click();
     }
 }
