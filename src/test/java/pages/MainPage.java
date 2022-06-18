@@ -85,6 +85,11 @@ public class MainPage {
         getSubmitSearchLanguagesMenu().getText();
     }
 
+    public void getSubmitNewLanguageMenuClick() {
+
+        getSubmitNewLanguageMenu().click();
+    }
+
     public WebElement getFooterSearchLanguagesMenu() {
 
         return getDriver().findElement(FOOTER_SEARCH_LANGUAGES);
