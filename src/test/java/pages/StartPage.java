@@ -9,6 +9,7 @@ public class StartPage {
 
     private final By START_MENU = By.xpath("//ul[@id='menu']/li/a[@href='/']");
     private final By HISTORIC_INFORMATION_LINK = By.xpath("//a[@href='./info.html']");
+    private final By HERE_LINK = By.xpath("//a[@href='./lyrics.html']");
 
     public StartPage(WebDriver existingDriver) {
 
@@ -33,5 +34,15 @@ public class StartPage {
     public void getHistoricInformationLinkClick() {
 
         getHistoricInformationLink().click();
+    }
+
+    public WebElement getHereLink() {
+
+        return getDriver().findElement(HERE_LINK);
+    }
+
+    public void getHereLinkClick() {
+
+        getHereLink().click();
     }
 }
