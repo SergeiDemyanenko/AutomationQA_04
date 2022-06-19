@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.StartPage;
 import runner.BaseTest;
 
 public class TatianaPTest extends BaseTest {
