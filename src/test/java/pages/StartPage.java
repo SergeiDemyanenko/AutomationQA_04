@@ -10,7 +10,7 @@ public class StartPage {
     private final By HISTORIC_INFORMATION_LINK = By.xpath("//a[@href='./info.html']");
     private final By HERE_LINK = By.xpath("//a[@href='./lyrics.html']");
     private final By SONG_LYRICS_MENU = By.linkText("Song Lyrics");
-    private final By HISTORY_MENU = By.xpath("By.xpath(//a[@href='info.html']']);");
+    private final By HISTORY_MENU = By.xpath("//a[@href='info.html']");
 
     public StartPage(WebDriver existingDriver) {
 
