@@ -14,6 +14,8 @@ public class SubmitNewLanguagePage {
 
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p[@style]");
 
+    private final By FIELD_CATEGORY = By.xpath("//select[@name='category']");
+
     public SubmitNewLanguagePage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -53,4 +55,13 @@ public class SubmitNewLanguagePage {
 
         return getErrorMessage().getText();
     }
+
+    public WebElement getField_Category() {
+
+        WebElement category = getDriver().findElement(FIELD_CATEGORY);
+
+        return category;
+    }
+
+    public void getField_CategoryClick() {getField_Category().click();}
 }
