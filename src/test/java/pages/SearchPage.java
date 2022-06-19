@@ -13,6 +13,8 @@ public class SearchPage {
 
     private final By H2_MAIN =By.xpath("//div[@id='main']/h2");
 
+    private final By SEARCH_BOX = By.xpath("//input[@name='search']");
+
     public SearchPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -51,5 +53,15 @@ public class SearchPage {
     public String getH2MainText() {
 
         return getH2Main().getText();
+    }
+
+    public WebElement getSearchBox(){
+
+        return getDriver().findElement(SEARCH_BOX);
+    }
+
+    public void getSearchBoxSendKey(String name){
+
+        getSearchBox().sendKeys(name);
     }
 }
