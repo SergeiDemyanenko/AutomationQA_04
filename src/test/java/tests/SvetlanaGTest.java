@@ -25,4 +25,17 @@ public class SvetlanaGTest extends BaseTest {
         Assert.assertEquals(actualResult, expectedResult);
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
     }
+
+    @Test
+    public void testVerifyHereLink() {
+
+        final String expectedUrl = "https://www.99-bottles-of-beer.net/lyrics.html";
+
+        getDriver().get(BASE_URL);
+
+        StartPage start = new StartPage(getDriver());
+        start.getHereLinkClick();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
+    }
 }
