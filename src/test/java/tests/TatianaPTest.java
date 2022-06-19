@@ -19,4 +19,14 @@ public class TatianaPTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testStartPageContainsHistoryMenu(){
+        String expectedResult = "History";
+        getDriver().get(BASE_URL);
+
+        StartPage start = new StartPage(getDriver());
+
+        Assert.assertEquals(start.getHistoryMenu().getText(),expectedResult);
+    }
 }
