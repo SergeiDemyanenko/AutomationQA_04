@@ -8,7 +8,6 @@ public class HistoryPage {
 
     private WebDriver driver;
 
-    private final By HISTORY_START = By.xpath("//ul[@id='submenu']/li/a[@href='info.html']");
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
 
     public HistoryPage(WebDriver existingDriver){
@@ -19,11 +18,6 @@ public class HistoryPage {
     protected WebDriver getDriver() {
 
         return driver;
-    }
-
-    public WebElement getHISTORY_START() {
-
-        return getDriver().findElement(HISTORY_START);
     }
 
     public WebElement getH2Header() {
