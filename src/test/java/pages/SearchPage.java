@@ -15,6 +15,8 @@ public class SearchPage {
 
     private final By SEARCH_BOX = By.xpath("//input[@name='search']");
 
+    private final By SUBMIT_SEARCH = By.name("submitsearch");
+
     public SearchPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -63,5 +65,15 @@ public class SearchPage {
     public void getSearchBoxSendKey(String name){
 
         getSearchBox().sendKeys(name);
+    }
+
+    public WebElement getSubmitSearch(){
+
+        return getDriver().findElement(SUBMIT_SEARCH);
+    }
+
+    public void getSubmitSearchClick(){
+
+        getSubmitSearch().click();
     }
 }
