@@ -10,6 +10,10 @@ public class SubmitNewLanguagePage {
 
     private final By SPAN_IMPORTANT =By.xpath("//div[@id='main']/ul/li/span/b");
 
+    private final By BUTTON_SUBMIT_LANGUAGE = By.xpath("//div/div/form[@id='addlanguage']/p/input[@type='submit']");
+
+    private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p[@style]");
+
     public SubmitNewLanguagePage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -28,5 +32,25 @@ public class SubmitNewLanguagePage {
     public String getSPAN_IMPORTANTSCC_Value(String value) {
 
         return getSPAN_IMPORTANT().getCssValue(value);
+    }
+
+    public WebElement getButtonSubmitLanguage(){
+
+        return getDriver().findElement(BUTTON_SUBMIT_LANGUAGE);
+    }
+
+    public void getButtonSubmitLanguageClick() {
+
+        getButtonSubmitLanguage().click();
+    }
+
+    public WebElement getErrorMessage(){
+
+        return getDriver().findElement(ERROR_MESSAGE);
+    }
+
+    public String getErrorMessageText() {
+
+        return getErrorMessage().getText();
     }
 }
