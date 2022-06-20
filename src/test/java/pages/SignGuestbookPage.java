@@ -13,6 +13,8 @@ public class SignGuestbookPage {
     private final By SUBMIT = By.xpath("//input[@type='submit']");
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
     private final By HOMEPAGE_FIELD = By.xpath("//input[@name='homepage']");
+    private final By READ_GUESTBOOK = By.xpath("//ul[@id='submenu']//a[@href='./guestbookv2.html']");
+
 
     public SignGuestbookPage(WebDriver existingDriver) {
 
@@ -65,5 +67,9 @@ public class SignGuestbookPage {
     public String getHomepageFieldAttribute() {
 
         return getHomepageField().getAttribute("value");
+    }
+    public WebElement getReadGuestbook() {
+
+        return getDriver().findElement(READ_GUESTBOOK);
     }
 }
