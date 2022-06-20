@@ -11,6 +11,7 @@ public class AbcPage {
     private final By CATEGORY_J = By.xpath("//a[@href='j.html']");
     private final By CATEGORY_M = By.xpath("//a[@href='m.html']");
     private final By CATEGORY_L = By.xpath("//a[@href='l.html']");
+    private final By CATEGORY_C = By.xpath("//a[@href='j.html']");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -48,5 +49,14 @@ public class AbcPage {
 
     public void getCategoryLClick(){
         getCategoryL().click();
+    }
+
+    public WebElement getCategoryC() {
+
+        return getDriver().findElement(CATEGORY_C);
+    }
+
+    public void getCategoryCClick(){
+        getCategoryC().click();
     }
 }
