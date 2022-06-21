@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class AbcPage {
 
     private WebDriver driver;
@@ -13,6 +15,7 @@ public class AbcPage {
     private final By CATEGORY_L = By.xpath("//a[@href='l.html']");
     private final By CATEGORY_C = By.xpath("//a[@href='c.html']");
     private final By CATEGORY_09 = By.xpath("//a[@href='0.html']");
+    private final By ALL_CATEGORIES = By.xpath("//ul[@id='submenu']//a");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -69,5 +72,10 @@ public class AbcPage {
     public String getCategory09Text(){
 
         return getCategory09().getText();
+    }
+
+    public List<WebElement> getAllCategories(){
+
+        return getDriver().findElements(ALL_CATEGORIES);
     }
 }
