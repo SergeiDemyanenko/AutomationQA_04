@@ -14,6 +14,7 @@ public class HistoryPage {
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By PRE_ELEMENTS = By.xpath("//div[@id='main']/pre");
     private static final String LANG_VERSION = "REM BASIC Version of 99 ";
+    private static final By LOCAL_COPY = By.xpath("//a[@href='/mirrors/1/']");
 
     public HistoryPage(WebDriver existingDriver){
 
@@ -143,5 +144,9 @@ public class HistoryPage {
                 .replace("]", "");
 
         return Code;
+    }
+
+    public WebElement getLocalCopyLink() {
+        return getDriver().findElement(LOCAL_COPY);
     }
 }
