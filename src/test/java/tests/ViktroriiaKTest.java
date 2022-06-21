@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.TopListTopHitsPage;
+import pages.TopListPage;
 import runner.BaseTest;
 
 public class ViktroriiaKTest extends BaseTest {
@@ -33,13 +33,12 @@ public class ViktroriiaKTest extends BaseTest {
 
         mainPage.clickTopListMenu();
 
-        TopListTopHitsPage hits = new TopListTopHitsPage(getDriver());
-        hits.getTopHitsClick();
+        TopListPage hits = new TopListPage(getDriver());
+        hits.clickMenuTopHits();
 
-        String actualResult = hits.getTopHitsText();
+        String actualResult = hits.getMenuTopHitsText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
-
 }
 

@@ -62,6 +62,10 @@ public class TopListPage {
         getMenuTopHits().click();
     }
 
+    public String getMenuTopHitsText() {
+        return getMenuTopHits().getText();
+    }
+
     public WebElement getMenuNewLanguagesThisMonth() {
 
         return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_MENU);
