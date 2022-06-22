@@ -11,7 +11,7 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testFirstSubmenuIs09(){
+    public void testFirstSubmenuIs09() {
         String expectedResult = "0-9";
 
         getDriver().get(BASE_URL);
@@ -22,8 +22,25 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
         AbcPage abc = new AbcPage(getDriver());
 
-       String actualResult = abc.getCategory09Text();
+        String actualResult = abc.getCategory09Text();
 
-       Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testHowManyCategoriesInBrowseLanguage() {
+        int expectedResult = 27;
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+
+        main.getBrowseLanguagesMenuClick();
+
+        AbcPage abc = new AbcPage(getDriver());
+
+        int actualResult = abc.getAllCategories().size();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
