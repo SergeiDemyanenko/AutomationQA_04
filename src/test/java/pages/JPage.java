@@ -14,6 +14,7 @@ public class JPage {
     private final By DESCRIPTION_J = By.xpath("//div[@id='main']/p[text()]");
     private final By H2_TITLE_J = By.xpath("//div[@id='main']/h2");
     private final By A_LINKS = By.xpath("//tbody/tr/td/a[@href]");
+    private final By JAVA_LANGUAGE = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
 
     public JPage(WebDriver existingDriver) {
 
@@ -58,4 +59,14 @@ public class JPage {
 
         return listOfLanguages.size();
     }
+
+    public  WebElement getJavaLanguage() {
+        return getDriver().findElement(JAVA_LANGUAGE);
+    }
+
+    public void clickGetJavaLanguage() {
+        getJavaLanguage().click();
+    }
+
+
 }
