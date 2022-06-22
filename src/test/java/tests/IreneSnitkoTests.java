@@ -2,8 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HistoryPage;
-import pages.StartPage;
+import pages.*;
 import runner.BaseTest;
 
 public class IreneSnitkoTests extends BaseTest {
@@ -22,5 +21,25 @@ public class IreneSnitkoTests extends BaseTest {
         HistoryPage history = new HistoryPage(getDriver());
 
         Assert.assertEquals(history.getCodeOfLanguageBasic(), history.createBasicCode());
+    }
+
+    @Test
+    public void testCountNumberOfProgrammingLanguagesOnJPage() {
+
+        int expectedResult = 22;
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+
+        main.getBrowseLanguagesMenuClick();
+
+        AbcPage abc = new AbcPage(getDriver());
+
+        abc.getCategoryJClick();
+
+        JPage j = new JPage(getDriver());
+
+        Assert.assertEquals(j.countProgrammingLanguages(), expectedResult);
     }
 }
