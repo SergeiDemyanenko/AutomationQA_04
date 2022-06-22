@@ -10,6 +10,7 @@ public class JPage {
 
     private final By DESCRIPTION_J = By.xpath("//div[@id='main']/p[text()]");
     private final By H2_TITLE_J = By.xpath("//div[@id='main']/h2");
+    private final By LANGUAGE_JAVA = By.xpath("//a[@href='language-java-3.html']");
 
     public JPage(WebDriver existingDriver) {
 
@@ -38,5 +39,10 @@ public class JPage {
     public String getH2PageJText() {
 
         return getH2PageJ().getText();
+    }
+
+    public WebElement findLinkToLanguageJava() {
+
+        return getDriver().findElement(LANGUAGE_JAVA);
     }
 }
