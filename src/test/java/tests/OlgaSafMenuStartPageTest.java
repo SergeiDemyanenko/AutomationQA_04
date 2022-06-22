@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.CPage;
-import pages.MainPage;
+import pages.*;
 import runner.BaseTest;
 
 public class OlgaSafMenuStartPageTest extends BaseTest {
@@ -59,9 +57,28 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
 
         CPage title = new CPage(getDriver());
 
-
         String actualResult = title.getH2PageCText();
 
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testTopRatedAssemblyLanguagesText() {
+
+            String expectedResult = "Top Rated Assembly Languages";
+
+            getDriver().get(URL);
+
+            MainPage main = new MainPage(getDriver());
+            main.clickTopListMenu();
+
+            TopListPage topListPage = new TopListPage(getDriver());
+            topListPage.clickMenuTopListAssembly();
+
+            TopListAssemblyPage topListAssembly = new TopListAssemblyPage(getDriver());
+
+            String actualResult = topListAssembly.getH2TableAssemblyName();
+
+            Assert.assertEquals(actualResult,expectedResult);
     }
 }
