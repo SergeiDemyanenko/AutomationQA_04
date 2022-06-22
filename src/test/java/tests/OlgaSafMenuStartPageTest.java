@@ -7,6 +7,9 @@ import org.testng.annotations.Test;
 import pages.*;
 import runner.BaseTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OlgaSafMenuStartPageTest extends BaseTest {
     private static final String URL = "http://www.99-bottles-of-beer.net/";
 
@@ -80,5 +83,33 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
             String actualResult = topListAssembly.getH2TableAssemblyName();
 
             Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void testVerifyTableHeaderIs() {
+
+        List<String> expectedResult = new ArrayList<>();
+
+        expectedResult.add("Language");
+        expectedResult.add("Author");
+        expectedResult.add("Date");
+        expectedResult.add("Comments");
+        expectedResult.add("Rate");
+
+        getDriver().get(URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.getBrowseLanguagesMenuClick();
+
+        List<WebElement> tableHeader = getDriver().findElements(By.xpath("//tbody/tr[1]/th"));
+
+
+        List<String> actualResult = new ArrayList<>();
+
+        for (WebElement name: tableHeader) {
+            actualResult.add(name.getText());
+        }
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
