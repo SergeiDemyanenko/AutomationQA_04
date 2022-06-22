@@ -1,14 +1,9 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import runner.BaseTest;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GalaKonTests extends BaseTest{
 
@@ -34,7 +29,6 @@ public class GalaKonTests extends BaseTest{
         String actualResult = lmp.BrentonBostick().getText();
 
         Assert.assertEquals(expectedResult, actualResult);
-
     }
 
     @Test
@@ -55,7 +49,5 @@ public class GalaKonTests extends BaseTest{
         int actualResult = ljp.getAmmountOfCommentheaders();
 
         Assert.assertEquals(expectedResult, actualResult);
-
     }
-
 }

@@ -73,6 +73,4 @@ public class JPage {
     public void clickGetJavaLanguage() {
         getJavaLanguage().click();
     }
-
-
 }
