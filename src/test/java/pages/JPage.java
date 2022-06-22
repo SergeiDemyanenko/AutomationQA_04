@@ -4,12 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JPage {
 
     private WebDriver driver;
 
     private final By DESCRIPTION_J = By.xpath("//div[@id='main']/p[text()]");
     private final By H2_TITLE_J = By.xpath("//div[@id='main']/h2");
+    private final By A_LINKS = By.xpath("//tbody/tr/td/a[@href]");
+    private final By JAVA_LANGUAGE = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
     private final By LANGUAGE_JAVA = By.xpath("//a[@href='language-java-3.html']");
 
     public JPage(WebDriver existingDriver) {
@@ -45,4 +50,29 @@ public class JPage {
 
         return getDriver().findElement(LANGUAGE_JAVA);
     }
+
+    public int countProgrammingLanguages() {
+
+        List<WebElement> aHrefs
+                = getDriver()
+                .findElements(A_LINKS);
+
+        List<String> listOfLanguages = new ArrayList<>();
+
+        for (WebElement a : aHrefs) {
+            listOfLanguages.add(a.getText());
+        }
+
+        return listOfLanguages.size();
+    }
+
+    public  WebElement getJavaLanguage() {
+        return getDriver().findElement(JAVA_LANGUAGE);
+    }
+
+    public void clickGetJavaLanguage() {
+        getJavaLanguage().click();
+    }
+
+
 }
