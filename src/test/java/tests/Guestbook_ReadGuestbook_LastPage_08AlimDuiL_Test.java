@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.Guestbook;
+import pages.GuestbookV2Page;
 import pages.MainPage;
 import runner.BaseTest;
 
@@ -24,8 +24,8 @@ public class Guestbook_ReadGuestbook_LastPage_08AlimDuiL_Test extends BaseTest {
         MainPage main = new MainPage(getDriver());
         main.getGuestbookClick();
 
-        Guestbook readGuestbook = new Guestbook(getDriver());
-        readGuestbook.getReadGuestbook().click();
+        GuestbookV2Page readGuestbookV2Page = new GuestbookV2Page(getDriver());
+        readGuestbookV2Page.getReadGuestbook().click();
 
         WebDriverWait wait = new WebDriverWait(getDriver(), 50);
         WebElement lastPage = wait

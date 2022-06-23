@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Guestbook {
+public class GuestbookV2Page {
 
     private WebDriver driver;
 
     private final By READ_GUESTBOOK = By.xpath("//ul[@id='submenu']//a[@href='./guestbookv2.html']");
 
-    public Guestbook(WebDriver existingDriver) {
+    public GuestbookV2Page(WebDriver existingDriver) {
 
         this.driver = existingDriver;
     }
