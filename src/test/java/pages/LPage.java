@@ -10,6 +10,8 @@ public class LPage {
 
     private final By H2_TITLE_L = By.xpath("//div[@id = 'main']/h2");
 
+    private final By CATEGORY_L = By.xpath("//ul[@id='submenu']/li/a[@href='l.html']");
+
     public LPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -26,5 +28,9 @@ public class LPage {
 
     public String getH2PageLText(){
         return getH2PageL().getText();
+    }
+
+    public void clickCategoryL(){
+        getDriver().findElement(CATEGORY_L).click();
     }
 }
