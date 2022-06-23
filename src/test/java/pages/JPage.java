@@ -64,7 +64,7 @@ public class JPage {
         return getDriver().findElement(JAVA_LANGUAGE);
     }
 
-    public void getJavaLanguageClick() {
+    public void clickGetJavaLanguage() {
         getJavaLanguage().click();
     }
 
