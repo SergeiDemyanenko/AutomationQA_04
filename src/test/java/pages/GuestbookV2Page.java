@@ -9,6 +9,7 @@ public class GuestbookV2Page {
     private WebDriver driver;
 
     private final By READ_GUESTBOOK = By.xpath("//ul[@id='submenu']//a[@href='./guestbookv2.html']");
+    private final By SIGN_GUESTBOOK =By.xpath("//a[@href='./signv2.html']");
 
     public GuestbookV2Page(WebDriver existingDriver) {
 
@@ -23,5 +24,14 @@ public class GuestbookV2Page {
     public WebElement getReadGuestbook() {
 
         return getDriver().findElement(READ_GUESTBOOK);
+    }
+
+    public WebElement getSignGuestbook() {
+
+        return getDriver().findElement(SIGN_GUESTBOOK);
+    }
+
+    public void SignGuestbookClick() {
+        getSignGuestbook().click();
     }
 }
