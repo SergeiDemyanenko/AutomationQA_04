@@ -3,7 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.SignGuestbookPage;
+import pages.SignV2Page;
 import runner.BaseTest;
 
 
@@ -15,11 +15,11 @@ public class KsSignGuestbookPageTest extends BaseTest {
     public void testSecurityCodeField() {
         String expectedResult = "Error: Error: Invalid security code.";
 
-        SignGuestbookPage signGuestbookPage = new SignGuestbookPage(getDriver());
+        SignV2Page signV2Page = new SignV2Page(getDriver());
 
         getDriver().get(BASE_URL);
-        signGuestbookPage.getGuestbookMenu().click();
-        signGuestbookPage.getSignGuestbookMenuClick();
+        signV2Page.getGuestbookMenu().click();
+        signV2Page.getSignGuestbookMenuClick();
 
         getDriver().findElement(By.xpath
                 ("//form/p/input[@name='name']")).sendKeys("Ksenia");
@@ -34,9 +34,9 @@ public class KsSignGuestbookPageTest extends BaseTest {
         getDriver().findElement(By.xpath("//textarea[@name='comment']")).sendKeys
                 ("Test");
 
-        signGuestbookPage.getSubmitButtonClick();
+        signV2Page.getSubmitButtonClick();
 
-        String actualResult = signGuestbookPage.getErrorMessageText();
+        String actualResult = signV2Page.getErrorMessageText();
         Assert.assertEquals(actualResult, expectedResult);
     }
 }

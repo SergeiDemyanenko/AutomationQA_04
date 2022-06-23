@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.SignGuestbookPage;
+import pages.SignV2Page;
 import runner.BaseTest;
 
 public class MorigorProjectAllTest extends BaseTest {
@@ -28,7 +28,7 @@ public class MorigorProjectAllTest extends BaseTest {
 
         getDriver().get(GUESTBOOK_URL);
 
-        SignGuestbookPage signGuestbook = new SignGuestbookPage(getDriver());
+        SignV2Page signGuestbook = new SignV2Page(getDriver());
 
         signGuestbook.getSignGuestbookMenuClick();
         signGuestbook.getSubmitButtonClick();

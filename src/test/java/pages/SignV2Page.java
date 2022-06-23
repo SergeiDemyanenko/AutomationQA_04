@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class SignGuestbookPage {
+public class SignV2Page {
 
     private WebDriver driver;
 
@@ -14,7 +14,7 @@ public class SignGuestbookPage {
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
     private final By HOMEPAGE_FIELD = By.xpath("//input[@name='homepage']");
 
-    public SignGuestbookPage(WebDriver existingDriver) {
+    public SignV2Page(WebDriver existingDriver) {
 
         this.driver = existingDriver;
     }
