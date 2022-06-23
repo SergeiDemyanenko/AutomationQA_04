@@ -3,6 +3,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AbcPage;
+import pages.JPage;
+import pages.LanguageJava3Page;
 import pages.MainPage;
 import runner.BaseTest;
 import java.util.List;
@@ -29,4 +32,27 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         Assert.assertEquals(headers.toString().trim(), expectedResult);
     }
+
+    @Test
+    public void testVerifyCountVersionsJavaLanguages () {
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.getBrowseLanguagesMenuClick();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.getCategoryJClick();
+
+        JPage j = new JPage(getDriver());
+        j.getJavaLanguageClick();
+
+        LanguageJava3Page java = new LanguageJava3Page(getDriver());
+
+        List<WebElement> javaVersions = java.getALTERNATIVE_VERSIONS();
+        javaVersions.add(java.getMAIN_VERSION());
+
+        Assert.assertEquals(javaVersions.size(), 6);
+    }
+
 }
