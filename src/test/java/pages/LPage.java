@@ -12,6 +12,8 @@ public class LPage {
 
     private final By CATEGORY_L = By.xpath("//ul[@id='submenu']/li/a[@href='l.html']");
 
+    private final By LANGUAGE_L33T = By.xpath("//tbody/tr/td/a[@href='language-l33t-963.html']");
+
     public LPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -32,5 +34,9 @@ public class LPage {
 
     public void clickCategoryL(){
         getDriver().findElement(CATEGORY_L).click();
+    }
+
+    public void clickLanguageL33t(){
+        getDriver().findElement(LANGUAGE_L33T).click();
     }
 }
