@@ -33,6 +33,5 @@ public class GalaKonTests extends BaseTest {
         String actualResult = lmp.BrentonBostick().getText();
 
         Assert.assertEquals(expectedResult, actualResult);
-
     }
 }
