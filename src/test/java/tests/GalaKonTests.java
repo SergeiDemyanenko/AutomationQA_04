@@ -50,5 +50,4 @@ public class GalaKonTests extends BaseTest {
 
         Assert.assertEquals(expectedResult, ljp.getAmmountOfCommentheaders());
     }
-
 }
