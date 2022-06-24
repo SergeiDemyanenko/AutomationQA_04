@@ -9,11 +9,11 @@ import runner.BaseTest;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckGeneralFieldsOnGuestbook extends BaseTest {
+public class CheckGeneralFieldsOnGuestbookTest extends BaseTest {
     public final String START_URL = ("http://www.99-bottles-of-beer.net/");
 
     @Test
-    public void signGuestBook() {
+    public void signGuestBookTest() {
 
         String name = "Name:";
         String location = "Location: (optional)";
