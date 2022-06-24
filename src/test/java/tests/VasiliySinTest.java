@@ -25,6 +25,5 @@ public class VasiliySinTest extends BaseTest {
         String actualResult = category.getField_Category().getText();
 
         Assert.assertEquals(actualResult, expectedResult);
-        System.out.println(actualResult);
     }
 }
