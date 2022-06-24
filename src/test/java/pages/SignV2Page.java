@@ -18,6 +18,7 @@ public class SignV2Page {
     private final By EMAIL_FIELD = By.xpath("//input[@name='email']");
     private final By CAPTCHA_FIELD = By.xpath("//input[@name='captcha']");
     private final By COMMENT_FIELD = By.xpath("//textarea[@name='comment']");
+    private final By TAG_FONT_ERROR_TEXT = By.xpath("//div[@id='main']/p/b");
 
     public SignV2Page(WebDriver existingDriver) {
 
@@ -119,5 +120,10 @@ public class SignV2Page {
 
     public void inputCommentField(String name) {
         getCommentField().sendKeys(name);
+    }
+
+    public String getErrorMessageTagFont() {
+
+        return getDriver().findElement(TAG_FONT_ERROR_TEXT).getTagName();
     }
 }
