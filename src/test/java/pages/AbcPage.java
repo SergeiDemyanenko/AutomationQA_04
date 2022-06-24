@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
 
 public class AbcPage {
@@ -18,6 +17,7 @@ public class AbcPage {
     private final By CATEGORY_09 = By.xpath("//a[@href='0.html']");
     private final By ALL_CATEGORIES = By.xpath("//ul[@id='submenu']//a");
     private final By CATEGORY_R = By.xpath("//a[@href='r.html']");
+    private final By CATEGORY_Z = By.xpath("//a[@href='z.html']");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -96,6 +96,15 @@ public class AbcPage {
     }
 
     public void getCategoryRClick() {
+
+        getCategoryR().click();
+    }
+    public WebElement getCategoryZ() {
+
+        return getDriver().findElement(CATEGORY_Z);
+    }
+
+    public void getCategoryZClick() {
 
         getCategoryR().click();
     }
