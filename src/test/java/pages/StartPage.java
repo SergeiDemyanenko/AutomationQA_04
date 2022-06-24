@@ -12,6 +12,7 @@ public class StartPage {
     private final By SONG_LYRICS_MENU = By.linkText("Song Lyrics");
     private final By HISTORY_MENU = By.xpath("//a[@href='info.html']");
     private final By TEAM_MENU = By.xpath("//a[@href='team.html']");
+    private final By P_WISHES_START_PAGE = By.xpath("//div[@id='main']/p[last()]");
 
     public StartPage(WebDriver existingDriver) {
 
@@ -70,5 +71,13 @@ public class StartPage {
     public void  getTeamMenuClick() {
 
         getTeamMenu().click();
+    }
+
+    public WebElement getTeamWishes() {
+        return getDriver().findElement(P_WISHES_START_PAGE);
+    }
+
+    public String getTeamWishesText() {
+        return getTeamWishes().getText();
     }
 }
