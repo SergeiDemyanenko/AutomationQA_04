@@ -11,11 +11,11 @@ public class CheckLocationErrorOnGuestbookTest extends BaseTest {
 
     @Test
     public void textInputForFieldLocationTest() {
+        String expectedResult = "Error: Please enter at least a message, your email address and the security code.";
+
         getDriver().get(START_URL);
         getDriver().findElement(By.linkText("GUESTBOOK")).click();
         getDriver().findElement(By.linkText("Sign Guestbook")).click();
-
-        String expectedResult = "Error: Please enter at least a message, your email address and the security code.";
 
         getDriver().findElement(By.xpath("//form[@id='addentry']/p/input[2]")).sendKeys("ddd");
         getDriver().findElement(By.xpath("//input[@type='submit']")).click();
@@ -23,6 +23,5 @@ public class CheckLocationErrorOnGuestbookTest extends BaseTest {
         WebElement actualResult = getDriver().findElement(By.xpath("//p[contains(text(), Error)]"));
 
         Assert.assertEquals(actualResult.getText(), expectedResult);
-
     }
 }
