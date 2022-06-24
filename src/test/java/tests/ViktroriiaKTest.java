@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.StartPage;
 import pages.TopListPage;
 import runner.BaseTest;
 
@@ -39,6 +40,23 @@ public class ViktroriiaKTest extends BaseTest {
         String actualResult = hits.getMenuTopHitsText();
 
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void menuStartMenuHistory() {
+
+        String expectedResult = "https://www.99-bottles-of-beer.net/images/history1_full.png";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        startPage.getHistoryMenuClick();
+
+        getDriver().findElement(By.xpath("//div[@id='main']/p/a/img[@src='/images/history1_small.png']")).click();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
+
     }
 }
 
