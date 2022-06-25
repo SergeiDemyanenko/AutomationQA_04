@@ -18,6 +18,7 @@ public class MainPage {
     private final By START_MENU = By.xpath("//ul[@id='menu']/li/a[@href='/']");
     private final By TOP_LIST_MENU =  By.xpath("//a[@href='/toplist.html']");
     private final By GUESTBOOK_ = By.xpath("//ul[@id='menu']//a[@href='/guestbookv2.html']");
+    private final By FOOTER_SUBMIT_NEW_LANGUAGE = By.xpath("//div[@id='footer']//a[text()='Submit new Language']");
 
 
     public MainPage(WebDriver existingDriver) {
