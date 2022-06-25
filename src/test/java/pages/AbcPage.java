@@ -106,6 +106,6 @@ public class AbcPage {
 
     public void getCategoryZClick() {
 
-        getCategoryR().click();
+        getCategoryZ().click();
     }
 }
