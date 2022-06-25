@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AbcPage;
 import pages.MainPage;
 import pages.StartPage;
 import pages.TopListPage;
@@ -57,6 +58,22 @@ public class ViktroriiaKTest extends BaseTest {
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
 
+    }
+
+    @Test
+    public void clickUPage() {
+
+        getDriver().get(BASE_URL);
+
+        String expectedResult = "U";
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.getBrowseLanguagesMenuClick();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        String actualResult = abcPage.getCategoryUText();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
 
