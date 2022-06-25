@@ -22,6 +22,7 @@ public class AbcPage {
 
     private final By CATEGORY_S = By.xpath("//a[@href='s.html']");
     private final By CATEGORY_U = By.xpath("//a[@href='u.html']");
+    private final By TITLE_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -137,5 +138,19 @@ public class AbcPage {
     public String getCategoryUText(){
 
         return getCategoryU().getText();
+    }
+
+    public String getTitelsTable() {
+        StringBuilder stringTitle = new StringBuilder();
+        String actualResult;
+
+        List<WebElement> titles = getDriver().findElements(TITLE_TABLE);
+        for (WebElement t : titles) {
+            stringTitle.append(t.getText()).append(", ");
+        }
+        actualResult = stringTitle.toString()
+                .substring(0,stringTitle.length()-2);
+
+        return actualResult;
     }
 }
