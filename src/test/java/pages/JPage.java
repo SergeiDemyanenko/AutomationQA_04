@@ -45,8 +45,7 @@ public class JPage {
         return getH2PageJ().getText();
     }
 
-    public int countProgrammingLanguages() {
-
+    protected List<String> takeALinksOfLanguages() {
         List<WebElement> aHrefs
                 = getDriver()
                 .findElements(A_LINKS);
@@ -57,7 +56,12 @@ public class JPage {
             listOfLanguages.add(a.getText());
         }
 
-        return listOfLanguages.size();
+        return listOfLanguages;
+    }
+
+    public int countProgrammingLanguages() {
+
+        return takeALinksOfLanguages().size();
     }
 
     public  WebElement getJavaLanguage() {
