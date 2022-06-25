@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 public class AbcPage {
@@ -18,6 +19,8 @@ public class AbcPage {
     private final By ALL_CATEGORIES = By.xpath("//ul[@id='submenu']//a");
     private final By CATEGORY_R = By.xpath("//a[@href='r.html']");
     private final By CATEGORY_Z = By.xpath("//a[@href='z.html']");
+
+    private final By CATEGORY_S = By.xpath("//a[@href='s.html']");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -49,11 +52,11 @@ public class AbcPage {
         getCategoryM().click();
     }
 
-    public WebElement getCategoryL(){
+    public WebElement getCategoryL() {
         return getDriver().findElement(CATEGORY_L);
     }
 
-    public void getCategoryLClick(){
+    public void getCategoryLClick() {
         getCategoryL().click();
     }
 
@@ -62,24 +65,25 @@ public class AbcPage {
         return getDriver().findElement(CATEGORY_C);
     }
 
-    public void getCategoryCClick(){
+    public void getCategoryCClick() {
         getCategoryC().click();
     }
 
-    public WebElement getCategory09(){
+    public WebElement getCategory09() {
 
         return getDriver().findElement(CATEGORY_09);
     }
 
-    public String getCategory09Text(){
+    public String getCategory09Text() {
 
         return getCategory09().getText();
     }
 
-    public List<WebElement> getAllCategories(){
+    public List<WebElement> getAllCategories() {
 
         return getDriver().findElements(ALL_CATEGORIES);
     }
+
     public WebElement getCategoryP() {
 
         return getDriver().findElement(CATEGORY_P);
@@ -99,6 +103,7 @@ public class AbcPage {
 
         getCategoryR().click();
     }
+
     public WebElement getCategoryZ() {
 
         return getDriver().findElement(CATEGORY_Z);
@@ -107,5 +112,14 @@ public class AbcPage {
     public void getCategoryZClick() {
 
         getCategoryZ().click();
+    }
+
+    public WebElement getCategoryS() {
+
+        return getDriver().findElement(CATEGORY_S);
+    }
+
+    public void getCategorySClick() {
+        getCategoryS().click();
     }
 }
