@@ -1,4 +1,5 @@
 package tests;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
@@ -20,9 +21,26 @@ public class VasiliySinTest extends BaseTest {
         SubmitNewLanguagePage category = new SubmitNewLanguagePage(getDriver());
 
         SubmitNewLanguage.getSubmitNewLanguageMenuClick();
-        category.getField_Category();
 
         String actualResult = category.getField_Category().getText();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testErrorBlankFieldsSubmitNewLanguage() {
+
+        String expectedResult = "Error: Precondition failed - Incomplete Input.";
+
+        getDriver().get(BASE_URL);
+
+        MainPage SubmitNewLanguage = new MainPage(getDriver());
+        SubmitNewLanguagePage getButtonSubmitLanguage = new SubmitNewLanguagePage(getDriver());
+
+        SubmitNewLanguage.getSubmitNewLanguageMenuClick();
+        getButtonSubmitLanguage.getButtonSubmitLanguageClick();
+
+        String actualResult = getButtonSubmitLanguage.getErrorMessage().getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
