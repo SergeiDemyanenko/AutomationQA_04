@@ -133,4 +133,14 @@ public class MainPage {
 
         getGuestbook().click();
     }
+
+    public WebElement getFooterSubmitNewLanguage() {
+
+        return getDriver().findElement(FOOTER_SUBMIT_NEW_LANGUAGE);
+    }
+
+    public void getFooterSubmitNewLanguageClick(){
+
+        getFooterSubmitNewLanguage().click();
+    }
 }
