@@ -19,7 +19,7 @@ public class AuthorOfMathematicaLanguageTest extends BaseTest {
         LanguageMathematicaPage lm = new LanguageMathematicaPage(getDriver());
         AbcPage ab = new AbcPage(getDriver());
 
-        ab.getCategoryMClick();
+        ab.clickMSubmenu();
         mp.mathematicaPage().click();
         String actualResult = lm.BrentonBostick().getText();
 

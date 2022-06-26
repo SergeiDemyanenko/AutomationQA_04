@@ -65,10 +65,10 @@ public class ViktroriiaKTest extends BaseTest {
         String expectedResult = "U";
 
         MainPage mainPage = new MainPage(getDriver());
-        mainPage.getBrowseLanguagesMenuClick();
+        mainPage.clickBrowseLanguagesMenu();
 
         AbcPage abcPage = new AbcPage(getDriver());
-        String actualResult = abcPage.getCategoryUText();
+        String actualResult = abcPage.getUSubmenuText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -80,10 +80,10 @@ public class ViktroriiaKTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
-        mainPage.getBrowseLanguagesMenuClick();
+        mainPage.clickBrowseLanguagesMenu();
 
         AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.getCategoryUClick();
+        abcPage.clickUSubmenu();
 
         UPage uPage = new UPage(getDriver());
 

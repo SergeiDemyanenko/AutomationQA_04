@@ -21,7 +21,7 @@ public class BrowseLanguagesAllCategoriesOfSubmenuTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         StringBuilder actualResult = new StringBuilder();
 

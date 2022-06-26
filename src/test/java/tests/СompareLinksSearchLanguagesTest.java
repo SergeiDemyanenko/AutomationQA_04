@@ -19,12 +19,12 @@ public class СompareLinksSearchLanguagesTest extends BaseTest {
         MainPage main = new MainPage(getDriver());
 
         String actualResultHeader = main
-                .getSubmitSearchLanguagesMenu()
+                .getSearchMenu()
                 .getText()
                 .trim()
                 .toLowerCase();
         String actualResultFooter = main
-                .getFooterSearchLanguagesMenu()
+                .getFooterSearch()
                 .getText()
                 .trim()
                 .toLowerCase();

@@ -19,10 +19,10 @@ public class СompareRealLinksSearchLanguages extends BaseTest {
         MainPage main = new MainPage(getDriver());
 
         String actualResultHeader = main
-                .getSubmitSearchLanguagesMenu()
+                .getSearchMenu()
                 .getAttribute("href");
         String actualResultFooter = main
-                .getFooterSearchLanguagesMenu()
+                .getFooterSearch()
                 .getAttribute("href");
 
         Assert.assertEquals(actualResultHeader, expectedResult);

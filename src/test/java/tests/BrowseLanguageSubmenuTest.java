@@ -18,11 +18,11 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
         MainPage main = new MainPage(getDriver());
 
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
 
-        String actualResult = abc.getCategory09Text();
+        String actualResult = abc.getZeroSubmenuText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -35,11 +35,11 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
         MainPage main = new MainPage(getDriver());
 
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
 
-        int actualResult = abc.getAllCategories().size();
+        int actualResult = abc.getAllSubmenu().size();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

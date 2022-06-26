@@ -45,7 +45,7 @@ public class NadiaLidtTest extends BaseTest {
         MainPage menuSubmitNewLanguagePage = new MainPage(getDriver());
         SubmitNewLanguagePage errorMessage = new SubmitNewLanguagePage(getDriver());
 
-        menuSubmitNewLanguagePage.getSubmitNewLanguageMenuClick();
+        menuSubmitNewLanguagePage.clickSubmitNewLanguageMenu();
 
         errorMessage.getButtonSubmitLanguageClick();
 
@@ -93,8 +93,8 @@ public class NadiaLidtTest extends BaseTest {
         AbcPage abc = new AbcPage(getDriver());
         RPage rPage = new RPage(getDriver());
 
-        main.getBrowseLanguagesMenuClick();
-        abc.getCategoryRClick();
+        main.clickBrowseLanguagesMenu();
+        abc.clickRSubmenu();
 
         for (WebElement tr : rPage.getTRTags()) {
             if (tr.getText().contains(languageExpected)) {
