@@ -46,6 +46,6 @@ public class GalaKonTests extends BaseTest {
         abc.getJSubmenu().click();
         jp.getJavaLanguage().click();
 
-        Assert.assertEquals(expectedResult, ljp.getAmmountOfCommentheaders());
+        Assert.assertEquals(expectedResult, ljp.getCountOfCommentsHeaders());
     }
 }
