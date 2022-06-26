@@ -10,7 +10,7 @@ public class StartPage {
     private final By HISTORIC_INFORMATION_LINK = By.xpath("//a[@href='./info.html']");
     private final By HERE_LINK = By.xpath("//a[@href='./lyrics.html']");
     private final By SONG_LYRICS_MENU = By.linkText("Song Lyrics");
-    private final By HISTORY_MENU = By.xpath("//a[@href='info.html']");
+    private final By INFO_MENU = By.xpath("//a[@href='info.html']");
     private final By TEAM_MENU = By.xpath("//a[@href='team.html']");
     private final By P_WISHES_START_PAGE = By.xpath("//div[@id='main']/p[last()]");
 
@@ -55,7 +55,7 @@ public class StartPage {
 
     public WebElement getHistoryMenu(){
 
-        return getDriver().findElement(HISTORY_MENU);
+        return getDriver().findElement(INFO_MENU);
     }
 
     public void getHistoryMenuClick(){

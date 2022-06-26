@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistoryPage {
+public class InfoPage {
 
     private WebDriver driver;
 
@@ -16,7 +16,7 @@ public class HistoryPage {
     private static final String LANG_VERSION = "REM BASIC Version of 99 ";
     private static final By LOCAL_COPY = By.xpath("//a[@href='/mirrors/1/']");
 
-    public HistoryPage(WebDriver existingDriver){
+    public InfoPage(WebDriver existingDriver){
 
         this.driver = existingDriver;
     }

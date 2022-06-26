@@ -44,7 +44,7 @@ public class HelenVelTest extends BaseTest {
         StartPage historyLink = new StartPage(getDriver());
         historyLink.getHistoricInformationLinkClick();
 
-        HistoryPage H2Header = new HistoryPage(getDriver());
+        InfoPage H2Header = new InfoPage(getDriver());
         String actualResult = H2Header.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);

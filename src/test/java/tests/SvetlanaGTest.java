@@ -18,7 +18,7 @@ public class SvetlanaGTest extends BaseTest {
         StartPage start = new StartPage(getDriver());
         start.getHistoricInformationLinkClick();
 
-        HistoryPage history = new HistoryPage(getDriver());
+        InfoPage history = new InfoPage(getDriver());
         String actualResult = history.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
