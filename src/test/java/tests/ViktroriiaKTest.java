@@ -3,8 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.TopListPage;
+import pages.*;
 import runner.BaseTest;
 
 public class ViktroriiaKTest extends BaseTest {
@@ -39,6 +38,56 @@ public class ViktroriiaKTest extends BaseTest {
         String actualResult = hits.getMenuTopHitsText();
 
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void menuStartMenuHistory() {
+
+        String expectedResult = "https://www.99-bottles-of-beer.net/images/history1_full.png";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        startPage.getHistoryMenuClick();
+
+        getDriver().findElement(By.xpath("//div[@id='main']/p/a/img[@src='/images/history1_small.png']")).click();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
+
+    }
+
+    @Test
+    public void clickUPage() {
+
+        getDriver().get(BASE_URL);
+
+        String expectedResult = "U";
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.getBrowseLanguagesMenuClick();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        String actualResult = abcPage.getCategoryUText();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void countLanguagesU() {
+
+        int expectedResult = 25;
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.getBrowseLanguagesMenuClick();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.getCategoryUClick();
+
+        UPage uPage = new UPage(getDriver());
+
+        Assert.assertEquals(uPage.countLanguagesU(),expectedResult);
     }
 }
 

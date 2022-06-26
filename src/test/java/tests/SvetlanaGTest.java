@@ -1,8 +1,7 @@
 package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HistoryPage;
-import pages.StartPage;
+import pages.*;
 import runner.BaseTest;
 
 public class SvetlanaGTest extends BaseTest {
@@ -37,5 +36,21 @@ public class SvetlanaGTest extends BaseTest {
         start.getHereLinkClick();
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
+    }
+
+    @Test
+    public void testPageRCountLanguages() {
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.getBrowseLanguagesMenuClick();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.getCategoryRClick();
+
+        RPage r = new RPage(getDriver());
+
+        Assert.assertEquals(r.countLanguages(), 44);
     }
 }

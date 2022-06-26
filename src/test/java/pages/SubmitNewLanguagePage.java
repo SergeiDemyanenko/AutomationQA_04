@@ -16,6 +16,8 @@ public class SubmitNewLanguagePage {
 
     private final By FIELD_CATEGORY = By.xpath("//select[@name='category']");
 
+    private final By TITLE_H2 = By.xpath("//div[@id='main']/h2");
+
     public SubmitNewLanguagePage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -64,4 +66,14 @@ public class SubmitNewLanguagePage {
     }
 
     public void getField_CategoryClick() {getField_Category().click();}
+
+    public WebElement getTitleH2() {
+
+        return getDriver().findElement(TITLE_H2);
+    }
+
+    public void getTitleH2Click() {
+
+        getTitleH2().click();
+    }
 }

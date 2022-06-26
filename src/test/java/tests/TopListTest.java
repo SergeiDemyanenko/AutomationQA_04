@@ -77,4 +77,22 @@ public class TopListTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
+    @Test
+    public void testGoToTheTopHits() {
+        String expectedResult = "Top Hits";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickMenuTopHits();
+
+        TopListTopHitsPage topListTopHitsPage = new TopListTopHitsPage(getDriver());
+        String actualResult = topListTopHitsPage.getH2TableTopHitsName();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }

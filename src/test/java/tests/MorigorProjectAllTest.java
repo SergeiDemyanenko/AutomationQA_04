@@ -35,4 +35,16 @@ public class MorigorProjectAllTest extends BaseTest {
 
         Assert.assertEquals(signGuestbook.getErrorMessageText(), expectedResult);
     }
+
+    @Test
+    public void testVerificationOfHomepageAttribute() {
+
+        getDriver().get(GUESTBOOK_URL);
+
+        SignV2Page signGuestbook = new SignV2Page(getDriver());
+
+        signGuestbook.getSignGuestbookMenuClick();
+
+        Assert.assertEquals(signGuestbook.getHomepageFieldAttribute(), "http://");
+    }
 }
