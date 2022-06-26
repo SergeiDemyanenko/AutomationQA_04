@@ -1,6 +1,7 @@
 package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AbcPage;
 import pages.MainPage;
 import pages.SearchPage;
 import pages.SubmitNewLanguagePage;
@@ -64,5 +65,21 @@ public class NadiaLidtTest extends BaseTest {
         Assert.assertEquals(actualdResult1, expectedResult1);
         Assert.assertEquals(actualdResult2, expectedResult2);
         Assert.assertEquals(actualdResult3, expectedResult3);
+    }
+
+    @Test
+    public void testCheckTableTitleMenuBrowseLanguages() {
+        String expectedResult = "Language, Author, Date, Comments, Rate" ;
+        String actualResult;
+
+        getDriver().get(BASE_URL);
+
+        MainPage menuBrowseLanguages = new MainPage(getDriver());
+        AbcPage titleTable = new AbcPage(getDriver());
+
+        menuBrowseLanguages.getBrowseLanguagesMenuClick();
+        actualResult = titleTable.getTitelsTable();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
