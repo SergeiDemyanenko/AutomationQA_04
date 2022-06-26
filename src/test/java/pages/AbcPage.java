@@ -19,10 +19,10 @@ public class AbcPage {
     private final By ALL_CATEGORIES = By.xpath("//ul[@id='submenu']//a");
     private final By CATEGORY_R = By.xpath("//a[@href='r.html']");
     private final By CATEGORY_Z = By.xpath("//a[@href='z.html']");
-
     private final By CATEGORY_S = By.xpath("//a[@href='s.html']");
     private final By CATEGORY_U = By.xpath("//a[@href='u.html']");
     private final By TITLE_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
+    private final By SUBMENU_CATEGORIES = By.xpath("//ul[@id='submenu']");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -152,5 +152,10 @@ public class AbcPage {
                 .substring(0,stringTitle.length()-2);
 
         return actualResult;
+    }
+
+    public WebElement getSubmenuCategories(){
+
+        return getDriver().findElement(SUBMENU_CATEGORIES);
     }
 }
