@@ -94,9 +94,4 @@ public class AbcPage {
 
         return getDriver().findElement(CATEGORY_R);
     }
-
-    public void getCategoryRClick() {
-
-        getCategoryR().click();
-    }
 }
