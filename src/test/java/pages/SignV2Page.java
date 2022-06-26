@@ -126,4 +126,9 @@ public class SignV2Page {
 
         return getDriver().findElement(TAG_FONT_ERROR_TEXT).getTagName();
     }
+
+    public String getErrorMessageAttributeStyle() {
+
+        return getErrorMessage().getAttribute("style");
+    }
 }

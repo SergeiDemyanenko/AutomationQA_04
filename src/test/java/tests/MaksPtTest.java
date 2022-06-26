@@ -68,4 +68,53 @@ public class MaksPtTest extends BaseTest {
 
         Assert.assertEquals(signV2Page.getErrorMessageText(), expectedTextError);
     }
+
+    @Test
+    public void testErrorTextFontSignV2Page() {
+        final String expectedTextErrorBold = "b";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.getGuestbookClick();
+
+        GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
+        guestbookV2Page.SignGuestbookClick();
+
+        SignV2Page signV2Page = new SignV2Page(getDriver());
+        signV2Page.inputNameField("MaksPt");
+        signV2Page.inputLocationField("Portugal");
+        signV2Page.inputEmailField("pt@gmail.com");
+        signV2Page.inputHomepageField("maks.com");
+        signV2Page.inputCaptchaField(Integer.toString((int) (Math.random() * 900 + 100)));
+        signV2Page.inputCommentField("QA Automation for everyone");
+        signV2Page.getSubmitButtonClick();
+
+        Assert.assertEquals(signV2Page.getErrorMessageTagFont(), expectedTextErrorBold);
+    }
+
+    @Test
+    public void testErrorTextBackgroundColorSignV2Page() {
+        final String expectedTextErrorStyle =
+                "border: 1px solid red; background-color: rgb(255, 224, 224); padding: 5px; margin: 5px 10px;";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.getGuestbookClick();
+
+        GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
+        guestbookV2Page.SignGuestbookClick();
+
+        SignV2Page signV2Page = new SignV2Page(getDriver());
+        signV2Page.inputNameField("MaksPt");
+        signV2Page.inputLocationField("Portugal");
+        signV2Page.inputEmailField("pt@gmail.com");
+        signV2Page.inputHomepageField("maks.com");
+        signV2Page.inputCaptchaField(Integer.toString((int) (Math.random() * 900 + 100)));
+        signV2Page.inputCommentField("QA Automation for everyone");
+        signV2Page.getSubmitButtonClick();
+
+        Assert.assertEquals(signV2Page.getErrorMessageAttributeStyle(), expectedTextErrorStyle);
+    }
 }
