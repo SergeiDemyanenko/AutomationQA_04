@@ -22,7 +22,7 @@ public class StartPageWishesTeamTest extends BaseTest {
         startButton.clickStartMenu();
 
         StartPage start = new StartPage(getDriver());
-        String actualResult = start.getTeamWishesText();
+        String actualResult = start.getTeamWishesStartPageText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

@@ -42,7 +42,7 @@ public class HelenVelTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage historyLink = new StartPage(getDriver());
-        historyLink.getHistoricInformationLinkClick();
+        historyLink.clickInfoMain();
 
         InfoPage H2Header = new InfoPage(getDriver());
         String actualResult = H2Header.getH2HeaderText();

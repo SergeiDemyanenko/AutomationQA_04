@@ -49,7 +49,7 @@ public class ViktroriiaKTest extends BaseTest {
 
         StartPage startPage = new StartPage(getDriver());
 
-        startPage.getHistoryMenuClick();
+        startPage.clickInfoSubmenu();
 
         getDriver().findElement(By.xpath("//div[@id='main']/p/a/img[@src='/images/history1_small.png']")).click();
 

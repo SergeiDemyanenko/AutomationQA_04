@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 public class StartPage {
     private WebDriver driver;
 
-    private final By HISTORIC_INFORMATION_LINK = By.xpath("//a[@href='./info.html']");
-    private final By HERE_LINK = By.xpath("//a[@href='./lyrics.html']");
-    private final By SONG_LYRICS_MENU = By.linkText("Song Lyrics");
-    private final By INFO_MENU = By.xpath("//a[@href='info.html']");
-    private final By TEAM_MENU = By.xpath("//a[@href='team.html']");
-    private final By P_WISHES_START_PAGE = By.xpath("//div[@id='main']/p[last()]");
+    private final By INFO_MAIN = By.xpath("//a[@href='./info.html']");
+    private final By LYRICS_MAIN = By.xpath("//a[@href='./lyrics.html']");
+    private final By LYRICS_SUBMENU = By.linkText("Song Lyrics");
+    private final By INFO_SUBMENU = By.xpath("//a[@href='info.html']");
+    private final By TEAM_SUBMENU = By.xpath("//a[@href='team.html']");
+    private final By TEAM_WISHES_TEXT_START_PAGE = By.xpath("//div[@id='main']/p[last()]");
 
     public StartPage(WebDriver existingDriver) {
 
@@ -24,60 +24,67 @@ public class StartPage {
         return driver;
     }
 
-    public WebElement getHistoricInformationLink() {
+    public String getText(WebElement element) {
 
-        return getDriver().findElement(HISTORIC_INFORMATION_LINK);
+        return element.getText();
     }
 
-    public void getHistoricInformationLinkClick() {
+    public WebElement getInfoMain() {
 
-        getHistoricInformationLink().click();
+        return getDriver().findElement(INFO_MAIN);
     }
 
-    public WebElement getHereLink() {
+    public void clickInfoMain() {
 
-        return getDriver().findElement(HERE_LINK);
+        getInfoMain().click();
     }
 
-    public void getHereLinkClick() {
+    public WebElement getLyricsMain() {
 
-        getHereLink().click();
+        return getDriver().findElement(LYRICS_MAIN);
     }
 
-    public WebElement getMenuSongLyrics() {
+    public void clickLyricsMain() {
 
-        return getDriver().findElement(SONG_LYRICS_MENU);
+        getLyricsMain().click();
     }
 
-    public void clickMenuSongLyrics() {
-        getMenuSongLyrics().click();
+    public WebElement getLyricsSubmenu() {
+
+        return getDriver().findElement(LYRICS_SUBMENU);
     }
 
-    public WebElement getHistoryMenu(){
-
-        return getDriver().findElement(INFO_MENU);
+    public void clickLyricsSubmenu() {
+        getLyricsSubmenu().click();
     }
 
-    public void getHistoryMenuClick(){
+    public WebElement getInfoSubmenu(){
 
-        getHistoryMenu().click();
+        return getDriver().findElement(INFO_SUBMENU);
     }
 
-    public WebElement getTeamMenu() {
+    public void clickInfoSubmenu(){
 
-        return getDriver().findElement(TEAM_MENU);
+        getInfoSubmenu().click();
     }
 
-    public void  getTeamMenuClick() {
+    public WebElement getTeamSubmenu() {
 
-        getTeamMenu().click();
+        return getDriver().findElement(TEAM_SUBMENU);
     }
 
-    public WebElement getTeamWishes() {
-        return getDriver().findElement(P_WISHES_START_PAGE);
+    public void clickTeamSubmenu() {
+
+        getTeamSubmenu().click();
     }
 
-    public String getTeamWishesText() {
-        return getTeamWishes().getText();
+    public WebElement getTeamWishesStartPage() {
+
+        return getDriver().findElement(TEAM_WISHES_TEXT_START_PAGE);
+    }
+
+    public String getTeamWishesStartPageText() {
+
+        return getTeamWishesStartPage().getText();
     }
 }
