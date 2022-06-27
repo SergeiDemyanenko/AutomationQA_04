@@ -22,7 +22,7 @@ public class MaksPtTest extends BaseTest {
         abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
-        String actualResult = j.getDescriptionCategoryJText();
+        String actualResult = j.getPTagText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

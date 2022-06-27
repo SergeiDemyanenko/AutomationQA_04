@@ -45,7 +45,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
-        j.clickGetJavaLanguage();
+        j.clickLinkLanguageJava3();
 
         LanguageJava3Page java = new LanguageJava3Page(getDriver());
 

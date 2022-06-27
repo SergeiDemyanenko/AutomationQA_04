@@ -26,7 +26,7 @@ public class TitleAndDescriptionJPageTest extends BaseTest {
 
         JPage title = new JPage(getDriver());
 
-        String actualResult = title.getH2PageJText();
+        String actualResult = title.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

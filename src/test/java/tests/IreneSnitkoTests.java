@@ -40,6 +40,6 @@ public class IreneSnitkoTests extends BaseTest {
 
         JPage j = new JPage(getDriver());
 
-        Assert.assertEquals(j.countProgrammingLanguages(), expectedResult);
+        Assert.assertEquals(j.getQuantityALinks(), expectedResult);
     }
 }
