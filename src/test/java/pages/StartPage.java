@@ -14,6 +14,7 @@ public class StartPage {
     private final By INFO_SUBMENU = By.xpath("//a[@href='info.html']");
     private final By TEAM_SUBMENU = By.xpath("//a[@href='team.html']");
     private final By LAST_P_MAIN_START = By.xpath("//div[@id='main']/p[last()]");
+    private final By IMPRESSUM_SUBMENU = By.xpath("//a[@href = 'impressum.html']");
 
     public StartPage(WebDriver existingDriver) {
 
@@ -87,5 +88,16 @@ public class StartPage {
     public String getLastPMainStartText() {
 
         return getText(getLastPMainStart());
+    }
+
+
+    public WebElement getImpressumSubmenu() {
+
+        return getDriver().findElement(IMPRESSUM_SUBMENU);
+    }
+
+    public String getImpressumSubmenuText() {
+
+        return getText(getImpressumSubmenu());
     }
 }
