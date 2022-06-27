@@ -72,8 +72,8 @@ public class SubmitNewLanguagePage {
         return getDriver().findElement(TITLE_H2);
     }
 
-    public void getTitleH2Text() {
+    public String getTitleH2Text() {
 
-        getTitleH2().getText();
+        return getTitleH2().getText();
     }
 }
