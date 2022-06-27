@@ -30,7 +30,7 @@ public class TatianaPTest extends BaseTest {
 
         StartPage start = new StartPage(getDriver());
 
-        Assert.assertEquals(start.getHistoryMenu().getText(), expectedResult);
+        Assert.assertEquals(start.getInfoSubmenu().getText(), expectedResult);
     }
 
     @Test

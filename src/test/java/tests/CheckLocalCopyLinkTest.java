@@ -15,7 +15,7 @@ public class CheckLocalCopyLinkTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage startPage = new StartPage(getDriver());
-        startPage.getHistoryMenuClick();
+        startPage.clickInfoSubmenu();
 
         InfoPage infoPage = new InfoPage(getDriver());
         infoPage.getLocalCopyLink().click();

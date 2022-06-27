@@ -16,7 +16,7 @@ public class SvetlanaGTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage start = new StartPage(getDriver());
-        start.getHistoricInformationLinkClick();
+        start.clickInfoMain();
 
         InfoPage history = new InfoPage(getDriver());
         String actualResult = history.getH2HeaderText();
@@ -33,7 +33,7 @@ public class SvetlanaGTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage start = new StartPage(getDriver());
-        start.getHereLinkClick();
+        start.clickLyricsMain();
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
     }

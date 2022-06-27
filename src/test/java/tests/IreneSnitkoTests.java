@@ -16,7 +16,7 @@ public class IreneSnitkoTests extends BaseTest {
 
         StartPage start = new StartPage(getDriver());
 
-        start.getHistoryMenuClick();
+        start.clickInfoSubmenu();
 
         InfoPage history = new InfoPage(getDriver());
 

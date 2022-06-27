@@ -129,6 +129,7 @@ public class MainPage {
 
         getTopListMenu().click();
     }
+
     public WebElement getGuestbookV2Menu() {
 
         return getDriver().findElement(GUESTBOOK_V2_MENU);
