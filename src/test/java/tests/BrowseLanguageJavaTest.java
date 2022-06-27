@@ -22,10 +22,10 @@ public class BrowseLanguageJavaTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
-        abc.getCategoryJClick();
+        abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
         j.clickGetJavaLanguage();

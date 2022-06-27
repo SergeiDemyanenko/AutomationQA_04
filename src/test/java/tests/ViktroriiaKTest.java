@@ -3,10 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.MainPage;
-import pages.StartPage;
-import pages.TopListPage;
+import pages.*;
 import runner.BaseTest;
 
 public class ViktroriiaKTest extends BaseTest {
@@ -68,12 +65,29 @@ public class ViktroriiaKTest extends BaseTest {
         String expectedResult = "U";
 
         MainPage mainPage = new MainPage(getDriver());
-        mainPage.getBrowseLanguagesMenuClick();
+        mainPage.clickBrowseLanguagesMenu();
 
         AbcPage abcPage = new AbcPage(getDriver());
-        String actualResult = abcPage.getCategoryUText();
+        String actualResult = abcPage.getUSubmenuText();
 
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void countLanguagesU() {
+
+        int expectedResult = 25;
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickUSubmenu();
+
+        UPage uPage = new UPage(getDriver());
+
+        Assert.assertEquals(uPage.countLanguagesU(),expectedResult);
     }
 }
 

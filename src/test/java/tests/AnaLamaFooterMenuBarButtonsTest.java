@@ -19,7 +19,7 @@ public class AnaLamaFooterMenuBarButtonsTest extends BaseTest {
 
         MainPage main = new MainPage(getDriver());
 
-        String actualResult = main.getFooterMenuText();
+        String actualResult = main.getFooterBarText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -28,7 +28,7 @@ public class AnaLamaFooterMenuBarButtonsTest extends BaseTest {
         getDriver().get(BASE_URL);
         MainPage main = new MainPage(getDriver());
 
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
        Assert.assertEquals(getDriver().getCurrentUrl(), BROWSE_LANGUAGE_PAGE_URL);
     }

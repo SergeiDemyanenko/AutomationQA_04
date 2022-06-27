@@ -21,7 +21,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         List<WebElement> list = getDriver().findElements(By.xpath("//div[@id='main']//th"));
 
@@ -39,10 +39,10 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
-        abc.getCategoryJClick();
+        abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
         j.clickGetJavaLanguage();

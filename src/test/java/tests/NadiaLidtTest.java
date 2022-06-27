@@ -1,10 +1,12 @@
 package tests;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.SearchPage;
-import pages.SubmitNewLanguagePage;
+import pages.*;
 import runner.BaseTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NadiaLidtTest extends BaseTest {
 
@@ -43,7 +45,7 @@ public class NadiaLidtTest extends BaseTest {
         MainPage menuSubmitNewLanguagePage = new MainPage(getDriver());
         SubmitNewLanguagePage errorMessage = new SubmitNewLanguagePage(getDriver());
 
-        menuSubmitNewLanguagePage.getSubmitNewLanguageMenuClick();
+        menuSubmitNewLanguagePage.clickSubmitNewLanguageMenu();
 
         errorMessage.getButtonSubmitLanguageClick();
 
@@ -64,5 +66,44 @@ public class NadiaLidtTest extends BaseTest {
         Assert.assertEquals(actualdResult1, expectedResult1);
         Assert.assertEquals(actualdResult2, expectedResult2);
         Assert.assertEquals(actualdResult3, expectedResult3);
+    }
+
+    @Test (description = "[US][Browse Language][R Page]")
+    public void testVerifyInformationAboutLanguageRPGIVFreeForm(){
+        String languageExpected = "RPG IV Free-Form";
+        String authorExpected = "James Wall";
+        String dateExpected = "01/10/06";
+        String commentsExpected = "3";
+        List<String> actualResult = new ArrayList<>();
+
+        StringBuilder expectedResult = new StringBuilder();
+
+        expectedResult
+                .append(languageExpected)
+                .append(" ")
+                .append(authorExpected)
+                .append(" ")
+                .append(dateExpected)
+                .append(" ")
+                .append(commentsExpected);
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        AbcPage abc = new AbcPage(getDriver());
+        RPage rPage = new RPage(getDriver());
+
+        main.clickBrowseLanguagesMenu();
+        abc.clickRSubmenu();
+
+        for (WebElement tr : rPage.getTRTags()) {
+            if (tr.getText().contains(languageExpected)) {
+                actualResult.add(tr.getText());
+            }
+        }
+
+        Assert.assertEquals(actualResult.size(), 1);
+        Assert.assertTrue(!actualResult.get(0).isEmpty());
+        Assert.assertEquals(actualResult.get(0),expectedResult.toString());
     }
 }

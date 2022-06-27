@@ -3,7 +3,6 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AbcPage;
-import pages.JPage;
 import pages.LPage;
 import pages.MainPage;
 import runner.BaseTest;
@@ -17,10 +16,10 @@ public class LiliYnusovaTest extends BaseTest {
 
         getDriver().get(BASE_URL);
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
-        abc.getCategoryLClick();
+        abc.clickLSubmenu();
 
         LPage l = new LPage(getDriver());
         String actualResult = l.getH2PageLText();

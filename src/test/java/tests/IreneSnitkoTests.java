@@ -32,11 +32,11 @@ public class IreneSnitkoTests extends BaseTest {
 
         MainPage main = new MainPage(getDriver());
 
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
 
-        abc.getCategoryJClick();
+        abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
 

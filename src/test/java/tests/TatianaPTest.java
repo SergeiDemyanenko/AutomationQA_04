@@ -41,7 +41,7 @@ public class TatianaPTest extends BaseTest {
 
         MainPage mainPage = new MainPage(getDriver());
 
-        mainPage.getSubmitSearchLanguagesMenu().click();
+        mainPage.getSearchMenu().click();
 
         SearchPage searchPage = new SearchPage(getDriver());
 

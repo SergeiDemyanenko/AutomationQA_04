@@ -20,10 +20,10 @@ public class VerifyPythonInfoLinkTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage p = new AbcPage(getDriver());
-        p.getCategoryPClick();
+        p.clickPSubmenu();
 
         PPage python = new PPage(getDriver());
         python.getPythonLanguageClick();

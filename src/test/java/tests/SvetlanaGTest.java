@@ -44,10 +44,10 @@ public class SvetlanaGTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
-        abc.getCategoryRClick();
+        abc.clickRSubmenu();
 
         RPage r = new RPage(getDriver());
 
