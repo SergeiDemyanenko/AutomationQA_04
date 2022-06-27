@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.SignV2Page;
+import pages.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 public class MorigorProjectAllTest extends BaseTest {
@@ -46,5 +47,20 @@ public class MorigorProjectAllTest extends BaseTest {
         signGuestbook.getSignGuestbookMenuClick();
 
         Assert.assertEquals(signGuestbook.getHomepageFieldAttribute(), "http://");
+    }
+
+    @Test
+    public void testVerifySubmitNewLanguageText() {
+        String expectedResult = "Submit New Language";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+
+        mainPage.clickFooterSubmitNewLanguage();
+
+        SubmitNewLanguagePage submit = new SubmitNewLanguagePage(getDriver());
+
+        Assert.assertEquals(submit.getTitleH2Text(), expectedResult);
     }
 }
