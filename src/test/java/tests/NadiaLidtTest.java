@@ -106,4 +106,20 @@ public class NadiaLidtTest extends BaseTest {
         Assert.assertTrue(!actualResult.get(0).isEmpty());
         Assert.assertEquals(actualResult.get(0),expectedResult.toString());
     }
+
+    @Test
+    public void testCheckTableTitleMenuBrowseLanguages() {
+        String expectedResult = "Language, Author, Date, Comments, Rate" ;
+        String actualResult;
+
+        getDriver().get(BASE_URL);
+
+        MainPage menuBrowseLanguages = new MainPage(getDriver());
+        AbcPage titleTable = new AbcPage(getDriver());
+
+        menuBrowseLanguages.clickBrowseLanguagesMenu();
+        actualResult = titleTable.getTitlesTable();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
