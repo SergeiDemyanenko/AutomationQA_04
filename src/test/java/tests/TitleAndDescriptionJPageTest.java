@@ -19,10 +19,10 @@ public class TitleAndDescriptionJPageTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage j = new AbcPage(getDriver());
-        j.getCategoryJClick();
+        j.clickJSubmenu();
 
         JPage title = new JPage(getDriver());
 

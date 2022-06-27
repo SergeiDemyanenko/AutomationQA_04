@@ -36,11 +36,11 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         getDriver().get(URL);
 
         MainPage bl = new MainPage(getDriver());
-        bl.getBrowseLanguagesMenuClick();
+        bl.clickBrowseLanguagesMenu();
 
         AbcPage abcC = new AbcPage(getDriver());
 
-        String actualResult = abcC.getCategoryC().getText();
+        String actualResult = abcC.getCSubmenu().getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -53,10 +53,10 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         getDriver().get(URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage c = new AbcPage(getDriver());
-        c.getCategoryCClick();
+        c.clickCSubmenu();
 
         CPage title = new CPage(getDriver());
 
@@ -99,7 +99,7 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         getDriver().get(URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         List<WebElement> tableHeader = getDriver().findElements(By.xpath("//tbody/tr[1]/th"));
 

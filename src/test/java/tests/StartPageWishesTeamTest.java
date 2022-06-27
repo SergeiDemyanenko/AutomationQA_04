@@ -19,7 +19,7 @@ public class StartPageWishesTeamTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage startButton = new MainPage(getDriver());
-        startButton.getStartMenuClick();
+        startButton.clickStartMenu();
 
         StartPage start = new StartPage(getDriver());
         String actualResult = start.getTeamWishesText();

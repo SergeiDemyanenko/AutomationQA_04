@@ -23,10 +23,10 @@ public class HelenVelTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage category_m = new AbcPage(getDriver());
-        category_m.getCategoryMClick();
+        category_m.clickMSubmenu();
 
         MPage language_macroX = new MPage(getDriver());
         String actualResult = language_macroX.getlanguageMacroXVerify();

@@ -16,10 +16,10 @@ public class MaksPtTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
-        abc.getCategoryJClick();
+        abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
         String actualResult = j.getDescriptionCategoryJText();
@@ -34,10 +34,10 @@ public class MaksPtTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage abc = new AbcPage(getDriver());
-        abc.getCategoryMClick();
+        abc.clickMSubmenu();
 
         MPage m = new MPage(getDriver());
         String actualResult = m.getLastLanguageInMText();
@@ -52,7 +52,7 @@ public class MaksPtTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
-        mainPage.getGuestbookClick();
+        mainPage.clickGuestbookV2Menu();
 
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
         guestbookV2Page.SignGuestbookClick();
@@ -76,7 +76,7 @@ public class MaksPtTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
-        mainPage.getGuestbookClick();
+        mainPage.clickGuestbookV2Menu();
 
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
         guestbookV2Page.SignGuestbookClick();
@@ -101,7 +101,7 @@ public class MaksPtTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
-        mainPage.getGuestbookClick();
+        mainPage.clickGuestbookV2Menu();
 
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
         guestbookV2Page.SignGuestbookClick();

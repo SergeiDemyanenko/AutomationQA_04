@@ -10,19 +10,19 @@ public class AbcPage {
 
     private WebDriver driver;
 
-    private final By CATEGORY_J = By.xpath("//a[@href='j.html']");
-    private final By CATEGORY_M = By.xpath("//a[@href='m.html']");
-    private final By CATEGORY_L = By.xpath("//a[@href='l.html']");
-    private final By CATEGORY_C = By.xpath("//a[@href='c.html']");
-    private final By CATEGORY_P = By.xpath("//a[@href='p.html']");
-    private final By CATEGORY_09 = By.xpath("//a[@href='0.html']");
-    private final By ALL_CATEGORIES = By.xpath("//ul[@id='submenu']//a");
-    private final By CATEGORY_R = By.xpath("//a[@href='r.html']");
-    private final By CATEGORY_Z = By.xpath("//a[@href='z.html']");
-
-    private final By CATEGORY_S = By.xpath("//a[@href='s.html']");
-    private final By CATEGORY_U = By.xpath("//a[@href='u.html']");
-    private final By TITLE_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
+    private final By ZERO_SUBMENU = By.xpath("//a[@href='0.html']");
+    private final By J_SUBMENU = By.xpath("//a[@href='j.html']");
+    private final By M_SUBMENU = By.xpath("//a[@href='m.html']");
+    private final By L_SUBMENU = By.xpath("//a[@href='l.html']");
+    private final By C_SUBMENU = By.xpath("//a[@href='c.html']");
+    private final By P_SUBMENU = By.xpath("//a[@href='p.html']");
+    private final By R_SUBMENU = By.xpath("//a[@href='r.html']");
+    private final By Z_SUBMENU = By.xpath("//a[@href='z.html']");
+    private final By S_SUBMENU = By.xpath("//a[@href='s.html']");
+    private final By U_SUBMENU = By.xpath("//a[@href='u.html']");
+    private final By TITLES_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
+    private final By SUBMENU = By.id("submenu");
+    private final By ALL_SUBMENU = By.xpath("//ul[@id='submenu']//a");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -34,117 +34,126 @@ public class AbcPage {
         return driver;
     }
 
-    public WebElement getCategoryJ() {
+    public String getText(WebElement element) {
 
-        return getDriver().findElement(CATEGORY_J);
+        return element.getText();
     }
 
-    public void getCategoryJClick() {
+    public WebElement getJSubmenu() {
 
-        getCategoryJ().click();
+        return getDriver().findElement(J_SUBMENU);
     }
 
-    public WebElement getCategoryM() {
+    public void clickJSubmenu() {
 
-        return getDriver().findElement(CATEGORY_M);
+        getJSubmenu().click();
     }
 
-    public void getCategoryMClick() {
+    public WebElement getMSubmenu() {
 
-        getCategoryM().click();
+        return getDriver().findElement(M_SUBMENU);
     }
 
-    public WebElement getCategoryL() {
-        return getDriver().findElement(CATEGORY_L);
+    public void clickMSubmenu() {
+
+        getMSubmenu().click();
     }
 
-    public void getCategoryLClick() {
-        getCategoryL().click();
+    public WebElement getLSubmenu() {
+
+        return getDriver().findElement(L_SUBMENU);
     }
 
-    public WebElement getCategoryC() {
+    public void clickLSubmenu() {
 
-        return getDriver().findElement(CATEGORY_C);
+        getLSubmenu().click();
     }
 
-    public void getCategoryCClick() {
-        getCategoryC().click();
+    public WebElement getCSubmenu() {
+
+        return getDriver().findElement(C_SUBMENU);
     }
 
-    public WebElement getCategory09() {
+    public void clickCSubmenu() {
 
-        return getDriver().findElement(CATEGORY_09);
+        getCSubmenu().click();
     }
 
-    public String getCategory09Text() {
+    public WebElement getZeroSubmenu() {
 
-        return getCategory09().getText();
+        return getDriver().findElement(ZERO_SUBMENU);
     }
 
-    public List<WebElement> getAllCategories() {
+    public String getZeroSubmenuText() {
 
-        return getDriver().findElements(ALL_CATEGORIES);
+        return getText(getZeroSubmenu());
     }
 
-    public WebElement getCategoryP() {
+    public List<WebElement> getAllSubmenu() {
 
-        return getDriver().findElement(CATEGORY_P);
+        return getDriver().findElements(ALL_SUBMENU);
     }
 
-    public void getCategoryPClick() {
+    public WebElement getPSubmenu() {
 
-        getDriver().findElement(CATEGORY_P).click();
+        return getDriver().findElement(P_SUBMENU);
     }
 
-    public WebElement getCategoryR() {
+    public void clickPSubmenu() {
 
-        return getDriver().findElement(CATEGORY_R);
+        getPSubmenu().click();
     }
 
-    public void getCategoryRClick() {
+    public WebElement getRSubmenu() {
 
-        getCategoryR().click();
+        return getDriver().findElement(R_SUBMENU);
     }
 
-    public WebElement getCategoryZ() {
+    public void clickRSubmenu() {
 
-        return getDriver().findElement(CATEGORY_Z);
+        getRSubmenu().click();
     }
 
-    public void getCategoryZClick() {
+    public WebElement getZSubmenu() {
 
-        getCategoryZ().click();
+        return getDriver().findElement(Z_SUBMENU);
     }
 
-    public WebElement getCategoryS() {
+    public void clickZSubmenu() {
 
-        return getDriver().findElement(CATEGORY_S);
+        getZSubmenu().click();
     }
 
-    public void getCategorySClick() {
-        getCategoryS().click();
+    public WebElement getSSubmenu() {
+
+        return getDriver().findElement(S_SUBMENU);
     }
 
-    public WebElement getCategoryU(){
+    public void clickSSubmenu() {
 
-        return getDriver().findElement(CATEGORY_U);
+        getSSubmenu().click();
     }
 
-    public void getCategoryUClick() {
+    public WebElement getUSubmenu(){
 
-        getCategoryU().click();
+        return getDriver().findElement(U_SUBMENU);
     }
 
-    public String getCategoryUText(){
+    public void clickUSubmenu() {
 
-        return getCategoryU().getText();
+        getUSubmenu().click();
     }
 
-    public String getTitelsTable() {
+    public String getUSubmenuText(){
+
+        return getText(getUSubmenu());
+    }
+
+    public String getTitlesTable() {
         StringBuilder stringTitle = new StringBuilder();
         String actualResult;
 
-        List<WebElement> titles = getDriver().findElements(TITLE_TABLE);
+        List<WebElement> titles = getDriver().findElements(TITLES_TABLE);
         for (WebElement t : titles) {
             stringTitle.append(t.getText()).append(", ");
         }
@@ -152,5 +161,10 @@ public class AbcPage {
                 .substring(0,stringTitle.length()-2);
 
         return actualResult;
+    }
+
+    public WebElement getSubmenu(){
+
+        return getDriver().findElement(SUBMENU);
     }
 }

@@ -20,7 +20,7 @@ public class VasiliySinTest extends BaseTest {
         MainPage SubmitNewLanguage = new MainPage(getDriver());
         SubmitNewLanguagePage category = new SubmitNewLanguagePage(getDriver());
 
-        SubmitNewLanguage.getSubmitNewLanguageMenuClick();
+        SubmitNewLanguage.clickSubmitNewLanguageMenu();
 
         String actualResult = category.getField_Category().getText();
 
@@ -37,7 +37,7 @@ public class VasiliySinTest extends BaseTest {
         MainPage SubmitNewLanguage = new MainPage(getDriver());
         SubmitNewLanguagePage getButtonSubmitLanguage = new SubmitNewLanguagePage(getDriver());
 
-        SubmitNewLanguage.getSubmitNewLanguageMenuClick();
+        SubmitNewLanguage.clickSubmitNewLanguageMenu();
         getButtonSubmitLanguage.getButtonSubmitLanguageClick();
 
         String actualResult = getButtonSubmitLanguage.getErrorMessage().getText();

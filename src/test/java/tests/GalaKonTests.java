@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -22,8 +21,8 @@ public class GalaKonTests extends BaseTest {
         MPage mp = new MPage(getDriver());
         LanguageMathematicaPage lmp = new LanguageMathematicaPage(getDriver());
 
-        mainP.getBrowseLanguagesMenuClick();
-        abc.getCategoryM().click();
+        mainP.clickBrowseLanguagesMenu();
+        abc.getMSubmenu().click();
         mp.mathematicaPage().click();
         lmp.BrentonBostick();
 
@@ -43,8 +42,8 @@ public class GalaKonTests extends BaseTest {
         JPage jp = new JPage(getDriver());
         LanguageJava3Page ljp = new LanguageJava3Page(getDriver());
 
-        mainP.getBrowseLanguagesMenuClick();
-        abc.getCategoryJ().click();
+        mainP.clickBrowseLanguagesMenu();
+        abc.getJSubmenu().click();
         jp.getJavaLanguage().click();
 
         Assert.assertEquals(expectedResult, ljp.getAmmountOfCommentheaders());

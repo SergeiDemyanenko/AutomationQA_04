@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AbcPage;
@@ -19,10 +18,10 @@ public class AnufryievaTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.getBrowseLanguagesMenuClick();
+        main.clickBrowseLanguagesMenu();
 
         AbcPage Abc = new AbcPage(getDriver());
-        Abc.getCategoryJClick();
+        Abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
         String actualResult = j.getDescriptionCategoryJText();
