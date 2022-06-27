@@ -48,4 +48,21 @@ public class GalaKonTests extends BaseTest {
 
         Assert.assertEquals(expectedResult, ljp.getAmmountOfCommentheaders());
     }
+
+    @Test
+    public void test() {
+
+        String expectedResult = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainP = new MainPage(getDriver());
+        AbcPage abc = new AbcPage(getDriver());
+
+        mainP.getBrowseLanguagesMenu().click();
+
+        String actualResult = abc.getSubmenu().getText();
+
+        Assert.assertEquals(expectedResult, actualResult);
+    }
 }
