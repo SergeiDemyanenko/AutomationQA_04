@@ -19,13 +19,14 @@ public class PPage {
 
         return driver;
     }
-    public WebElement getPythonLanguageButton() {
+
+    public WebElement getPythonLanguage() {
 
         return getDriver().findElement(PYTHON_LANGUAGE);
     }
 
-    public void getPythonLanguageClick() {
+    public void clickPythonLanguage() {
 
-        getDriver().findElement(PYTHON_LANGUAGE).click();
+        getPythonLanguage().click();
     }
 }
