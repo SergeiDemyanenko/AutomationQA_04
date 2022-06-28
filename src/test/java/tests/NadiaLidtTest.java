@@ -20,9 +20,9 @@ public class NadiaLidtTest extends BaseTest {
 
         SearchPage search = new SearchPage(getDriver());
 
-        search.getSearchMenuClick();
+        search.clickSearchMenu();
 
-        search.getSearchSubmenuClick();
+        search.clickSearchSubmenu();
 
         String actualResult = search.getH2MainText();
 

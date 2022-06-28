@@ -46,7 +46,7 @@ public class TatianaPTest extends BaseTest {
         SearchPage searchPage = new SearchPage(getDriver());
 
         searchPage.getSearchBoxSendKey("Java");
-        searchPage.getSubmitSearch().click();
+        searchPage.getSearchSubmit().click();
 
         WebElement findJava = getDriver().findElement(By.linkText("Java (object-oriented version)"));
 

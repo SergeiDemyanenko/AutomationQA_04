@@ -15,7 +15,7 @@ public class SearchPage {
 
     private final By SEARCH_BOX = By.xpath("//input[@name='search']");
 
-    private final By SUBMIT_SEARCH = By.name("submitsearch");
+    private final By SEARCH_SUBMIT = By.name("submitsearch");
 
     public SearchPage(WebDriver existingDriver) {
 
@@ -32,7 +32,7 @@ public class SearchPage {
         return getDriver().findElement(SEARCH_MENU);
     }
 
-    public void getSearchMenuClick() {
+    public void clickSearchMenu() {
 
         getSearchMenu().click();
     }
@@ -42,7 +42,7 @@ public class SearchPage {
         return getDriver().findElement(SEARCH_SUBMENU);
     }
 
-    public void getSearchSubmenuClick() {
+    public void clickSearchSubmenu() {
 
         getSearchSubmenu().click();
     }
@@ -67,13 +67,13 @@ public class SearchPage {
         getSearchBox().sendKeys(name);
     }
 
-    public WebElement getSubmitSearch(){
+    public WebElement getSearchSubmit(){
 
-        return getDriver().findElement(SUBMIT_SEARCH);
+        return getDriver().findElement(SEARCH_SUBMIT);
     }
 
-    public void getSubmitSearchClick(){
+    public void clickSubmitSearch(){
 
-        getSubmitSearch().click();
+        getSearchSubmit().click();
     }
 }
