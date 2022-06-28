@@ -113,6 +113,7 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+
     @Test
     public void testSubmenuAbcTitle()  {
         String expectedResult = "A";
