@@ -47,7 +47,7 @@ public class NadiaLidtTest extends BaseTest {
 
         menuSubmitNewLanguagePage.clickSubmitNewLanguageMenu();
 
-        errorMessage.getButtonSubmitLanguageClick();
+        errorMessage.clickButtonSubmitLanguage();
 
         String actualdResultError = errorMessage.getErrorMessageText().substring(0,5);
         String actualdResultPrecondition = errorMessage.getErrorMessageText().substring(7,19);

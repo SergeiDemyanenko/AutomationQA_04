@@ -27,9 +27,9 @@ public class Song99BottlesAsTest extends BaseTest {
         MainPage main = new MainPage(getDriver());
         main.getSubmitNewLanguageMenu().click();
         SubmitNewLanguagePage category = new SubmitNewLanguagePage(getDriver());
-        category.getField_CategoryClick();
+        category.clickCategoryName();
         SubmitNewLanguagePage click = new SubmitNewLanguagePage(getDriver());
-        click.getField_CategoryClick();
+        click.clickCategoryName();
 
         List<WebElement> name = getDriver().findElements(By.xpath("//select[@name='category']/option"));
         List<String> actualyResalt = new ArrayList<>();

@@ -22,7 +22,7 @@ public class VasiliySinTest extends BaseTest {
 
         SubmitNewLanguage.clickSubmitNewLanguageMenu();
 
-        String actualResult = category.getField_Category().getText();
+        String actualResult = category.getCategoryName().getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -38,7 +38,7 @@ public class VasiliySinTest extends BaseTest {
         SubmitNewLanguagePage getButtonSubmitLanguage = new SubmitNewLanguagePage(getDriver());
 
         SubmitNewLanguage.clickSubmitNewLanguageMenu();
-        getButtonSubmitLanguage.getButtonSubmitLanguageClick();
+        getButtonSubmitLanguage.clickButtonSubmitLanguage();
 
         String actualResult = getButtonSubmitLanguage.getErrorMessage().getText();
 
