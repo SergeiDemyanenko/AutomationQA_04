@@ -112,4 +112,21 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testSubmenuAbcTitle()  {
+        String expectedResult = "A";
+
+        getDriver().get(URL);
+
+        MainPage main = new MainPage(getDriver());
+
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abcA = new AbcPage(getDriver());
+
+        String actualResult = abcA.getASubmenu().getText();
+
+          Assert.assertEquals(actualResult, expectedResult);
+    }
 }
