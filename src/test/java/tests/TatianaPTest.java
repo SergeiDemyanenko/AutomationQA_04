@@ -9,6 +9,9 @@ import pages.SearchPage;
 import pages.StartPage;
 import runner.BaseTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TatianaPTest extends BaseTest {
 
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
@@ -35,7 +38,13 @@ public class TatianaPTest extends BaseTest {
 
     @Test
     public void testSearchFunction() {
-        String expectedResult = "Java (object-oriented version)";
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("Java (object-oriented version)");
+        expectedResult.add("Java");
+        expectedResult.add("Java (exception oriented)");
+        expectedResult.add("Java (bytecode-version with loader)");
+        expectedResult.add("Java (Java 5.0 object-oriented version)");
+        expectedResult.add("Java (Singing with Java Speech API)");
 
         getDriver().get(BASE_URL);
 
@@ -48,9 +57,15 @@ public class TatianaPTest extends BaseTest {
         searchPage.getSearchBoxSendKey("Java");
         searchPage.getSubmitSearch().click();
 
-        WebElement findJava = getDriver().findElement(By.linkText("Java (object-oriented version)"));
+        List<WebElement> javaLnggs = getDriver().findElements(
+                By
+                        .xpath("//td/a[contains(@href, 'language')and (text()='Java' or contains(text(), 'Java ('))]"));
 
-        String actualResult = findJava.getText();
+        List<String> actualResult = new ArrayList<>();
+
+        for(WebElement name : javaLnggs){
+            actualResult.add(name.getText());
+        }
 
         Assert.assertEquals(actualResult, expectedResult);
     }
