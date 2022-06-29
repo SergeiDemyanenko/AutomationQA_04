@@ -33,9 +33,9 @@ public class ViktroriiaKTest extends BaseTest {
         mainPage.clickTopListMenu();
 
         TopListPage hits = new TopListPage(getDriver());
-        hits.clickMenuTopHits();
+        hits.clickTopHitsSubmenu();
 
-        String actualResult = hits.getMenuTopHitsText();
+        String actualResult = hits.getTextTopHitsSubmenu();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

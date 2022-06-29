@@ -8,12 +8,12 @@ public class TopListPage {
 
     private WebDriver driver;
 
-    private final By TOP_LIST_REAL_MENU = By.linkText("Top Rated Real");
-    private final By TOP_LIST_ESOTERIC_MENU = By.xpath("//a[@href='./toplist_esoteric.html']");
-    private final By TOP_LIST_ASSEMBLY_MENU = By.xpath("//a[@href='./toplist_assembly.html']");
-    private final By TOP_LIST_TOPHITS_MENU = By.xpath("//a[@href='./tophits.html']");
-    private final By NEW_LANGUAGES_THIS_MONTH_MENU = By.xpath("//a[@href='./toplist_newlanguagesthismonth.html']");
-    private final By NEW_COMMENTS_MENU = By.linkText("New Comments");
+    private final By TOP_LIST_REAL_SUBMENU = By.linkText("Top Rated Real");
+    private final By TOP_LIST_ESOTERIC_SUBMENU = By.xpath("//a[@href='./toplist_esoteric.html']");
+    private final By TOP_LIST_ASSEMBLY_SUBMENU = By.xpath("//a[@href='./toplist_assembly.html']");
+    private final By TOPHITS_SUBMENU = By.xpath("//a[@href='./tophits.html']");
+    private final By NEW_LANGUAGES_THIS_MONTH_SUBMENU = By.xpath("//a[@href='./toplist_newlanguagesthismonth.html']");
+    private final By NEW_COMMENTS_SUBMENU = By.linkText("New Comments");
 
     public TopListPage(WebDriver existingDriver) {
 
@@ -23,67 +23,72 @@ public class TopListPage {
 
         return driver;
     }
-    public WebElement getMenuTopListReal() {
 
-        return getDriver().findElement(TOP_LIST_REAL_MENU);
+    public void clickSubmenu(WebElement element) {
+        element.click();
+    }
+    public WebElement getTopListRealSubmenu() {
+
+        return getDriver().findElement(TOP_LIST_REAL_SUBMENU);
     }
 
-    public void clickMenuTopListReal() {
+    public void clickTopListRealSubmenu() {
 
-        getMenuTopListReal().click();
+        clickSubmenu(getTopListRealSubmenu());
     }
 
-    public WebElement getMenuTopEsoteric() {
+    public WebElement getTopListEsotericSubmenu() {
 
-        return getDriver().findElement(TOP_LIST_ESOTERIC_MENU);
+        return getDriver().findElement(TOP_LIST_ESOTERIC_SUBMENU);
     }
 
-    public void clickMenuTopEsotericPage() {
+    public void clickTopListEsotericSubmenu() {
 
-        getMenuTopEsoteric().click();
+        getTopListEsotericSubmenu().click();
     }
 
-    public WebElement getMenuTopListAssembly() {
+    public WebElement getTopListAssemblySubmenu() {
 
-        return getDriver().findElement(TOP_LIST_ASSEMBLY_MENU);
+        return getDriver().findElement(TOP_LIST_ASSEMBLY_SUBMENU);
     }
 
-    public void clickMenuTopListAssembly() {
+    public void clickTopListAssemblySubmenu() {
 
-        getMenuTopListAssembly().click();
+        getTopListAssemblySubmenu().click();
     }
 
-    public WebElement getMenuTopHits() {
+    public WebElement getTopHitsSubmenu() {
 
-        return getDriver().findElement(TOP_LIST_TOPHITS_MENU);
+        return getDriver().findElement(TOPHITS_SUBMENU);
     }
 
-    public void clickMenuTopHits() {
+    public void clickTopHitsSubmenu() {
 
-        getMenuTopHits().click();
+        getTopHitsSubmenu().click();
     }
 
-    public String getMenuTopHitsText() {
-        return getMenuTopHits().getText();
+    public String getTextTopHitsSubmenu() {
+        
+        return getTopHitsSubmenu().getText();
     }
 
-    public WebElement getMenuNewLanguagesThisMonth() {
+    public WebElement getNewLanguagesThisMonthSubmenu() {
 
-        return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_MENU);
+        return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_SUBMENU);
     }
 
-    public void clickMenuNewLanguagesThisMonth() {
+    public void clickNewLanguagesThisMonthSubmenu() {
 
-        getMenuNewLanguagesThisMonth().click();
+        getNewLanguagesThisMonthSubmenu().click();
     }
 
-    public WebElement getMenuNewComments() {
+    public WebElement getNewCommentsSubmenu() {
 
-        return getDriver().findElement(NEW_COMMENTS_MENU);
+        return getDriver().findElement(NEW_COMMENTS_SUBMENU);
     }
 
-    public void clickMenuNewComments() {
+    public void clickNewCommentsSubmenu() {
 
-        getMenuNewComments().click();
+        getNewCommentsSubmenu().click();
     }
 }

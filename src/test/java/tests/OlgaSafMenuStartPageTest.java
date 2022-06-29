@@ -76,7 +76,7 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
             main.clickTopListMenu();
 
             TopListPage topListPage = new TopListPage(getDriver());
-            topListPage.clickMenuTopListAssembly();
+            topListPage.clickTopListAssemblySubmenu();
 
             TopListAssemblyPage topListAssembly = new TopListAssemblyPage(getDriver());
 
