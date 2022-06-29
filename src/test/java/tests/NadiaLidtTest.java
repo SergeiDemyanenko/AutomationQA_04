@@ -18,13 +18,15 @@ public class NadiaLidtTest extends BaseTest {
 
         getDriver().get(BASE_URL);
 
-        SearchPage search = new SearchPage(getDriver());
+        MainPage search = new MainPage(getDriver());
 
         search.clickSearchMenu();
 
-        search.clickSearchSubmenu();
+        SearchPage searchPage = new SearchPage(getDriver());
 
-        String actualResult = search.getH2MainText();
+        searchPage.clickSearchSubmenu();
+
+        String actualResult = searchPage.getH2MainText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

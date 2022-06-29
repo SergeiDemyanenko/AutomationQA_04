@@ -95,6 +95,11 @@ public class MainPage {
         return getText(getSearchMenu());
     }
 
+    public void clickSearchMenu() {
+
+        getSearchMenu().click();
+    }
+
     public void clickSubmitNewLanguageMenu() {
 
         getSubmitNewLanguageMenu().click();

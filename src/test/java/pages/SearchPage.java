@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 public class SearchPage {
     private WebDriver driver;
 
-    private final By SEARCH_MENU = By.xpath("//div[@id='navigation']/ul[@id='menu']/li/a[@href='/search.html']");
-
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
 
     private final By H2_MAIN =By.xpath("//div[@id='main']/h2");
@@ -27,14 +25,9 @@ public class SearchPage {
         return driver;
     }
 
-    public WebElement getSearchMenu() {
+    public String getText(WebElement element) {
 
-        return getDriver().findElement(SEARCH_MENU);
-    }
-
-    public void clickSearchMenu() {
-
-        getSearchMenu().click();
+        return element.getText();
     }
 
     public WebElement getSearchSubmenu() {
@@ -54,7 +47,7 @@ public class SearchPage {
 
     public String getH2MainText() {
 
-        return getH2Main().getText();
+        return getText(getH2Main());
     }
 
     public WebElement getSearchBox(){
