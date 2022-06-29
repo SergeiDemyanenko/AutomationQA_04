@@ -75,4 +75,29 @@ public class JPage {
 
         getLinkLanguageJava3().click();
     }
+
+    public String getLanguageJavascript1948() {
+
+        for (String language : getAllALinks()) {
+
+            if (
+                    getAllALinks().size() != 0
+                            && language.equals("JavaScript")
+            ) {
+                return language;
+            }
+        }
+
+        return null;
+    }
+
+    public void clickLanguageJavascript1948() {
+
+        getDriver().findElement(
+                        By.linkText(
+                                getLanguageJavascript1948()
+                        )
+                )
+                .click();
+    }
 }
