@@ -55,7 +55,7 @@ public class MaksPtTest extends BaseTest {
         mainPage.clickGuestbookV2Menu();
 
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
-        guestbookV2Page.SignGuestbookClick();
+        guestbookV2Page.clickSignV2();
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
         signV2Page.inputNameField("MaksPt");
@@ -79,7 +79,7 @@ public class MaksPtTest extends BaseTest {
         mainPage.clickGuestbookV2Menu();
 
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
-        guestbookV2Page.SignGuestbookClick();
+        guestbookV2Page.clickSignV2();
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
         signV2Page.inputNameField("MaksPt");
@@ -104,7 +104,7 @@ public class MaksPtTest extends BaseTest {
         mainPage.clickGuestbookV2Menu();
 
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
-        guestbookV2Page.SignGuestbookClick();
+        guestbookV2Page.clickSignV2();
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
         signV2Page.inputNameField("MaksPt");
