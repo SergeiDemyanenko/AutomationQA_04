@@ -28,6 +28,5 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
         String actualResult = zSubmenu.getH2Text();
 
         Assert.assertEquals(actualResult,expectedResult);
-
     }
 }
