@@ -18,7 +18,7 @@ public class CheckLocalCopyLinkTest extends BaseTest {
         startPage.clickInfoSubmenu();
 
         InfoPage infoPage = new InfoPage(getDriver());
-        infoPage.getLocalCopyLink().click();
+        infoPage.getLinkMirrors1().click();
 
         String actualResult = getDriver().getCurrentUrl();
         Assert.assertEquals(actualResult, expectedResult);
