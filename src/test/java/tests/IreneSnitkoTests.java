@@ -66,12 +66,24 @@ public class IreneSnitkoTests extends BaseTest {
 
         js1948.clickWikiLink();
 
-        Assert.assertTrue(
-                getDriver()
-                .findElement(By.xpath(
-                "//div[@id='content']/h1"
-                )
-                ).isDisplayed()
-                );
+        Assert.assertTrue(getDriver().findElement(By.xpath("//div[@id='content']/h1")).isDisplayed());
+    }
+
+    @Test
+    public void testVerifyAttributesSrcOfMessageIcons () {
+
+        getDriver().get(BASE_URL);
+
+        MainPage mp = new MainPage(getDriver());
+
+        mp.clickGuestbookV2Menu();
+
+        GuestbookV2Page gb = new GuestbookV2Page(getDriver());
+
+        gb.clickSignV2();
+
+        SignV2Page sv2 = new SignV2Page(getDriver());
+
+        Assert.assertEquals(sv2.getAttributesSrcOfImg(), sv2.createAttributesSrcOfImg());
     }
 }
