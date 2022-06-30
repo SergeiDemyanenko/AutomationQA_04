@@ -28,4 +28,15 @@ public class AAA_MenuTeamTest extends BaseTest {
 
         Assert.assertEquals(startPage.getTeamSubmenu().getAttribute("href"), expectedResult);
     }
+
+    @Test
+    public void testVerifyNavigation() {
+        String expectedResult = "99 Bottles of Beer | The Team";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        startPage.getTeamSubmenu().click();
+
+        Assert.assertEquals(getDriver().getTitle(), expectedResult);
+    }
 }
