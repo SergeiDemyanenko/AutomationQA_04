@@ -23,6 +23,8 @@ public class SearchPage {
     private final By JAVA_LANGUAGES =
             By.xpath("//td/a[contains(@href, 'language')and (text()='Java' or contains(text(), 'Java ('))]");
 
+    private final By TABLE_JAVA_SEARCH_LANGUAGES = By.xpath("//tbody/tr");
+
     public SearchPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -99,6 +101,16 @@ public class SearchPage {
         }
 
         return allJavaLanguages;
+    }
+
+    public List<WebElement> getTableJavaSearchLanguages(){
+
+        return  getDriver().findElements(TABLE_JAVA_SEARCH_LANGUAGES);
+    }
+
+    public int countLanguagesJavaSearch(){
+
+        return getTableJavaSearchLanguages().size() - 1;
     }
 
 }
