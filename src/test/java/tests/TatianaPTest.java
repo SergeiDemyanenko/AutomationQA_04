@@ -8,7 +8,6 @@ import pages.MainPage;
 import pages.SearchPage;
 import pages.StartPage;
 import runner.BaseTest;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,5 +86,18 @@ public class TatianaPTest extends BaseTest {
         InfoPage infoPage = new InfoPage(getDriver());
 
         Assert.assertEquals(infoPage.getH2HeaderText(),expectedResult);
+    }
+
+    @Test
+    public void testSearchSubmitAndSearchAreDisplayed(){
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickSearchMenu();
+
+        SearchPage searchPage = new SearchPage(getDriver());
+
+        Assert.assertTrue(searchPage.getSearchSubmit().isDisplayed());
+        Assert.assertTrue(searchPage.getSearchBox().isDisplayed());
     }
 }
