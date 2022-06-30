@@ -131,4 +131,51 @@ public class SignV2Page {
 
         return getErrorMessage().getAttribute("style");
     }
+
+    protected String createSrc(String value) {
+
+        return "images/bb/bb".concat(value).concat(".gif");
+    }
+
+    public String createAttributesSrcOfImg() {
+
+        String ln = "\n";
+
+        return createSrc("url")
+                .concat(ln)
+                .concat(createSrc("email"))
+                .concat(ln)
+                .concat(createSrc("bold"))
+                .concat(ln)
+                .concat(createSrc("italic"))
+                .concat(ln)
+                .concat(createSrc("underline"));
+    }
+
+    protected String getAttributeName (String cssSelector) {
+
+        return getDriver().findElement(
+                        By.cssSelector("img[alt='".concat(cssSelector).concat("']")))
+                .getAttribute("src");
+    }
+
+    public String getAttributesSrcOfImg() {
+
+        String url = "https://www.99-bottles-of-beer.net/";
+        String ln = "\n";
+
+        StringBuilder att = new StringBuilder();
+        att
+                .append(getAttributeName("Web Address"))
+                .append(ln)
+                .append(getAttributeName("Email Address"))
+                .append(ln)
+                .append(getAttributeName("Bold Text"))
+                .append(ln)
+                .append(getAttributeName("Italic Text"))
+                .append(ln)
+                .append(getAttributeName("Underlined Text"));
+
+        return att.toString().replace(url, "");
+    }
 }
