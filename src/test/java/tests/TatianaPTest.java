@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.InfoPage;
 import pages.MainPage;
 import pages.SearchPage;
 import pages.StartPage;
@@ -72,5 +73,19 @@ public class TatianaPTest extends BaseTest {
         searchPage.clickSubmitSearch();
 
         Assert.assertEquals(searchPage.countLanguagesJavaSearch(), expectedResult);
+    }
+
+    @Test
+    public void testVerifyH2HeaderOnInfoPage(){
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickInfoSubmenu();
+
+        InfoPage infoPage = new InfoPage(getDriver());
+
+        Assert.assertEquals(infoPage.getH2HeaderText(),expectedResult);
     }
 }
