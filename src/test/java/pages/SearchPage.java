@@ -4,18 +4,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchPage {
     private WebDriver driver;
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
 
-    private final By H2_MAIN =By.xpath("//div[@id='main']/h2");
+    private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
 
     private final By SEARCH_BOX = By.xpath("//input[@name='search']");
 
     private final By SEARCH_SUBMIT = By.name("submitsearch");
 
     private final By PERL_LANGUAGE = By.linkText("Perl (bottled by Acme::EyeDrops)");
+
+    private final By JAVA_LANGUAGES =
+            By.xpath("//td/a[contains(@href, 'language')and (text()='Java' or contains(text(), 'Java ('))]");
 
     public SearchPage(WebDriver existingDriver) {
 
@@ -52,22 +58,22 @@ public class SearchPage {
         return getText(getH2Main());
     }
 
-    public WebElement getSearchBox(){
+    public WebElement getSearchBox() {
 
         return getDriver().findElement(SEARCH_BOX);
     }
 
-    public void getSearchBoxSendKey(String name){
+    public void getSearchBoxSendKey(String name) {
 
         getSearchBox().sendKeys(name);
     }
 
-    public WebElement getSearchSubmit(){
+    public WebElement getSearchSubmit() {
 
         return getDriver().findElement(SEARCH_SUBMIT);
     }
 
-    public void clickSubmitSearch(){
+    public void clickSubmitSearch() {
 
         getSearchSubmit().click();
     }
@@ -76,8 +82,23 @@ public class SearchPage {
 
         return getDriver().findElement(PERL_LANGUAGE);
     }
+
     public void clickPerlLanguage() {
 
         getPerlLanguage().click();
     }
+
+    public List<String> getOnlyJavaLanguages() {
+
+        List<WebElement> javaLanguages = getDriver().findElements(JAVA_LANGUAGES);
+
+        List<String> allJavaLanguages = new ArrayList<>();
+
+        for (WebElement name : javaLanguages) {
+            allJavaLanguages.add(name.getText());
+        }
+
+        return allJavaLanguages;
+    }
+
 }

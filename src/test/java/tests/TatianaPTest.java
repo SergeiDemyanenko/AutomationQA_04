@@ -1,7 +1,6 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
@@ -57,16 +56,6 @@ public class TatianaPTest extends BaseTest {
         searchPage.getSearchBoxSendKey("Java");
         searchPage.clickSubmitSearch();
 
-        List<WebElement> javaLnggs = getDriver().findElements(
-                By
-                        .xpath("//td/a[contains(@href, 'language')and (text()='Java' or contains(text(), 'Java ('))]"));
-
-        List<String> actualResult = new ArrayList<>();
-
-        for (WebElement name : javaLnggs) {
-            actualResult.add(name.getText());
-        }
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(searchPage.getOnlyJavaLanguages(), expectedResult);
     }
 }
