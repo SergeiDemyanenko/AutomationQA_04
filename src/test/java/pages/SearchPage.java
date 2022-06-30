@@ -15,6 +15,8 @@ public class SearchPage {
 
     private final By SEARCH_SUBMIT = By.name("submitsearch");
 
+    private final By PERL_LANGUAGE = By.linkText("Perl (bottled by Acme::EyeDrops)");
+
     public SearchPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -68,5 +70,14 @@ public class SearchPage {
     public void clickSubmitSearch(){
 
         getSearchSubmit().click();
+    }
+
+    public WebElement getPerlLanguage() {
+
+        return getDriver().findElement(PERL_LANGUAGE);
+    }
+    public void clickPerlLanguage() {
+
+        getPerlLanguage().click();
     }
 }
