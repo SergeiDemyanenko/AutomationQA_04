@@ -58,13 +58,13 @@ public class MaksPtTest extends BaseTest {
         guestbookV2Page.clickSignV2();
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
-        signV2Page.inputNameField("MaksPt");
-        signV2Page.inputLocationField("Portugal");
-        signV2Page.inputEmailField("pt@gmail.com");
-        signV2Page.inputHomepageField("maks.com");
-        signV2Page.inputCaptchaField(Integer.toString((int) (Math.random() * 900 + 100)));
-        signV2Page.inputCommentField("QA Automation for everyone");
-        signV2Page.getSubmitButtonClick();
+        signV2Page.inputName("MaksPt");
+        signV2Page.inputLocation("Portugal");
+        signV2Page.inputEmail("pt@gmail.com");
+        signV2Page.inputHomepage("maks.com");
+        signV2Page.inputCaptcha();
+        signV2Page.inputComment("QA Automation for everyone");
+        signV2Page.clickButtonSubmit();
 
         Assert.assertEquals(signV2Page.getErrorMessageText(), expectedTextError);
     }
@@ -82,13 +82,13 @@ public class MaksPtTest extends BaseTest {
         guestbookV2Page.clickSignV2();
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
-        signV2Page.inputNameField("MaksPt");
-        signV2Page.inputLocationField("Portugal");
-        signV2Page.inputEmailField("pt@gmail.com");
-        signV2Page.inputHomepageField("maks.com");
-        signV2Page.inputCaptchaField(Integer.toString((int) (Math.random() * 900 + 100)));
-        signV2Page.inputCommentField("QA Automation for everyone");
-        signV2Page.getSubmitButtonClick();
+        signV2Page.inputName("MaksPt");
+        signV2Page.inputLocation("Portugal");
+        signV2Page.inputEmail("pt@gmail.com");
+        signV2Page.inputHomepage("maks.com");
+        signV2Page.inputCaptcha();
+        signV2Page.inputComment("QA Automation for everyone");
+        signV2Page.clickButtonSubmit();
 
         Assert.assertEquals(signV2Page.getErrorMessageTagFont(), expectedTextErrorBold);
     }
@@ -107,13 +107,13 @@ public class MaksPtTest extends BaseTest {
         guestbookV2Page.clickSignV2();
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
-        signV2Page.inputNameField("MaksPt");
-        signV2Page.inputLocationField("Portugal");
-        signV2Page.inputEmailField("pt@gmail.com");
-        signV2Page.inputHomepageField("maks.com");
-        signV2Page.inputCaptchaField(Integer.toString((int) (Math.random() * 900 + 100)));
-        signV2Page.inputCommentField("QA Automation for everyone");
-        signV2Page.getSubmitButtonClick();
+        signV2Page.inputName("MaksPt");
+        signV2Page.inputLocation("Portugal");
+        signV2Page.inputEmail("pt@gmail.com");
+        signV2Page.inputHomepage("maks.com");
+        signV2Page.inputCaptcha();
+        signV2Page.inputComment("QA Automation for everyone");
+        signV2Page.clickButtonSubmit();
 
         Assert.assertEquals(signV2Page.getErrorMessageAttributeStyle(), expectedTextErrorStyle);
     }
