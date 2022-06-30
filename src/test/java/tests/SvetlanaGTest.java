@@ -53,4 +53,25 @@ public class SvetlanaGTest extends BaseTest {
 
         Assert.assertEquals(r.countLanguages(), 44);
     }
+
+    @Test
+    public void testPageRVerifyHeaderAndText() {
+        final String expectedHeader = "Category R";
+        final String expectedText = "All languages starting with the letter R are shown, sorted by Language.";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickRSubmenu();
+
+        RPage r = new RPage(getDriver());
+        String actualHeader = r.getH2HeaderText();
+        String actualText = r.getPTagText();
+
+        Assert.assertEquals(actualHeader, expectedHeader);
+        Assert.assertEquals(actualText, expectedText);
+    }
 }
