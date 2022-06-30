@@ -130,4 +130,21 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
 
           Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testVerifyLanguageAlgol60() {
+        String expectedResult = "Algol60";
+
+        getDriver().get(URL);
+
+        MainPage bl = new MainPage(getDriver());
+        bl.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickASubmenu();
+
+        String actualResult = getDriver().findElement(
+                By.xpath("//td[@bgcolor='#efefef']/a[text()='Algol60']")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
