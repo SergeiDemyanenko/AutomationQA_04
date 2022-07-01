@@ -10,32 +10,28 @@ public class AAA_MenuLyricsTest extends BaseTest {
 
     @Test
     public void testVerifyText() {
-        String expectedResult = "Song Lyrics";
-
         getDriver().get(BASE_URL);
         StartPage startPage = new StartPage(getDriver());
 
-        Assert.assertEquals(startPage.getLyricsSubmenu().getText(), expectedResult);
+        Assert.assertEquals(startPage.getLyricsSubmenu().getText(), "Song Lyrics");
     }
 
     @Test
     public void testVerifyLinkText() {
-        String expectedResult = "http://www.99-bottles-of-beer.net/lyrics.html";
-
         getDriver().get(BASE_URL);
         StartPage startPage = new StartPage(getDriver());
 
-        Assert.assertEquals(startPage.getLyricsSubmenu().getAttribute("href"), expectedResult);
+        Assert.assertEquals(startPage.getLyricsSubmenu().getAttribute("href"),
+                "http://www.99-bottles-of-beer.net/lyrics.html");
     }
 
     @Test
     public void testVerifyNavigation() {
-        String expectedResult = "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer";
-
         getDriver().get(BASE_URL);
         StartPage startPage = new StartPage(getDriver());
         startPage.getLyricsSubmenu().click();
 
-        Assert.assertEquals(getDriver().getTitle(), expectedResult);
+        Assert.assertEquals(getDriver().getTitle(),
+                "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer");
     }
 }
