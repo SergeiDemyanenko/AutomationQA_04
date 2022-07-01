@@ -100,4 +100,8 @@ public class StartPage {
 
         return getText(getImpressumSubmenu());
     }
+
+    public void clickImpressumSubmenu() {
+        getImpressumSubmenu().click();
+    }
 }

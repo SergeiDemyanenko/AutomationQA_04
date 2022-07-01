@@ -55,4 +55,21 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         Assert.assertEquals(startPage.getImpressumSubmenuText(), "Privacy");
     }
+
+    @Test
+    public void testVerifyLinkText() {
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickImpressumSubmenu();
+
+        ImpressumPage impressumPage = new ImpressumPage(getDriver());
+
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("impressum.html"));
+        Assert.assertEquals(impressumPage.getH2HeaderText(), "Privacy");
+
+
+
+    }
 }
