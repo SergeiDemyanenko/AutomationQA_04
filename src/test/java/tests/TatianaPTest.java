@@ -114,4 +114,28 @@ public class TatianaPTest extends BaseTest {
 
         Assert.assertEquals(newCommentsPage.getTextMainP(), expectedResult);
     }
+
+    @Test
+    public void testVerifyAllSubmenuLinksAreClickable(){
+        getDriver().get(BASE_URL);
+
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("https://www.99-bottles-of-beer.net/team.html");
+        expectedResult.add("https://www.99-bottles-of-beer.net/lyrics.html");
+        expectedResult.add("https://www.99-bottles-of-beer.net/info.html");
+        expectedResult.add("https://www.99-bottles-of-beer.net/impressum.html");
+
+        StartPage startPage = new StartPage(getDriver());
+        List<String> actualResult = new ArrayList<>();
+        startPage.clickTeamSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+        startPage.clickLyricsSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+        startPage.clickInfoSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+        startPage.clickImpressumSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }
