@@ -24,6 +24,9 @@ public class StartPage {
     @FindBy(xpath = "//a[@href='./lyrics.html']")
     private WebElement hereLink;
 
+    @FindBy(xpath = "//a[@href='./submitnewlanguage.html']")
+    private WebElement  submitYourOwnPieceOfCodeLink;
+
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -139,5 +142,20 @@ public class StartPage {
     public void clickHereLink() {
 
         hereLink.click();
+    }
+
+    public WebElement getSubmitYourOwnPieceOfCodeLink() {
+
+        return submitYourOwnPieceOfCodeLink;
+    }
+
+    public String getSubmitYourOwnPieceOfCodeLinkText() {
+
+        return getSubmitYourOwnPieceOfCodeLink().getText();
+    }
+
+    public void clickSubmitYourOwnPieceOfCodeLink() {
+
+        submitYourOwnPieceOfCodeLink.click();
     }
 }

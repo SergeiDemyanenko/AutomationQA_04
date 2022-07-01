@@ -2,7 +2,6 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.InfoPage;
 import pages.StartPage;
 import runner.BaseTest;
 
@@ -48,5 +47,25 @@ public class AAA_MenuStartLinksTest extends BaseTest {
 
         Assert.assertEquals(getDriver().getTitle(),
                 "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer");
+    }
+
+    @Test
+    public void testSubmitYourOwnPieceOfCodeLinkText() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getSubmitYourOwnPieceOfCodeLinkText(), "submit your own piece of code");
+    }
+
+    @Test
+    public void testSubmitYourOwnPieceOfCodeLink() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickSubmitYourOwnPieceOfCodeLink();
+
+        Assert.assertEquals(getDriver().getTitle(),
+                "99 Bottles of Beer | Submit new Language");
     }
 }
