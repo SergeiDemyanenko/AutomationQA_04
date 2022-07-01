@@ -30,6 +30,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
     @Test
     public void testZSubmenuDescription() {
 
@@ -49,5 +50,4 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
-
 }
