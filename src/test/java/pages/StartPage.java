@@ -124,4 +124,20 @@ public class StartPage {
 
         historicInformationLink.click();
     }
+
+
+    public WebElement getHereLink() {
+
+        return hereLink;
+    }
+
+    public String getHereLinkText() {
+
+        return getHereLink().getText();
+    }
+
+    public void clickHereLink() {
+
+        hereLink.click();
+    }
 }

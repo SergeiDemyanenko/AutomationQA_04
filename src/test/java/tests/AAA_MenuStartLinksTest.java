@@ -29,4 +29,24 @@ public class AAA_MenuStartLinksTest extends BaseTest {
         Assert.assertEquals(getDriver().getTitle(),
                 "99 Bottles of Beer | Background and historic information");
     }
+
+    @Test
+    public void testHereLinkText() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getHereLinkText(), "here");
+    }
+
+    @Test
+    public void testHereLink() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickHereLink();
+
+        Assert.assertEquals(getDriver().getTitle(),
+                "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer");
+    }
 }
