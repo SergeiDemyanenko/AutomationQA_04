@@ -124,4 +124,15 @@ public class NadiaLidtTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testVeryfiTextInfoSubmenu() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        String actualResult = startPage.getText(startPage.getInfoSubmenu());
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
