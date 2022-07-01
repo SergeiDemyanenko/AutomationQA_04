@@ -104,4 +104,9 @@ public class StartPage {
     public void clickImpressumSubmenu() {
         getImpressumSubmenu().click();
     }
+
+    public String getSubmenuCurrentUrl(){
+
+        return getDriver().getCurrentUrl();
+    }
 }
