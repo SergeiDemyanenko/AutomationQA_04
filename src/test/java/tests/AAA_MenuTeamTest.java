@@ -11,32 +11,27 @@ public class AAA_MenuTeamTest extends BaseTest {
 
     @Test
     public void testVerifyText() {
-        String expectedResult = "Team";
-
         getDriver().get(BASE_URL);
         StartPage startPage = new StartPage(getDriver());
 
-        Assert.assertEquals(startPage.getTeamSubmenu().getText(), expectedResult);
+        Assert.assertEquals(startPage.getTeamSubmenu().getText(), "Team");
     }
 
     @Test
     public void testVerifyLinkText() {
-        String expectedResult = "http://www.99-bottles-of-beer.net/team.html";
-
         getDriver().get(BASE_URL);
         StartPage startPage = new StartPage(getDriver());
 
-        Assert.assertEquals(startPage.getTeamSubmenu().getAttribute("href"), expectedResult);
+        Assert.assertEquals(startPage.getTeamSubmenu().getAttribute("href"),
+                "http://www.99-bottles-of-beer.net/team.html");
     }
 
     @Test
     public void testVerifyNavigation() {
-        String expectedResult = "99 Bottles of Beer | The Team";
-
         getDriver().get(BASE_URL);
         StartPage startPage = new StartPage(getDriver());
         startPage.getTeamSubmenu().click();
 
-        Assert.assertEquals(getDriver().getTitle(), expectedResult);
+        Assert.assertEquals(getDriver().getTitle(), "99 Bottles of Beer | The Team");
     }
 }
