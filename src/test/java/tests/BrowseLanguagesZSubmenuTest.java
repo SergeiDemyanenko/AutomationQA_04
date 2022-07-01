@@ -50,4 +50,23 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
+    @Test
+    public void testZSubmenuHeadersOfTable() {
+
+        final String expectedResult = "Language Author Date Comments Rate";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickZSubmenu();
+
+        ZPage zSubmenuHeaders = new ZPage(getDriver());
+        String actualResult = zSubmenuHeaders.getCategoryText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }
