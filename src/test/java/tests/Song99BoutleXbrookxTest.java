@@ -53,6 +53,6 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         StartPage startPage = new StartPage(getDriver());
 
-        Assert.assertEquals(startPage.getImpressumSubmenu(), "Privacy");
+        Assert.assertEquals(startPage.getImpressumSubmenuText(), "Privacy");
     }
 }
