@@ -6,16 +6,17 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
 
 
-//    kjdgc
+//    kjdgc Hello,World!
 
 
 
-    public static String getText(String text) {
+    public static String getTextOneTwoThree(String text) {
 
         return text;
     }
 
+    public static String getTextFourFive(String text) {
 
-
-
+        return text;
+    }
 }
