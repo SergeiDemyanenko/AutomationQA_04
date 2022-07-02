@@ -1,21 +1,20 @@
 package tests;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.StartPage;
 import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
 
+    public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
+    @Test
+    public void testHistoricInformationLinkText() {
+        getDriver().get(BASE_URL);
 
-//    kjdgc
+        StartPage startPage = new StartPage(getDriver());
 
-
-
-    public static String getText(String text) {
-
-        return text;
+        Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
-
-
-
-
 }
