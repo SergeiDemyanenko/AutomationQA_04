@@ -6,6 +6,7 @@ import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
 
+
     private final By H2_TITLE_A = By.xpath("//div[@id='main']/h2");
 
     public WebElement getH2PageA() {
@@ -13,17 +14,16 @@ public class ConflictResolvingPracticeTest extends BaseTest {
         return getDriver().findElement(H2_TITLE_A);
     }
 
+  public static String getText(String text) {
 
+  public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
+        number += number;
 
-
-
-    public static String getText(String text) {
 
         return text;
     }
 
-
-
+}
 
 }
