@@ -17,7 +17,7 @@ public class Song99BottlesKononirinIrinaShTest extends BaseTest {
 
         StartPage start = new StartPage(getDriver());
 
-        start.clickMenuSongLyrics();
+        start.clickLyricsSubmenu();
 
         LyricsPage lyrics = new LyricsPage(getDriver());
 

@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HistoryPage;
+import pages.InfoPage;
 import pages.StartPage;
 import runner.BaseTest;
 
@@ -15,10 +15,10 @@ public class CheckLocalCopyLinkTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage startPage = new StartPage(getDriver());
-        startPage.getHistoryMenuClick();
+        startPage.clickInfoSubmenu();
 
-        HistoryPage historyPage = new HistoryPage(getDriver());
-        historyPage.getLocalCopyLink().click();
+        InfoPage infoPage = new InfoPage(getDriver());
+        infoPage.getLinkMirrors1().click();
 
         String actualResult = getDriver().getCurrentUrl();
         Assert.assertEquals(actualResult, expectedResult);

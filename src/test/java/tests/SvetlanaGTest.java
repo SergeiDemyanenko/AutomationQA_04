@@ -16,9 +16,9 @@ public class SvetlanaGTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage start = new StartPage(getDriver());
-        start.getHistoricInformationLinkClick();
+        start.clickInfoMain();
 
-        HistoryPage history = new HistoryPage(getDriver());
+        InfoPage history = new InfoPage(getDriver());
         String actualResult = history.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
@@ -33,7 +33,7 @@ public class SvetlanaGTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage start = new StartPage(getDriver());
-        start.getHereLinkClick();
+        start.clickLyricsMain();
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
     }
@@ -52,5 +52,26 @@ public class SvetlanaGTest extends BaseTest {
         RPage r = new RPage(getDriver());
 
         Assert.assertEquals(r.countLanguages(), 44);
+    }
+
+    @Test
+    public void testPageRVerifyHeaderAndText() {
+        final String expectedHeader = "Category R";
+        final String expectedText = "All languages starting with the letter R are shown, sorted by Language.";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickRSubmenu();
+
+        RPage r = new RPage(getDriver());
+        String actualHeader = r.getH2HeaderText();
+        String actualText = r.getPTagText();
+
+        Assert.assertEquals(actualHeader, expectedHeader);
+        Assert.assertEquals(actualText, expectedText);
     }
 }

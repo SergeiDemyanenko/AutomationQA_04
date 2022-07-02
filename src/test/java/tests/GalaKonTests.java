@@ -45,8 +45,25 @@ public class GalaKonTests extends BaseTest {
 
         mainP.clickBrowseLanguagesMenu();
         abc.getJSubmenu().click();
-        jp.getJavaLanguage().click();
+        jp.getLinkLanguageJava3().click();
 
-        Assert.assertEquals(expectedResult, ljp.getAmmountOfCommentheaders());
+        Assert.assertEquals(expectedResult, ljp.getCountOfCommentsHeaders());
+    }
+
+    @Test
+    public void test() {
+
+        String expectedResult = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainP = new MainPage(getDriver());
+        AbcPage abc = new AbcPage(getDriver());
+
+        mainP.getBrowseLanguagesMenu().click();
+
+        String actualResult = abc.getSubmenu().getText();
+
+        Assert.assertEquals(expectedResult, actualResult);
     }
 }

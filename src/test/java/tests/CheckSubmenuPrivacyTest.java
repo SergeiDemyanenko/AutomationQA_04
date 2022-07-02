@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ImpressumPage;
+import pages.StartPage;
 import runner.BaseTest;
 
 public class CheckSubmenuPrivacyTest extends BaseTest {
@@ -15,9 +15,9 @@ public class CheckSubmenuPrivacyTest extends BaseTest {
 
         getDriver().get(BASE_URL);
 
-        ImpressumPage impressumPage = new ImpressumPage(getDriver());
+        StartPage startPage = new StartPage(getDriver());
 
-        String actualResult = impressumPage.getImpressumSubmenuText();
+        String actualResult = startPage.getImpressumSubmenuText();
 
         Assert.assertEquals(actualResult,expectedResult);
     }

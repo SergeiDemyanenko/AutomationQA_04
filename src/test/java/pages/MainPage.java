@@ -95,6 +95,11 @@ public class MainPage {
         return getText(getSearchMenu());
     }
 
+    public void clickSearchMenu() {
+
+        getSearchMenu().click();
+    }
+
     public void clickSubmitNewLanguageMenu() {
 
         getSubmitNewLanguageMenu().click();
@@ -129,6 +134,7 @@ public class MainPage {
 
         getTopListMenu().click();
     }
+
     public WebElement getGuestbookV2Menu() {
 
         return getDriver().findElement(GUESTBOOK_V2_MENU);
