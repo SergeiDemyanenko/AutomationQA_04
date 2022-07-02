@@ -37,4 +37,17 @@ public class LessonsTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testCheckSubmenuPrivacyIsClickable(){
+        String expectedResult = "Privacy";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        String actualResult = startPage.getImpressumSubmenuText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }
