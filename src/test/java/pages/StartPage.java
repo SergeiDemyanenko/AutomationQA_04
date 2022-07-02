@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class StartPage {
     
@@ -16,9 +18,19 @@ public class StartPage {
     private final By LAST_P_MAIN_START = By.xpath("//div[@id='main']/p[last()]");
     private final By IMPRESSUM_SUBMENU = By.xpath("//a[@href = 'impressum.html']");
 
+    @FindBy(xpath = "//a[@href='./info.html']")
+    private WebElement historicInformationLink;
+
+    @FindBy(xpath = "//a[@href='./lyrics.html']")
+    private WebElement hereLink;
+
+    @FindBy(xpath = "//a[@href='./submitnewlanguage.html']")
+    private WebElement  submitYourOwnPieceOfCodeLink;
+
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
+        PageFactory.initElements(getDriver(), this);
     }
 
     protected WebDriver getDriver(){
@@ -90,7 +102,6 @@ public class StartPage {
         return getText(getLastPMainStart());
     }
 
-
     public WebElement getImpressumSubmenu() {
 
         return getDriver().findElement(IMPRESSUM_SUBMENU);
@@ -108,5 +119,50 @@ public class StartPage {
     public String getSubmenuCurrentUrl(){
 
         return getDriver().getCurrentUrl();
+    }
+
+    public WebElement getHistoricInformationLink() {
+
+        return historicInformationLink;
+    }
+
+    public String getHistoricInformationLinkText() {
+
+        return getHistoricInformationLink().getText();
+    }
+
+    public void clickHistoricInformationLink() {
+
+        historicInformationLink.click();
+    }
+
+    public WebElement getHereLink() {
+
+        return hereLink;
+    }
+
+    public String getHereLinkText() {
+
+        return getHereLink().getText();
+    }
+
+    public void clickHereLink() {
+
+        hereLink.click();
+    }
+
+    public WebElement getSubmitYourOwnPieceOfCodeLink() {
+
+        return submitYourOwnPieceOfCodeLink;
+    }
+
+    public String getSubmitYourOwnPieceOfCodeLinkText() {
+
+        return getSubmitYourOwnPieceOfCodeLink().getText();
+    }
+
+    public void clickSubmitYourOwnPieceOfCodeLink() {
+
+        submitYourOwnPieceOfCodeLink.click();
     }
 }
