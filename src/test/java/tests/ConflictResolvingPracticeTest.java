@@ -10,12 +10,10 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
 
 
-    public static String getText(String text) {
+    public static int CountTextP(int n) {
 
-        return text;
+        return n;
     }
 
 
-
-
-}
+   }
