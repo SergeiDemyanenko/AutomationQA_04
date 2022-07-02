@@ -10,6 +10,12 @@ import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
 
+public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+
+   public static int CountTextP(int n) {
+
+        return n;
+    }
 
     private final By H2_TITLE_A = By.xpath("//div[@id='main']/h2");
 
@@ -29,9 +35,6 @@ public class ConflictResolvingPracticeTest extends BaseTest {
         return text.concat("Text2").concat("Text3");
 }
 
-    public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
-
-
     @Test
     public void testHistoricInformationLinkText() {
         getDriver().get(BASE_URL);
@@ -49,5 +52,4 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
         return text;
     }
-
 }
