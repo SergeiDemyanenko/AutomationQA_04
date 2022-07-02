@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 import pages.StartPage;
 import runner.BaseTest;
 
-public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
-
 public class ConflictResolvingPracticeTest extends BaseTest {
+
+public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
    public static int CountTextP(int n) {
 
