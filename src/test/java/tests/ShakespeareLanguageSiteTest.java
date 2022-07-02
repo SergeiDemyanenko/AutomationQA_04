@@ -31,11 +31,11 @@ public class ShakespeareLanguageSiteTest extends BaseTest {
 
         MainPage browseLanguage = new MainPage(getDriver());
 
-        browseLanguage.getBrowseLanguagesMenuClick();
+        //browseLanguage.getBrowseLanguagesMenuClick();
 
         AbcPage categoryS = new AbcPage(getDriver());
 
-        categoryS.getCategorySClick();
+        //categoryS.getCategorySClick();
 
         SPage clickShakespeareLanguage = new SPage(getDriver());
 
