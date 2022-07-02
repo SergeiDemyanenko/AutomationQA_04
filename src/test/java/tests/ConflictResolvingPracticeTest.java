@@ -54,7 +54,7 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
 
-    public static String getText(String text) {
+    public static String getText6(String text) {
 
         return text;
     }
@@ -79,7 +79,7 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     return text;
   }
 
-    public static int getText(String text) {
+    public static int getText9(String text) {
 
         int length = text.length();
         
