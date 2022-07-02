@@ -8,9 +8,9 @@ public class LPage {
 
     private WebDriver driver;
 
-    private final By H2_TITLE_L = By.xpath("//div[@id = 'main']/h2");
+    private final By H2_HEADER = By.xpath("//div[@id = 'main']/h2");
 
-    private final By CATEGORY_L = By.xpath("//ul[@id='submenu']/li/a[@href='l.html']");
+    private final By L_SUBMENU = By.xpath("//a[@href='l.html']");
 
     private final By LANGUAGE_L33T = By.xpath("//tbody/tr/td/a[@href='language-l33t-963.html']");
 
@@ -24,19 +24,20 @@ public class LPage {
         return driver;
     }
 
-    public WebElement  getH2PageL(){
-        return getDriver().findElement(H2_TITLE_L);
+    public WebElement getH2Header() {
+
+        return getDriver().findElement(H2_HEADER);
     }
 
-    public String getH2PageLText(){
-        return getH2PageL().getText();
+    public String getText(WebElement element) {
+
+        return element.getText();
+    }
+    public void clickLSubmenu() {
+        getDriver().findElement(L_SUBMENU).click();
     }
 
-    public void clickCategoryL(){
-        getDriver().findElement(CATEGORY_L).click();
-    }
-
-    public void clickLanguageL33t(){
+    public void clickLanguageL33t() {
         getDriver().findElement(LANGUAGE_L33T).click();
     }
 }
