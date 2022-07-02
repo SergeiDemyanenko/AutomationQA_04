@@ -17,7 +17,6 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
-}
 
   public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
@@ -25,7 +24,4 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
         return text;
     }
-
-
-
 }
