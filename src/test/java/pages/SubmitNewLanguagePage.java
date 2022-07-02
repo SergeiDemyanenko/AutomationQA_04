@@ -20,6 +20,7 @@ public class SubmitNewLanguagePage {
     private final By CODE_NAME = By.name("code");
     private final By ASSEMBLYLANGUAGE_NAME_CATEGORY = By.xpath("//select[@name='category']/option[@value='3']");
     private final By ERROR_MESSAGE_INVALID_SEC_COD = By.xpath("//div[@id='main']/p");
+    private final By IMG_CAPTCHA = By.xpath("//input[@name='captcha']/following-sibling::img");
 
     public SubmitNewLanguagePage(WebDriver existingDriver) {
 
@@ -118,5 +119,12 @@ public class SubmitNewLanguagePage {
     public String getErrorMessageInvalidSecCodeText() {
 
         return getErrorMessageInvalidSecCode().getText();
+    }
+
+    public String getAttributeSrcOfCaptcha() {
+
+        String c = getDriver().findElement(IMG_CAPTCHA).getAttribute("src");
+
+        return c.replace("https://www.99-bottles-of-beer.net", "");
     }
 }

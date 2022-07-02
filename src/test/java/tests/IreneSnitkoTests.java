@@ -86,4 +86,18 @@ public class IreneSnitkoTests extends BaseTest {
 
         Assert.assertEquals(sv2.getAttributesSrcOfImg(), sv2.createAttributesSrcOfImg());
     }
+
+    @Test
+    public void testVerifyAttributeSrcCaptchaOnSubmitNewLanguagePage() {
+
+        getDriver().get(BASE_URL);
+
+        MainPage mp = new MainPage(getDriver());
+
+        mp.clickSubmitNewLanguageMenu();
+
+        SubmitNewLanguagePage snl = new SubmitNewLanguagePage(getDriver());
+
+        Assert.assertEquals(snl.getAttributeSrcOfCaptcha(), "/captcha.php");
+    }
 }

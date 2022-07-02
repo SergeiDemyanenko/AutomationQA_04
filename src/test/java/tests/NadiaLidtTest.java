@@ -124,4 +124,39 @@ public class NadiaLidtTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testVeryfiTextInfoSubmenu() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        String actualResult = startPage.getText(startPage.getInfoSubmenu());
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testVeryfiLinkTextInfoSubmenu() {
+        String expectedResult = "https://99-bottles-of-beer.net/info.html";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        String actualResult = startPage.getInfoSubmenu().getAttribute("href");
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testVeryfiNavigationInfoSubmenu() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickInfoSubmenu();
+        InfoPage infoPage = new InfoPage(getDriver());
+        String actualResalt = infoPage.getH2HeaderText();
+
+        Assert.assertEquals(actualResalt, expectedResult);
+    }
 }
