@@ -12,6 +12,7 @@ import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
 
+
 public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     
@@ -21,10 +22,28 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         return element.getText();
     }
 
+
+  public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
+  
+  number += number;
+  
+  return text;  
+ }
+
+
+
    public static int CountTextP(int n) {
 
         return n;
     }
+
+
+
+    public static String getTextFourFive(String text) {
+
+        return text;
+    }
+
 
     private final By H2_TITLE_A = By.xpath("//div[@id='main']/h2");
 
@@ -34,7 +53,7 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     }
 
   public static String getText(String text) {
-  
+
    return text;
   }
 
@@ -44,5 +63,5 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
         return text.concat("Text2").concat("Text3");
 
-}
+  }
 }
