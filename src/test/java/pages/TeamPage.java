@@ -12,7 +12,7 @@ public class TeamPage {
     private WebDriver driver;
 
     private final By H3_TEAM_NAME = By.xpath("//div[@id = 'main']/h3");
-    private final By GREGOR_SCHEITHAUER_STEFAN_SCHELER_IMAGES = By.xpath("//img[@src]");
+    private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
 
     public TeamPage(WebDriver existingDriver) {
 
@@ -29,17 +29,12 @@ public class TeamPage {
         return getDriver().findElements(H3_TEAM_NAME);
     }
 
-    public List<WebElement> getListTeamImages() {
-
-        return getDriver().findElements(GREGOR_SCHEITHAUER_STEFAN_SCHELER_IMAGES);
-    }
-
     public int getAmmountOfImages() {
 
-        List<WebElement> Commentheaderslist;
-        Commentheaderslist = getDriver().findElements(GREGOR_SCHEITHAUER_STEFAN_SCHELER_IMAGES);
+        List<WebElement> getListTeamImages;
+        getListTeamImages = getDriver().findElements(ALL_TEAM_IMAGES);
 
-        int count = Commentheaderslist.size();
+        int count = getListTeamImages.size();
 
         return count;
     }

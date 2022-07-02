@@ -17,6 +17,7 @@ public class SignV2Page {
     private final By INPUT_CAPTCHA = By.xpath("//input[@name='captcha']");
     private final By INPUT_COMMENT = By.xpath("//textarea[@name='comment']");
     private final By BUTTON_SUBMIT = By.xpath("//input[@type='submit']");
+    private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
 
     public SignV2Page(WebDriver existingDriver) {
 
