@@ -1,10 +1,13 @@
 package tests;
 
-public class ConflictResolvingPractice {
+import runner.BaseTest;
+
+public class ConflictResolvingPracticeTest extends BaseTest {
 
 
 
 //    kjdgc
+
 
 
     public static String getText(String text) {
