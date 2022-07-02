@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.MainPage;
 import runner.BaseTest;
 
 public class SubmitNewLanguageTest extends BaseTest {
+    private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
     @Test(description = "TC_700.001" )
     public void testErrorMessageSubmitLanguageButton() {
@@ -19,5 +21,18 @@ public class SubmitNewLanguageTest extends BaseTest {
                 By.xpath("//div[@id='main']/p"));
 
         Assert.assertEquals(errorMessage.getText(), expectedResult);
+    }
+
+    @Test
+    public void testMainSubmitNewLanguageVerifyText() {
+
+        final String expectedResult = "SUBMIT NEW LANGUAGE";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        String actualResult = main.getSubmitNewLanguageMenu().getText();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
