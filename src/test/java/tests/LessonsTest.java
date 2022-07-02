@@ -37,4 +37,12 @@ public class LessonsTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testVerifyText() {
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getLyricsSubmenu().getText(), "Song Lyrics");
+    }
 }
