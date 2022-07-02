@@ -11,7 +11,6 @@ public class TeamPage {
     private WebDriver driver;
 
     private final By H3_TEAM_NAME = By.xpath("//div[@id = 'main']/h3");
-    private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
 
     public TeamPage(WebDriver existingDriver) {
 
@@ -26,15 +25,5 @@ public class TeamPage {
     public List<WebElement> getListH3TeamName() {
 
         return getDriver().findElements(H3_TEAM_NAME);
-    }
-
-    public int getAmmountOfImages() {
-
-        List<WebElement> getListTeamImages;
-        getListTeamImages = getDriver().findElements(ALL_TEAM_IMAGES);
-
-        int count = getListTeamImages.size();
-
-        return count;
     }
 }
