@@ -1,16 +1,18 @@
 package tests;
 
+import org.testng.annotations.Test;
+import pages.MainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.StartPage;
-
 import runner.BaseTest;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
+
 
 public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
@@ -72,7 +74,8 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     }
 
     @Test
-    public void testCheckSubmenuPrivacyIsClickable(){
+    public void testCheckSubmenuPrivacyIsClickable() {
+        
         String expectedResult = "Privacy";
 
         getDriver().get(BASE_URL);
