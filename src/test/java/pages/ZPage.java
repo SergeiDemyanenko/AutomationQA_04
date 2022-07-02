@@ -62,7 +62,7 @@ public class ZPage {
 
         StringBuilder result = new StringBuilder();
 
-        for (WebElement th : getPTags()) {
+        for (WebElement th : getCategoryOfTable()) {
             result.append(" ").append(th.getText());
         }
         result.deleteCharAt(0);
@@ -77,7 +77,7 @@ public class ZPage {
     public String getNamesText() {
         StringBuilder result = new StringBuilder();
 
-        for (WebElement names : getPTags()) {
+        for (WebElement names : getNamesOfLanguageZ()) {
             result.append(names.getText()).append("\n");
         }
         result.deleteCharAt(result.length() - 1);

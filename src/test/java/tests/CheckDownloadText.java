@@ -22,7 +22,7 @@ public class CheckDownloadText extends BaseTest {
 
         LPage LP = new LPage(getDriver());
 
-        LP.clickCategoryL();
+        LP.clickLSubmenu();
 
         LP.clickLanguageL33t();
 

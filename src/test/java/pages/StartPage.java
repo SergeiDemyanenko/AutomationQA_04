@@ -102,7 +102,6 @@ public class StartPage {
         return getText(getLastPMainStart());
     }
 
-
     public WebElement getImpressumSubmenu() {
 
         return getDriver().findElement(IMPRESSUM_SUBMENU);
@@ -111,6 +110,15 @@ public class StartPage {
     public String getImpressumSubmenuText() {
 
         return getText(getImpressumSubmenu());
+    }
+
+    public void clickImpressumSubmenu() {
+        getImpressumSubmenu().click();
+    }
+
+    public String getSubmenuCurrentUrl(){
+
+        return getDriver().getCurrentUrl();
     }
 
     public WebElement getHistoricInformationLink() {
@@ -127,7 +135,6 @@ public class StartPage {
 
         historicInformationLink.click();
     }
-
 
     public WebElement getHereLink() {
 
