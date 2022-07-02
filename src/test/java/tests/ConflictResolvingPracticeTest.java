@@ -18,7 +18,7 @@ public class ConflictResolvingPracticeTest extends BaseTest {
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
 
-    private static final String BASE_URL = "http://www.99-bottles-of-beer.net";
+    
     public static String getText(String text) {
 
         return text;
