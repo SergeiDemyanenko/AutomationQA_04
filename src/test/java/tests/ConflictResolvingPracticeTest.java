@@ -39,14 +39,7 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         return text;
     }
 
-    public static String getText5(String text) {
-
-        String str = null;
-
-        return text.concat("Text2").concat("Text3");
-    }
-
-    public void testHistoricInformationLinkText2() {
+     public void testHistoricInformationLinkText2() {
          
         getDriver().get(BASE_URL);
 
@@ -63,13 +56,6 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
-
-    
-    public static String getText(String text) {
-
-        return text.concat("Text2").concat("Text3");
-    }
-
 
     public static List<String> getListWithText(String text) {
 
@@ -93,19 +79,10 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         Assert.assertEquals(actualResult,expectedResult);
     }
 
-  public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
-
-        number += number;
-
-        return text;
-    }
-
     public static String getTextFourFive(String text) {
 
         return text;
     }
-
-    private final By H2_TITLE_A = By.xpath("//div[@id='main']/h2");
 
     public WebElement getH2PageA() {
 
