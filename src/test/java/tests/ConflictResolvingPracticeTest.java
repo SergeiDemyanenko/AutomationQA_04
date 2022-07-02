@@ -28,7 +28,7 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         return getDriver().findElement(H2_TITLE_A);
     }
 
-     public static String getText(String text) {
+     public static String getText67(String text) {
    
         return text;
     }
