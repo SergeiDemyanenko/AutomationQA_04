@@ -6,13 +6,14 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
 
 
-//    kjdgc
+//    Int
 
 
 
-    public static String getText(String text) {
+    public static int getText(String text) {
 
-        return text;
+        int length = text.length();
+        return length;
     }
 
 
