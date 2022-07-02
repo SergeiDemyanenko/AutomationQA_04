@@ -35,4 +35,17 @@ public class SubmitNewLanguageTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testMainSubmitNewLanguageVerifyLinkText() {
+
+        final String expectedResult = "https://www.99-bottles-of-beer.net/submitnewlanguage.html";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        String actualResult = main.getSubmitNewLanguageMenu().getAttribute("href");
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
