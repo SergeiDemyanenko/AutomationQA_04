@@ -4,16 +4,11 @@ import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
 
+   public static int CountTextP(int n) {
 
-
-//    kjdgc
-
-
-
-    public static int CountTextP(int n) {
+        number += number;
 
         return n;
     }
+}
 
-
-   }
