@@ -146,4 +146,17 @@ public class NadiaLidtTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testVeryfiNavigationInfoSubmenu() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickInfoSubmenu();
+        InfoPage infoPage = new InfoPage(getDriver());
+        String actualResalt = infoPage.getH2HeaderText();
+
+        Assert.assertEquals(actualResalt, expectedResult);
+    }
 }
