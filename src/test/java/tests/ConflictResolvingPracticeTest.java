@@ -19,6 +19,8 @@ public class ConflictResolvingPracticeTest extends BaseTest {
   
   return text;  
  }
+ 
+ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
    public static int CountTextP(int n) {
 
