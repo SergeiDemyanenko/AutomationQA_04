@@ -15,6 +15,8 @@ public class ConflictResolvingPracticeTest extends BaseTest {
     }
 
   public static String getText(String text) {
+  
+  }
 
   public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
@@ -23,7 +25,5 @@ public class ConflictResolvingPracticeTest extends BaseTest {
 
         return text;
     }
-
-}
 
 }
