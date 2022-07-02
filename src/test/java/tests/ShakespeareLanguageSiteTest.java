@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.AbcPage;
 import pages.LanguageShakespearePage;
@@ -9,6 +10,7 @@ import pages.MainPage;
 import pages.SPage;
 import runner.BaseTest;
 
+@Ignore
 public class ShakespeareLanguageSiteTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
