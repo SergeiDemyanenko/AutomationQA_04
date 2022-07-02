@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ImpressumPage {
-    private final By IMPRESSUM_SUBMENU = By.xpath("//a[@href = 'impressum.html']");
 
     private WebDriver driver;
+
+    private final By H2_HEADER = By.xpath("//div[@id='main']//h2");
 
     public ImpressumPage(WebDriver existingDriver) {
 
@@ -15,18 +16,17 @@ public class ImpressumPage {
     }
 
     protected WebDriver getDriver() {
+
         return driver;
     }
 
-    public WebElement getImpressumSubmenu() {
+    public WebElement getH2Header() {
 
-        return getDriver().findElement(IMPRESSUM_SUBMENU);
+        return  getDriver().findElement(H2_HEADER);
     }
 
-    public String getImpressumSubmenuText() {
+    public String getH2HeaderText() {
 
-        return getImpressumSubmenu().getText();
+        return  getH2Header().getText();
     }
-
-
 }

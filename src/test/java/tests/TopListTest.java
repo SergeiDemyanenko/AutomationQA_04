@@ -1,7 +1,6 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -34,7 +33,7 @@ public class TopListTest extends BaseTest {
         main.clickTopListMenu();
 
         TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickMenuTopListReal();
+        topListPage.clickTopListRealSubmenu();
 
         TopListRealPage topListRealPage = new TopListRealPage(getDriver());
         String actualResult = topListRealPage.getH2TableName();
@@ -52,7 +51,7 @@ public class TopListTest extends BaseTest {
         main.clickTopListMenu();
 
         TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickMenuTopEsotericPage();
+        topListPage.clickTopListEsotericSubmenu();
 
         TopListEsotericPage topListEsotericPage = new TopListEsotericPage(getDriver());
         String actualResult = topListEsotericPage.getH2TableEsotericName();
@@ -70,7 +69,7 @@ public class TopListTest extends BaseTest {
         main.clickTopListMenu();
 
         TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickMenuTopListAssembly();
+        topListPage.clickTopListAssemblySubmenu();
 
         TopListAssemblyPage topListAssemblyPage = new TopListAssemblyPage(getDriver());
         String actualResult = topListAssemblyPage.getH2TableAssemblyName();
@@ -88,7 +87,7 @@ public class TopListTest extends BaseTest {
         main.clickTopListMenu();
 
         TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickMenuTopHits();
+        topListPage.clickTopHitsSubmenu();
 
         TopListTopHitsPage topListTopHitsPage = new TopListTopHitsPage(getDriver());
         String actualResult = topListTopHitsPage.getH2TableTopHitsName();

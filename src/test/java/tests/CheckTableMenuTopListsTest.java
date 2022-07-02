@@ -22,7 +22,7 @@ public class CheckTableMenuTopListsTest extends BaseTest {
 
         TopListPage topList = new TopListPage(getDriver());
 
-        topList.clickMenuTopListReal();
+        topList.clickTopListRealSubmenu();
 
         TopListRealPage realPage = new TopListRealPage(getDriver());
 

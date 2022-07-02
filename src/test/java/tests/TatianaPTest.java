@@ -1,13 +1,13 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.SearchPage;
-import pages.StartPage;
+import pages.*;
 import runner.BaseTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TatianaPTest extends BaseTest {
 
@@ -30,12 +30,18 @@ public class TatianaPTest extends BaseTest {
 
         StartPage start = new StartPage(getDriver());
 
-        Assert.assertEquals(start.getHistoryMenu().getText(), expectedResult);
+        Assert.assertEquals(start.getInfoSubmenu().getText(), expectedResult);
     }
 
     @Test
     public void testSearchFunction() {
-        String expectedResult = "Java (object-oriented version)";
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("Java (object-oriented version)");
+        expectedResult.add("Java");
+        expectedResult.add("Java (exception oriented)");
+        expectedResult.add("Java (bytecode-version with loader)");
+        expectedResult.add("Java (Java 5.0 object-oriented version)");
+        expectedResult.add("Java (Singing with Java Speech API)");
 
         getDriver().get(BASE_URL);
 
@@ -46,12 +52,108 @@ public class TatianaPTest extends BaseTest {
         SearchPage searchPage = new SearchPage(getDriver());
 
         searchPage.getSearchBoxSendKey("Java");
-        searchPage.getSubmitSearch().click();
+        searchPage.clickSubmitSearch();
 
-        WebElement findJava = getDriver().findElement(By.linkText("Java (object-oriented version)"));
+        Assert.assertEquals(searchPage.getOnlyJavaLanguages(), expectedResult);
+    }
 
-        String actualResult = findJava.getText();
+    @Test
+    public void testVerifyNumberOfLanguagesForJavaSearch() {
+        getDriver().get(BASE_URL);
+        int expectedResult = 14;
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickSearchMenu();
+
+        SearchPage searchPage = new SearchPage(getDriver());
+        searchPage.getSearchBoxSendKey("Java");
+        searchPage.clickSubmitSearch();
+
+        Assert.assertEquals(searchPage.countLanguagesJavaSearch(), expectedResult);
+    }
+
+    @Test
+    public void testVerifyH2HeaderOnInfoPage() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickInfoSubmenu();
+
+        InfoPage infoPage = new InfoPage(getDriver());
+
+        Assert.assertEquals(infoPage.getH2HeaderText(), expectedResult);
+    }
+
+    @Test
+    public void testSearchSubmitAndSearchAreDisplayed() {
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickSearchMenu();
+
+        SearchPage searchPage = new SearchPage(getDriver());
+
+        Assert.assertTrue(searchPage.getSearchSubmit().isDisplayed());
+        Assert.assertTrue(searchPage.getSearchBox().isDisplayed());
+    }
+
+    @Test
+    public void testVerifyNoNewComments() {
+        getDriver().get(BASE_URL);
+
+        String expectedResult = "";
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickNewCommentsSubmenu();
+
+        NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
+
+        Assert.assertEquals(newCommentsPage.getTextMainP(), expectedResult);
+    }
+
+    @Test
+    public void testVerifyAllSubmenuLinksAreClickable() {
+        getDriver().get(BASE_URL);
+
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("https://www.99-bottles-of-beer.net/team.html");
+        expectedResult.add("https://www.99-bottles-of-beer.net/lyrics.html");
+        expectedResult.add("https://www.99-bottles-of-beer.net/info.html");
+        expectedResult.add("https://www.99-bottles-of-beer.net/impressum.html");
+
+        StartPage startPage = new StartPage(getDriver());
+        List<String> actualResult = new ArrayList<>();
+        startPage.clickTeamSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+        startPage.clickLyricsSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+        startPage.clickInfoSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
+        startPage.clickImpressumSubmenu();
+        actualResult.add(startPage.getSubmenuCurrentUrl());
 
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testNewCommentsPageVerifyHeaderH2() {
+        getDriver().get(BASE_URL);
+
+        String expectedResult = "New Comments";
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickNewCommentsSubmenu();
+
+        NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
+
+        Assert.assertEquals(newCommentsPage.getTextH2Main(), expectedResult);
     }
 }

@@ -18,7 +18,7 @@ public class LessonsTest extends BaseTest {
 
         StartPage start = new StartPage(getDriver());
 
-        start.clickMenuSongLyrics();
+        start.clickLyricsSubmenu();
 
         LyricsPage lyrics = new LyricsPage(getDriver());
 

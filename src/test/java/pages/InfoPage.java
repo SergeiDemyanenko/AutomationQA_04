@@ -7,16 +7,16 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistoryPage {
+public class InfoPage {
 
     private WebDriver driver;
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By PRE_ELEMENTS = By.xpath("//div[@id='main']/pre");
     private static final String LANG_VERSION = "REM BASIC Version of 99 ";
-    private static final By LOCAL_COPY = By.xpath("//a[@href='/mirrors/1/']");
+    private static final By MIRRORS_1 = By.xpath("//a[@href='/mirrors/1/']");
 
-    public HistoryPage(WebDriver existingDriver){
+    public InfoPage(WebDriver existingDriver){
 
         this.driver = existingDriver;
     }
@@ -36,7 +36,7 @@ public class HistoryPage {
         return getH2Header().getText();
     }
 
-    protected List<String> takeTextOfCode() {
+    protected List<String> getTextOfCode() {
 
         String b = "bottle(s) of beer";
         String w = " on the wall,";
@@ -109,18 +109,18 @@ public class HistoryPage {
         String sp = " ";
         String ln = "\n";
 
-        for (int i = 0; i < takeTextOfCode().size() - 1; i ++ ) {
+        for (int i = 0; i < getTextOfCode().size() - 1; i ++ ) {
 
             basicCode.append(count)
                     .append(sp)
-                    .append(takeTextOfCode().get(i))
+                    .append(getTextOfCode().get(i))
                     .append(ln);
             count+=10;
 
             if(count == 60) {
                 basicCode.append(count)
                         .append(sp)
-                        .append(takeTextOfCode().get(takeTextOfCode().size() - 1));
+                        .append(getTextOfCode().get(getTextOfCode().size() - 1));
             }
         }
         return basicCode.toString();
@@ -146,7 +146,7 @@ public class HistoryPage {
         return Code;
     }
 
-    public WebElement getLocalCopyLink() {
-        return getDriver().findElement(LOCAL_COPY);
+    public WebElement getLinkMirrors1() {
+        return getDriver().findElement(MIRRORS_1);
     }
 }

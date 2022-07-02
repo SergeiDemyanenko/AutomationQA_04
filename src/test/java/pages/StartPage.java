@@ -3,20 +3,34 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class StartPage {
+    
     private WebDriver driver;
 
-    private final By HISTORIC_INFORMATION_LINK = By.xpath("//a[@href='./info.html']");
-    private final By HERE_LINK = By.xpath("//a[@href='./lyrics.html']");
-    private final By SONG_LYRICS_MENU = By.linkText("Song Lyrics");
-    private final By HISTORY_MENU = By.xpath("//a[@href='info.html']");
-    private final By TEAM_MENU = By.xpath("//a[@href='team.html']");
-    private final By P_WISHES_START_PAGE = By.xpath("//div[@id='main']/p[last()]");
+    private final By INFO_MAIN = By.xpath("//a[@href='./info.html']");
+    private final By LYRICS_MAIN = By.xpath("//a[@href='./lyrics.html']");
+    private final By LYRICS_SUBMENU = By.linkText("Song Lyrics");
+    private final By INFO_SUBMENU = By.xpath("//a[@href='info.html']");
+    private final By TEAM_SUBMENU = By.xpath("//a[@href='team.html']");
+    private final By LAST_P_MAIN_START = By.xpath("//div[@id='main']/p[last()]");
+    private final By IMPRESSUM_SUBMENU = By.xpath("//a[@href = 'impressum.html']");
+
+    @FindBy(xpath = "//a[@href='./info.html']")
+    private WebElement historicInformationLink;
+
+    @FindBy(xpath = "//a[@href='./lyrics.html']")
+    private WebElement hereLink;
+
+    @FindBy(xpath = "//a[@href='./submitnewlanguage.html']")
+    private WebElement  submitYourOwnPieceOfCodeLink;
 
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
+        PageFactory.initElements(getDriver(), this);
     }
 
     protected WebDriver getDriver(){
@@ -24,60 +38,131 @@ public class StartPage {
         return driver;
     }
 
-    public WebElement getHistoricInformationLink() {
+    public String getText(WebElement element) {
 
-        return getDriver().findElement(HISTORIC_INFORMATION_LINK);
+        return element.getText();
     }
 
-    public void getHistoricInformationLinkClick() {
+    public WebElement getInfoMain() {
 
-        getHistoricInformationLink().click();
+        return getDriver().findElement(INFO_MAIN);
+    }
+
+    public void clickInfoMain() {
+
+        getInfoMain().click();
+    }
+
+    public WebElement getLyricsMain() {
+
+        return getDriver().findElement(LYRICS_MAIN);
+    }
+
+    public void clickLyricsMain() {
+
+        getLyricsMain().click();
+    }
+
+    public WebElement getLyricsSubmenu() {
+
+        return getDriver().findElement(LYRICS_SUBMENU);
+    }
+
+    public void clickLyricsSubmenu() {
+        getLyricsSubmenu().click();
+    }
+
+    public WebElement getInfoSubmenu(){
+
+        return getDriver().findElement(INFO_SUBMENU);
+    }
+
+    public void clickInfoSubmenu(){
+
+        getInfoSubmenu().click();
+    }
+
+    public WebElement getTeamSubmenu() {
+
+        return getDriver().findElement(TEAM_SUBMENU);
+    }
+
+    public void clickTeamSubmenu() {
+
+        getTeamSubmenu().click();
+    }
+
+    public WebElement getLastPMainStart() {
+
+        return getDriver().findElement(LAST_P_MAIN_START);
+    }
+
+    public String getLastPMainStartText() {
+
+        return getText(getLastPMainStart());
+    }
+
+    public WebElement getImpressumSubmenu() {
+
+        return getDriver().findElement(IMPRESSUM_SUBMENU);
+    }
+
+    public String getImpressumSubmenuText() {
+
+        return getText(getImpressumSubmenu());
+    }
+
+    public void clickImpressumSubmenu() {
+        getImpressumSubmenu().click();
+    }
+
+    public String getSubmenuCurrentUrl(){
+
+        return getDriver().getCurrentUrl();
+    }
+
+    public WebElement getHistoricInformationLink() {
+
+        return historicInformationLink;
+    }
+
+    public String getHistoricInformationLinkText() {
+
+        return getHistoricInformationLink().getText();
+    }
+
+    public void clickHistoricInformationLink() {
+
+        historicInformationLink.click();
     }
 
     public WebElement getHereLink() {
 
-        return getDriver().findElement(HERE_LINK);
+        return hereLink;
     }
 
-    public void getHereLinkClick() {
+    public String getHereLinkText() {
 
-        getHereLink().click();
+        return getHereLink().getText();
     }
 
-    public WebElement getMenuSongLyrics() {
+    public void clickHereLink() {
 
-        return getDriver().findElement(SONG_LYRICS_MENU);
+        hereLink.click();
     }
 
-    public void clickMenuSongLyrics() {
-        getMenuSongLyrics().click();
+    public WebElement getSubmitYourOwnPieceOfCodeLink() {
+
+        return submitYourOwnPieceOfCodeLink;
     }
 
-    public WebElement getHistoryMenu(){
+    public String getSubmitYourOwnPieceOfCodeLinkText() {
 
-        return getDriver().findElement(HISTORY_MENU);
+        return getSubmitYourOwnPieceOfCodeLink().getText();
     }
 
-    public void getHistoryMenuClick(){
+    public void clickSubmitYourOwnPieceOfCodeLink() {
 
-        getHistoryMenu().click();
-    }
-
-    public WebElement getTeamMenu() {
-
-        return getDriver().findElement(TEAM_MENU);
-    }
-
-    public void  getTeamMenuClick() {
-
-        getTeamMenu().click();
-    }
-
-    public WebElement getTeamWishes() {
-        return getDriver().findElement(P_WISHES_START_PAGE);
-    }
-
-    public String getTeamWishesText() {
-        return getTeamWishes().getText();
+        submitYourOwnPieceOfCodeLink.click();
     }
 }
