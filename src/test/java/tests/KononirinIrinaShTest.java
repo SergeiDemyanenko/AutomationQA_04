@@ -23,4 +23,17 @@ public class KononirinIrinaShTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    public void testTitleKPage() {
+
+        String expectedResult = "Category K";
+
+        getDriver().get(BASE_URL);
+
+        MainPage browseLang = new MainPage(getDriver());
+        browseLang.clickBrowseLanguagesMenu();
+
+
+
+    }
 }
