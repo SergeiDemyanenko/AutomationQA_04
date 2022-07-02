@@ -20,8 +20,6 @@ public class ConflictResolvingPracticeTest extends BaseTest {
   return text;  
  }
 
-public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
-
    public static int CountTextP(int n) {
 
         return n;
@@ -82,11 +80,6 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     public static String getTextFourFive(String text) {
 
         return text;
-    }
-
-    public WebElement getH2PageA() {
-
-        return getDriver().findElement(H2_TITLE_A);
     }
 
     public static String getText(String text) {
