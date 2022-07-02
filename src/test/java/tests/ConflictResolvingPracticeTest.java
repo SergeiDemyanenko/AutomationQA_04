@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebElement;
 import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
@@ -15,7 +16,10 @@ public class ConflictResolvingPracticeTest extends BaseTest {
         return text;
     }
 
+    public String getText1(WebElement element) {
 
+        return element.getText();
+    }
 
 
 }
