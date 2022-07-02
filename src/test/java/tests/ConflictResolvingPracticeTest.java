@@ -11,7 +11,7 @@ import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
 
-}
+private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     public void testHistoricInformationLinkText2() {
         getDriver().get(BASE_URL);
