@@ -13,6 +13,7 @@ public class JPage {
 
     private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
+    private final By TH_TAGS = By.xpath("//table[@id='category']//th");
     private final By ALL_A_LINKS = By.xpath("//tbody/tr/td/a[@href]");
     private final By lINK_LANGUAGE_JAVA_3 = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
 
@@ -24,6 +25,11 @@ public class JPage {
     protected WebDriver getDriver() {
 
         return driver;
+    }
+
+    public String getText(WebElement element) {
+
+        return element.getText();
     }
 
     public WebElement getPTag() {
@@ -99,5 +105,21 @@ public class JPage {
                         )
                 )
                 .click();
+    }
+
+    public List<WebElement> getThTags() {
+
+        return getDriver().findElements(TH_TAGS);
+    }
+
+    public String getTextThTags(){
+
+        StringBuilder result = new StringBuilder();
+
+        for(WebElement th : getThTags()) {
+            result.append(getText(th)).append(" ");
+        }
+
+        return result.toString();
     }
 }

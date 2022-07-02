@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TitleAndDescriptionJPageTest extends BaseTest {
+public class ServachakMariaVerifyJPageTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
