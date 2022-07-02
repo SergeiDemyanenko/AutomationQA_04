@@ -7,6 +7,7 @@ public class ConflictResolvingPracticeTest extends BaseTest {
   public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
 //    kjdgc Hello,World!
+}
 
     public static String getTextOneTwoThree(String text) {
 
