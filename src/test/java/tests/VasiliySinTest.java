@@ -44,4 +44,22 @@ public class VasiliySinTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testVerifyTextPleaseNoteSubmitNewLanguage() {
+
+        String expectedResult = "Please note:";
+
+        getDriver().get(BASE_URL);
+
+        MainPage SubmitNewLanguage = new MainPage(getDriver());
+        SubmitNewLanguagePage getTitleH3 = new SubmitNewLanguagePage(getDriver());
+
+        SubmitNewLanguage.clickSubmitNewLanguageMenu();
+
+        String actualResult = getTitleH3.getTitleH3Text();
+
+        Assert.assertEquals(actualResult, expectedResult);
+        System.out.println(actualResult);
+    }
 }
