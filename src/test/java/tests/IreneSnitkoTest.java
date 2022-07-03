@@ -14,7 +14,7 @@ import pages.start.StartPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
-public class IreneSnitkoTests extends BaseTest {
+public class IreneSnitkoTest extends BaseTest {
 
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
