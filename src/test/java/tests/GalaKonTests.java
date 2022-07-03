@@ -48,4 +48,18 @@ public class GalaKonTests extends BaseTest {
 
         Assert.assertEquals(expectedResult, ljp.getAmmountOfCommentheaders());
     }
+
+    @Test
+    public void verifyTwoImagesOfTeamMembers() {
+        int expectedResult = 2;
+
+        getDriver().get(BASE_URL);
+
+        StartPage startP = new StartPage(getDriver());
+        TeamPage teamP = new TeamPage(getDriver());
+
+        startP.getTeamMenu().click();
+
+        Assert.assertEquals(expectedResult, teamP.getAmmountOfImages());
+    }
 }
