@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import runner.BaseTest;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class TatianaPTest extends BaseTest {
     }
 
     @Test
-    public void testVerifyNumberOfLanguagesForJavaSearch(){
+    public void testVerifyNumberOfLanguagesForJavaSearch() {
         getDriver().get(BASE_URL);
         int expectedResult = 14;
 
@@ -72,7 +73,7 @@ public class TatianaPTest extends BaseTest {
     }
 
     @Test
-    public void testVerifyH2HeaderOnInfoPage(){
+    public void testVerifyH2HeaderOnInfoPage() {
         String expectedResult = "History";
 
         getDriver().get(BASE_URL);
@@ -82,11 +83,11 @@ public class TatianaPTest extends BaseTest {
 
         InfoPage infoPage = new InfoPage(getDriver());
 
-        Assert.assertEquals(infoPage.getH2HeaderText(),expectedResult);
+        Assert.assertEquals(infoPage.getH2HeaderText(), expectedResult);
     }
 
     @Test
-    public void testSearchSubmitAndSearchAreDisplayed(){
+    public void testSearchSubmitAndSearchAreDisplayed() {
         getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
@@ -116,7 +117,7 @@ public class TatianaPTest extends BaseTest {
     }
 
     @Test
-    public void testVerifyAllSubmenuLinksAreClickable(){
+    public void testVerifyAllSubmenuLinksAreClickable() {
         getDriver().get(BASE_URL);
 
         List<String> expectedResult = new ArrayList<>();
@@ -136,6 +137,23 @@ public class TatianaPTest extends BaseTest {
         startPage.clickImpressumSubmenu();
         actualResult.add(startPage.getSubmenuCurrentUrl());
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testNewCommentsPageVerifyHeaderH2() {
+        getDriver().get(BASE_URL);
+
+        String expectedResult = "New Comments";
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickNewCommentsSubmenu();
+
+        NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
+
+        Assert.assertEquals(newCommentsPage.getTextH2Main(), expectedResult);
     }
 }

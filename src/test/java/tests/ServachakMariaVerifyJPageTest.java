@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TitleAndDescriptionJPageTest extends BaseTest {
+public class ServachakMariaVerifyJPageTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
@@ -36,5 +36,23 @@ public class TitleAndDescriptionJPageTest extends BaseTest {
         List<String> actualResults = List.of(j.getH2HeaderText(), j.getPTagText());
 
         Assert.assertEquals(actualResults, expectedResults);
+    }
+
+    @Test
+    public void testVerifyTextTableHeader(){
+
+        String expectedResult = "Language Author Date Comments Rate";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        JPage j = new JPage(getDriver());
+
+        Assert.assertEquals(j.getTextThTags().trim(), expectedResult);
     }
 }

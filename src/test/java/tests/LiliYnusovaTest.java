@@ -22,7 +22,7 @@ public class LiliYnusovaTest extends BaseTest {
         abc.clickLSubmenu();
 
         LPage l = new LPage(getDriver());
-        String actualResult = l.getH2PageLText();
+        String actualResult = l.getText(l.getH2Header());
 
         Assert.assertEquals(actualResult,expectedResult);
 
