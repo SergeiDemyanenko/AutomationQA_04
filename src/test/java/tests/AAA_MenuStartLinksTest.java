@@ -76,4 +76,15 @@ public class AAA_MenuStartLinksTest extends BaseTest {
 
         Assert.assertEquals(startPage.getGuestbookLinkText(), "guestbook");
     }
+
+    @Test
+    public void testSubmitYourOwnPieceOfCodeLink() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickSubmitYourOwnPieceOfCodeLink();
+
+        Assert.assertEquals(getDriver().getTitle(),
+                "99 Bottles of Beer | Submit new Language");
+    }
 }
