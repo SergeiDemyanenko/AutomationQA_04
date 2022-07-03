@@ -12,7 +12,7 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
     @Test
     public void testVerifyTextZeroSubmenu() {
-        String expectedResult = "0-9";
+        final String expectedResult = "0-9";
 
         getDriver().get(BASE_URL);
 
@@ -29,7 +29,7 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
     @Test
     public void testVerifyLinkTextZeroSubmenu(){
-        String expectedResult = "https://www.99-bottles-of-beer.net/0.html";
+        final String expectedResult = "https://www.99-bottles-of-beer.net/0.html";
 
         getDriver().get(BASE_URL);
 
@@ -46,7 +46,6 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
     @Test
     public void testVerifyNavigationZeroSubmenu() {
-        String expectedResult = "99 Bottles of Beer | Browse category 0-9";
 
         getDriver().get(BASE_URL);
 
@@ -58,10 +57,10 @@ public class BrowseLanguageSubmenuTest extends BaseTest {
 
         abc.getZeroSubmenu().click();
 
-        String actualResult = getDriver().getTitle();
+        String actualResult = getDriver().getCurrentUrl();
 
         Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertTrue(actualResult.contains("0.html"));
     }
 
     @Test
