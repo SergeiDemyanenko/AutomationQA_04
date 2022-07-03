@@ -9,7 +9,7 @@ public class MPage {
     private WebDriver driver;
 
     private final By MATHEMATICA_PAGE = By.xpath("//a[@href='language-mathematica-1090.html']");
-    private final By LAST_LANGUAGE = By.xpath("//table[@id='category']/tbody/tr[last()]/td/a");
+    private final By LANGUAGE_MYSQL = By.xpath("//a[@href='language-mysql-1252.html']");
     private final By LANGUAGE_MACROX =  By.xpath("//a[@href='language-macrox-371.html']");
 
     public MPage(WebDriver existingDriver) {
@@ -29,7 +29,7 @@ public class MPage {
 
     public WebElement getLastLanguageInM() {
 
-        return getDriver().findElement(LAST_LANGUAGE);
+        return getDriver().findElement(LANGUAGE_MYSQL);
     }
 
     public String getLastLanguageInMText() {

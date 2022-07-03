@@ -8,17 +8,16 @@ public class SignV2Page {
 
     private WebDriver driver;
 
-    private final By GUESTBOOK = By.xpath("//li/a[@href='/guestbookv2.html']");
-    private final By SIGN_GUESTBOOK = By.xpath("//a[@href='./signv2.html']");
-    private final By SUBMIT = By.xpath("//input[@type='submit']");
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
-    private final By HOMEPAGE_FIELD = By.xpath("//input[@name='homepage']");
-    private final By NAME_FIELD = By.xpath("//input[@name='name']");
-    private final By LOCATION_FIELD = By.xpath("//input[@name='location']");
-    private final By EMAIL_FIELD = By.xpath("//input[@name='email']");
-    private final By CAPTCHA_FIELD = By.xpath("//input[@name='captcha']");
-    private final By COMMENT_FIELD = By.xpath("//textarea[@name='comment']");
-    private final By TAG_FONT_ERROR_TEXT = By.xpath("//div[@id='main']/p/b");
+    private final By ERROR_MESSAGE_TAG_FONT = By.xpath("//div[@id='main']/p/b");
+    private final By INPUT_HOMEPAGE = By.xpath("//input[@name='homepage']");
+    private final By INPUT_NAME = By.xpath("//input[@name='name']");
+    private final By INPUT_LOCATION = By.xpath("//input[@name='location']");
+    private final By INPUT_EMAIL = By.xpath("//input[@name='email']");
+    private final By INPUT_CAPTCHA = By.xpath("//input[@name='captcha']");
+    private final By INPUT_COMMENT = By.xpath("//textarea[@name='comment']");
+    private final By BUTTON_SUBMIT = By.xpath("//input[@type='submit']");
+    private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
 
     public SignV2Page(WebDriver existingDriver) {
 
@@ -30,27 +29,37 @@ public class SignV2Page {
         return driver;
     }
 
-    public WebElement getSignGuestbookMenu() {
+    public String getText(WebElement element) {
 
-        return getDriver().findElement(SIGN_GUESTBOOK);
+        return element.getText();
     }
 
-    public WebElement getGuestbookMenu() {
+    public String getAttribute(WebElement element, String attribute) {
 
-        return getDriver().findElement(GUESTBOOK);
+        return element.getAttribute(attribute);
     }
 
-    public void getSignGuestbookMenuClick() {
-        getSignGuestbookMenu().click();
+    public void inputText(WebElement element, String inputText) {
+        element.sendKeys(inputText);
     }
 
-    public WebElement getSubmitButton() {
+    public int randomThreeNumbers() {
 
-        return getDriver().findElement(SUBMIT);
+        return (int) (Math.random() * 900 + 100);
     }
 
-    public void getSubmitButtonClick() {
-        getSubmitButton().click();
+    public String getTagName(WebElement element) {
+
+        return element.getTagName();
+    }
+
+    public WebElement getButtonSubmit() {
+
+        return getDriver().findElement(BUTTON_SUBMIT);
+    }
+
+    public void clickButtonSubmit() {
+        getButtonSubmit().click();
     }
 
     public WebElement getErrorMessage() {
@@ -60,75 +69,127 @@ public class SignV2Page {
 
     public String getErrorMessageText() {
 
-        return getErrorMessage().getText();
+        return getText(getErrorMessage());
     }
 
-    public WebElement getHomepageField() {
+    public WebElement getInputHomepage() {
 
-        return getDriver().findElement(HOMEPAGE_FIELD);
+        return getDriver().findElement(INPUT_HOMEPAGE);
     }
 
-    public String getHomepageFieldAttribute() {
+    public String getInputHomepageAttribute() {
 
-        return getHomepageField().getAttribute("value");
+        return getAttribute(getInputHomepage(), "value");
     }
 
-    public WebElement getNameField() {
+    public WebElement getInputName() {
 
-        return getDriver().findElement(NAME_FIELD);
+        return getDriver().findElement(INPUT_NAME);
     }
 
-    public void inputNameField(String name) {
-        getNameField().sendKeys(name);
+    public void inputName(String name) {
+        inputText(getInputName(), name);
     }
 
-    public WebElement getLocationField() {
+    public WebElement getInputLocation() {
 
-        return getDriver().findElement(LOCATION_FIELD);
+        return getDriver().findElement(INPUT_LOCATION);
     }
 
-    public void inputLocationField(String name) {
-        getLocationField().sendKeys(name);
+    public void inputLocation(String location) {
+        inputText(getInputLocation(), location);
     }
 
-    public WebElement getEmailField() {
+    public WebElement getInputEmail() {
 
-        return getDriver().findElement(EMAIL_FIELD);
+        return getDriver().findElement(INPUT_EMAIL);
     }
 
-    public void inputEmailField(String name) {
-        getEmailField().sendKeys(name);
+    public void inputEmail(String email) {
+        inputText(getInputEmail(), email);
     }
 
-    public void inputHomepageField(String name) {
-        getHomepageField().sendKeys(name);
+    public void inputHomepage(String homepage) {
+        inputText(getInputHomepage(), homepage);
     }
 
-    public WebElement getCaptchaField() {
+    public WebElement getInputCaptcha() {
 
-        return getDriver().findElement(CAPTCHA_FIELD);
+        return getDriver().findElement(INPUT_CAPTCHA);
     }
 
-    public void inputCaptchaField(String name) {
-        getCaptchaField().sendKeys(name);
+    public void inputCaptcha() {
+        inputText(getInputCaptcha(), Integer.toString(randomThreeNumbers()));
     }
 
-    public WebElement getCommentField() {
+    public WebElement getInputComment() {
 
-        return getDriver().findElement(COMMENT_FIELD);
+        return getDriver().findElement(INPUT_COMMENT);
     }
 
-    public void inputCommentField(String name) {
-        getCommentField().sendKeys(name);
+    public void inputComment(String comment) {
+        inputText(getInputComment(), comment);
     }
 
     public String getErrorMessageTagFont() {
 
-        return getDriver().findElement(TAG_FONT_ERROR_TEXT).getTagName();
+        return getTagName(getDriver().findElement(ERROR_MESSAGE_TAG_FONT));
     }
 
     public String getErrorMessageAttributeStyle() {
 
-        return getErrorMessage().getAttribute("style");
+        return getAttribute(getErrorMessage(), "style");
+    }
+
+    protected String createSrc(String value) {
+
+        return "images/bb/bb".concat(value).concat(".gif");
+    }
+
+    public String createAttributesSrcOfImg() {
+
+        String ln = "\n";
+
+        return createSrc("url")
+                .concat(ln)
+                .concat(createSrc("email"))
+                .concat(ln)
+                .concat(createSrc("bold"))
+                .concat(ln)
+                .concat(createSrc("italic"))
+                .concat(ln)
+                .concat(createSrc("underline"));
+    }
+
+    protected String getAttributeName (String cssSelector) {
+
+        return getDriver().findElement(
+                        By.cssSelector("img[alt='".concat(cssSelector).concat("']")))
+                .getAttribute("src");
+    }
+
+    public String getAttributesSrcOfImg() {
+
+        String url = "https://www.99-bottles-of-beer.net/";
+        String ln = "\n";
+
+        StringBuilder att = new StringBuilder();
+        att
+                .append(getAttributeName("Web Address"))
+                .append(ln)
+                .append(getAttributeName("Email Address"))
+                .append(ln)
+                .append(getAttributeName("Bold Text"))
+                .append(ln)
+                .append(getAttributeName("Italic Text"))
+                .append(ln)
+                .append(getAttributeName("Underlined Text"));
+
+        return att.toString().replace(url, "");
+    }
+
+    public WebElement getImgCaptcha() {
+
+        return getDriver().findElement(IMG_CAPTCHA_PHP);
     }
 }

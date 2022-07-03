@@ -2,8 +2,10 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.GuestbookV2Page;
 import pages.MainPage;
 import pages.SignV2Page;
+import pages.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 public class MorigorProjectAllTest extends BaseTest {
@@ -29,9 +31,10 @@ public class MorigorProjectAllTest extends BaseTest {
         getDriver().get(GUESTBOOK_URL);
 
         SignV2Page signGuestbook = new SignV2Page(getDriver());
+        GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
 
-        signGuestbook.getSignGuestbookMenuClick();
-        signGuestbook.getSubmitButtonClick();
+        guestbookV2Page.clickSignV2();
+        signGuestbook.clickButtonSubmit();
 
         Assert.assertEquals(signGuestbook.getErrorMessageText(), expectedResult);
     }
@@ -42,9 +45,25 @@ public class MorigorProjectAllTest extends BaseTest {
         getDriver().get(GUESTBOOK_URL);
 
         SignV2Page signGuestbook = new SignV2Page(getDriver());
+        GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
 
-        signGuestbook.getSignGuestbookMenuClick();
+        guestbookV2Page.clickSignV2();
 
-        Assert.assertEquals(signGuestbook.getHomepageFieldAttribute(), "http://");
+        Assert.assertEquals(signGuestbook.getInputHomepageAttribute(), "http://");
+    }
+
+    @Test
+    public void testVerifySubmitNewLanguageText() {
+        String expectedResult = "Submit New Language";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+
+        mainPage.clickFooterSubmitNewLanguage();
+
+        SubmitNewLanguagePage submit = new SubmitNewLanguagePage(getDriver());
+
+        Assert.assertEquals(submit.getTitleH2Text(), expectedResult);
     }
 }

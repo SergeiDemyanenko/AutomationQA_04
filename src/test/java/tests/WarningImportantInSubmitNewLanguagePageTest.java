@@ -18,12 +18,12 @@ public class WarningImportantInSubmitNewLanguagePageTest extends BaseTest {
         main.getSubmitNewLanguageMenu().click();
 
         SubmitNewLanguagePage submitNewLanguage = new SubmitNewLanguagePage(getDriver());
-        String actualResult = submitNewLanguage.getSPAN_IMPORTANT().getText();
+        String actualResult = submitNewLanguage.getSpanImportant().getText();
 
         Assert.assertEquals(actualResult, "IMPORTANT:");
-        Assert.assertEquals(submitNewLanguage.getSPAN_IMPORTANTSCC_Value("background-color"), "rgba(0, 0, 0, 0)");
-        Assert.assertEquals(submitNewLanguage.getSPAN_IMPORTANTSCC_Value("color"), "rgba(255, 255, 255, 1)");
-        Assert.assertEquals(submitNewLanguage.getSPAN_IMPORTANTSCC_Value("font-weight"), "700");
+        Assert.assertEquals(submitNewLanguage.getSpanImportantSCCValue("background-color"), "rgba(0, 0, 0, 0)");
+        Assert.assertEquals(submitNewLanguage.getSpanImportantSCCValue("color"), "rgba(255, 255, 255, 1)");
+        Assert.assertEquals(submitNewLanguage.getSpanImportantSCCValue("font-weight"), "700");
     }
 
 
