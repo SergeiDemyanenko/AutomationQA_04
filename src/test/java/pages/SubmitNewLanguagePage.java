@@ -133,4 +133,8 @@ public class SubmitNewLanguagePage {
 
         return getDriver().findElement(TEXT_H3);
     }
+    public String getTitleH3Text() {
+
+        return getTitleH3().getText();
+    }
 }
