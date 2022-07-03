@@ -100,4 +100,22 @@ public class IreneSnitkoTests extends BaseTest {
 
         Assert.assertEquals(snl.getAttributeSrcOfCaptcha(), "/captcha.php");
     }
+
+    @Test
+    public void testCheckingTheDisplayOfCaptchaOnSignV2Page() {
+
+        getDriver().get(BASE_URL);
+
+        MainPage mp = new MainPage(getDriver());
+
+        mp.clickGuestbookV2Menu();
+
+        GuestbookV2Page gb = new GuestbookV2Page(getDriver());
+
+        gb.clickSignV2();
+
+        SignV2Page sv2 = new SignV2Page(getDriver());
+
+        Assert.assertTrue(sv2.getImgCaptcha().isDisplayed());
+    }
 }
