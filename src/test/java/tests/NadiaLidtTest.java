@@ -8,6 +8,7 @@ import pages.browse_languages.letters.RPage;
 import pages.search_languages.SearchPage;
 import pages.start.InfoPage;
 import pages.start.StartPage;
+import pages.start.TeamPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
