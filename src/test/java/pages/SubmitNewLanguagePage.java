@@ -130,7 +130,7 @@ public class SubmitNewLanguagePage {
         return c.replace("https://www.99-bottles-of-beer.net", "");
     }
 
-    public String TitleH3Text() {
+    public String getTitleH3Text() {
 
         return getTitleH2().getText();
     }
