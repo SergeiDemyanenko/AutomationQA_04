@@ -59,6 +59,5 @@ public class VasiliySinTest extends BaseTest {
         String actualResult = getTitleH3.getTitleH3Text();
 
         Assert.assertEquals(actualResult, expectedResult);
-        System.out.println(actualResult);
     }
 }
