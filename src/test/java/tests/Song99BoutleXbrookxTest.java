@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import pages.browse_languages.AbcPage;
 import pages.browse_languages.languages.LanguageJava3Page;
+import pages.browse_languages.letters.DPage;
 import pages.browse_languages.letters.JPage;
 import pages.start.ImpressumPage;
 import pages.start.StartPage;
