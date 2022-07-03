@@ -80,4 +80,21 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
                     .contains(expectedResult.toLowerCase()));
         }
     }
+
+    @Test
+    public void testHowManyLanguagesOnJPage(){
+        int expectedResult = 22;
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        JPage j = new JPage(getDriver());
+
+        Assert.assertEquals(j.getAllLanguages().size(), expectedResult);
+    }
 }
