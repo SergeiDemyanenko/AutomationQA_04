@@ -2,10 +2,10 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.GuestbookV2Page;
+import pages.guestbook.GuestbookV2Page;
 import pages.MainPage;
-import pages.SignV2Page;
-import pages.SubmitNewLanguagePage;
+import pages.guestbook.SignV2Page;
+import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 public class MorigorProjectAllTest extends BaseTest {

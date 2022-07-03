@@ -3,6 +3,11 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.JPage;
+import pages.browse_languages.letters.MPage;
+import pages.guestbook.GuestbookV2Page;
+import pages.guestbook.SignV2Page;
 import runner.BaseTest;
 
 public class MaksPtTest extends BaseTest {

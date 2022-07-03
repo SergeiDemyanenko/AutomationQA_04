@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.StartPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class StartPageWishesTeamTest extends BaseTest {

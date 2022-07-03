@@ -3,6 +3,12 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.RPage;
+import pages.search_languages.SearchPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
+import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 import java.util.ArrayList;

@@ -2,9 +2,9 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LanguagePerl737Page;
+import pages.browse_languages.languages.LanguagePerl737Page;
 import pages.MainPage;
-import pages.SearchPage;
+import pages.search_languages.SearchPage;
 import runner.BaseTest;
 
 public class VerifyPerlLanguageFeaturesTest extends BaseTest {

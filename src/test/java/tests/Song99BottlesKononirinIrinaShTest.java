@@ -2,8 +2,8 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LyricsPage;
-import pages.StartPage;
+import pages.start.LyricsPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class Song99BottlesKononirinIrinaShTest extends BaseTest {

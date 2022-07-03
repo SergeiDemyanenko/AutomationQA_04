@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.StartPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class CheckSubmenuPrivacyTest extends BaseTest {

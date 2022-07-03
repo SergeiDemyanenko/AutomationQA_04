@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.UPage;
+import pages.start.StartPage;
+import pages.top_lists.TopListPage;
 import runner.BaseTest;
 
 public class ViktroriiaKTest extends BaseTest {

@@ -3,7 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LPage;
+import pages.browse_languages.letters.LPage;
 import pages.MainPage;
 import runner.BaseTest;
 

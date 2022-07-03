@@ -2,8 +2,8 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.LPage;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.LPage;
 import pages.MainPage;
 import runner.BaseTest;
 

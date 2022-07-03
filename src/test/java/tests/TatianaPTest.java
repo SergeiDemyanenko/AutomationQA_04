@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.search_languages.SearchPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
+import pages.top_lists.NewCommentsPage;
+import pages.top_lists.TopListPage;
 import runner.BaseTest;
 
 import java.util.ArrayList;

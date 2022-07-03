@@ -4,6 +4,14 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.languages.LanguageJavascript1948Page;
+import pages.browse_languages.letters.JPage;
+import pages.guestbook.GuestbookV2Page;
+import pages.guestbook.SignV2Page;
+import pages.start.InfoPage;
+import pages.start.StartPage;
+import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 public class IreneSnitkoTests extends BaseTest {
