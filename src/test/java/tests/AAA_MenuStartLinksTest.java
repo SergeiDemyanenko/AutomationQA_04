@@ -65,8 +65,7 @@ public class AAA_MenuStartLinksTest extends BaseTest {
         StartPage startPage = new StartPage(getDriver());
         startPage.clickGuestbookLink();
 
-        Assert.assertEquals(getDriver().getTitle(),
-                "99 Bottles of Beer | Guestbook");
+        Assert.assertEquals(getDriver().getTitle(), "99 Bottles of Beer | Guestbook");
     }
 
     @Test
