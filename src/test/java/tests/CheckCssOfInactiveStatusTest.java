@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.start.StartPage;
 import runner.BaseTest;
 
-public class CheckCssOfInactiveStatus extends BaseTest {
+public class CheckCssOfInactiveStatusTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
