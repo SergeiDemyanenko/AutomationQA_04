@@ -7,7 +7,7 @@ import pages.browse_languages.letters.LPage;
 import pages.MainPage;
 import runner.BaseTest;
 
-public class CheckDownloadText extends BaseTest {
+public class CheckDownloadTextTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net";
 
