@@ -30,6 +30,9 @@ public class StartPage {
     @FindBy(xpath = "//a[@href='./guestbookv2.html']")
     private WebElement  guestbookLink;
 
+    @FindBy(xpath = "//a[@href='./team.html']")
+    private WebElement  teamMembersLink;
+
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -182,5 +185,20 @@ public class StartPage {
     public void clickGuestbookLink() {
 
         guestbookLink.click();
+    }
+
+    public WebElement getTeamMembersLink() {
+
+        return teamMembersLink;
+    }
+
+    public String getTeamMembersLinkText() {
+
+        return getTeamMembersLink().getText();
+    }
+
+    public void clickTeamMembersLink() {
+
+        teamMembersLink.click();
     }
 }

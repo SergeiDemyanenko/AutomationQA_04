@@ -87,4 +87,24 @@ public class AAA_MenuStartLinksTest extends BaseTest {
         Assert.assertEquals(getDriver().getTitle(),
                 "99 Bottles of Beer | Submit new Language");
     }
+
+    @Test
+    public void testTeamMembersLinkText() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getTeamMembersLinkText(), "team members");
+    }
+
+    @Test
+    public void testTeamMembersLink() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickTeamMembersLink();
+
+        Assert.assertEquals(getDriver().getTitle(),
+                "99 Bottles of Beer | The Team");
+    }
 }
