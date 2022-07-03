@@ -72,8 +72,38 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         Assert.assertTrue(getDriver().getCurrentUrl().contains("impressum.html"));
         Assert.assertEquals(impressumPage.getH2HeaderText(), "Privacy");
+    }
 
+    @Test
+    public void testVerifyH2TextDPage () {
 
+        getDriver().get(BASE_URL);
 
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickDSubmenu();
+
+        DPage dPage = new DPage(getDriver());
+
+        Assert.assertEquals(dPage.getH2HeaderText(), "Category D");
+    }
+
+    @Test
+    public void testVerifyDescriptionTextDPage () {
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickDSubmenu();
+
+        DPage dPage = new DPage(getDriver());
+
+        Assert.assertEquals(dPage.getDescriptionText(),
+                "All languages starting with the letter D are shown, sorted by Language.");
     }
 }
