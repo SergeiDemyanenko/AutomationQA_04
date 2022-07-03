@@ -11,7 +11,7 @@ public class LanguageJava3Page {
 
     private final By ALTERNATIVE_VERSIONS = By.xpath("//table[@id='category']//td/a");
     private final By MAIN_VERSION = By.xpath("//div[@id='main']/p[text()='(object-oriented version)']");
-    public final By COMMENTHEADER = By.xpath("//p[@class='commentheader']");
+    private final By COMMENTS_HEADER = By.xpath("//p[@class='commentheader']");
 
     public LanguageJava3Page(WebDriver existingDriver) {
 
@@ -23,20 +23,18 @@ public class LanguageJava3Page {
         return driver;
     }
 
-    public List<WebElement> getALTERNATIVE_VERSIONS() {
+    public List<WebElement> getAlternativeVersions() {
+        
         return getDriver().findElements(ALTERNATIVE_VERSIONS);
     }
-    public WebElement getMAIN_VERSION() {
+
+    public WebElement getMainVersion() {
+        
         return getDriver().findElement(MAIN_VERSION);
     }
 
-    public int getAmmountOfCommentheaders() {
+    public int getCountOfCommentsHeaders() {
 
-        List<WebElement> Commentheaderslist;
-        Commentheaderslist = getDriver().findElements(COMMENTHEADER);
-
-        int count = Commentheaderslist.size();
-
-        return count;
+        return getDriver().findElements(COMMENTS_HEADER).size();
     }
 }

@@ -1,5 +1,6 @@
 package tests;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -27,16 +28,43 @@ public class Song99BottlesAsTest extends BaseTest {
         MainPage main = new MainPage(getDriver());
         main.getSubmitNewLanguageMenu().click();
         SubmitNewLanguagePage category = new SubmitNewLanguagePage(getDriver());
-        category.getField_CategoryClick();
-        SubmitNewLanguagePage click = new SubmitNewLanguagePage(getDriver());
-        click.getField_CategoryClick();
-
+        category.clickCategoryName();
         List<WebElement> name = getDriver().findElements(By.xpath("//select[@name='category']/option"));
-        List<String> actualyResalt = new ArrayList<>();
+        List<String> actuallyResult = new ArrayList<>();
         for (WebElement dropDown : name) {
-            actualyResalt.add(dropDown.getText());
+            actuallyResult.add(dropDown.getText());
         }
+        System.out.println(actuallyResult);
+        Assert.assertEquals(actuallyResult,expectedResult);
+    }
 
-        Assert.assertEquals(actualyResalt,expectedResult);
+    public static String getRandomStr(int length) {
+        return RandomStringUtils.random(length,
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+    }
+
+    @Test
+    public void testGetErrorMessageInvalidSecCode(){
+
+        String expectedResult = "Error: Invalid security code.";
+
+        getDriver().get(URL);
+        MainPage main = new MainPage(getDriver());
+        main.getSubmitNewLanguageMenu().click();
+
+        SubmitNewLanguagePage newLanguagePage = new SubmitNewLanguagePage(getDriver());
+        newLanguagePage.getLanguageName().sendKeys(getRandomStr(5));
+        newLanguagePage.getAuthorName().sendKeys(getRandomStr(7));
+        newLanguagePage.getEmailName().sendKeys(getRandomStr(7));
+        newLanguagePage.getCategoryName().click();
+        newLanguagePage.getCategoryAssemblyLanguage().click();
+        newLanguagePage.getSecurityCodeName().sendKeys(getRandomStr(4));
+        newLanguagePage.getCodeName().sendKeys(getRandomStr(5));
+        newLanguagePage.getButtonSubmitLanguage();
+        newLanguagePage.clickButtonSubmitLanguage();
+
+        String actuallyResult  = newLanguagePage.getErrorMessageInvalidSecCodeText();
+
+        Assert.assertEquals(actuallyResult,expectedResult);
     }
 }

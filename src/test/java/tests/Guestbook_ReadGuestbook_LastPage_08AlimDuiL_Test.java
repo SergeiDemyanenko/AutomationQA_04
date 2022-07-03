@@ -25,7 +25,7 @@ public class Guestbook_ReadGuestbook_LastPage_08AlimDuiL_Test extends BaseTest {
         main.clickGuestbookV2Menu();
 
         GuestbookV2Page readGuestbookV2Page = new GuestbookV2Page(getDriver());
-        readGuestbookV2Page.getReadGuestbook().click();
+        readGuestbookV2Page.getGuestbookV2().click();
 
         WebDriverWait wait = new WebDriverWait(getDriver(), 50);
         WebElement lastPage = wait

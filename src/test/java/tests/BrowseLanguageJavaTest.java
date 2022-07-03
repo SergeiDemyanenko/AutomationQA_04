@@ -28,7 +28,7 @@ public class BrowseLanguageJavaTest extends BaseTest {
         abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
-        j.clickGetJavaLanguage();
+        j.clickLinkLanguageJava3();
 
         int mainVersionComments = Integer.parseInt(getDriver().findElement(
                 By.xpath("//strong[contains(text(),'Comments')]/parent::td/parent::tr/td[2]")).getText());

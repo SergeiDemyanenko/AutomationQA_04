@@ -18,13 +18,15 @@ public class NadiaLidtTest extends BaseTest {
 
         getDriver().get(BASE_URL);
 
-        SearchPage search = new SearchPage(getDriver());
+        MainPage search = new MainPage(getDriver());
 
-        search.getSearchMenuClick();
+        search.clickSearchMenu();
 
-        search.getSearchSubmenuClick();
+        SearchPage searchPage = new SearchPage(getDriver());
 
-        String actualResult = search.getH2MainText();
+        searchPage.clickSearchSubmenu();
+
+        String actualResult = searchPage.getH2MainText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -47,7 +49,7 @@ public class NadiaLidtTest extends BaseTest {
 
         menuSubmitNewLanguagePage.clickSubmitNewLanguageMenu();
 
-        errorMessage.getButtonSubmitLanguageClick();
+        errorMessage.clickButtonSubmitLanguage();
 
         String actualdResultError = errorMessage.getErrorMessageText().substring(0,5);
         String actualdResultPrecondition = errorMessage.getErrorMessageText().substring(7,19);
@@ -105,5 +107,56 @@ public class NadiaLidtTest extends BaseTest {
         Assert.assertEquals(actualResult.size(), 1);
         Assert.assertTrue(!actualResult.get(0).isEmpty());
         Assert.assertEquals(actualResult.get(0),expectedResult.toString());
+    }
+
+    @Test
+    public void testCheckTableTitleMenuBrowseLanguages() {
+        String expectedResult = "Language, Author, Date, Comments, Rate" ;
+        String actualResult;
+
+        getDriver().get(BASE_URL);
+
+        MainPage menuBrowseLanguages = new MainPage(getDriver());
+        AbcPage titleTable = new AbcPage(getDriver());
+
+        menuBrowseLanguages.clickBrowseLanguagesMenu();
+        actualResult = titleTable.getTitlesTable();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testVeryfiTextInfoSubmenu() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        String actualResult = startPage.getText(startPage.getInfoSubmenu());
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testVeryfiLinkTextInfoSubmenu() {
+        String expectedResult = "https://99-bottles-of-beer.net/info.html";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        String actualResult = startPage.getInfoSubmenu().getAttribute("href");
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testVeryfiNavigationInfoSubmenu() {
+        String expectedResult = "History";
+
+        getDriver().get(BASE_URL);
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickInfoSubmenu();
+        InfoPage infoPage = new InfoPage(getDriver());
+        String actualResalt = infoPage.getH2HeaderText();
+
+        Assert.assertEquals(actualResalt, expectedResult);
     }
 }

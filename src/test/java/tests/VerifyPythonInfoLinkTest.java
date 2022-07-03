@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AbcPage;
-import pages.LanguagePythonPage;
+import pages.LanguagePython808Page;
 import pages.MainPage;
 import pages.PPage;
 import runner.BaseTest;
@@ -26,14 +26,13 @@ public class VerifyPythonInfoLinkTest extends BaseTest {
         p.clickPSubmenu();
 
         PPage python = new PPage(getDriver());
-        python.getPythonLanguageClick();
+        python.clickPythonLanguage();
 
-        LanguagePythonPage lp = new LanguagePythonPage(getDriver());
-        lp.getPythonWebsiteClick();
+        LanguagePython808Page lp = new LanguagePython808Page(getDriver());
+        lp.clickPythonLanguageInfoLink();
 
         String strUrl = getDriver().getCurrentUrl();
 
         Assert.assertEquals(strUrl, expectedResult);
-
     }
 }

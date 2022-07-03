@@ -11,10 +11,11 @@ public class JPage {
 
     private WebDriver driver;
 
-    private final By DESCRIPTION_J = By.xpath("//div[@id='main']/p[text()]");
-    private final By H2_TITLE_J = By.xpath("//div[@id='main']/h2");
-    private final By A_LINKS = By.xpath("//tbody/tr/td/a[@href]");
-    private final By JAVA_LANGUAGE = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
+    private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
+    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
+    private final By TH_TAGS = By.xpath("//table[@id='category']//th");
+    private final By ALL_A_LINKS = By.xpath("//tbody/tr/td/a[@href]");
+    private final By lINK_LANGUAGE_JAVA_3 = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
 
     public JPage(WebDriver existingDriver) {
 
@@ -26,29 +27,36 @@ public class JPage {
         return driver;
     }
 
-    public WebElement getDescriptionCategoryJ() {
+    public String getText(WebElement element) {
 
-        return getDriver().findElement(DESCRIPTION_J);
+        return element.getText();
     }
 
-    public String getDescriptionCategoryJText() {
+    public WebElement getPTag() {
 
-        return getDescriptionCategoryJ().getText();
-    }
-    public WebElement getH2PageJ() {
-
-        return getDriver().findElement(H2_TITLE_J);
+        return getDriver().findElement(P_TAG_TEXT);
     }
 
-    public String getH2PageJText() {
+    public String getPTagText() {
 
-        return getH2PageJ().getText();
+        return getPTag().getText();
     }
 
-    protected List<String> takeALinksOfLanguages() {
+    public WebElement getH2Header() {
+
+        return getDriver().findElement(H2_HEADER);
+    }
+
+    public String getH2HeaderText() {
+
+        return getH2Header().getText();
+    }
+
+    protected List<String> getAllALinks() {
+
         List<WebElement> aHrefs
                 = getDriver()
-                .findElements(A_LINKS);
+                .findElements(ALL_A_LINKS);
 
         List<String> listOfLanguages = new ArrayList<>();
 
@@ -59,18 +67,59 @@ public class JPage {
         return listOfLanguages;
     }
 
-    public int countProgrammingLanguages() {
+    public int getQuantityALinks() {
 
-        return takeALinksOfLanguages().size();
+        return getAllALinks().size();
     }
 
-    public  WebElement getJavaLanguage() {
-        return getDriver().findElement(JAVA_LANGUAGE);
+    public  WebElement getLinkLanguageJava3() {
+
+        return getDriver().findElement(lINK_LANGUAGE_JAVA_3);
     }
 
-    public void clickGetJavaLanguage() {
-        getJavaLanguage().click();
+    public void clickLinkLanguageJava3() {
+
+        getLinkLanguageJava3().click();
     }
 
+    public String getLanguageJavascript1948() {
 
+        for (String language : getAllALinks()) {
+
+            if (
+                    getAllALinks().size() != 0
+                            && language.equals("JavaScript")
+            ) {
+                return language;
+            }
+        }
+
+        return null;
+    }
+
+    public void clickLanguageJavascript1948() {
+
+        getDriver().findElement(
+                        By.linkText(
+                                getLanguageJavascript1948()
+                        )
+                )
+                .click();
+    }
+
+    public List<WebElement> getThTags() {
+
+        return getDriver().findElements(TH_TAGS);
+    }
+
+    public String getTextThTags(){
+
+        StringBuilder result = new StringBuilder();
+
+        for(WebElement th : getThTags()) {
+            result.append(getText(th)).append(" ");
+        }
+
+        return result.toString();
+    }
 }

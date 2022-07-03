@@ -2,6 +2,8 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AbcPage;
+import pages.KPage;
 import pages.MainPage;
 import runner.BaseTest;
 
@@ -20,6 +22,26 @@ public class KononirinIrinaShTest extends BaseTest {
         MainPage main = new MainPage(getDriver());
 
         String actualResult = main.getSubmitNewLanguageMenuText().toLowerCase();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testTitleKPage() {
+
+        String expectedResult = "Category K";
+
+        getDriver().get(BASE_URL);
+
+        MainPage browseLang = new MainPage(getDriver());
+        browseLang.clickBrowseLanguagesMenu();
+
+        AbcPage k = new AbcPage(getDriver());
+        k.clickKSubmenu();
+
+        KPage title = new KPage(getDriver());
+
+        String actualResult = title.getH2PageKText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
