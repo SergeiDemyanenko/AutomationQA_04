@@ -129,9 +129,8 @@ public class SubmitNewLanguagePage {
 
         return c.replace("https://www.99-bottles-of-beer.net", "");
     }
+    public WebElement getTitleH3() {
 
-    public String getTitleH3Text() {
-
-        return getTitleH2().getText();
+        return getDriver().findElement(TEXT_H3);
     }
 }
