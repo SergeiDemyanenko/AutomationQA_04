@@ -111,5 +111,23 @@ public class ViktroriiaKTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
+    @Test
+    public void testUSubmenuDescription() {
+
+        String expectedResult = "All languages starting with the letter U are shown, sorted by Language.";
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickUSubmenu();
+
+        UPage description = new UPage(getDriver());
+        String actualResult = description.getPTagText();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
 
