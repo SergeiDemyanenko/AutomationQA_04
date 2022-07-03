@@ -27,6 +27,9 @@ public class StartPage {
     @FindBy(xpath = "//a[@href='./submitnewlanguage.html']")
     private WebElement  submitYourOwnPieceOfCodeLink;
 
+    @FindBy(xpath = "//a[@href='./guestbookv2.html']")
+    private WebElement  guestbookLink;
+
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -164,5 +167,20 @@ public class StartPage {
     public void clickSubmitYourOwnPieceOfCodeLink() {
 
         submitYourOwnPieceOfCodeLink.click();
+    }
+
+    public WebElement getGuestbookLink() {
+
+        return guestbookLink;
+    }
+
+    public String getGuestbookLinkText() {
+
+        return getGuestbookLink().getText();
+    }
+
+    public void clickGuestbookLink() {
+
+        guestbookLink.click();
     }
 }
