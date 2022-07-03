@@ -89,5 +89,23 @@ public class ViktroriiaKTest extends BaseTest {
 
         Assert.assertEquals(uPage.countLanguagesU(),expectedResult);
     }
+
+    @Test
+    public void testTitleUPage(){
+        String expectedResult = "Category U";
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickUSubmenu();
+
+        UPage title = new UPage(getDriver());
+
+        String actualResult= title.getH2PageUText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }
 
