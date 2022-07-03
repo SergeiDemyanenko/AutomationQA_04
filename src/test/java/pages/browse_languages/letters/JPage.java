@@ -122,4 +122,9 @@ public class JPage {
 
         return result.toString();
     }
+
+    public List<WebElement> getAllLanguages(){
+
+        return getDriver().findElements(ALL_A_LINKS);
+    }
 }

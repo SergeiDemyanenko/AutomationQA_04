@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.AbcPage;
@@ -54,5 +55,29 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         JPage j = new JPage(getDriver());
 
         Assert.assertEquals(j.getTextThTags().trim(), expectedResult);
+    }
+
+    @Test
+    public void testAreAllLanguagesOnJPageStartWithTheLetterJ() {
+        String expectedResult = "j";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        JPage j = new JPage(getDriver());
+
+        for (WebElement a : j.getAllLanguages()) {
+
+            Assert.assertTrue(a
+                    .getText()
+                    .toLowerCase()
+                    .substring(0, 1)
+                    .contains(expectedResult.toLowerCase()));
+        }
     }
 }
