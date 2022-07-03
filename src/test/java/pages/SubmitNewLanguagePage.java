@@ -8,7 +8,7 @@ public class SubmitNewLanguagePage {
 
     private WebDriver driver;
 
-    private final By SPAN_IMPORTANT =By.xpath("//div[@id='main']/ul/li/span/b");
+    private final By SPAN_IMPORTANT = By.xpath("//div[@id='main']/ul/li/span/b");
     private final By BUTTON_SUBMIT_LANGUAGE = By.xpath("//div/div/form[@id='addlanguage']/p/input[@type='submit']");
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p[@style]");
     private final By TITLE_H2 = By.xpath("//div[@id='main']/h2");
@@ -21,6 +21,7 @@ public class SubmitNewLanguagePage {
     private final By ASSEMBLYLANGUAGE_NAME_CATEGORY = By.xpath("//select[@name='category']/option[@value='3']");
     private final By ERROR_MESSAGE_INVALID_SEC_COD = By.xpath("//div[@id='main']/p");
     private final By IMG_CAPTCHA = By.xpath("//input[@name='captcha']/following-sibling::img");
+    private final By TEXT_H3 = By.xpath("//div[@id='main']/h3");
 
     public SubmitNewLanguagePage(WebDriver existingDriver) {
 
@@ -42,7 +43,7 @@ public class SubmitNewLanguagePage {
         return getSpanImportant().getCssValue(value);
     }
 
-    public WebElement getButtonSubmitLanguage(){
+    public WebElement getButtonSubmitLanguage() {
 
         return getDriver().findElement(BUTTON_SUBMIT_LANGUAGE);
     }
@@ -52,7 +53,7 @@ public class SubmitNewLanguagePage {
         getButtonSubmitLanguage().click();
     }
 
-    public WebElement getErrorMessage(){
+    public WebElement getErrorMessage() {
 
         return getDriver().findElement(ERROR_MESSAGE);
     }
@@ -64,7 +65,7 @@ public class SubmitNewLanguagePage {
 
     public WebElement getCategoryName() {
 
-        return  getDriver().findElement(CATEGORY_NAME);
+        return getDriver().findElement(CATEGORY_NAME);
     }
 
     public void clickCategoryName() {
@@ -81,29 +82,30 @@ public class SubmitNewLanguagePage {
 
         return getTitleH2().getText();
     }
+
     public WebElement getEmailName() {
 
-        return  getDriver().findElement(EMAIL_NAME);
+        return getDriver().findElement(EMAIL_NAME);
     }
 
     public WebElement getAuthorName() {
 
-        return  getDriver().findElement(AUTOR_NAME);
+        return getDriver().findElement(AUTOR_NAME);
     }
 
     public WebElement getSecurityCodeName() {
 
-        return  getDriver().findElement(SECURITYCODE_NAME);
+        return getDriver().findElement(SECURITYCODE_NAME);
     }
 
     public WebElement getCodeName() {
 
-        return  getDriver().findElement(CODE_NAME);
+        return getDriver().findElement(CODE_NAME);
     }
 
     public WebElement getLanguageName() {
 
-        return  getDriver().findElement(LANGUAGE_NAME);
+        return getDriver().findElement(LANGUAGE_NAME);
     }
 
     public WebElement getCategoryAssemblyLanguage() {
@@ -126,5 +128,10 @@ public class SubmitNewLanguagePage {
         String c = getDriver().findElement(IMG_CAPTCHA).getAttribute("src");
 
         return c.replace("https://www.99-bottles-of-beer.net", "");
+    }
+
+    public String getTitleH3Text() {
+
+        return getTitleH2().getText();
     }
 }
