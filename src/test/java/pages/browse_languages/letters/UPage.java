@@ -12,6 +12,7 @@ public class UPage {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By TABLE_U = By.xpath("//tbody/tr[@onmouseover]");
+    private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
 
     public UPage(WebDriver existingDriver) {
 
@@ -41,5 +42,15 @@ public class UPage {
     public String getH2PageUText() {
 
         return getH2PageU().getText();
+    }
+
+    public WebElement getPTag() {
+
+        return getDriver().findElement(P_TAG_TEXT);
+    }
+
+    public String getPTagText() {
+
+        return getPTag().getText();
     }
 }
