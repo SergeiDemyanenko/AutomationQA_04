@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.GuestbookV2Page;
 import pages.MainPage;
 import pages.SubmitNewLanguagePage;
 import runner.BaseTest;
@@ -66,5 +67,23 @@ public class Song99BottlesAsTest extends BaseTest {
         String actuallyResult  = newLanguagePage.getErrorMessageInvalidSecCodeText();
 
         Assert.assertEquals(actuallyResult,expectedResult);
+    }
+
+    @Test
+    public void testVerifyLinkTextGuestbookV2Page() {
+
+        String expectedResult = "http://www.99-bottles-of-beer.net/guestbookv2.html";
+        String expecResNum = "2";
+
+        getDriver().get(URL);
+        MainPage main = new MainPage(getDriver());
+        main.getSubmitNewLanguageMenu().click();
+        main.clickGuestbookV2Menu();
+        GuestbookV2Page text = new GuestbookV2Page(getDriver());
+        String actuallyResNum = text.getPage2Text();
+        String actuallyResult = getDriver().getCurrentUrl();
+
+        Assert.assertEquals(actuallyResult, expectedResult);
+        Assert.assertEquals(actuallyResNum,expecResNum);
     }
 }

@@ -159,4 +159,19 @@ public class NadiaLidtTest extends BaseTest {
 
         Assert.assertEquals(actualResalt, expectedResult);
     }
+
+    @Test
+    public void testVeryfiTextH2MainHeader() {
+        String expectedResult = "The Team";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickTeamSubmenu();
+
+        TeamPage teamPage = new TeamPage(getDriver());
+        String actualResult = teamPage.getH2MainHeaderText();
+
+        Assert.assertEquals(expectedResult, actualResult);
+    }
 }

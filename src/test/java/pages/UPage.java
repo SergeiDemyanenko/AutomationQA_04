@@ -10,6 +10,7 @@ public class UPage {
 
     private WebDriver driver;
 
+    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By TABLE_U = By.xpath("//tbody/tr[@onmouseover]");
 
     public UPage(WebDriver existingDriver) {
@@ -30,5 +31,15 @@ public class UPage {
     public int countLanguagesU() {
 
         return getTableU().size();
+    }
+
+    public WebElement getH2PageU() {
+
+        return getDriver().findElement(H2_HEADER);
+    }
+
+    public String getH2PageUText() {
+
+        return getH2PageU().getText();
     }
 }

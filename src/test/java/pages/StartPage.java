@@ -27,6 +27,12 @@ public class StartPage {
     @FindBy(xpath = "//a[@href='./submitnewlanguage.html']")
     private WebElement  submitYourOwnPieceOfCodeLink;
 
+    @FindBy(xpath = "//a[@href='./guestbookv2.html']")
+    private WebElement  guestbookLink;
+
+    @FindBy(xpath = "//a[@href='./team.html']")
+    private WebElement  teamMembersLink;
+
     public StartPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -164,5 +170,35 @@ public class StartPage {
     public void clickSubmitYourOwnPieceOfCodeLink() {
 
         submitYourOwnPieceOfCodeLink.click();
+    }
+
+    public WebElement getGuestbookLink() {
+
+        return guestbookLink;
+    }
+
+    public String getGuestbookLinkText() {
+
+        return getGuestbookLink().getText();
+    }
+
+    public void clickGuestbookLink() {
+
+        guestbookLink.click();
+    }
+
+    public WebElement getTeamMembersLink() {
+
+        return teamMembersLink;
+    }
+
+    public String getTeamMembersLinkText() {
+
+        return getTeamMembersLink().getText();
+    }
+
+    public void clickTeamMembersLink() {
+
+        teamMembersLink.click();
     }
 }

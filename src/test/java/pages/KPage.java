@@ -9,9 +9,6 @@ public class KPage {
 
     private final By H2_TITLE_K = By.xpath("//div[@id='main']/h2");
 
-    private final By DESCRIPTION_K = By.xpath("//div[@id='main']/p[text()]");
-
-
     public KPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -22,22 +19,12 @@ public class KPage {
         return driver;
     }
 
-    public WebElement getDescriptionCategoryK() {
-
-        return getDriver().findElement(DESCRIPTION_K);
-    }
-
-    public String getDescriptionCategoryKText() {
-
-        return getDescriptionCategoryK().getText();
-    }
-
     public WebElement getH2PageK() {
 
         return getDriver().findElement(H2_TITLE_K);
     }
 
-    public String getH2PageCText() {
+    public String getH2PageKText() {
 
         return getH2PageK().getText();
     }

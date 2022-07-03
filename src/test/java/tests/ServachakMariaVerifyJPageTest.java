@@ -37,4 +37,22 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
 
         Assert.assertEquals(actualResults, expectedResults);
     }
+
+    @Test
+    public void testVerifyTextTableHeader(){
+
+        String expectedResult = "Language Author Date Comments Rate";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        JPage j = new JPage(getDriver());
+
+        Assert.assertEquals(j.getTextThTags().trim(), expectedResult);
+    }
 }
