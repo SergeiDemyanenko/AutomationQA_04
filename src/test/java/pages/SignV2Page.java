@@ -187,4 +187,9 @@ public class SignV2Page {
 
         return att.toString().replace(url, "");
     }
+
+    public WebElement getImgCaptcha() {
+
+        return getDriver().findElement(IMG_CAPTCHA_PHP);
+    }
 }
