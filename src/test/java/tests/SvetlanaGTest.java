@@ -68,8 +68,8 @@ public class SvetlanaGTest extends BaseTest {
         abc.clickRSubmenu();
 
         RPage r = new RPage(getDriver());
-        String actualHeader = r.getH2HeaderText();
-        String actualText = r.getPTagText();
+        String actualHeader = r.getTitleH2Text();
+        String actualText = r.getP1TagText();
 
         Assert.assertEquals(actualHeader, expectedHeader);
         Assert.assertEquals(actualText, expectedText);

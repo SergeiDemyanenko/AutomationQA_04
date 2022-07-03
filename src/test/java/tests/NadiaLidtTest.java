@@ -98,7 +98,7 @@ public class NadiaLidtTest extends BaseTest {
         main.clickBrowseLanguagesMenu();
         abc.clickRSubmenu();
 
-        for (WebElement tr : rPage.getTRTags()) {
+        for (WebElement tr : rPage.getAllTR()) {
             if (tr.getText().contains(languageExpected)) {
                 actualResult.add(tr.getText());
             }

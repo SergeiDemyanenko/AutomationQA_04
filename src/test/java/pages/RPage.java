@@ -10,9 +10,9 @@ public class RPage {
 
     private WebDriver driver;
 
-    private final By TR_TAGS = By.xpath("//tbody/tr[@onmouseover]");
-    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
-    private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[1]");
+    private final By ALL_TR = By.xpath("//tbody/tr[@onmouseover]");
+    private final By TITLE_H2 = By.xpath("//div[@id='main']/h2");
+    private final By P1_TAG_TEXT = By.xpath("//div[@id='main']/p[1]");
 
     public RPage(WebDriver existingDriver) {
 
@@ -24,14 +24,14 @@ public class RPage {
         return driver;
     }
 
-    public List <WebElement> getTRTags() {
+    public List <WebElement> getAllTR() {
 
-        return getDriver().findElements(TR_TAGS);
+        return getDriver().findElements(ALL_TR);
     }
 
     public int countLanguages() {
 
-        return getTRTags().size();
+        return getAllTR().size();
     }
 
     public String getText(WebElement element) {
@@ -39,23 +39,23 @@ public class RPage {
         return element.getText();
     }
 
-    public WebElement getH2Header() {
+    public WebElement getTitleH2() {
 
-        return getDriver().findElement(H2_HEADER);
+        return getDriver().findElement(TITLE_H2);
     }
 
-    public String getH2HeaderText() {
+    public String getTitleH2Text() {
 
-        return getText(getH2Header());
+        return getText(getTitleH2());
     }
 
-    public  WebElement getPTag() {
+    public  WebElement getP1Tag() {
 
-        return getDriver().findElement(P_TAG_TEXT);
+        return getDriver().findElement(P1_TAG_TEXT);
     }
 
-    public String getPTagText() {
+    public String getP1TagText() {
 
-        return getText(getPTag());
+        return getText(getP1Tag());
     }
 }
