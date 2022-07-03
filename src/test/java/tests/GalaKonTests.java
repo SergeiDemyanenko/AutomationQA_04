@@ -58,7 +58,7 @@ public class GalaKonTests extends BaseTest {
         StartPage startP = new StartPage(getDriver());
         TeamPage teamP = new TeamPage(getDriver());
 
-        startP.getTeamMenu().click();
+        startP.getTeamMenuClick();
 
         Assert.assertEquals(expectedResult, teamP.getAmmountOfImages());
     }
