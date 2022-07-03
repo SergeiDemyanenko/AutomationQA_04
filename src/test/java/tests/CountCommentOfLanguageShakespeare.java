@@ -3,9 +3,9 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
+import pages.browse_languages.AbcPage;
 import pages.MainPage;
-import pages.SPage;
+import pages.browse_languages.letters.SPage;
 import runner.BaseTest;
 
 public class CountCommentOfLanguageShakespeare extends BaseTest {

@@ -2,9 +2,9 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
+import pages.browse_languages.AbcPage;
 import pages.MainPage;
-import pages.ZPage;
+import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
 public class BrowseLanguagesZSubmenuTest extends BaseTest {

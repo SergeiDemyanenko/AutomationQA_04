@@ -1,9 +1,15 @@
 package tests;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.languages.LanguageJava3Page;
+import pages.browse_languages.languages.LanguageMathematicaPage;
+import pages.browse_languages.letters.JPage;
+import pages.browse_languages.letters.MPage;
+import pages.start.StartPage;
+import pages.start.TeamPage;
 import runner.BaseTest;
 
 public class GalaKonTests extends BaseTest {

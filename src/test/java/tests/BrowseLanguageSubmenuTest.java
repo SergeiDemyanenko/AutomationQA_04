@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
+import pages.browse_languages.AbcPage;
 import pages.MainPage;
 import runner.BaseTest;
 

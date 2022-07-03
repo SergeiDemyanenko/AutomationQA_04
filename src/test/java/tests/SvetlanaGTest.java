@@ -2,6 +2,10 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.RPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class SvetlanaGTest extends BaseTest {

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.StartPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class CheckCssOfInactiveStatus extends BaseTest {

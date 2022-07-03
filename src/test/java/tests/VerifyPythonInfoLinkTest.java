@@ -2,10 +2,10 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.LanguagePython808Page;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.languages.LanguagePython808Page;
 import pages.MainPage;
-import pages.PPage;
+import pages.browse_languages.letters.PPage;
 import runner.BaseTest;
 
 public class VerifyPythonInfoLinkTest extends BaseTest {

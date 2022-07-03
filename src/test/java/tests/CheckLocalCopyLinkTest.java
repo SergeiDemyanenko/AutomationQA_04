@@ -2,8 +2,8 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.InfoPage;
-import pages.StartPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class CheckLocalCopyLinkTest extends BaseTest {

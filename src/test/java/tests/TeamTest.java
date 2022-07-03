@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.TeamPage;
+import pages.start.TeamPage;
 import runner.BaseTest;
 
 import java.util.ArrayList;

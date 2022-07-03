@@ -1,9 +1,9 @@
 package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.LanguageMathematicaPage;
-import pages.MPage;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.languages.LanguageMathematicaPage;
+import pages.browse_languages.letters.MPage;
 import runner.BaseTest;
 
 public class AuthorOfMathematicaLanguageTest extends BaseTest {

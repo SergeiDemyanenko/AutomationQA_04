@@ -3,9 +3,9 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.GuestbookV2Page;
+import pages.guestbook.GuestbookV2Page;
 import pages.MainPage;
-import pages.SignV2Page;
+import pages.guestbook.SignV2Page;
 import runner.BaseTest;
 
 
