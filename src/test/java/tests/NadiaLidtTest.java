@@ -163,7 +163,6 @@ public class NadiaLidtTest extends BaseTest {
     @Test
     public void testVeryfiTextH2MainHeader() {
         String expectedResult = "The Team";
-        String actualResult = "";
 
         getDriver().get(BASE_URL);
 
@@ -171,7 +170,7 @@ public class NadiaLidtTest extends BaseTest {
         startPage.clickTeamSubmenu();
 
         TeamPage teamPage = new TeamPage(getDriver());
-        actualResult = teamPage.getH2MainHeaderText();
+        String actualResult = teamPage.getH2MainHeaderText();
 
         Assert.assertEquals(expectedResult, actualResult);
     }
