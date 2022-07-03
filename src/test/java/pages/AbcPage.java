@@ -21,6 +21,7 @@ public class AbcPage {
     private final By S_SUBMENU = By.xpath("//a[@href='s.html']");
     private final By U_SUBMENU = By.xpath("//a[@href='u.html']");
     private final By A_SUBMENU = By.xpath("//a[@href='a.html']");
+    private final By K_SUBMENU = By.xpath("//a[@href='k.html']");
     private final By TITLES_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
     private final By SUBMENU = By.id("submenu");
     private final By ALL_SUBMENU = By.xpath("//ul[@id='submenu']//a");
@@ -183,4 +184,15 @@ public class AbcPage {
 
         return getText(getASubmenu());
     }
+
+    public WebElement getKSubmenu() {
+
+        return getDriver().findElement(K_SUBMENU);
+    }
+
+    public void clickKSubmenu() {
+
+        getKSubmenu().click();
+    }
+
 }
