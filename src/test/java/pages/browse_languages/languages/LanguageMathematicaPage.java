@@ -8,7 +8,7 @@ public class LanguageMathematicaPage {
 
     private WebDriver driver;
 
-    private final By BRENTON_BOSTICK = By.xpath("//table[@style='margin: 7px; padding: 0;;']/tbody[1]/tr[2]/td[2]");
+    private final By TD_TABLE_BRENTON_BOSTICK = By.xpath("//table[@style='margin: 7px; padding: 0;;']/tbody[1]/tr[2]/td[2]");
 
     public LanguageMathematicaPage(WebDriver existingDriver) {
 
@@ -20,8 +20,8 @@ public class LanguageMathematicaPage {
         return driver;
     }
 
-    public WebElement BrentonBostick() {
+    public WebElement getTdTableBrentonBostick() {
 
-        return getDriver().findElement(BRENTON_BOSTICK);
+        return getDriver().findElement(TD_TABLE_BRENTON_BOSTICK);
     }
 }

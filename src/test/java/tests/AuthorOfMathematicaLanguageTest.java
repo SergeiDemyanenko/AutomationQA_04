@@ -21,7 +21,7 @@ public class AuthorOfMathematicaLanguageTest extends BaseTest {
 
         ab.clickMSubmenu();
         mp.mathematicaPage().click();
-        String actualResult = lm.BrentonBostick().getText();
+        String actualResult = lm.getTdTableBrentonBostick().getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

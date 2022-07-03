@@ -31,9 +31,9 @@ public class GalaKonTests extends BaseTest {
         mainP.clickBrowseLanguagesMenu();
         abc.getMSubmenu().click();
         mp.mathematicaPage().click();
-        lmp.BrentonBostick();
+        lmp.getTdTableBrentonBostick();
 
-        String actualResult = lmp.BrentonBostick().getText();
+        String actualResult = lmp.getTdTableBrentonBostick().getText();
 
         Assert.assertEquals(expectedResult, actualResult);
     }
