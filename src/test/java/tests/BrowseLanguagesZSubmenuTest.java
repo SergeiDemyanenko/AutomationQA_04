@@ -69,4 +69,41 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
+    @Test
+    public void testNamesOfLanguageZ() {
+
+        final String expectedResult =
+                "Z-C\n" +
+                "Z-Shell\n" +
+                "Zeno\n" +
+                "Zero\n" +
+                "Zim\n" +
+                "zkl\n" +
+                "zmud scripting language\n" +
+                "ZOMBIE\n" +
+                "Zonnon\n" +
+                "Zope-DHTML\n" +
+                "Zope-PageTemplates\n" +
+                "Zowie\n" +
+                "ZT\n" +
+                "ZZT";
+
+        final int expectedResultCount = 14;
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickZSubmenu();
+
+        ZPage zSubmenuHeaders = new ZPage(getDriver());
+        String actualResult = zSubmenuHeaders.getNamesText();
+        int actualResultCount = zSubmenuHeaders.getNamesOfLanguageZ().size();
+
+        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResultCount,expectedResultCount);
+    }
 }
