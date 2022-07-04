@@ -16,7 +16,15 @@ import java.util.List;
 
 public class MaksPtTest extends BaseTest {
 
-    public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+    private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+    private static final By ALL_H2_LETTERS = By.xpath("//div[@id='main']/h2");
+    private static final By ALL_TEXT_LETTERS = By.xpath("//div[@id='main']/p[text()]");
+    private static final String EXPECTED_H2 = "Category ";
+
+    private String expectedText(String letter) {
+
+        return "All languages starting with the letter ".concat(letter).concat(" are shown, sorted by Language.");
+    }
 
     @Test
     public void testDescriptionLanguagesJ() {
@@ -125,14 +133,6 @@ public class MaksPtTest extends BaseTest {
         signV2Page.clickButtonSubmit();
 
         Assert.assertEquals(signV2Page.getErrorMessageAttributeStyle(), expectedTextErrorStyle);
-    }
-
-    public final By ALL_H2_LETTERS = By.xpath("//div[@id='main']/h2");
-    public final By ALL_TEXT_LETTERS = By.xpath("//div[@id='main']/p[text()]");
-    public final String EXPECTED_H2 = "Category ";
-    public final String expectedText(String letter) {
-
-        return "All languages starting with the letter ".concat(letter).concat(" are shown, sorted by Language.");
     }
 
     @Test
