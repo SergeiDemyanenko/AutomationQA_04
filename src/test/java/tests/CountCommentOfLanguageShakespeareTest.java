@@ -8,7 +8,7 @@ import pages.MainPage;
 import pages.browse_languages.letters.SPage;
 import runner.BaseTest;
 
-public class CountCommentOfLanguageShakespeare extends BaseTest {
+public class CountCommentOfLanguageShakespeareTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
