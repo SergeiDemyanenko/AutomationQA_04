@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -96,5 +97,25 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         JPage j = new JPage(getDriver());
 
         Assert.assertEquals(j.getAllLanguages().size(), expectedResult);
+    }
+
+    @Test
+    public void testLinkInTableIsClickable(){
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        String url = getDriver().getCurrentUrl();
+
+        JPage j = new JPage(getDriver());
+
+        j.getAllLanguages().get(j.randomALinks() - 1).click();
+
+        Assert.assertNotEquals(getDriver().getCurrentUrl(), url);
     }
 }
