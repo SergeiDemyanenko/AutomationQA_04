@@ -1,11 +1,10 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 import pages.MainPage;
-import pages.AbcPage;
+import pages.browse_languages.AbcPage;
 
 @Ignore
 public class AratinveTest extends BaseTest {

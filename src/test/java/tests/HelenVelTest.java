@@ -5,6 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.MPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
+import pages.start.TeamPage;
 import runner.BaseTest;
 
 import java.util.ArrayList;

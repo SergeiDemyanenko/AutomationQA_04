@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.UPage;
+import pages.start.StartPage;
+import pages.top_lists.TopListPage;
 import runner.BaseTest;
 
 public class ViktroriiaKTest extends BaseTest {
@@ -88,6 +92,42 @@ public class ViktroriiaKTest extends BaseTest {
         UPage uPage = new UPage(getDriver());
 
         Assert.assertEquals(uPage.countLanguagesU(),expectedResult);
+    }
+
+    @Test
+    public void testTitleUPage(){
+        String expectedResult = "Category U";
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickUSubmenu();
+
+        UPage title = new UPage(getDriver());
+
+        String actualResult= title.getH2PageUText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void testUSubmenuDescription() {
+
+        String expectedResult = "All languages starting with the letter U are shown, sorted by Language.";
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickUSubmenu();
+
+        UPage description = new UPage(getDriver());
+        String actualResult = description.getPTagText();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
 

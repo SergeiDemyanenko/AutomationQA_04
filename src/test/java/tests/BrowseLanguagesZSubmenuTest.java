@@ -2,14 +2,23 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
+import pages.browse_languages.AbcPage;
 import pages.MainPage;
-import pages.ZPage;
+import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
 public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
-    private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+    protected void clickOnZSubmenu() {
+
+        getDriver().get("http://www.99-bottles-of-beer.net/");
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickZSubmenu();
+    }
 
     @Test
 
@@ -17,38 +26,26 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final String expectedResult = "Category Z";
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-        abc.clickZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
         String actualResult = zSubmenu.getH2Text();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testZSubmenuDescription() {
 
-        final String expectedResult = "All languages starting with the letter" +
-                " Z are shown, sorted by Language.";
+        final String expectedResult =
+        "All languages starting with the letter Z are shown, sorted by Language.";
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-        abc.clickZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
         String actualResult = zSubmenu.getPTagsText();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
@@ -56,54 +53,44 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final String expectedResult = "Language Author Date Comments Rate";
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-        abc.clickZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getCategoryText();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testNamesOfLanguageZ() {
 
-        final String expectedResult =
-                "Z-C\n" +
-                "Z-Shell\n" +
-                "Zeno\n" +
-                "Zero\n" +
-                "Zim\n" +
-                "zkl\n" +
-                "zmud scripting language\n" +
-                "ZOMBIE\n" +
-                "Zonnon\n" +
-                "Zope-DHTML\n" +
-                "Zope-PageTemplates\n" +
-                "Zowie\n" +
-                "ZT\n" +
-                "ZZT";
+        StringBuilder allNamesZ = new StringBuilder();
+        allNamesZ
+                .append("Z-C\n")
+                .append("Z-Shell\n")
+                .append("Zeno\n")
+                .append("Zero\n")
+                .append("Zim\n")
+                .append("zkl\n")
+                .append("zmud scripting language\n")
+                .append("ZOMBIE\n")
+                .append("Zonnon\n")
+                .append("Zope-DHTML\n")
+                .append("Zope-PageTemplates\n")
+                .append("Zowie\n")
+                .append("ZT\n")
+                .append("ZZT");
+        final String expectedResult = allNamesZ.toString();
 
         final int expectedResultCount = 14;
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-        abc.clickZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getNamesText();
         int actualResultCount = zSubmenuHeaders.getNamesOfLanguageZ().size();
 
-        Assert.assertEquals(actualResult,expectedResult);
-        Assert.assertEquals(actualResultCount,expectedResultCount);
+        Assert.assertEquals(actualResultCount, expectedResultCount);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }

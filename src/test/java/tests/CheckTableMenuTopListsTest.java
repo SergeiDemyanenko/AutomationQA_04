@@ -3,8 +3,8 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.TopListPage;
-import pages.TopListRealPage;
+import pages.top_lists.TopListPage;
+import pages.top_lists.TopListRealPage;
 import runner.BaseTest;
 
 public class CheckTableMenuTopListsTest extends BaseTest {

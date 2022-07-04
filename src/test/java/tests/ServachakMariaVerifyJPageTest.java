@@ -1,9 +1,11 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.JPage;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.JPage;
 import pages.MainPage;
 import runner.BaseTest;
 
@@ -54,5 +56,66 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         JPage j = new JPage(getDriver());
 
         Assert.assertEquals(j.getTextThTags().trim(), expectedResult);
+    }
+
+    @Test
+    public void testAreAllLanguagesOnJPageStartWithTheLetterJ() {
+        String expectedResult = "j";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        JPage j = new JPage(getDriver());
+
+        for (WebElement a : j.getAllLanguages()) {
+
+            Assert.assertTrue(a
+                    .getText()
+                    .toLowerCase()
+                    .substring(0, 1)
+                    .contains(expectedResult.toLowerCase()));
+        }
+    }
+
+    @Test
+    public void testHowManyLanguagesOnJPage(){
+        int expectedResult = 22;
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        JPage j = new JPage(getDriver());
+
+        Assert.assertEquals(j.getAllLanguages().size(), expectedResult);
+    }
+
+    @Test
+    public void testLinkInTableIsClickable(){
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickJSubmenu();
+
+        String url = getDriver().getCurrentUrl();
+
+        JPage j = new JPage(getDriver());
+
+        j.getAllLanguages().get(j.randomALinks() - 1).click();
+
+        Assert.assertNotEquals(getDriver().getCurrentUrl(), url);
     }
 }

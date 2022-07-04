@@ -2,6 +2,10 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.RPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class SvetlanaGTest extends BaseTest {
@@ -68,8 +72,8 @@ public class SvetlanaGTest extends BaseTest {
         abc.clickRSubmenu();
 
         RPage r = new RPage(getDriver());
-        String actualHeader = r.getH2HeaderText();
-        String actualText = r.getPTagText();
+        String actualHeader = r.getTitleH2Text();
+        String actualText = r.getP1TagText();
 
         Assert.assertEquals(actualHeader, expectedHeader);
         Assert.assertEquals(actualText, expectedText);

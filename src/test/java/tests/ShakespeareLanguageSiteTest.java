@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
-import pages.AbcPage;
-import pages.LanguageShakespearePage;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.languages.LanguageShakespearePage;
 import pages.MainPage;
-import pages.SPage;
+import pages.browse_languages.letters.SPage;
 import runner.BaseTest;
 
 @Ignore

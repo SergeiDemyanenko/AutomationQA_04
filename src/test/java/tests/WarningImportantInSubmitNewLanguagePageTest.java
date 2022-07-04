@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.SubmitNewLanguagePage;
+import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 public class WarningImportantInSubmitNewLanguagePageTest extends BaseTest {

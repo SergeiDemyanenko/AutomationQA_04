@@ -3,6 +3,13 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.RPage;
+import pages.search_languages.SearchPage;
+import pages.start.InfoPage;
+import pages.start.StartPage;
+import pages.start.TeamPage;
+import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 import java.util.ArrayList;
@@ -98,7 +105,7 @@ public class NadiaLidtTest extends BaseTest {
         main.clickBrowseLanguagesMenu();
         abc.clickRSubmenu();
 
-        for (WebElement tr : rPage.getTRTags()) {
+        for (WebElement tr : rPage.getAllTR()) {
             if (tr.getText().contains(languageExpected)) {
                 actualResult.add(tr.getText());
             }
@@ -158,5 +165,20 @@ public class NadiaLidtTest extends BaseTest {
         String actualResalt = infoPage.getH2HeaderText();
 
         Assert.assertEquals(actualResalt, expectedResult);
+    }
+
+    @Test
+    public void testVeryfiTextH2MainHeader() {
+        String expectedResult = "The Team";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+        startPage.clickTeamSubmenu();
+
+        TeamPage teamPage = new TeamPage(getDriver());
+        String actualResult = teamPage.getH2MainHeaderText();
+
+        Assert.assertEquals(expectedResult, actualResult);
     }
 }
