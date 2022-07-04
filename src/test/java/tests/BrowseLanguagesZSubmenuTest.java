@@ -9,7 +9,7 @@ import runner.BaseTest;
 
 public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
-    protected void clicOnZSubmenu() {
+    protected void clickOnZSubmenu() {
 
         getDriver().get("http://www.99-bottles-of-beer.net/");
 
@@ -26,7 +26,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final String expectedResult = "Category Z";
 
-        clicOnZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
         String actualResult = zSubmenu.getH2Text();
@@ -40,7 +40,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
         final String expectedResult =
         "All languages starting with the letter Z are shown, sorted by Language.";
 
-        clicOnZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
         String actualResult = zSubmenu.getPTagsText();
@@ -53,7 +53,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final String expectedResult = "Language Author Date Comments Rate";
 
-        clicOnZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getCategoryText();
@@ -84,7 +84,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final int expectedResultCount = 14;
 
-        clicOnZSubmenu();
+        clickOnZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getNamesText();
