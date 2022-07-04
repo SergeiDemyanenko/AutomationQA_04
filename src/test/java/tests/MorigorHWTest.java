@@ -8,7 +8,7 @@ import runner.BaseTest;
 
 import static java.lang.Integer.parseInt;
 
-public class MorigorHWTests extends BaseTest {
+public class MorigorHWTest extends BaseTest {
 
     private final String baseURL = "http://www.99-bottles-of-beer.net/";
     private final String browseLangURL = "https://www.99-bottles-of-beer.net/abc.html";
