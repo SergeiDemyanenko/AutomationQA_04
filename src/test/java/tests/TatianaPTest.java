@@ -31,6 +31,7 @@ public class TatianaPTest extends BaseTest {
     @Test
     public void testStartPageContainsHistoryMenu() {
         String expectedResult = "History";
+
         getDriver().get(BASE_URL);
 
         StartPage start = new StartPage(getDriver());
@@ -64,8 +65,9 @@ public class TatianaPTest extends BaseTest {
 
     @Test
     public void testVerifyNumberOfLanguagesForJavaSearch() {
-        getDriver().get(BASE_URL);
         int expectedResult = 14;
+
+        getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
         mainPage.clickSearchMenu();
@@ -106,9 +108,9 @@ public class TatianaPTest extends BaseTest {
 
     @Test
     public void testVerifyNoNewComments() {
-        getDriver().get(BASE_URL);
-
         String expectedResult = "";
+
+        getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
         mainPage.clickTopListMenu();
@@ -126,10 +128,10 @@ public class TatianaPTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         List<String> expectedResult = new ArrayList<>();
-        expectedResult.add("https://www.99-bottles-of-beer.net/team.html");
-        expectedResult.add("https://www.99-bottles-of-beer.net/lyrics.html");
-        expectedResult.add("https://www.99-bottles-of-beer.net/info.html");
-        expectedResult.add("https://www.99-bottles-of-beer.net/impressum.html");
+        expectedResult.add(BASE_URL + "team.html");
+        expectedResult.add(BASE_URL + "lyrics.html");
+        expectedResult.add(BASE_URL + "info.html");
+        expectedResult.add(BASE_URL + "impressum.html");
 
         StartPage startPage = new StartPage(getDriver());
         List<String> actualResult = new ArrayList<>();
@@ -147,9 +149,9 @@ public class TatianaPTest extends BaseTest {
 
     @Test
     public void testNewCommentsPageVerifyHeaderH2() {
-        getDriver().get(BASE_URL);
-
         String expectedResult = "New Comments";
+
+        getDriver().get(BASE_URL);
 
         MainPage mainPage = new MainPage(getDriver());
         mainPage.clickTopListMenu();
