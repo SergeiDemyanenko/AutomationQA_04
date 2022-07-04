@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.MainPage;
 import runner.BaseTest;
 
-public class СompareRealLinksSearchLanguages extends BaseTest {
+public class СompareRealLinksSearchLanguagesTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
