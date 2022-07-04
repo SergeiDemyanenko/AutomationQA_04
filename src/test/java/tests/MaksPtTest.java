@@ -1,5 +1,7 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -9,6 +11,8 @@ import pages.browse_languages.letters.MPage;
 import pages.guestbook.GuestbookV2Page;
 import pages.guestbook.SignV2Page;
 import runner.BaseTest;
+
+import java.util.List;
 
 public class MaksPtTest extends BaseTest {
 
@@ -121,5 +125,37 @@ public class MaksPtTest extends BaseTest {
         signV2Page.clickButtonSubmit();
 
         Assert.assertEquals(signV2Page.getErrorMessageAttributeStyle(), expectedTextErrorStyle);
+    }
+
+    public final By ALL_H2_LETTERS = By.xpath("//div[@id='main']/h2");
+    public final By ALL_TEXT_LETTERS = By.xpath("//div[@id='main']/p[text()]");
+    public final String EXPECTED_H2 = "Category ";
+    public final String expectedText(String letter) {
+
+        return "All languages starting with the letter ".concat(letter).concat(" are shown, sorted by Language.");
+    }
+
+    @Test
+    public void testH2AndTextAllLanguages() {
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        List<WebElement> list = abcPage.getAllSubmenu();
+        for (WebElement letters : list) {
+            String expectedH2 = EXPECTED_H2.concat(letters.getText());
+            String expectedText = expectedText(letters.getText());
+
+            letters.click();
+            String actualH2 = getDriver().findElement(ALL_H2_LETTERS).getText();
+            String actualText = getDriver().findElement(ALL_TEXT_LETTERS).getText();
+
+            Assert.assertEquals(actualH2, expectedH2);
+            Assert.assertEquals(actualText, expectedText);
+
+            getDriver().navigate().back();
+        }
     }
 }
