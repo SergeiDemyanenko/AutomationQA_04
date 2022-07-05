@@ -39,7 +39,7 @@ public class ShakespeareLanguageSiteTest extends BaseTest {
 
         SPage clickShakespeareLanguage = new SPage(getDriver());
 
-        clickShakespeareLanguage.getShakespeareLanguageClick();
+        clickShakespeareLanguage.clickShakespeareLanguage();
 
         LanguageShakespearePage clickShakespeareLanguageSiteLink = new LanguageShakespearePage(getDriver());
 

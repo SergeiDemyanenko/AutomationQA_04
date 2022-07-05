@@ -11,19 +11,21 @@ public class SPage {
     private final By SHAKESPEARE_LANGUAGE = By.xpath("//a[@href='language-shakespeare-664.html']");
 
     public SPage(WebDriver existingDriver) {
+
         this.driver = existingDriver;
     }
 
     protected WebDriver getDriver() {
+
         return driver;
     }
 
     public WebElement getShakespeareLanguage() {
+
         return getDriver().findElement(SHAKESPEARE_LANGUAGE);
     }
 
-    public void getShakespeareLanguageClick() {
+    public void clickShakespeareLanguage() {
         getShakespeareLanguage().click();
     }
-
 }
