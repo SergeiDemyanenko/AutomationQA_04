@@ -163,4 +163,19 @@ public class TatianaPTest extends BaseTest {
 
         Assert.assertEquals(newCommentsPage.getTextH2Main(), expectedResult);
     }
+
+    @Test
+    public void testSubmitSearchIsClickable(){
+       String expectedResult = BASE_URL + "search.html";
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickSearchMenu();
+
+        SearchPage searchPage = new SearchPage(getDriver());
+        searchPage.clickSubmitSearch();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(),expectedResult);
+    }
 }
