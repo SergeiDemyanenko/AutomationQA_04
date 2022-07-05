@@ -26,7 +26,7 @@ public class CountCommentOfLanguageShakespeareTest extends BaseTest {
         abcPage.clickSSubmenu();
 
         SPage sPage = new SPage(getDriver());
-        sPage.getShakespeareLanguageClick();
+        sPage.clickShakespeareLanguage();
 
         String[] result = new String[7];
         int countComment = 0;

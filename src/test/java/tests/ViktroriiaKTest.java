@@ -15,7 +15,7 @@ public class ViktroriiaKTest extends BaseTest {
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
     @Test
-    public void CheckStartMenuHeader2() {
+    public void testCheckStartMenuHeader2() {
 
         String expectedResult = "Welcome to 99 Bottles of Beer";
 
@@ -26,7 +26,7 @@ public class ViktroriiaKTest extends BaseTest {
     }
 
     @Test
-    public void checkTopListMenuTopHits() {
+    public void testCheckTopListMenuTopHits() {
 
         String expectedResult = "Top Hits";
 
@@ -45,7 +45,7 @@ public class ViktroriiaKTest extends BaseTest {
     }
 
     @Test
-    public void menuStartMenuHistory() {
+    public void testMenuStartMenuHistory() {
 
         String expectedResult = "https://www.99-bottles-of-beer.net/images/history1_full.png";
 
@@ -62,7 +62,7 @@ public class ViktroriiaKTest extends BaseTest {
     }
 
     @Test
-    public void clickUPage() {
+    public void testSubMenuCategoryU() {
 
         getDriver().get(BASE_URL);
 
@@ -78,7 +78,7 @@ public class ViktroriiaKTest extends BaseTest {
     }
 
     @Test
-    public void countLanguagesU() {
+    public void testCountLanguagesU() {
 
         int expectedResult = 25;
         getDriver().get(BASE_URL);

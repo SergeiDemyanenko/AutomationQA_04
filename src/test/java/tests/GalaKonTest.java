@@ -12,7 +12,7 @@ import pages.start.StartPage;
 import pages.start.TeamPage;
 import runner.BaseTest;
 
-public class GalaKonTests extends BaseTest {
+public class GalaKonTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
@@ -57,7 +57,7 @@ public class GalaKonTests extends BaseTest {
     }
 
     @Test
-    public void test() {
+    public void verifyBrowseLanguagesSubmenuText() {
 
         String expectedResult = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

@@ -15,6 +15,7 @@ public class TeamPage {
     private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
     private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
     private final By H2_MAIN_HEADER = By.xpath("//div[@id='main']/h2");
+    private final By OLIVER_SCHADE_LINK = By.xpath("//div[@id='main']//p/a[@href='Index of /']");
 
     public TeamPage(WebDriver existingDriver) {
 
@@ -59,5 +60,15 @@ public class TeamPage {
     public String getH2MainHeaderText() {
 
         return getH2MainHeader().getText();
+    }
+
+    public WebElement getOliverSchadeLink() {
+
+        return getDriver().findElement(OLIVER_SCHADE_LINK);
+    }
+
+    public void clickOliverSchadeLink(){
+
+        getOliverSchadeLink().click();
     }
 }

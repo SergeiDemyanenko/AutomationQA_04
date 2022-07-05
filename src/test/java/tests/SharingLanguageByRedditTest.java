@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class SharingLanguageByReddit extends BaseTest {
+public class SharingLanguageByRedditTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/abc.html";
 
