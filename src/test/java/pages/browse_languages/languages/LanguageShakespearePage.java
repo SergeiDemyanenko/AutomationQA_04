@@ -16,14 +16,16 @@ public class LanguageShakespearePage {
     }
 
     protected WebDriver getDriver() {
+
         return driver;
     }
 
     public WebElement getShakespeareLanguageSite() {
+
         return getDriver().findElement(LINK_SHAKESPEARE_LANGUAGE_SITE);
     }
 
-    public void getShakespeareLanguageSiteClick() {
+    public void clickShakespeareLanguageSite() {
         getShakespeareLanguageSite().click();
     }
 }
