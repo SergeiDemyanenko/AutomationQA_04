@@ -87,6 +87,14 @@ public class SignV2Page {
         return getDriver().findElement(INPUT_NAME);
     }
 
+    public WebElement getSetInputName() {
+
+        return getDriver().findElement(INPUT_NAME);
+    }
+    public void getInputNameSendKey(String name) {
+        getSetInputName().sendKeys(name);
+    }
+
     public void inputName(String name) {
         inputText(getInputName(), name);
     }
@@ -99,6 +107,13 @@ public class SignV2Page {
     public void inputLocation(String location) {
         inputText(getInputLocation(), location);
     }
+    public WebElement getSetInputLocation(){
+
+        return getDriver().findElement(INPUT_LOCATION);
+    }
+    public void getInputLocationSendKey (String location){
+        getInputLocation().sendKeys(location);
+    }
 
     public WebElement getInputEmail() {
 
@@ -109,8 +124,28 @@ public class SignV2Page {
         inputText(getInputEmail(), email);
     }
 
+    public WebElement getSetInputEmail(){
+
+        return getDriver().findElement(INPUT_EMAIL);
+    }
+
+    public void getInputEmailSendKey(String email){
+        getSetInputEmail().sendKeys(email);
+    }
+
+
+
     public void inputHomepage(String homepage) {
         inputText(getInputHomepage(), homepage);
+    }
+
+    public WebElement getSetInputHomepage(){
+
+        return getDriver().findElement(INPUT_HOMEPAGE);
+    }
+
+    public void getInputHomepageSendkeys(String homepage){
+        getSetInputHomepage().sendKeys(homepage);
     }
 
     public WebElement getInputCaptcha() {
@@ -122,6 +157,15 @@ public class SignV2Page {
         inputText(getInputCaptcha(), Integer.toString(randomThreeNumbers()));
     }
 
+    public WebElement getSetInputCapcha(){
+
+        return getDriver().findElement(INPUT_CAPTCHA);
+    }
+
+    public void getInputCapchaSendkeys(String capcha){
+        getSetInputCapcha().sendKeys(capcha);
+    }
+
     public WebElement getInputComment() {
 
         return getDriver().findElement(INPUT_COMMENT);
@@ -129,6 +173,15 @@ public class SignV2Page {
 
     public void inputComment(String comment) {
         inputText(getInputComment(), comment);
+    }
+
+    public WebElement getSetInputComment(){
+
+        return getDriver().findElement(INPUT_EMAIL);
+    }
+
+    public void getInputCommentSendkeys(String comment){
+        getSetInputComment().sendKeys(comment);
     }
 
     public String getErrorMessageTagFont() {

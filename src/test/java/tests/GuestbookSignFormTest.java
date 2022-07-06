@@ -11,7 +11,16 @@ public class GuestbookSignFormTest extends BaseTest {
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
+
     public void TestGuestbookSignFormFields() {
+        final String name = "QA Tests";
+        final String location = "AnyWhere in World";
+        final String email = "test@qa.com";
+        final String homepage = "QAForEveryOne.com";
+        final String capcha = "some symbols";
+        final String comment = "Test passed if you get an error";
+
+
         getDriver().get(BASE_URL);
 
         MainPage mp = new MainPage(getDriver());
@@ -22,29 +31,20 @@ public class GuestbookSignFormTest extends BaseTest {
 
         gb.clickSignV2();
 
-        SignV2Page inputField = new SignV2Page(getDriver());
-        inputField.getInputName().sendKeys("QA Tests");
+        SignV2Page sv2 = new SignV2Page(getDriver());
 
-        SignV2Page location = new SignV2Page(getDriver());
-        location.getInputLocation().sendKeys("AnyWhere in World");
-
-        SignV2Page eMail = new SignV2Page(getDriver());
-        eMail.getInputEmail().sendKeys("test@qa.com");
-
-        SignV2Page homepage = new SignV2Page(getDriver());
-        homepage.getInputHomepage().sendKeys("QAForEveryOne.com");
-
-        SignV2Page securityCode = new SignV2Page(getDriver());
-        securityCode.getInputCaptcha().sendKeys("ffddd");
-
-        SignV2Page comment = new SignV2Page(getDriver());
-        comment.getInputComment().sendKeys("Test passed if you get an error");
-
-        SignV2Page submitButton = new SignV2Page(getDriver());
-        submitButton.getButtonSubmit();
-        submitButton.clickButtonSubmit();
+        sv2.getInputNameSendKey(name);
+        sv2.getInputLocationSendKey(location);
+        sv2.getInputEmailSendKey(email);
+        sv2.getInputHomepageSendkeys(homepage);
+        sv2.getInputCapchaSendkeys(capcha);
+        sv2.getInputCommentSendkeys(comment);
+        sv2.getButtonSubmit();
+        sv2.clickButtonSubmit();
 
         SignV2Page errorMessage = new SignV2Page(getDriver());
         errorMessage.getErrorMessage().isDisplayed();
+
+        Assert.assertEquals(errorMessage.getErrorMessage().getText(), "Error: Please enter at least a message, your email address and the security code.");
     }
 }
