@@ -87,9 +87,12 @@ public class SignV2Page {
         return getDriver().findElement(INPUT_NAME);
     }
 
-    public void setInputName(String name) {
-        getInputName().click();
-        getInputName().sendKeys(name);
+    public WebElement getSetInputName() {
+
+        return getDriver().findElement(INPUT_NAME);
+    }
+    public void getInputNameSendKey(String name) {
+        getSetInputName().sendKeys(name);
     }
 
     public void inputName(String name) {
@@ -104,8 +107,11 @@ public class SignV2Page {
     public void inputLocation(String location) {
         inputText(getInputLocation(), location);
     }
-    public void setInputLocation (String location){
-        getInputLocation().click();
+    public WebElement getSetInputLocation(){
+
+        return getDriver().findElement(INPUT_LOCATION);
+    }
+    public void getInputLocationSendKey (String location){
         getInputLocation().sendKeys(location);
     }
 
@@ -118,18 +124,28 @@ public class SignV2Page {
         inputText(getInputEmail(), email);
     }
 
-    public void setInputEmail(String email){
-        getInputEmail().click();
-        getInputEmail().sendKeys(email);
+    public WebElement getSetInputEmail(){
+
+        return getDriver().findElement(INPUT_EMAIL);
     }
+
+    public void getInputEmailSendKey(String email){
+        getSetInputEmail().sendKeys(email);
+    }
+
+
 
     public void inputHomepage(String homepage) {
         inputText(getInputHomepage(), homepage);
     }
 
-    public void setInputHomepage(String homepage){
-        getInputHomepage().click();
-        getInputHomepage().sendKeys(homepage);
+    public WebElement getSetInputHomepage(){
+
+        return getDriver().findElement(INPUT_HOMEPAGE);
+    }
+
+    public void getInputHomepageSendkeys(String homepage){
+        getSetInputHomepage().sendKeys(homepage);
     }
 
     public WebElement getInputCaptcha() {
@@ -141,9 +157,13 @@ public class SignV2Page {
         inputText(getInputCaptcha(), Integer.toString(randomThreeNumbers()));
     }
 
-    public void setInputCaptcha(String captcha){
-        getInputCaptcha().click();
-        getInputCaptcha().sendKeys(captcha);
+    public WebElement getSetInputCapcha(){
+
+        return getDriver().findElement(INPUT_CAPTCHA);
+    }
+
+    public void getInputCapchaSendkeys(String capcha){
+        getSetInputCapcha().sendKeys(capcha);
     }
 
     public WebElement getInputComment() {
@@ -155,9 +175,13 @@ public class SignV2Page {
         inputText(getInputComment(), comment);
     }
 
-    public void setInputComment(String comment) {
-        getInputComment().click();
-        getInputComment().sendKeys(comment);
+    public WebElement getSetInputComment(){
+
+        return getDriver().findElement(INPUT_EMAIL);
+    }
+
+    public void getInputCommentSendkeys(String comment){
+        getSetInputComment().sendKeys(comment);
     }
 
     public String getErrorMessageTagFont() {
