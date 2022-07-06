@@ -129,9 +129,19 @@ public class JPage {
         return getDriver().findElements(ALL_A_LINKS);
     }
 
-    public int randomALinks() {
+    public int randomLanguage() {
 
         return (int) (Math.random() * getAllLanguages().size()) + 1;
+    }
+
+    public int randomIndex(){
+
+        return randomLanguage() - 1;
+    }
+
+    public WebElement getRandomTr(){
+
+       return getTrTags().get(randomIndex());
     }
 
     public List<WebElement> getTrTags() {

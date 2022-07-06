@@ -102,7 +102,7 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         abc.clickJSubmenu();
 
         String url = getDriver().getCurrentUrl();
-        j.getAllLanguages().get(j.randomALinks() - 1).click();
+        j.getAllLanguages().get(j.randomLanguage() - 1).click();
 
 
         Assert.assertNotEquals(getDriver().getCurrentUrl(), url);
@@ -121,5 +121,21 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         abc.clickJSubmenu();
 
         Assert.assertEquals(j.getTrText(languageName), j.getExpectedResult(languageName));
+    }
+
+    @Test
+    public void testVerifyRandomTrIsDisplayedIsEnabledNotEmpty(){
+
+        MainPage main = new MainPage(getDriver());
+        AbcPage abc = new AbcPage(getDriver());
+        JPage j = new JPage(getDriver());
+
+        getDriver().get(BASE_URL);
+        main.clickBrowseLanguagesMenu();
+        abc.clickJSubmenu();
+
+        Assert.assertTrue(j.getRandomTr().isDisplayed());
+        Assert.assertTrue(j.getRandomTr().isEnabled());
+        Assert.assertFalse(j.getRandomTr().getText().isEmpty());
     }
 }
