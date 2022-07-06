@@ -28,6 +28,7 @@ public class AbcPage {
     private final By D_SUBMENU = By.xpath("//a[@href='d.html']");
     private final By I_SUBMENU = By.xpath("//a[@href='i.html']");
     private final By Y_SUBMENU = By.xpath("//a[@href='y.html']");
+    private final By X_SUBMENU = By.xpath("//a[@href='x.html']");
 
     public AbcPage(WebDriver existingDriver) {
 
@@ -224,5 +225,15 @@ public class AbcPage {
     public void clickYSubmenu() {
 
         getYSubmenu().click();
+    }
+
+    public WebElement getXSubmenu() {
+
+        return getDriver().findElement(X_SUBMENU);
+    }
+
+    public void clickXSubmenu() {
+
+        getXSubmenu().click();
     }
 }
