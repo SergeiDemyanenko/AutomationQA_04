@@ -102,8 +102,8 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         abc.clickJSubmenu();
 
         String url = getDriver().getCurrentUrl();
-
         j.getAllLanguages().get(j.randomALinks() - 1).click();
+
 
         Assert.assertNotEquals(getDriver().getCurrentUrl(), url);
     }
