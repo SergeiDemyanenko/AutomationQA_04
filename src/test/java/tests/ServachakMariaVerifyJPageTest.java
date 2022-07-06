@@ -25,15 +25,13 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         expectedResults.add("All languages starting with the " +
                 "letter J are shown, sorted by Language.");
 
-        getDriver().get(BASE_URL);
-
         MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
         AbcPage abc = new AbcPage(getDriver());
-        abc.clickJSubmenu();
-
         JPage j = new JPage(getDriver());
+
+        getDriver().get(BASE_URL);
+        main.clickBrowseLanguagesMenu();
+        abc.clickJSubmenu();
 
         List<String> actualResults = List.of(j.getH2HeaderText(), j.getPTagText());
 
@@ -45,15 +43,13 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
 
         String expectedResult = "Language Author Date Comments Rate";
 
-        getDriver().get(BASE_URL);
-
         MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
         AbcPage abc = new AbcPage(getDriver());
-        abc.clickJSubmenu();
-
         JPage j = new JPage(getDriver());
+
+        getDriver().get(BASE_URL);
+        main.clickBrowseLanguagesMenu();
+        abc.clickJSubmenu();
 
         Assert.assertEquals(j.getTextThTags().trim(), expectedResult);
     }
@@ -62,15 +58,13 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
     public void testAreAllLanguagesOnJPageStartWithTheLetterJ() {
         String expectedResult = "j";
 
-        getDriver().get(BASE_URL);
-
         MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
         AbcPage abc = new AbcPage(getDriver());
-        abc.clickJSubmenu();
-
         JPage j = new JPage(getDriver());
+
+        getDriver().get(BASE_URL);
+        main.clickBrowseLanguagesMenu();
+        abc.clickJSubmenu();
 
         for (WebElement a : j.getAllLanguages()) {
 
@@ -86,15 +80,13 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
     public void testHowManyLanguagesOnJPage(){
         int expectedResult = 22;
 
-        getDriver().get(BASE_URL);
-
         MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
         AbcPage abc = new AbcPage(getDriver());
-        abc.clickJSubmenu();
-
         JPage j = new JPage(getDriver());
+
+        getDriver().get(BASE_URL);
+        main.clickBrowseLanguagesMenu();
+        abc.clickJSubmenu();
 
         Assert.assertEquals(j.getAllLanguages().size(), expectedResult);
     }
@@ -102,17 +94,15 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
     @Test
     public void testLinkInTableIsClickable(){
 
-        getDriver().get(BASE_URL);
-
         MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
         AbcPage abc = new AbcPage(getDriver());
+        JPage j = new JPage(getDriver());
+
+        getDriver().get(BASE_URL);
+        main.clickBrowseLanguagesMenu();
         abc.clickJSubmenu();
 
         String url = getDriver().getCurrentUrl();
-
-        JPage j = new JPage(getDriver());
 
         j.getAllLanguages().get(j.randomALinks() - 1).click();
 
