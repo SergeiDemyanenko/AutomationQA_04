@@ -244,5 +244,6 @@ public class SignV2Page {
     public WebElement getImgCaptcha() {
 
         return getDriver().findElement(IMG_CAPTCHA_PHP);
+
     }
 }
