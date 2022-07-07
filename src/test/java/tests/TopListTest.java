@@ -95,4 +95,24 @@ public class TopListTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
+    @Test
+    public void testGoToTheNewLanguagesThisMonth() {
+        String expectedResult = "New Languages this month";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickMenuNewLanguagesThisMonth();
+
+        TopListNewLanguagesThisMonthPage topListNewLanguagesThisMonthPage =
+                new TopListNewLanguagesThisMonthPage(getDriver());
+        String actualResult = topListNewLanguagesThisMonthPage.getH2TableNewLanguagesName();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
 }
