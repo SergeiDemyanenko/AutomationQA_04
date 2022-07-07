@@ -1,8 +1,12 @@
 package pages.submit_new_language;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SubmitNewLanguagePage {
 
@@ -22,6 +26,8 @@ public class SubmitNewLanguagePage {
     private final By ERROR_MESSAGE_INVALID_SEC_COD = By.xpath("//div[@id='main']/p");
     private final By IMG_CAPTCHA = By.xpath("//input[@name='captcha']/following-sibling::img");
     private final By TEXT_H3 = By.xpath("//div[@id='main']/h3");
+    private final By CATEGORY_LIST = By.xpath("//select[@name='category']/option");
+
 
     public SubmitNewLanguagePage(WebDriver existingDriver) {
 
@@ -129,14 +135,33 @@ public class SubmitNewLanguagePage {
 
         return c.replace("https://www.99-bottles-of-beer.net", "");
     }
-    
+
     public WebElement getTitleH3() {
 
         return getDriver().findElement(TEXT_H3);
     }
-    
+
     public String getTitleH3Text() {
 
         return getTitleH3().getText();
     }
+
+    public  List <String> getCategoryText() {
+
+        List<WebElement> category_list = getDriver().findElements(CATEGORY_LIST);
+        List<String> text = new ArrayList<>();
+        for (WebElement dropDown : category_list) {
+            text.add(dropDown.getText());
+        }
+
+        return text;
+    }
+
+    public static String getRandomStr(int length) {
+
+        return RandomStringUtils.random(length,
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+    }
+
+
 }
