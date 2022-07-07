@@ -2,6 +2,8 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.YPage;
 import pages.guestbook.GuestbookV2Page;
 import pages.MainPage;
 import pages.guestbook.SignV2Page;
@@ -12,6 +14,7 @@ public class MorigorProjectAllTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     private static final String GUESTBOOK_URL = "https://www.99-bottles-of-beer.net/guestbookv2.html";
+    private static final String BROWSE_LANGUAGES_URL = "https://www.99-bottles-of-beer.net/abc.html";
 
     @Test
     public void testVerifyTextOnMainPage() {
@@ -65,5 +68,20 @@ public class MorigorProjectAllTest extends BaseTest {
         SubmitNewLanguagePage submit = new SubmitNewLanguagePage(getDriver());
 
         Assert.assertEquals(submit.getTitleH2Text(), expectedResult);
+    }
+
+    @Test
+    public void testVerifyNumberOfYLanguages () {
+        int expectedresult = 9;
+
+        getDriver().get(BROWSE_LANGUAGES_URL);
+
+        AbcPage abcPage = new AbcPage(getDriver());
+
+        abcPage.clickYSubmenu();
+
+        YPage yPage = new YPage(getDriver());
+
+        Assert.assertEquals(yPage.getNumberOfLanguages(), expectedresult);
     }
 }

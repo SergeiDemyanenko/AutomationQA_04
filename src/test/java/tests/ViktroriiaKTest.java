@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -9,6 +10,9 @@ import pages.browse_languages.letters.UPage;
 import pages.start.StartPage;
 import pages.top_lists.TopListPage;
 import runner.BaseTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ViktroriiaKTest extends BaseTest {
 
@@ -126,6 +130,34 @@ public class ViktroriiaKTest extends BaseTest {
 
         UPage description = new UPage(getDriver());
         String actualResult = description.getPTagText();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testIsTableHeader() {
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("Language");
+        expectedResult.add("Author");
+        expectedResult.add("Date");
+        expectedResult.add("Comments");
+        expectedResult.add("Rate");
+
+        getDriver().get(BASE_URL);
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickUSubmenu();
+
+        List<WebElement> tableHeader = getDriver().findElements(By.xpath("//tbody/tr[1]/th"));
+
+        List<String> actualResult = new ArrayList<>();
+
+        for (WebElement name : tableHeader) {
+            actualResult.add(name.getText());
+        }
 
         Assert.assertEquals(actualResult, expectedResult);
     }

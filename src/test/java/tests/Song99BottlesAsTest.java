@@ -1,8 +1,6 @@
 package tests;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.guestbook.GuestbookV2Page;
@@ -10,15 +8,18 @@ import pages.MainPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static pages.submit_new_language.SubmitNewLanguagePage.getRandomStr;
 
 public class Song99BottlesAsTest extends BaseTest {
 
     private static final String URL = "http://www.99-bottles-of-beer.net/lyrics.html";
 
     @Test
-    public void testiIncludesNewLanguageCategoryTest() {
+    public void testIncludesNewLanguageCategory(){
 
         List<String> expectedResult = new ArrayList<>();
         expectedResult.add("real language");
@@ -27,21 +28,10 @@ public class Song99BottlesAsTest extends BaseTest {
 
         getDriver().get(URL);
         MainPage main = new MainPage(getDriver());
-        main.getSubmitNewLanguageMenu().click();
+        main.clickSubmitNewLanguageMenu();
         SubmitNewLanguagePage category = new SubmitNewLanguagePage(getDriver());
         category.clickCategoryName();
-        List<WebElement> name = getDriver().findElements(By.xpath("//select[@name='category']/option"));
-        List<String> actuallyResult = new ArrayList<>();
-        for (WebElement dropDown : name) {
-            actuallyResult.add(dropDown.getText());
-        }
-        System.out.println(actuallyResult);
-        Assert.assertEquals(actuallyResult,expectedResult);
-    }
-
-    public static String getRandomStr(int length) {
-        return RandomStringUtils.random(length,
-                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+        Assert.assertEquals(category.getCategoryText(),expectedResult);
     }
 
     @Test
@@ -51,10 +41,10 @@ public class Song99BottlesAsTest extends BaseTest {
 
         getDriver().get(URL);
         MainPage main = new MainPage(getDriver());
-        main.getSubmitNewLanguageMenu().click();
+        main.clickSubmitNewLanguageMenu();
 
         SubmitNewLanguagePage newLanguagePage = new SubmitNewLanguagePage(getDriver());
-        newLanguagePage.getLanguageName().sendKeys(getRandomStr(5));
+        newLanguagePage.getLanguageName().sendKeys(getRandomStr(4));
         newLanguagePage.getAuthorName().sendKeys(getRandomStr(7));
         newLanguagePage.getEmailName().sendKeys(getRandomStr(7));
         newLanguagePage.getCategoryName().click();
@@ -77,7 +67,7 @@ public class Song99BottlesAsTest extends BaseTest {
 
         getDriver().get(URL);
         MainPage main = new MainPage(getDriver());
-        main.getSubmitNewLanguageMenu().click();
+        main.clickSubmitNewLanguageMenu();
         main.clickGuestbookV2Menu();
         GuestbookV2Page text = new GuestbookV2Page(getDriver());
         String actuallyResNum = text.getPage2Text();

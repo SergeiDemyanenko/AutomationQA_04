@@ -3,8 +3,10 @@ package pages.start;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TeamPage {
@@ -16,6 +18,7 @@ public class TeamPage {
     private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
     private final By H2_MAIN_HEADER = By.xpath("//div[@id='main']/h2");
     private final By OLIVER_SCHADE_LINK = By.xpath("//div[@id='main']//p/a[@href='Index of /']");
+    private final By ALL_TEAM_LINKS = By.xpath("//div[@id='main']/p/a");
 
     public TeamPage(WebDriver existingDriver) {
 
@@ -70,5 +73,14 @@ public class TeamPage {
     public void clickOliverSchadeLink(){
 
         getOliverSchadeLink().click();
+    }
+
+    public List<String> getAllLinks() {
+        List<String> actualResult = new ArrayList<>();
+        for(WebElement br: getDriver().findElements(ALL_TEAM_LINKS)) {
+            actualResult.add(br.getText());
+        }
+
+        return actualResult;
     }
 }
