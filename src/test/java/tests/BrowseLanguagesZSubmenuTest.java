@@ -1,15 +1,17 @@
 package tests;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.AbcPage;
 import pages.MainPage;
+import pages.browse_languages.languages.LanguagesBeginWithZ;
 import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
 public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
-    protected void clickOnZSubmenu() {
+    protected void clickZSubmenu() {
 
         getDriver().get("http://www.99-bottles-of-beer.net/");
 
@@ -26,7 +28,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final String expectedResult = "Category Z";
 
-        clickOnZSubmenu();
+        clickZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
         String actualResult = zSubmenu.getH2Text();
@@ -40,7 +42,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
         final String expectedResult =
         "All languages starting with the letter Z are shown, sorted by Language.";
 
-        clickOnZSubmenu();
+        clickZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
         String actualResult = zSubmenu.getPTagsText();
@@ -53,7 +55,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final String expectedResult = "Language Author Date Comments Rate";
 
-        clickOnZSubmenu();
+        clickZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getCategoryText();
@@ -84,13 +86,33 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         final int expectedResultCount = 14;
 
-        clickOnZSubmenu();
+        clickZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getNamesText();
         int actualResultCount = zSubmenuHeaders.getNamesOfLanguageZ().size();
 
         Assert.assertEquals(actualResultCount, expectedResultCount);
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCheckingRandomLanguage() {
+
+        ZPage languageZ = new ZPage(getDriver());
+        LanguagesBeginWithZ h2Header = new LanguagesBeginWithZ(getDriver());
+
+        clickZSubmenu();
+
+        WebElement identicalRandomNameOfZ = languageZ.getRandomNameOfZ();
+
+        final String expectedResult = "Language "
+                .concat(identicalRandomNameOfZ.getText());
+
+        identicalRandomNameOfZ.click();
+
+        String actualResult = h2Header.getH2Text();
+
         Assert.assertEquals(actualResult, expectedResult);
     }
 }

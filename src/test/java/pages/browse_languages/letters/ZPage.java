@@ -84,4 +84,13 @@ public class ZPage {
 
         return result.toString();
     }
+
+    public WebElement getRandomNameOfZ() {
+        int index =
+                (int) (Math.random() * (getNamesOfLanguageZ().size() - 1)) + 1;
+
+        return getDriver()
+                .findElement(By.xpath(
+                        "//table[@id='category']/tbody/tr[@onmouseover][" + index + "]/td/a"));
+    }
 }
