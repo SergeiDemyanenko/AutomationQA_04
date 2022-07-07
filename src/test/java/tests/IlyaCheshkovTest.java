@@ -45,5 +45,7 @@ public class IlyaCheshkovTest extends BaseTest {
         List<WebElement> allTRs = i.getTrTags();
 
         int actualResult = allTRs.size();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
