@@ -2,6 +2,9 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class IPage {
 
@@ -13,6 +16,8 @@ public class IPage {
 
     private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
 
+    private final By TR_TAGS = By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover]");
+
     public IPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -21,5 +26,9 @@ public class IPage {
     protected WebDriver getDriver() {
 
         return driver;
+    }
+
+    public List<WebElement> getTrTags() {
+        return getDriver().findElements(TR_TAGS);
     }
 }
