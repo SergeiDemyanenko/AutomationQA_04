@@ -48,4 +48,25 @@ public class IlyaCheshkovTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testCheckAllTableLinksClickable() {
+
+        MainPage main = new MainPage(getDriver());
+        AbcPage abc = new AbcPage(getDriver());
+        IPage i = new IPage(getDriver());
+
+        getDriver().get(URL);
+        main.clickBrowseLanguagesMenu();
+        abc.clickISubmenu();
+
+        List<WebElement> allTableLinks = i.getLanguageLink();
+
+        List<String> expectedResult = new ArrayList<>();
+        List<String> actualResult = new ArrayList<>();
+
+        Assert.assertEquals
+                (i.getActualResult(allTableLinks, actualResult),
+                        i.getExpectedResult("href", expectedResult));
+    }
 }

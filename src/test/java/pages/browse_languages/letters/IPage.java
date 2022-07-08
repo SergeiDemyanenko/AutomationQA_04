@@ -18,6 +18,8 @@ public class IPage {
 
     private final By TR_TAGS = By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover]");
 
+    private final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a[@href]");
+
     public IPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -30,5 +32,36 @@ public class IPage {
 
     public List<WebElement> getTrTags() {
         return getDriver().findElements(TR_TAGS);
+    }
+
+    public String getCurrentUrl(){
+
+        return getDriver().getCurrentUrl();
+    }
+
+    public List<WebElement> getLanguageLink() {
+
+        return getDriver().findElements(TD_LINKS);
+    }
+
+    public List<String> getActualResult(List<WebElement> allTableLinks, List<String> actualResult) {
+        for (int j = 1; j <= 2; j++) {
+            getDriver().findElement(
+                    By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]"))
+                    .click();
+            actualResult.add(getDriver().getCurrentUrl());
+            getDriver().navigate().back();
+        }
+        return actualResult;
+    }
+
+    public List<String> getExpectedResult(String attribute, List<String> expectedResult) {
+
+        for (int j = 1; j <= 2; j ++) {
+            expectedResult.add(getDriver().findElement(
+                    By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]"))
+                    .getAttribute("href"));
+        }
+        return expectedResult;
     }
 }
