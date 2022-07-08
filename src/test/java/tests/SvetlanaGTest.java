@@ -8,6 +8,9 @@ import pages.start.InfoPage;
 import pages.start.StartPage;
 import runner.BaseTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SvetlanaGTest extends BaseTest {
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
@@ -77,5 +80,29 @@ public class SvetlanaGTest extends BaseTest {
 
         Assert.assertEquals(actualHeader, expectedHeader);
         Assert.assertEquals(actualText, expectedText);
+    }
+
+    @Test
+    public void testPageRVerifyTableHeaders() {
+
+       final List<String> expectedResult = new ArrayList<>();
+
+        expectedResult.add("Language");
+        expectedResult.add("Author");
+        expectedResult.add("Date");
+        expectedResult.add("Comments");
+        expectedResult.add("Rate");
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickBrowseLanguagesMenu();
+
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickRSubmenu();
+
+        RPage r = new RPage(getDriver());
+
+        Assert.assertEquals(r.getThTagsText(), expectedResult);
     }
 }
