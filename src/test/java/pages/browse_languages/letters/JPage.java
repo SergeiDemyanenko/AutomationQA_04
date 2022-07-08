@@ -83,14 +83,13 @@ public class JPage {
         getLinkLanguageJava3().click();
     }
 
-    public String getLanguageJavascript1948() {
+    protected String getLanguageJavascript1948() {
 
         for (String language : getAllALinks()) {
 
-            if (
-                    getAllALinks().size() != 0
-                            && language.equals("JavaScript")
-            ) {
+            if (getAllALinks().size() != 0
+                && language.equals("JavaScript")) {
+
                 return language;
             }
         }
@@ -102,10 +101,10 @@ public class JPage {
 
         getDriver().findElement(
                         By.linkText(
-                                getLanguageJavascript1948()
+                        getLanguageJavascript1948()
                         )
-                )
-                .click();
+                        )
+                        .click();
     }
 
     public List<WebElement> getThTags() {
