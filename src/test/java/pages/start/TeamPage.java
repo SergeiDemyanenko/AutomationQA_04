@@ -17,8 +17,9 @@ public class TeamPage {
     private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
     private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
     private final By H2_MAIN_HEADER = By.xpath("//div[@id='main']/h2");
-    private final By OLIVER_SCHADE_LINK = By.xpath("//div[@id='main']//p/a[@href='Index of /']");
+    private final By OLIVER_SCHADE_LINK = By.xpath("//a[@href='http://www.ls-la.net/']");
     private final By ALL_TEAM_LINKS = By.xpath("//div[@id='main']/p/a");
+    private final By GREGOR_SCHEITHAUER_LINK = By.xpath("//a[@href='http://www.e-taste.org']");
 
     public TeamPage(WebDriver existingDriver) {
 
@@ -82,5 +83,10 @@ public class TeamPage {
         }
 
         return actualResult;
+    }
+
+    public WebElement GregorScheithauerLink() {
+
+        return getDriver().findElement(GREGOR_SCHEITHAUER_LINK);
     }
 }

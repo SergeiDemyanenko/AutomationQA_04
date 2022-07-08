@@ -8,6 +8,7 @@ import pages.*;
 import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.CPage;
 import pages.start.StartPage;
+import pages.start.TeamPage;
 import pages.top_lists.TopListAssemblyPage;
 import pages.top_lists.TopListPage;
 import runner.BaseTest;
@@ -164,14 +165,10 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         getDriver().get(URL);
 
         StartPage start = new StartPage(getDriver());
+        TeamPage actualResult = new TeamPage(getDriver());
+
         start.clickTeamSubmenu();
 
-        List<String> actualResult = new ArrayList<>();
-
-        for (WebElement br : getDriver().findElements(By.xpath("//div[@id='main']/p/a"))) {
-            actualResult.add(br.getText());
-        }
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult.getAllLinks(), expectedResult);
     }
 }

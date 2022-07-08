@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -17,7 +18,7 @@ public class GalaKonTest extends BaseTest {
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
-    public void checkTheNameOfMathematicaLanguageAuthor() {
+    public void testCheckTheNameOfMathematicaLanguageAuthor() {
 
         String expectedResult = "Brenton Bostick";
 
@@ -39,7 +40,7 @@ public class GalaKonTest extends BaseTest {
     }
 
     @Test
-    public void confirmObjectOrientedVersionHasTheLargestNumberOfComments() {
+    public void testConfirmObjectOrientedVersionHasTheLargestNumberOfComments() {
         int expectedResult = 33;
 
         getDriver().get(BASE_URL);
@@ -57,7 +58,7 @@ public class GalaKonTest extends BaseTest {
     }
 
     @Test
-    public void verifyBrowseLanguagesSubmenuText() {
+    public void testVerifyBrowseLanguagesSubmenuText() {
 
         String expectedResult = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -74,7 +75,7 @@ public class GalaKonTest extends BaseTest {
     }
 
     @Test
-    public void verifyTwoImagesOfTeamMembers() {
+    public void testVerifyTwoImagesOfTeamMembers() {
         int expectedResult = 2;
 
         getDriver().get(BASE_URL);
