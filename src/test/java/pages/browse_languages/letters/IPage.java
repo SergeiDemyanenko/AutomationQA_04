@@ -45,8 +45,8 @@ public class IPage {
     }
 
     public List<String> getActualResult(List<WebElement> allTableLinks, List<String> actualResult) {
-        for (WebElement allTableLink : allTableLinks) {
-            allTableLink.click();
+        for (int j = 1; j <= allTableLinks.size(); j++) {
+            getDriver().findElement(By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]")).click();
             actualResult.add(getDriver().getCurrentUrl());
             getDriver().navigate().back();
         }
