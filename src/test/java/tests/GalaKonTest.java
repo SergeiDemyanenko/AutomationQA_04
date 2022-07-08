@@ -87,4 +87,38 @@ public class GalaKonTest extends BaseTest {
 
         Assert.assertEquals(expectedResult, teamP.getAmmountOfImages());
     }
+
+    @Test
+    public void testVerifyClickabilityOfWebsiteLinks() {
+
+        StringBuilder expectedR = new StringBuilder();
+        String expectedResult = expectedR.append("Index of /").append("www.e-taste.org").toString();
+
+        String lsLaNetURL = "http://www.ls-la.net/";
+        String eTasteURL = "http://www.e-taste.org/";
+
+        StartPage startP = new StartPage(getDriver());
+        TeamPage teamP = new TeamPage(getDriver());
+
+        getDriver().get(BASE_URL);
+
+        startP.getTeamSubmenu().click();
+
+        teamP.getOliverSchadeLink().click();
+        getDriver().get(lsLaNetURL);
+        String h1LsLaNet = getDriver()
+                .findElement(By.xpath("//h1")).getText();
+
+        getDriver().get("https://www.99-bottles-of-beer.net/team.html");
+
+        teamP.GregorScheithauerLink().click();
+        getDriver().get(eTasteURL);
+        String h1ETaste = getDriver()
+                .findElement(By.xpath("//strong[@class='text-primary text-5xl mb-4']")).getText();
+
+        StringBuilder actualR = new StringBuilder();
+        String actualResult = actualR.append(h1LsLaNet).append(h1ETaste).toString();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
