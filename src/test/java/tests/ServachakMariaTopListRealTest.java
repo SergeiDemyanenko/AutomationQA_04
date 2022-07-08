@@ -7,26 +7,22 @@ import pages.top_lists.TopListPage;
 import pages.top_lists.TopListRealPage;
 import runner.BaseTest;
 
-public class CheckTableMenuTopListsTest extends BaseTest {
+public class ServachakMariaTopListRealTest extends BaseTest {
     private static final String URL = "https://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testTableNameMenuTopListsSubmenuTopRatedReal(){
+    public void testVerifyTextH2Header(){
         String expectedResult = "Top Rated Real Languages";
 
-        getDriver().get(URL);
-
         MainPage main = new MainPage(getDriver());
-
-        main.clickTopListMenu();
-
         TopListPage topList = new TopListPage(getDriver());
-
-        topList.clickTopListRealSubmenu();
-
         TopListRealPage realPage = new TopListRealPage(getDriver());
 
-        String actualResult = realPage.getH2TableName().trim();
+        getDriver().get(URL);
+        main.clickTopListMenu();
+        topList.clickTopListRealSubmenu();
+
+        String actualResult = realPage.getTextH2Header().trim();
 
         Assert.assertEquals(actualResult,expectedResult);
     }

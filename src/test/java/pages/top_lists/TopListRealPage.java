@@ -8,7 +8,7 @@ public class TopListRealPage {
 
     private WebDriver driver;
 
-    private final By H2_TABLE_NAME = By.xpath("//div[@id='main']/h2");
+    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
 
     public TopListRealPage(WebDriver existingDriver) {
 
@@ -19,13 +19,13 @@ public class TopListRealPage {
         return driver;
     }
 
-    public WebElement getH2Table() {
+    public WebElement getH2Header() {
 
-        return getDriver().findElement(H2_TABLE_NAME);
+        return getDriver().findElement(H2_HEADER);
     }
 
-    public String getH2TableName() {
+    public String getTextH2Header() {
 
-        return getH2Table().getText();
+        return getH2Header().getText();
     }
 }
