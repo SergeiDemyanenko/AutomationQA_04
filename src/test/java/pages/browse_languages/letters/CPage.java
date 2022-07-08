@@ -10,7 +10,7 @@ public class CPage {
 
     private final By H2_TITLE_C = By.xpath("//div[@id='main']/h2");
     private final By DESCRIPTION_C = By.xpath("//div[@id='main']/p[text()]");
-
+    private final By CSHARP_LANGUAGE = By.linkText("C#");
 
     public CPage(WebDriver existingDriver) {
 
@@ -40,5 +40,15 @@ public class CPage {
     public String getH2PageCText() {
 
         return getH2PageC().getText();
+    }
+
+    public WebElement getCSharpLanguage() {
+
+        return getDriver().findElement(CSHARP_LANGUAGE);
+    }
+
+    public void clickCSharpLanguage() {
+
+        getCSharpLanguage().click();
     }
 }
