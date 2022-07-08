@@ -8,7 +8,7 @@ import pages.browse_languages.languages.LanguagesBeginWithZ;
 import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
-public class BrowseLanguagesAllBeginWithZ extends BaseTest {
+public class BrowseLanguagesAllBeginWithZTest extends BaseTest {
 
     private final String BASE_URL = "http://www.99-bottles-of-beer.net/abc.html";
 
