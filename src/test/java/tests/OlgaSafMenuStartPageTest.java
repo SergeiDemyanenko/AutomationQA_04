@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.CPage;
+import pages.start.StartPage;
 import pages.top_lists.TopListAssemblyPage;
 import pages.top_lists.TopListPage;
 import runner.BaseTest;
@@ -149,6 +150,28 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
 
         String actualResult = getDriver().findElement(
                 By.xpath("//td[@bgcolor='#efefef']/a[text()='Algol60']")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testClickAllLinksTeamPage() {
+
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("ls-la.net");
+        expectedResult.add("E-Taste.org");
+        expectedResult.add("sts.synflood.de");
+
+        getDriver().get(URL);
+
+        StartPage start = new StartPage(getDriver());
+        start.clickTeamSubmenu();
+
+        List<String> actualResult = new ArrayList<>();
+
+        for (WebElement br : getDriver().findElements(By.xpath("//div[@id='main']/p/a"))) {
+            actualResult.add(br.getText());
+        }
+
         Assert.assertEquals(actualResult, expectedResult);
     }
 }
