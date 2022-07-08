@@ -105,7 +105,8 @@ public class SignV2Page {
         inputText(getInputLocation(), location);
 
     }
-    public void setInputLocation (String location){
+
+    public void setInputLocation(String location) {
         getInputLocation().click();
         getInputLocation().sendKeys(location);
     }
@@ -119,7 +120,7 @@ public class SignV2Page {
         inputText(getInputEmail(), email);
     }
 
-    public void setInputEmail(String email){
+    public void setInputEmail(String email) {
         getInputEmail().click();
         getInputEmail().sendKeys(email);
     }
@@ -128,12 +129,12 @@ public class SignV2Page {
         inputText(getInputHomepage(), homepage);
     }
 
-    public WebElement getInputHomepage2(){
+    public WebElement getInputHomepage2() {
 
         return getDriver().findElement(INPUT_HOMEPAGE);
     }
 
-    public void setInputHomepage(String homepage){
+    public void setInputHomepage(String homepage) {
         getInputHomepage2().click();
         getInputHomepage2().sendKeys(homepage);
     }
@@ -147,7 +148,7 @@ public class SignV2Page {
         inputText(getInputCaptcha(), Integer.toString(randomThreeNumbers()));
     }
 
-    public void setInputCapcha(String capcha){
+    public void setInputCapcha(String capcha) {
         getInputCaptcha().click();
         getInputCaptcha().sendKeys(capcha);
     }
@@ -161,14 +162,9 @@ public class SignV2Page {
         inputText(getInputComment(), comment);
     }
 
-    public WebElement getSetInputComment(){
-
-        return getDriver().findElement(INPUT_EMAIL);
-    }
-
-    public void setInputComment(String comment){
-        getSetInputComment().click();
-        getSetInputComment().sendKeys(comment);
+    public void setInputComment(String comment) {
+        getInputComment().click();
+        getInputComment().sendKeys(comment);
     }
 
     public String getErrorMessageTagFont() {
@@ -201,7 +197,7 @@ public class SignV2Page {
                 .concat(createSrc("underline"));
     }
 
-    protected String getAttributeName (String cssSelector) {
+    protected String getAttributeName(String cssSelector) {
 
         return getDriver().findElement(
                         By.cssSelector("img[alt='".concat(cssSelector).concat("']")))
