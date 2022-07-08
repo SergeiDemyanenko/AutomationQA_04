@@ -48,4 +48,16 @@ public class SubmitNewLanguageTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testSubmitNewLanguageVerifyNavigation() {
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.getSubmitNewLanguageMenu().click();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
+    }
 }

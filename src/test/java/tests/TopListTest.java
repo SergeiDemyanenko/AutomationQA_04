@@ -1,11 +1,15 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import pages.top_lists.*;
 import runner.BaseTest;
+
+import java.awt.*;
+import java.util.List;
 
 public class TopListTest extends BaseTest {
 
@@ -111,6 +115,24 @@ public class TopListTest extends BaseTest {
         TopListNewLanguagesThisMonthPage topListNewLanguagesThisMonthPage =
                 new TopListNewLanguagesThisMonthPage(getDriver());
         String actualResult = topListNewLanguagesThisMonthPage.getH2TableNewLanguagesName();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void testGoToTheNewcomments() {
+        String expectedResult = "New Comments";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickNewCommentsSubmenu();
+
+        NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
+        String actualResult = newCommentsPage.getTextH2Main();
 
         Assert.assertEquals(actualResult,expectedResult);
     }

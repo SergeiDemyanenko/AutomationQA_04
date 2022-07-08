@@ -87,6 +87,11 @@ public class SignV2Page {
         return getDriver().findElement(INPUT_NAME);
     }
 
+    public void setInputName(String name) {
+        getInputName().click();
+        getInputName().sendKeys(name);
+    }
+
     public void inputName(String name) {
         inputText(getInputName(), name);
     }
@@ -98,6 +103,11 @@ public class SignV2Page {
 
     public void inputLocation(String location) {
         inputText(getInputLocation(), location);
+
+    }
+    public void setInputLocation (String location){
+        getInputLocation().click();
+        getInputLocation().sendKeys(location);
     }
 
     public WebElement getInputEmail() {
@@ -109,8 +119,23 @@ public class SignV2Page {
         inputText(getInputEmail(), email);
     }
 
+    public void setInputEmail(String email){
+        getInputEmail().click();
+        getInputEmail().sendKeys(email);
+    }
+
     public void inputHomepage(String homepage) {
         inputText(getInputHomepage(), homepage);
+    }
+
+    public WebElement getInputHomepage2(){
+
+        return getDriver().findElement(INPUT_HOMEPAGE);
+    }
+
+    public void setInputHomepage(String homepage){
+        getInputHomepage2().click();
+        getInputHomepage2().sendKeys(homepage);
     }
 
     public WebElement getInputCaptcha() {
@@ -122,6 +147,11 @@ public class SignV2Page {
         inputText(getInputCaptcha(), Integer.toString(randomThreeNumbers()));
     }
 
+    public void setInputCapcha(String capcha){
+        getInputCaptcha().click();
+        getInputCaptcha().sendKeys(capcha);
+    }
+
     public WebElement getInputComment() {
 
         return getDriver().findElement(INPUT_COMMENT);
@@ -129,6 +159,16 @@ public class SignV2Page {
 
     public void inputComment(String comment) {
         inputText(getInputComment(), comment);
+    }
+
+    public WebElement getSetInputComment(){
+
+        return getDriver().findElement(INPUT_EMAIL);
+    }
+
+    public void getInputComment(String comment){
+        getSetInputComment().click();
+        getSetInputComment().sendKeys(comment);
     }
 
     public String getErrorMessageTagFont() {
