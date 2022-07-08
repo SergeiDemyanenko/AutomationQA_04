@@ -19,6 +19,7 @@ public class MainPage {
     private final By FOOTER_BAR = By.id("footer");
     private final By FOOTER_SUBMIT_NEW_LANGUAGE = By.xpath("//div[@id='footer']//a[@href='/submitnewlanguage.html']");
     private final By FOOTER_SEARCH = By.xpath("//div[@id='footer']/p/a[@href='/search.html']");
+    private final By FOOTER_BROWSE_LANGUAGES = By.xpath("//p/a[@href='/abc.html']");
 
     public MainPage(WebDriver existingDriver) {
 
@@ -153,5 +154,16 @@ public class MainPage {
     public void clickFooterSubmitNewLanguage(){
 
         getFooterSubmitNewLanguage().click();
+    }
+
+    public void clickFooterSearchButton(){
+        getFooterSearch().click();
+    }
+    public WebElement getFooterBrowseLanguage() {
+
+        return getDriver().findElement(FOOTER_BROWSE_LANGUAGES);
+    }
+    public void clickFooterBrowseLanguage(){
+        getFooterBrowseLanguage().click();
     }
 }
