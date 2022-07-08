@@ -9,6 +9,7 @@ public class AnaLamaFooterMenuBarButtonsTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     private static final String BROWSE_LANGUAGE_PAGE_URL = "http://www.99-bottles-of-beer.net/abc.html";
+    private static final String SEARCH_PAGE_URL = "http://www.99-bottles-of-beer.net/search.html";
 
     @Test
     public void testFooterMenuBarMainPage() {
@@ -28,8 +29,19 @@ public class AnaLamaFooterMenuBarButtonsTest extends BaseTest {
         getDriver().get(BASE_URL);
         MainPage main = new MainPage(getDriver());
 
-        main.clickBrowseLanguagesMenu();
+        main.clickFooterBrowseLanguage();
 
        Assert.assertEquals(getDriver().getCurrentUrl(), BROWSE_LANGUAGE_PAGE_URL);
+    }
+
+    @Test
+    public void testFooterSearchButton(){
+        getDriver().get(BASE_URL);
+        MainPage main = new MainPage(getDriver());
+
+        main.clickFooterSearchButton();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), SEARCH_PAGE_URL);
+
     }
 }
