@@ -17,6 +17,7 @@ public class StartPage {
     private final By TEAM_SUBMENU = By.xpath("//a[@href='team.html']");
     private final By LAST_P_MAIN_START = By.xpath("//div[@id='main']/p[last()]");
     private final By IMPRESSUM_SUBMENU = By.xpath("//a[@href = 'impressum.html']");
+    private final By H2_HEADER = By.xpath("//div[@id='header']/h2");
 
     @FindBy(xpath = "//a[@href='./info.html']")
     private WebElement historicInformationLink;
@@ -111,6 +112,16 @@ public class StartPage {
     public WebElement getImpressumSubmenu() {
 
         return getDriver().findElement(IMPRESSUM_SUBMENU);
+    }
+
+    public WebElement getH2Header() {
+
+        return getDriver().findElement(H2_HEADER);
+    }
+
+    public String getH2HeaderText() {
+
+        return getText(getH2Header());
     }
 
     public String getImpressumSubmenuText() {
