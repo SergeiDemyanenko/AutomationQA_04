@@ -11,8 +11,9 @@ public class ServachakMariaTopListRealTest extends BaseTest {
     private static final String URL = "https://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testVerifyTextH2Header(){
-        String expectedResult = "Top Rated Real Languages";
+    public void testVerifyH2Header(){
+        String expectedResultText = "Top Rated Real Languages";
+        String expectedResultColor = "rgba(27, 101, 28, 1)";
 
         MainPage main = new MainPage(getDriver());
         TopListPage topList = new TopListPage(getDriver());
@@ -22,8 +23,10 @@ public class ServachakMariaTopListRealTest extends BaseTest {
         main.clickTopListMenu();
         topList.clickTopListRealSubmenu();
 
-        String actualResult = realPage.getTextH2Header().trim();
+        String actualResultText = realPage.getTextH2Header().trim();
+        String actualResultColor = realPage.getH2Header().getCssValue("color");
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResultText,expectedResultText);
+        Assert.assertEquals(actualResultColor,expectedResultColor);
     }
 }
