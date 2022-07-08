@@ -166,7 +166,7 @@ public class SignV2Page {
         return getDriver().findElement(INPUT_EMAIL);
     }
 
-    public void getInputComment(String comment){
+    public void setInputComment(String comment){
         getSetInputComment().click();
         getSetInputComment().sendKeys(comment);
     }
