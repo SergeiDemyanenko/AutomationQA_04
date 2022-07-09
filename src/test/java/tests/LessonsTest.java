@@ -2,39 +2,33 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.start.LyricsPage;
-import pages.MainPage;
-import pages.start.StartPage;
 import runner.BaseTest;
+
+import static runner.TestUtils.createSongLyricsTextUsingAlgorithm;
 
 public class LessonsTest extends BaseTest {
 
-    private static final String BASE_URL = "http://www.99-bottles-of-beer.net";
-
     @Test
     public void testSongLyricsText() {
+        String expectedSongLyricsText = createSongLyricsTextUsingAlgorithm();
 
-        getDriver().get(BASE_URL);
+        String actualSongLyricsText =
+                openBaseURL()
+                        .clickStartMenu()
+                        .clickLyricsSubmenu()
+                        .getSongLyricsText();
 
-        StartPage start = new StartPage(getDriver());
-
-        start.clickLyricsSubmenu();
-
-        LyricsPage lyrics = new LyricsPage(getDriver());
-
-        Assert.assertEquals(lyrics.getLyrics(), lyrics.createLyrics());
+        Assert.assertEquals(actualSongLyricsText, expectedSongLyricsText);
     }
 
     @Test
-    public void testH1HeaderMainPage() {
-        String expectedResult = "99 Bottles of Beer";
+    public void testH1HeaderText() {
+        final String expectedH1HeaderText = "99 Bottles of Beer";
 
-        getDriver().get(BASE_URL);
+        String actualH1HeaderText =
+                openBaseURL()
+                        .getH1HeaderText();
 
-        MainPage main = new MainPage(getDriver());
-
-        String actualResult = main.getH1HeaderText();
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualH1HeaderText, expectedH1HeaderText);
     }
 }

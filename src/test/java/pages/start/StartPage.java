@@ -5,10 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.BasePage;
 
-public class StartPage {
-    
-    private WebDriver driver;
+public class StartPage extends BasePage {
 
     private final By INFO_MAIN = By.xpath("//a[@href='./info.html']");
     private final By LYRICS_MAIN = By.xpath("//a[@href='./lyrics.html']");
@@ -34,15 +33,9 @@ public class StartPage {
     @FindBy(xpath = "//a[@href='./team.html']")
     private WebElement  teamMembersLink;
 
-    public StartPage(WebDriver existingDriver) {
-
-        this.driver = existingDriver;
+    public StartPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(getDriver(), this);
-    }
-
-    protected WebDriver getDriver(){
-
-        return driver;
     }
 
     public String getText(WebElement element) {
@@ -75,8 +68,10 @@ public class StartPage {
         return getDriver().findElement(LYRICS_SUBMENU);
     }
 
-    public void clickLyricsSubmenu() {
+    public LyricsPage clickLyricsSubmenu() {
         getLyricsSubmenu().click();
+
+        return new LyricsPage(getDriver());
     }
 
     public WebElement getInfoSubmenu(){

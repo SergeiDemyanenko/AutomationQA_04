@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.start.LyricsPage;
 import pages.start.StartPage;
 import runner.BaseTest;
+import runner.TestUtils;
 
 public class Song99BottlesKononirinIrinaShTest extends BaseTest {
 
@@ -21,6 +22,6 @@ public class Song99BottlesKononirinIrinaShTest extends BaseTest {
 
         LyricsPage lyrics = new LyricsPage(getDriver());
 
-        Assert.assertEquals(lyrics.getLyrics(), lyrics.createLyrics());
+        Assert.assertEquals(lyrics.getSongLyricsText(), TestUtils.createSongLyricsTextUsingAlgorithm());
     }
 }

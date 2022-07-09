@@ -3,10 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.start.StartPage;
 
-public class MainPage {
-
-    private WebDriver driver;
+public class MainPage extends BasePage {
 
     private final By H1_HEADER = By.xpath("//div[@id='header']/h1");
     private final By H2_HEADER = By.xpath("//div[@id='header']/h2");
@@ -22,14 +21,9 @@ public class MainPage {
     private final By FOOTER_BROWSE_LANGUAGES = By.xpath("//p/a[@href='/abc.html']");
     private final By ONLOAD_SETTINGS = By.xpath("//body[@onload]");
 
-    public MainPage(WebDriver existingDriver) {
+    public MainPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public String getText(WebElement element) {
@@ -122,9 +116,10 @@ public class MainPage {
         return getDriver().findElement(START_MENU);
     }
 
-    public void clickStartMenu(){
-
+    public StartPage clickStartMenu(){
         getStartMenu().click();
+
+        return new StartPage(getDriver());
     }
 
     public WebElement getTopListMenu(){
