@@ -20,6 +20,7 @@ public class MainPage {
     private final By FOOTER_SUBMIT_NEW_LANGUAGE = By.xpath("//div[@id='footer']//a[@href='/submitnewlanguage.html']");
     private final By FOOTER_SEARCH = By.xpath("//div[@id='footer']/p/a[@href='/search.html']");
     private final By FOOTER_BROWSE_LANGUAGES = By.xpath("//p/a[@href='/abc.html']");
+    private final By ONLOAD_SETTINGS = By.xpath("//body[@onload]");
 
     public MainPage(WebDriver existingDriver) {
 
@@ -165,5 +166,10 @@ public class MainPage {
     }
     public void clickFooterBrowseLanguage(){
         getFooterBrowseLanguage().click();
+    }
+
+    public WebElement getOnloadSettings() {
+
+        return getDriver().findElement(ONLOAD_SETTINGS);
     }
 }
