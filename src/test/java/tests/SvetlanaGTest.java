@@ -105,4 +105,17 @@ public class SvetlanaGTest extends BaseTest {
 
         Assert.assertEquals(r.getThTagsText(), expectedResult);
     }
+
+    @Test
+    public void testVerifyOnloadSettings() {
+
+        final  String expectedResult = "off('addcomments');";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        String actualResult = main.getOnloadSettings().getAttribute("onload");
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
