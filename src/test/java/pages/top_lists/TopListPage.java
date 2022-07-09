@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TopListPage {
@@ -22,6 +23,7 @@ public class TopListPage {
 
         this.driver = existingDriver;
     }
+
     protected WebDriver getDriver() {
 
         return driver;
@@ -30,6 +32,7 @@ public class TopListPage {
     public void clickSubmenu(WebElement element) {
         element.click();
     }
+
     public WebElement getTopListRealSubmenu() {
 
         return getDriver().findElement(TOP_LIST_REAL_SUBMENU);
@@ -71,7 +74,7 @@ public class TopListPage {
     }
 
     public String getTextTopHitsSubmenu() {
-        
+
         return getTopHitsSubmenu().getText();
     }
 
@@ -95,10 +98,25 @@ public class TopListPage {
         getNewCommentsSubmenu().click();
     }
 
-    public Integer getCountTableALinks() {
+    public Integer getCountTableLinks() {
 
         List<WebElement> countLanguages = getDriver()
                 .findElements(ALL_LANGUAGES_IN_THE_TABLE_TOP_LIST_SUBMENU);
         return countLanguages.size();
     }
+
+    public List<String> getAllTableLinks() {
+
+        List<WebElement> links
+                = getDriver()
+                .findElements(ALL_LANGUAGES_IN_THE_TABLE_TOP_LIST_SUBMENU);
+
+        List<String> textOfLinks = new ArrayList<>();
+
+        for (WebElement n : links) {
+            textOfLinks.add(n.getText());
+        }
+        return textOfLinks;
+    }
+
 }

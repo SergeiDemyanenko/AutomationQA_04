@@ -34,7 +34,7 @@ public class TopListTest extends BaseTest {
         main.clickTopListMenu();
 
         TopListPage topListPage = new TopListPage(getDriver());
-        int actualResult = topListPage.getCountTableALinks();
+        int actualResult = topListPage.getCountTableLinks();
 
         Assert.assertEquals(actualResult,expectedResult);
     }
