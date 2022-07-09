@@ -3,12 +3,11 @@ package pages.browse_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import java.util.List;
 
-public class AbcPage {
-
-    private WebDriver driver;
+public class AbcPage extends BasePage {
 
     private final By ZERO_SUBMENU = By.xpath("//a[@href='0.html']");
     private final By J_SUBMENU = By.xpath("//a[@href='j.html']");
@@ -30,14 +29,9 @@ public class AbcPage {
     private final By Y_SUBMENU = By.xpath("//a[@href='y.html']");
     private final By X_SUBMENU = By.xpath("//a[@href='x.html']");
 
-    public AbcPage(WebDriver existingDriver) {
+    public AbcPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super (driver);
     }
 
     public String getText(WebElement element) {

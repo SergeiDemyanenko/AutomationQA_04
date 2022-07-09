@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.AbcPage;
 import pages.guestbook.GuestbookV2Page;
 import pages.start.StartPage;
 
@@ -57,9 +58,11 @@ public class MainPage extends BasePage {
         return getDriver().findElement(ABC_MENU);
     }
 
-    public void clickBrowseLanguagesMenu() {
+    public AbcPage clickBrowseLanguagesMenu() {
 
         getBrowseLanguagesMenu().click();
+
+        return new AbcPage(getDriver());
     }
 
     public WebElement getSubmitNewLanguageMenu() {

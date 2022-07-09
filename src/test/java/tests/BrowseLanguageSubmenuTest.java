@@ -2,80 +2,44 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.AbcPage;
-import pages.MainPage;
 import runner.BaseTest;
 
 public class BrowseLanguageSubmenuTest extends BaseTest {
 
-    private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
-
     @Test
-    public void testVerifyTextZeroSubmenu() {
-        final String expectedResult = "0-9";
+    public void testTextZeroSubmenu() {
+        final String expectedTextZeroSubmenu = "0-9";
 
-        getDriver().get(BASE_URL);
+        String actualTextZeroSubmenu =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getZeroSubmenuText();
 
-        MainPage main = new MainPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-
-        String actualResult = abc.getZeroSubmenuText();
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualTextZeroSubmenu, expectedTextZeroSubmenu);
     }
 
     @Test
-    public void testVerifyLinkTextZeroSubmenu(){
-        final String expectedResult = "https://www.99-bottles-of-beer.net/0.html";
+    public void testLinkTextZeroSubmenu(){
+        final String expectedLinkTextZeroSubmenu = "http://www.99-bottles-of-beer.net/0.html";
 
-        getDriver().get(BASE_URL);
+        String actualLinkTextZeroSubmenu =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getZeroSubmenu()
+                        .getAttribute("href");
 
-        MainPage main = new MainPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-
-        String actualResult = abc.getZeroSubmenu().getAttribute("href");
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testVerifyNavigationZeroSubmenu() {
-
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-
-        abc.getZeroSubmenu().click();
-
-        String actualResult = getDriver().getCurrentUrl();
-
-        Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
-        Assert.assertTrue(actualResult.contains("0.html"));
+        Assert.assertEquals(actualLinkTextZeroSubmenu, expectedLinkTextZeroSubmenu);
     }
 
     @Test
     public void testHowManyCategoriesInBrowseLanguage() {
         int expectedResult = 27;
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-
-        int actualResult = abc.getAllSubmenu().size();
+        int actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getAllSubmenu()
+                        .size();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
