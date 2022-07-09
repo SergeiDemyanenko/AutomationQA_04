@@ -3,36 +3,38 @@ package pages.start;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import pages.BasePage;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamPage {
+public class TeamPage extends BasePage {
 
-    private WebDriver driver;
-
-    private final By H3_TEAM_NAME = By.xpath("//div[@id = 'main']/h3");
+    private final By H3_HEADER = By.xpath("//div[@id = 'main']/h3");
     private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
     private final By H2_MAIN_HEADER = By.xpath("//div[@id='main']/h2");
     private final By OLIVER_SCHADE_LINK = By.xpath("//a[@href='http://www.ls-la.net/']");
     private final By ALL_TEAM_LINKS = By.xpath("//div[@id='main']/p/a");
     private final By GREGOR_SCHEITHAUER_LINK = By.xpath("//a[@href='http://www.e-taste.org']");
 
-    public TeamPage(WebDriver existingDriver) {
+    public TeamPage(WebDriver driver) {
 
-        this.driver = existingDriver;
+        super(driver);
     }
 
-    protected WebDriver getDriver() {
+    public List<WebElement> getListH3Header() {
 
-        return driver;
+        return getDriver().findElements(H3_HEADER);
     }
 
-    public List<WebElement> getListH3TeamName() {
+    public List<String> getListH3TeamName() {
 
-        return getDriver().findElements(H3_TEAM_NAME);
+        List<String> h3TeamName = new ArrayList<>();
+        for (WebElement name : getListH3Header()) {
+            h3TeamName.add(name.getText());
+        }
+
+        return h3TeamName;
     }
 
     public int getAmmountOfImages() {

@@ -89,9 +89,11 @@ public class StartPage extends BasePage {
         return getDriver().findElement(TEAM_SUBMENU);
     }
 
-    public void clickTeamSubmenu() {
+    public TeamPage clickTeamSubmenu() {
 
         getTeamSubmenu().click();
+
+        return new TeamPage(getDriver());
     }
 
     public WebElement getLastPMainStart() {
