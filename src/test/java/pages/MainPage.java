@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.guestbook.GuestbookV2Page;
 import pages.start.StartPage;
 
 public class MainPage extends BasePage {
@@ -137,9 +138,10 @@ public class MainPage extends BasePage {
         return getDriver().findElement(GUESTBOOK_V2_MENU);
     }
 
-    public void clickGuestbookV2Menu(){
-
+    public GuestbookV2Page clickGuestbookV2Menu(){
         getGuestbookV2Menu().click();
+
+        return new GuestbookV2Page(getDriver());
     }
 
     public WebElement getFooterSubmitNewLanguage() {

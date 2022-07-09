@@ -3,10 +3,12 @@ package pages.guestbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
+import runner.TestUtils;
 
-public class SignV2Page {
+import static runner.TestUtils.getRandomStr;
 
-    private WebDriver driver;
+public class SignV2Page extends BasePage {
 
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
     private final By ERROR_MESSAGE_TAG_FONT = By.xpath("//div[@id='main']/p/b");
@@ -19,14 +21,9 @@ public class SignV2Page {
     private final By BUTTON_SUBMIT = By.xpath("//input[@type='submit']");
     private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
 
-    public SignV2Page(WebDriver existingDriver) {
+    public SignV2Page(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public String getText(WebElement element) {
@@ -41,11 +38,6 @@ public class SignV2Page {
 
     public void inputText(WebElement element, String inputText) {
         element.sendKeys(inputText);
-    }
-
-    public int randomThreeNumbers() {
-
-        return (int) (Math.random() * 900 + 100);
     }
 
     public String getTagName(WebElement element) {
@@ -144,8 +136,8 @@ public class SignV2Page {
         return getDriver().findElement(INPUT_CAPTCHA);
     }
 
-    public void inputCaptcha() {
-        inputText(getInputCaptcha(), Integer.toString(randomThreeNumbers()));
+    public void inputCaptcha(int length) {
+        inputText(getInputCaptcha(), Integer.toString(TestUtils.getRandomNumbers(length)));
     }
 
     public void setInputCapcha(String capcha) {
@@ -227,5 +219,17 @@ public class SignV2Page {
     public WebElement getImgCaptcha() {
 
         return getDriver().findElement(IMG_CAPTCHA_PHP);
+    }
+
+    public SignV2Page inputAllFieldsAndClickButtonSubmit() {
+        inputName(getRandomStr(3));
+        inputLocation(getRandomStr(6));
+        inputEmail(getRandomStr(8));
+        inputHomepage(getRandomStr(4));
+        inputCaptcha(3);
+        inputComment(getRandomStr(40));
+        clickButtonSubmit();
+
+        return new SignV2Page(getDriver());
     }
 }
