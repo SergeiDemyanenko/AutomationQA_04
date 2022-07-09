@@ -3,13 +3,13 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
+import pages.browse_languages.languages.LanguageJava3Page;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class JPage {
-
-    private WebDriver driver;
+public class JPage extends BasePage {
 
     private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
@@ -18,14 +18,9 @@ public class JPage {
     private final By ALL_A_LINKS = By.xpath("//tbody/tr/td/a[@href]");
     private final By lINK_LANGUAGE_JAVA_3 = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
 
-    public JPage(WebDriver existingDriver) {
+    public JPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public String getText(WebElement element) {
@@ -55,9 +50,7 @@ public class JPage {
 
     protected List<String> getAllALinks() {
 
-        List<WebElement> aHrefs
-                = getDriver()
-                .findElements(ALL_A_LINKS);
+        List<WebElement> aHrefs = getDriver().findElements(ALL_A_LINKS);
 
         List<String> listOfLanguages = new ArrayList<>();
 
@@ -78,9 +71,11 @@ public class JPage {
         return getDriver().findElement(lINK_LANGUAGE_JAVA_3);
     }
 
-    public void clickLinkLanguageJava3() {
+    public LanguageJava3Page clickLinkLanguageJava3() {
 
         getLinkLanguageJava3().click();
+
+        return new LanguageJava3Page(getDriver());
     }
 
     protected String getLanguageJavascript1948() {
@@ -99,12 +94,7 @@ public class JPage {
 
     public void clickLanguageJavascript1948() {
 
-        getDriver().findElement(
-                        By.linkText(
-                        getLanguageJavascript1948()
-                        )
-                        )
-                        .click();
+        getDriver().findElement(By.linkText(getLanguageJavascript1948())).click();
     }
 
     public List<WebElement> getThTags() {

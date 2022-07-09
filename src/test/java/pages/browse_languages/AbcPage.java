@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.letters.JPage;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class AbcPage extends BasePage {
 
     public AbcPage(WebDriver driver) {
 
-        super (driver);
+        super(driver);
     }
 
     public String getText(WebElement element) {
@@ -44,9 +45,11 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(J_SUBMENU);
     }
 
-    public void clickJSubmenu() {
+    public JPage clickJSubmenu() {
 
         getJSubmenu().click();
+
+        return new JPage(getDriver());
     }
 
     public WebElement getMSubmenu() {
