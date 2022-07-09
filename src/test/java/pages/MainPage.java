@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import pages.browse_languages.AbcPage;
 import pages.guestbook.GuestbookV2Page;
 import pages.start.StartPage;
+import pages.top_lists.TopListPage;
 
 public class MainPage extends BasePage {
 
@@ -131,9 +132,10 @@ public class MainPage extends BasePage {
         return getDriver().findElement(TOP_LIST_MENU);
     }
 
-    public void clickTopListMenu(){
-
+    public TopListPage clickTopListMenu(){
         getTopListMenu().click();
+
+        return new TopListPage(getDriver());
     }
 
     public WebElement getGuestbookV2Menu() {
