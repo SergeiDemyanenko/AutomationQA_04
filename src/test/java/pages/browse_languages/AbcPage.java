@@ -5,6 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.letters.SPage;
 import pages.BasePage;
+import pages.browse_languages.letters.RPage;
+import pages.browse_languages.letters.XPage;
+import pages.browse_languages.letters.YPage;
+import pages.browse_languages.letters.JPage;
 import java.util.List;
 
 public class AbcPage extends BasePage {
@@ -31,7 +35,7 @@ public class AbcPage extends BasePage {
 
     public AbcPage(WebDriver driver) {
 
-        super (driver);
+        super(driver);
     }
 
     public String getText(WebElement element) {
@@ -44,9 +48,11 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(J_SUBMENU);
     }
 
-    public void clickJSubmenu() {
+    public JPage clickJSubmenu() {
 
         getJSubmenu().click();
+
+        return new JPage(getDriver());
     }
 
     public WebElement getMSubmenu() {
@@ -109,9 +115,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(R_SUBMENU);
     }
 
-    public void clickRSubmenu() {
-
+    public RPage clickRSubmenu() {
         getRSubmenu().click();
+
+        return new RPage(getDriver());
     }
 
     public WebElement getZSubmenu() {
@@ -217,9 +224,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(Y_SUBMENU);
     }
 
-    public void clickYSubmenu() {
-
+    public YPage clickYSubmenu() {
         getYSubmenu().click();
+
+        return new YPage(getDriver());
     }
 
     public WebElement getXSubmenu() {
@@ -227,8 +235,9 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(X_SUBMENU);
     }
 
-    public void clickXSubmenu() {
-
+    public XPage clickXSubmenu() {
         getXSubmenu().click();
+
+        return new XPage(getDriver());
     }
 }

@@ -3,11 +3,12 @@ package pages.search_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage {
+public class SearchPage extends BasePage {
     private WebDriver driver;
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
@@ -25,14 +26,9 @@ public class SearchPage {
 
     private final By TABLE_JAVA_SEARCH_LANGUAGES = By.xpath("//tbody/tr");
 
-    public SearchPage(WebDriver existingDriver) {
+    public SearchPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public String getText(WebElement element) {
@@ -45,9 +41,10 @@ public class SearchPage {
         return getDriver().findElement(SEARCH_SUBMENU);
     }
 
-    public void clickSearchSubmenu() {
-
+    public SearchPage clickSearchSubmenu() {
         getSearchSubmenu().click();
+
+        return new SearchPage(getDriver());
     }
 
     public WebElement getH2Main() {
