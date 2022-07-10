@@ -66,7 +66,7 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
 
         CPage title = new CPage(getDriver());
 
-        String actualResult = title.getH2PageCText();
+        String actualResult = title.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

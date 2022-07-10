@@ -59,7 +59,7 @@ public class IlyaCheshkovTest extends BaseTest {
         main.clickBrowseLanguagesMenu();
         abc.clickISubmenu();
 
-        List<WebElement> allTableLinks = i.getLanguageLink();
+        List<WebElement> allTableLinks = i.getWebElementsTDLinks();
 
         List<String> expectedResult = new ArrayList<>();
         List<String> actualResult = new ArrayList<>();

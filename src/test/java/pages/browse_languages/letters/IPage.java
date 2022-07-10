@@ -6,42 +6,16 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class IPage {
+public class IPage extends _LettersPage {
 
-    private WebDriver driver;
+    public IPage(WebDriver driver) {
 
-    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
-
-    private final By TABLE_I = By.xpath("//tbody/tr[@onmouseover]");
-
-    private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
-
-    private final By TR_TAGS = By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover]");
-
-    private final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a[@href]");
-
-    public IPage(WebDriver existingDriver) {
-
-        this.driver = existingDriver;
+        super(driver);
     }
 
-    protected WebDriver getDriver() {
-
-        return driver;
-    }
-
-    public List<WebElement> getTrTags() {
-        return getDriver().findElements(TR_TAGS);
-    }
-
-    public String getCurrentUrl(){
+    public String getCurrentUrl() {
 
         return getDriver().getCurrentUrl();
-    }
-
-    public List<WebElement> getLanguageLink() {
-
-        return getDriver().findElements(TD_LINKS);
     }
 
     public List<String> getActualResult(List<WebElement> allTableLinks, List<String> actualResult) {
@@ -57,7 +31,7 @@ public class IPage {
 
     public List<String> getExpectedResult(String attribute, List<String> expectedResult) {
 
-        for (int j = 1; j <= getLanguageLink().size(); j ++) {
+        for (int j = 1; j <= getQuantityTDLinks(); j++) {
             expectedResult.add(getDriver().findElement(
                             By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]"))
                     .getAttribute("href"));

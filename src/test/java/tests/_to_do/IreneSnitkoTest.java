@@ -49,7 +49,7 @@ public class IreneSnitkoTest extends BaseTest {
 
         JPage j = new JPage(getDriver());
 
-        Assert.assertEquals(j.getQuantityALinks(), expectedResult);
+        Assert.assertEquals(j.getQuantityTDLinks(), expectedResult);
     }
 
     @Test
