@@ -3,6 +3,7 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.languages.LanguageShakespearePage;
 
 public class SPage {
 
@@ -25,7 +26,9 @@ public class SPage {
         return getDriver().findElement(SHAKESPEARE_LANGUAGE);
     }
 
-    public void clickShakespeareLanguage() {
+    public LanguageShakespearePage clickShakespeareLanguage() {
         getShakespeareLanguage().click();
+
+        return new LanguageShakespearePage(getDriver());
     }
 }
