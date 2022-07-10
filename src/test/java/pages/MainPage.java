@@ -157,9 +157,10 @@ public class MainPage extends BasePage {
         return getDriver().findElement(FOOTER_SUBMIT_NEW_LANGUAGE);
     }
 
-    public void clickFooterSubmitNewLanguage(){
-
+    public SubmitNewLanguagePage clickFooterSubmitNewLanguage() {
         getFooterSubmitNewLanguage().click();
+
+        return new SubmitNewLanguagePage(getDriver());
     }
 
     public void clickFooterSearchButton(){

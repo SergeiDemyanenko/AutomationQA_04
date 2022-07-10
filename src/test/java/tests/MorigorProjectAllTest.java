@@ -2,102 +2,83 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.AbcPage;
-import pages.browse_languages.letters.XPage;
-import pages.browse_languages.letters.YPage;
-import pages.guestbook.GuestbookV2Page;
-import pages.MainPage;
-import pages.guestbook.SignV2Page;
-import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
 public class MorigorProjectAllTest extends BaseTest {
 
-    private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
-    private static final String GUESTBOOK_URL = "https://www.99-bottles-of-beer.net/guestbookv2.html";
-    private static final String BROWSE_LANGUAGES_URL = BASE_URL.concat("abc.html");
-
     @Test
-    public void testVerifyTextOnMainPage() {
-        String expectedResult = "one program in 1500 variations";
+    public void testTextOnMainPage() {
+        final String expectedTextOnMainPage = "one program in 1500 variations";
 
-        getDriver().get(BASE_URL);
+        String actualTextOnMainPage =
+                openBaseURL()
+                        .getH2HeaderText();
 
-        MainPage main = new MainPage(getDriver());
-
-        Assert.assertEquals(main.getH2HeaderText(), expectedResult);
+        Assert.assertEquals(actualTextOnMainPage, expectedTextOnMainPage);
     }
 
     @Test
     public void testSignGuestbookErrorMessage() {
-        String expectedResult = "Error: Please enter at least a message, your email address and the security code.";
+        final String expectedSignGuestbookErrorMessage = "Error: Please enter at least a message, your email address and the security code.";
 
-        getDriver().get(GUESTBOOK_URL);
+        String actualSignGuestbookErrorMessage =
+                openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .clickButtonSubmit()
+                        .getErrorMessageText();
 
-        SignV2Page signGuestbook = new SignV2Page(getDriver());
-        GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
-
-        guestbookV2Page.clickSignV2();
-        signGuestbook.clickButtonSubmit();
-
-        Assert.assertEquals(signGuestbook.getErrorMessageText(), expectedResult);
+        Assert.assertEquals(actualSignGuestbookErrorMessage, expectedSignGuestbookErrorMessage);
     }
 
     @Test
     public void testVerificationOfHomepageAttribute() {
+        final String expectedVerificationOfHomepageAttribute = "http://";
 
-        getDriver().get(GUESTBOOK_URL);
+        String actualVerificationOfHomepageAttribute =
+                openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .getInputHomepageAttribute();
 
-        SignV2Page signGuestbook = new SignV2Page(getDriver());
-        GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
-
-        guestbookV2Page.clickSignV2();
-
-        Assert.assertEquals(signGuestbook.getInputHomepageAttribute(), "http://");
+        Assert.assertEquals(actualVerificationOfHomepageAttribute, expectedVerificationOfHomepageAttribute);
     }
 
     @Test
-    public void testVerifySubmitNewLanguageText() {
-        String expectedResult = "Submit New Language";
+    public void testSubmitNewLanguageTextViaFooter() {
+        final String expectedSubmitNewLanguageTextViaFooter = "Submit New Language";
 
-        getDriver().get(BASE_URL);
+        String actualSubmitNewLanguageTextViaFooter =
+                openBaseURL()
+                        .clickFooterSubmitNewLanguage()
+                        .getTitleH2Text();
 
-        MainPage mainPage = new MainPage(getDriver());
-
-        mainPage.clickFooterSubmitNewLanguage();
-
-        SubmitNewLanguagePage submit = new SubmitNewLanguagePage(getDriver());
-
-        Assert.assertEquals(submit.getTitleH2Text(), expectedResult);
+        Assert.assertEquals(actualSubmitNewLanguageTextViaFooter, expectedSubmitNewLanguageTextViaFooter);
     }
 
     @Test
-    public void testVerifyNumberOfYLanguages () {
-        int expectedresult = 9;
+    public void testNumberOfYLanguages() {
+        final int expectedNumberOfYLanguages = 9;
 
-        getDriver().get(BROWSE_LANGUAGES_URL);
+        int actualNumberOfYLanguages =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickYSubmenu()
+                        .getNumberOfLanguages();
 
-        AbcPage abcPage = new AbcPage(getDriver());
-
-        abcPage.clickYSubmenu();
-
-        YPage yPage = new YPage(getDriver());
-
-        Assert.assertEquals(yPage.getNumberOfLanguages(), expectedresult);
+        Assert.assertEquals(actualNumberOfYLanguages, expectedNumberOfYLanguages);
     }
 
     @Test
-    public void testVerifyNumberOfXLanguages() {
-        int expectedResult = 14;
+    public void testNumberOfXLanguages() {
+        final int expectedNumberOfXLanguages = 14;
 
-        getDriver().get(BROWSE_LANGUAGES_URL);
+        int actualNumberOfXLanguages =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickXSubmenu()
+                        .getNumberOfLanguages();
 
-        AbcPage abcPage = new AbcPage(getDriver());
-
-        abcPage.clickXSubmenu();
-
-        XPage xPage = new XPage(getDriver());
-
-        Assert.assertEquals(xPage.getNumberOfLanguages(), expectedResult);
+        Assert.assertEquals(actualNumberOfXLanguages, expectedNumberOfXLanguages);
     }
 }
