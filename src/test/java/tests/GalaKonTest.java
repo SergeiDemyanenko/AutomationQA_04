@@ -13,6 +13,8 @@ import pages.start.StartPage;
 import pages.start.TeamPage;
 import runner.BaseTest;
 
+import static pages.start.TeamPage.getTeamPageWebsitesLinksTitles;
+
 public class GalaKonTest extends BaseTest {
 
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
@@ -91,34 +93,20 @@ public class GalaKonTest extends BaseTest {
     @Test
     public void testVerifyClickabilityOfWebsiteLinks() {
 
-        StringBuilder expectedR = new StringBuilder();
-        String expectedResult = expectedR.append("Index of /").append("www.e-taste.org").toString();
+        String expectedTeamPageWebsitesLinksTitles = getTeamPageWebsitesLinksTitles();
 
-        String lsLaNetURL = "http://www.ls-la.net/";
-        String eTasteURL = "http://www.e-taste.org/";
+        String actualTeamPageWebsitesLinksTitles = openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .clickOliverSchadeLink()
+                .getDriver().getTitle()
+                + openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .clickGregorScheithauerLink()
+                .getDriver()
+                .getTitle();
 
-        StartPage startP = new StartPage(getDriver());
-        TeamPage teamP = new TeamPage(getDriver());
-
-        getDriver().get(BASE_URL);
-
-        startP.getTeamSubmenu().click();
-
-        teamP.getOliverSchadeLink().click();
-        getDriver().get(lsLaNetURL);
-        String h1LsLaNet = getDriver()
-                .findElement(By.xpath("//h1")).getText();
-
-        getDriver().get("https://www.99-bottles-of-beer.net/team.html");
-
-        teamP.GregorScheithauerLink().click();
-        getDriver().get(eTasteURL);
-        String h1ETaste = getDriver()
-                .findElement(By.xpath("//strong[@class='text-primary text-5xl mb-4']")).getText();
-
-        StringBuilder actualR = new StringBuilder();
-        String actualResult = actualR.append(h1LsLaNet).append(h1ETaste).toString();
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualTeamPageWebsitesLinksTitles, expectedTeamPageWebsitesLinksTitles);
     }
 }

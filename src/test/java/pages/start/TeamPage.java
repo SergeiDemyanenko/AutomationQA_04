@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.MainPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,9 +63,10 @@ public class TeamPage extends BasePage {
         return getDriver().findElement(OLIVER_SCHADE_LINK);
     }
 
-    public void clickOliverSchadeLink(){
-
+    public TeamPage clickOliverSchadeLink(){
         getOliverSchadeLink().click();
+
+        return new TeamPage(getDriver());
     }
 
     public List<String> getAllLinks() {
@@ -76,8 +78,24 @@ public class TeamPage extends BasePage {
         return actualResult;
     }
 
-    public WebElement GregorScheithauerLink() {
+    public WebElement getGregorScheithauerLink() {
 
         return getDriver().findElement(GREGOR_SCHEITHAUER_LINK);
+    }
+
+    public TeamPage clickGregorScheithauerLink(){
+        getGregorScheithauerLink().click();
+
+        return new TeamPage(getDriver());
+    }
+
+    public static String getTeamPageWebsitesLinksTitles() {
+        StringBuilder expectedR = new StringBuilder();
+        String TeamPageWebsitesLinksTitles = expectedR
+                .append("Index of /")
+                .append("Ce domaine a été enregistré par Youdot.io")
+                .toString();
+
+        return TeamPageWebsitesLinksTitles;
     }
 }
