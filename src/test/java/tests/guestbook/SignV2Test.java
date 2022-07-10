@@ -1,0 +1,76 @@
+package tests.guestbook;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import runner.BaseTest;
+
+public class SignV2Test extends BaseTest {
+
+    @Test
+    public void testHomepageFieldDefaultValue() {
+        final String expectedDefaultValue = "http://";
+
+        String actualDefaultValue =
+                openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .getInputHomepageAttribute();
+
+        Assert.assertEquals(actualDefaultValue, expectedDefaultValue);
+    }
+
+    @Test
+    public void testInvalidSecurityCodeError() {
+        final String expectedErrorText = "Error: Error: Invalid security code.";
+
+        String actualErrorText = openBaseURL()
+                .clickGuestbookV2Menu()
+                .clickSignV2()
+                .fillAllFieldsAndClickButtonSubmit()
+                .getErrorMessageText();
+
+        Assert.assertEquals(actualErrorText, expectedErrorText);
+    }
+
+    @Test
+    public void testEmptyFormError() {
+        final String expectedErrorText = "Error: Please enter at least a message, your email address and the security code.";
+
+        String actualErrorText =
+                openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .clickButtonSubmit()
+                        .getErrorMessageText();
+
+        Assert.assertEquals(actualErrorText, expectedErrorText);
+    }
+
+    @Test
+    public void testErrorTextFont() {
+        final String expectedFont = "b";
+
+        String actualFont = openBaseURL()
+                .clickGuestbookV2Menu()
+                .clickSignV2()
+                .fillAllFieldsAndClickButtonSubmit()
+                .getErrorMessageTagFont();
+
+        Assert.assertEquals(actualFont, expectedFont);
+    }
+
+    @Test
+    public void testErrorTextBackgroundColor() {
+        final String expectedStyle =
+                "border: 1px solid red; background-color: rgb(255, 224, 224); padding: 5px; margin: 5px 10px;";
+
+        String actualStyle = openBaseURL()
+                .clickGuestbookV2Menu()
+                .clickSignV2()
+                .fillAllFieldsAndClickButtonSubmit()
+                .getErrorMessageAttributeStyle();
+
+        Assert.assertEquals(actualStyle, expectedStyle);
+    }
+
+}

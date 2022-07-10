@@ -223,7 +223,7 @@ public class SignV2Page extends BasePage {
         return getDriver().findElement(IMG_CAPTCHA_PHP);
     }
 
-    public SignV2Page inputAllFieldsAndClickButtonSubmit() {
+    public SignV2Page fillAllFieldsAndClickButtonSubmit() {
         inputName(getRandomStr(3));
         inputLocation(getRandomStr(6));
         inputEmail(getRandomStr(8));
