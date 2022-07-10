@@ -50,8 +50,10 @@ public class SignV2Page extends BasePage {
         return getDriver().findElement(BUTTON_SUBMIT);
     }
 
-    public void clickButtonSubmit() {
+    public SignV2Page clickButtonSubmit() {
         getButtonSubmit().click();
+
+        return new SignV2Page(getDriver());
     }
 
     public WebElement getErrorMessage() {
