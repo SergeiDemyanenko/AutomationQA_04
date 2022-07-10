@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class BasePage {
 
@@ -13,5 +14,10 @@ public abstract class BasePage {
     public WebDriver getDriver() {
 
         return driver;
+    }
+
+    public String getText(WebElement element) {
+
+        return element.getText();
     }
 }

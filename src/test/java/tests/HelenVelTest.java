@@ -67,7 +67,7 @@ public class HelenVelTest extends BaseTest {
         TeamPage teamPage = new TeamPage(getDriver());
 
         List<String> actualResult = new ArrayList<>();
-        for (WebElement namesTeam : teamPage.getListH3TeamName()) {
+        for (WebElement namesTeam : teamPage.getListH3Header()) {
             actualResult.add(namesTeam.getText());
         }
         Assert.assertEquals(actualResult, expectedResult);

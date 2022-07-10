@@ -3,13 +3,12 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TopListPage {
-
-    private WebDriver driver;
+public class TopListPage extends BasePage {
 
     private final By TOP_LIST_REAL_SUBMENU = By.linkText("Top Rated Real");
     private final By TOP_LIST_ESOTERIC_SUBMENU = By.xpath("//a[@href='./toplist_esoteric.html']");
@@ -19,14 +18,9 @@ public class TopListPage {
     private final By NEW_COMMENTS_SUBMENU = By.linkText("New Comments");
     private final By ALL_LANGUAGES_IN_THE_TABLE_TOP_LIST_SUBMENU = By.xpath("//tbody/tr/td/a");
 
-    public TopListPage(WebDriver existingDriver) {
+    public TopListPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+       super(driver);
     }
 
     public void clickSubmenu(WebElement element) {
@@ -38,9 +32,11 @@ public class TopListPage {
         return getDriver().findElement(TOP_LIST_REAL_SUBMENU);
     }
 
-    public void clickTopListRealSubmenu() {
+    public TopListRealPage clickTopListRealSubmenu() {
 
         clickSubmenu(getTopListRealSubmenu());
+
+        return new TopListRealPage(getDriver());
     }
 
     public WebElement getTopListEsotericSubmenu() {
