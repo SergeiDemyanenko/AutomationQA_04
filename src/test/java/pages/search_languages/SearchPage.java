@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.languages.LanguagePerl737Page;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPage extends BasePage {
-    private WebDriver driver;
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
 
@@ -62,9 +62,10 @@ public class SearchPage extends BasePage {
         return getDriver().findElement(SEARCH_BOX);
     }
 
-    public void getSearchBoxSendKey(String name) {
-
+    public SearchPage getSearchBoxSendKey(String name) {
         getSearchBox().sendKeys(name);
+
+        return new SearchPage(getDriver());
     }
 
     public WebElement getSearchSubmit() {
@@ -72,9 +73,10 @@ public class SearchPage extends BasePage {
         return getDriver().findElement(SEARCH_SUBMIT);
     }
 
-    public void clickSubmitSearch() {
+    public SearchPage clickSubmitSearch() {
 
         getSearchSubmit().click();
+        return new SearchPage(getDriver());
     }
 
     public WebElement getPerlLanguage() {
@@ -82,9 +84,10 @@ public class SearchPage extends BasePage {
         return getDriver().findElement(PERL_LANGUAGE);
     }
 
-    public void clickPerlLanguage() {
-
+    public LanguagePerl737Page clickPerlLanguage() {
         getPerlLanguage().click();
+
+        return new LanguagePerl737Page(getDriver());
     }
 
     public List<String> getOnlyJavaLanguages() {
