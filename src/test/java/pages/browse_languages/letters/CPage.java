@@ -3,6 +3,7 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.languages.LanguageCSharp1614Page;
 
 public class CPage extends _LettersPage {
 
@@ -18,8 +19,11 @@ public class CPage extends _LettersPage {
         return getDriver().findElement(CSHARP_LANGUAGE);
     }
 
-    public void clickCSharpLanguage() {
-
+    public LanguageCSharp1614Page clickCSharpLanguage() {
         getCSharpLanguage().click();
+
+        return new LanguageCSharp1614Page(getDriver());
     }
 }
+
+
