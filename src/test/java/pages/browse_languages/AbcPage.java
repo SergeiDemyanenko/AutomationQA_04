@@ -3,12 +3,12 @@ package pages.browse_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.letters.SPage;
 import pages.BasePage;
 import pages.browse_languages.letters.RPage;
 import pages.browse_languages.letters.XPage;
 import pages.browse_languages.letters.YPage;
 import pages.browse_languages.letters.JPage;
-
 import java.util.List;
 
 public class AbcPage extends BasePage {
@@ -136,9 +136,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(S_SUBMENU);
     }
 
-    public void clickSSubmenu() {
-
+    public SPage clickSSubmenu() {
         getSSubmenu().click();
+
+        return new SPage(getDriver());
     }
 
     public WebElement getUSubmenu(){
