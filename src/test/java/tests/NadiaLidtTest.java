@@ -2,92 +2,113 @@ package tests;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.RPage;
-import pages.search_languages.SearchPage;
-import pages.start.InfoPage;
 import pages.start.StartPage;
-import pages.start.TeamPage;
-import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class NadiaLidtTest extends BaseTest {
 
-    private static final String BASE_URL = "https://99-bottles-of-beer.net/";
-
     @Test
     public void testTitleSearchLenguages () {
-        String expectedResult = "Search Languages";
+        final String expectedTitleSearchLenguages = "Search Languages";
 
-        getDriver().get(BASE_URL);
+        String actualTitleSearchLenguages =
+                openBaseURL()
+                        .clickSearchMenu()
+                        .clickSearchSubmenu()
+                        .getH2MainText();
 
-        MainPage search = new MainPage(getDriver());
-
-        search.clickSearchMenu();
-
-        SearchPage searchPage = new SearchPage(getDriver());
-
-        searchPage.clickSearchSubmenu();
-
-        String actualResult = searchPage.getH2MainText();
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualTitleSearchLenguages, expectedTitleSearchLenguages);
     }
 
     @Test (description = "TC_700.003")
-    public void testSpellingErrorMessageSubmitLanguageButton() {
-        String expectedResultError = "Error";
-        String expectedResultPrecondition = "Precondition";
-        String expectedResultIncomplete = "Incomplete";
-        String expectedResultInput = "Input";
-        String expectedResultFailed  = "failed";
-        String expectedResult1 = ":";
-        String expectedResult2 = "-";
-        String expectedResult3 = ".";
+    public void testErrorMessageSubmitLanguageButton() {
+        final String expectedResultErrorMessageSubmitLanguageButtonError = "Error";
+        final String expectedResultErrorMessageSubmitLanguageButtonPrecondition = "Precondition";
+        final String expectedResultErrorMessageSubmitLanguageButtonIncomplete = "Incomplete";
+        final String expectedResultErrorMessageSubmitLanguageButtonInput = "Input";
+        final String expectedResultErrorMessageSubmitLanguageButtonFailed  = "failed";
+        final String expectedResultErrorMessageSubmitLanguageButton1 = ":";
+        final String expectedResultErrorMessageSubmitLanguageButton2 = "-";
+        final String expectedResultErrorMessageSubmitLanguageButton3 = ".";
 
-        getDriver().get(BASE_URL);
 
-        MainPage menuSubmitNewLanguagePage = new MainPage(getDriver());
-        SubmitNewLanguagePage errorMessage = new SubmitNewLanguagePage(getDriver());
 
-        menuSubmitNewLanguagePage.clickSubmitNewLanguageMenu();
+        String actualErrorMessageSubmitLanguageButtonError =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(0,5);
+        String actualErrorMessageSubmitLanguageButtonPrecondition =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(7,19);
+        String actualErrorMessageSubmitLanguageButtonIncomplete =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(29,39);
+        String actualErrorMessageSubmitLanguageButtonInput =
+                openBaseURL().clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(40,45);
+        String actualErrorMessageSubmitLanguageButtonFailed =
+                openBaseURL().clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(20,26);
+        String actualErrorMessageSubmitLanguageButton1 =
+                openBaseURL().clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(5,6);
+        String actualErrorMessageSubmitLanguageButton2 =
+                openBaseURL().clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(27,28);
+        String actualErrorMessageSubmitLanguageButton3 =
+                openBaseURL().clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageText()
+                        .substring(45);
 
-        errorMessage.clickButtonSubmitLanguage();
-
-        String actualdResultError = errorMessage.getErrorMessageText().substring(0,5);
-        String actualdResultPrecondition = errorMessage.getErrorMessageText().substring(7,19);
-        String actualdResultIncomplete = errorMessage.getErrorMessageText().substring(29,39);
-        String actualdResultInput = errorMessage.getErrorMessageText().substring(40,45);
-        String actualdResultFailed = errorMessage.getErrorMessageText().substring(20,26);
-        String actualdResult1 = errorMessage.getErrorMessageText().substring(5,6);
-        String actualdResult2 = errorMessage.getErrorMessageText().substring(27,28);
-        String actualdResult3 = errorMessage.getErrorMessageText().substring(45);
-
-        Assert.assertEquals(actualdResultError, expectedResultError);
-        Assert.assertEquals(actualdResultPrecondition, expectedResultPrecondition);
-        Assert.assertEquals(actualdResultIncomplete, expectedResultIncomplete);
-        Assert.assertEquals(actualdResultInput, expectedResultInput);
-        Assert.assertEquals(actualdResultFailed, expectedResultFailed);
-        Assert.assertEquals(actualdResult1, expectedResult1);
-        Assert.assertEquals(actualdResult2, expectedResult2);
-        Assert.assertEquals(actualdResult3, expectedResult3);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButtonError,
+                expectedResultErrorMessageSubmitLanguageButtonError);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButtonPrecondition,
+                expectedResultErrorMessageSubmitLanguageButtonPrecondition);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButtonIncomplete,
+                expectedResultErrorMessageSubmitLanguageButtonIncomplete);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButtonInput,
+                expectedResultErrorMessageSubmitLanguageButtonInput);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButtonFailed,
+                expectedResultErrorMessageSubmitLanguageButtonFailed);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButton1,
+                expectedResultErrorMessageSubmitLanguageButton1);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButton2,
+                expectedResultErrorMessageSubmitLanguageButton2);
+        Assert.assertEquals(actualErrorMessageSubmitLanguageButton3,
+                expectedResultErrorMessageSubmitLanguageButton3);
     }
 
     @Test (description = "[US][Browse Language][R Page]")
-    public void testVerifyInformationAboutLanguageRPGIVFreeForm(){
+    public void testInformationAboutLanguageRPGIVFreeForm(){
         String languageExpected = "RPG IV Free-Form";
         String authorExpected = "James Wall";
         String dateExpected = "01/10/06";
         String commentsExpected = "3";
-        List<String> actualResult = new ArrayList<>();
+        List<String> actualInformationAboutLanguageRPGIVFreeForm = new ArrayList<>();
 
-        StringBuilder expectedResult = new StringBuilder();
+        StringBuilder expectedInformationAboutLanguageRPGIVFreeForm = new StringBuilder();
 
-        expectedResult
+        expectedInformationAboutLanguageRPGIVFreeForm
                 .append(languageExpected)
                 .append(" ")
                 .append(authorExpected)
@@ -96,89 +117,80 @@ public class NadiaLidtTest extends BaseTest {
                 .append(" ")
                 .append(commentsExpected);
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        AbcPage abc = new AbcPage(getDriver());
-        RPage rPage = new RPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-        abc.clickRSubmenu();
+        RPage rPage = openBaseURL().clickBrowseLanguagesMenu().clickRSubmenu();
 
         for (WebElement tr : rPage.getAllTR()) {
             if (tr.getText().contains(languageExpected)) {
-                actualResult.add(tr.getText());
+                actualInformationAboutLanguageRPGIVFreeForm.add(tr.getText());
             }
         }
 
-        Assert.assertEquals(actualResult.size(), 1);
-        Assert.assertTrue(!actualResult.get(0).isEmpty());
-        Assert.assertEquals(actualResult.get(0),expectedResult.toString());
+        Assert.assertEquals(actualInformationAboutLanguageRPGIVFreeForm.size(), 1);
+        Assert.assertTrue(!actualInformationAboutLanguageRPGIVFreeForm.get(0).isEmpty());
+        Assert.assertEquals(actualInformationAboutLanguageRPGIVFreeForm.get(0)
+                ,expectedInformationAboutLanguageRPGIVFreeForm.toString());
     }
 
     @Test
-    public void testCheckTableTitleMenuBrowseLanguages() {
-        String expectedResult = "Language, Author, Date, Comments, Rate" ;
-        String actualResult;
+    public void testTableTitleMenuBrowseLanguages() {
+        String expectedTableTitleMenuBrowseLanguages = "Language, Author, Date, Comments, Rate" ;
 
-        getDriver().get(BASE_URL);
+        String actualTableTitleMenuBrowseLanguages =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getTitlesTable();
 
-        MainPage menuBrowseLanguages = new MainPage(getDriver());
-        AbcPage titleTable = new AbcPage(getDriver());
-
-        menuBrowseLanguages.clickBrowseLanguagesMenu();
-        actualResult = titleTable.getTitlesTable();
-
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualTableTitleMenuBrowseLanguages, expectedTableTitleMenuBrowseLanguages);
     }
 
     @Test
-    public void testVeryfiTextInfoSubmenu() {
-        String expectedResult = "History";
+    public void testTextInfoSubmenu() {
+        String expectedTextInfoSubmenu = "History";
 
-        getDriver().get(BASE_URL);
-        StartPage startPage = new StartPage(getDriver());
-        String actualResult = startPage.getText(startPage.getInfoSubmenu());
+        String actualTextInfoSubmenu = openBaseURL()
+                .getText(openBaseURL()
+                        .clickStartMenu()
+                        .getInfoSubmenu());
 
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualTextInfoSubmenu, expectedTextInfoSubmenu);
     }
 
     @Test
-    public void testVeryfiLinkTextInfoSubmenu() {
-        String expectedResult = "https://99-bottles-of-beer.net/info.html";
+    public void testLinkTextInfoSubmenu() {
+        String expectedLinkTextInfoSubmenu = "http://www.99-bottles-of-beer.net/info.html";
 
-        getDriver().get(BASE_URL);
-        StartPage startPage = new StartPage(getDriver());
-        String actualResult = startPage.getInfoSubmenu().getAttribute("href");
+        String actualLinkTextInfoSubmenu = openBaseURL()
+                .clickStartMenu()
+                .getInfoSubmenu()
+                .getAttribute("href");
+        System.out.println(actualLinkTextInfoSubmenu);
 
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualLinkTextInfoSubmenu, expectedLinkTextInfoSubmenu);
     }
 
     @Test
-    public void testVeryfiNavigationInfoSubmenu() {
-        String expectedResult = "History";
+    public void testNavigationInfoSubmenu() {
+        String expectedNavigationInfoSubmenu = "History";
 
-        getDriver().get(BASE_URL);
-        StartPage startPage = new StartPage(getDriver());
-        startPage.clickInfoSubmenu();
-        InfoPage infoPage = new InfoPage(getDriver());
-        String actualResalt = infoPage.getH2HeaderText();
+        String actualNavigationInfoSubmenu = openBaseURL()
+                .clickStartMenu()
+                .clickInfoSubmenu()
+                .getH2HeaderText();
 
-        Assert.assertEquals(actualResalt, expectedResult);
+        Assert.assertEquals(actualNavigationInfoSubmenu, expectedNavigationInfoSubmenu);
     }
 
     @Test
-    public void testVeryfiTextH2MainHeader() {
-        String expectedResult = "The Team";
-
-        getDriver().get(BASE_URL);
+    public void testTextH2MainHeader() {
+        String expectedTextH2MainHeader = "The Team";
 
         StartPage startPage = new StartPage(getDriver());
-        startPage.clickTeamSubmenu();
 
-        TeamPage teamPage = new TeamPage(getDriver());
-        String actualResult = teamPage.getH2MainHeaderText();
+        String actualTextH2MainHeader = openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .getH2MainHeaderText();
 
-        Assert.assertEquals(expectedResult, actualResult);
+        Assert.assertEquals(expectedTextH2MainHeader, actualTextH2MainHeader);
     }
 }

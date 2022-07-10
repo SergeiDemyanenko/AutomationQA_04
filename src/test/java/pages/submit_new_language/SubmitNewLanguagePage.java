@@ -4,13 +4,13 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
-public class SubmitNewLanguagePage {
-
-    private WebDriver driver;
+public class SubmitNewLanguagePage extends BasePage {
 
     private final By SPAN_IMPORTANT = By.xpath("//div[@id='main']/ul/li/span/b");
     private final By BUTTON_SUBMIT_LANGUAGE = By.xpath("//div/div/form[@id='addlanguage']/p/input[@type='submit']");
@@ -29,14 +29,9 @@ public class SubmitNewLanguagePage {
     private final By CATEGORY_LIST = By.xpath("//select[@name='category']/option");
 
 
-    public SubmitNewLanguagePage(WebDriver existingDriver) {
+    public SubmitNewLanguagePage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getSpanImportant() {
@@ -54,9 +49,10 @@ public class SubmitNewLanguagePage {
         return getDriver().findElement(BUTTON_SUBMIT_LANGUAGE);
     }
 
-    public void clickButtonSubmitLanguage() {
-
+    public SubmitNewLanguagePage clickButtonSubmitLanguage() {
         getButtonSubmitLanguage().click();
+
+        return new SubmitNewLanguagePage(getDriver());
     }
 
     public WebElement getErrorMessage() {

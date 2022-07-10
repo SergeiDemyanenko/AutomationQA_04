@@ -3,11 +3,12 @@ package pages.start;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class InfoPage {
+public class InfoPage extends BasePage {
 
     private WebDriver driver;
 
@@ -16,14 +17,9 @@ public class InfoPage {
     private static final String LANG_VERSION = "REM BASIC Version of 99 ";
     private static final By MIRRORS_1 = By.xpath("//a[@href='/mirrors/1/']");
 
-    public InfoPage(WebDriver existingDriver){
+    public InfoPage(WebDriver driver){
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getH2Header() {

@@ -79,9 +79,10 @@ public class StartPage extends BasePage {
         return getDriver().findElement(INFO_SUBMENU);
     }
 
-    public void clickInfoSubmenu(){
+    public InfoPage clickInfoSubmenu(){
 
         getInfoSubmenu().click();
+        return new InfoPage(getDriver());
     }
 
     public WebElement getTeamSubmenu() {
