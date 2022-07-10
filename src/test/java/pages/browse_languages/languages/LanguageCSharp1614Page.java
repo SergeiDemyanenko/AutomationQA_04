@@ -3,33 +3,28 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LanguageCSharp1614Page {
+public class LanguageCSharp1614Page extends BasePage {
 
-    private final By CSharp_Versions = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
+    private final By A_LINKS = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
 
-    private final WebDriver driver;
 
-    public LanguageCSharp1614Page(WebDriver existingDriver) {
+    public LanguageCSharp1614Page(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public List<String> getCSharpLanguageALinks() {
 
-        List<WebElement> aHrefs = getDriver().findElements(CSharp_Versions);
+        List<WebElement> aHrefs = getDriver().findElements(A_LINKS);
         List<String> listOfVersions = new ArrayList<>();
 
-        for (WebElement tr : aHrefs ) {
-            listOfVersions.add(tr.getText());
+        for (WebElement a : aHrefs ) {
+            listOfVersions.add(a.getText());
         }
 
         return listOfVersions;

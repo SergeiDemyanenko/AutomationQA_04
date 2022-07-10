@@ -38,7 +38,7 @@ public class LanguagePerl737Page {
         return getDriver().findElement(DATE);
     }
 
-    public String getPerlLanguageDataText() {
+    public String getPerlLanguageDateText() {
 
         return getPerlLanguageDate().getText();
     }

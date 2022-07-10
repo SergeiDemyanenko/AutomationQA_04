@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.AbcPage;
 import pages.guestbook.GuestbookV2Page;
+import pages.search_languages.SearchPage;
 import pages.start.StartPage;
 import pages.top_lists.TopListPage;
 
@@ -96,9 +97,10 @@ public class MainPage extends BasePage {
         return getText(getSearchMenu());
     }
 
-    public void clickSearchMenu() {
-
+    public SearchPage clickSearchMenu() {
         getSearchMenu().click();
+
+        return new SearchPage(getDriver());
     }
 
     public void clickSubmitNewLanguageMenu() {

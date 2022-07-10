@@ -3,12 +3,14 @@ package pages.search_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
+import pages.browse_languages.languages.LanguagePerl737Page;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage {
-    private WebDriver driver;
+public class SearchPage extends BasePage {
+
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
 
@@ -25,15 +27,11 @@ public class SearchPage {
 
     private final By TABLE_JAVA_SEARCH_LANGUAGES = By.xpath("//tbody/tr");
 
-    public SearchPage(WebDriver existingDriver) {
+    public SearchPage(WebDriver driver) {
 
-        this.driver = existingDriver;
+        super(driver);
     }
 
-    protected WebDriver getDriver() {
-
-        return driver;
-    }
 
     public String getText(WebElement element) {
 
@@ -65,9 +63,11 @@ public class SearchPage {
         return getDriver().findElement(SEARCH_BOX);
     }
 
-    public void getSearchBoxSendKey(String name) {
+    public SearchPage getSearchBoxSendKey(String name) {
 
         getSearchBox().sendKeys(name);
+
+        return new SearchPage(getDriver());
     }
 
     public WebElement getSearchSubmit() {
@@ -75,9 +75,11 @@ public class SearchPage {
         return getDriver().findElement(SEARCH_SUBMIT);
     }
 
-    public void clickSubmitSearch() {
-
+    public SearchPage clickSubmitSearch() {
         getSearchSubmit().click();
+
+        return new SearchPage(getDriver());
+
     }
 
     public WebElement getPerlLanguage() {
@@ -85,9 +87,11 @@ public class SearchPage {
         return getDriver().findElement(PERL_LANGUAGE);
     }
 
-    public void clickPerlLanguage() {
-
+    public LanguagePerl737Page clickPerlLanguage() {
         getPerlLanguage().click();
+
+        return new LanguagePerl737Page(getDriver());
+
     }
 
     public List<String> getOnlyJavaLanguages() {
@@ -103,12 +107,12 @@ public class SearchPage {
         return allJavaLanguages;
     }
 
-    public List<WebElement> getTableJavaSearchLanguages(){
+    public List<WebElement> getTableJavaSearchLanguages() {
 
-        return  getDriver().findElements(TABLE_JAVA_SEARCH_LANGUAGES);
+        return getDriver().findElements(TABLE_JAVA_SEARCH_LANGUAGES);
     }
 
-    public int countLanguagesJavaSearch(){
+    public int countLanguagesJavaSearch() {
 
         return getTableJavaSearchLanguages().size() - 1;
     }

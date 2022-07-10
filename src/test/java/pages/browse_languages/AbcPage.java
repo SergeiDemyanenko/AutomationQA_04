@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.letters.CPage;
+import pages.browse_languages.letters.PPage;
 
 import java.util.List;
 
@@ -74,9 +76,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(C_SUBMENU);
     }
 
-    public void clickCSubmenu() {
-
+    public CPage clickCSubmenu() {
         getCSubmenu().click();
+
+        return new CPage(getDriver());
     }
 
     public WebElement getZeroSubmenu() {
@@ -99,9 +102,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(P_SUBMENU);
     }
 
-    public void clickPSubmenu() {
-
+    public PPage clickPSubmenu() {
         getPSubmenu().click();
+
+        return new PPage(getDriver());
     }
 
     public WebElement getRSubmenu() {

@@ -3,23 +3,18 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
+import pages.browse_languages.languages.LanguageCSharp1614Page;
 
-public class CPage {
-
-    private final WebDriver driver;
+public class CPage extends BasePage {
 
     private final By H2_TITLE_C = By.xpath("//div[@id='main']/h2");
     private final By DESCRIPTION_C = By.xpath("//div[@id='main']/p[text()]");
     private final By CSHARP_LANGUAGE = By.linkText("C#");
 
-    public CPage(WebDriver existingDriver) {
+    public CPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-   }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getDescriptionCategoryC() {
@@ -47,8 +42,9 @@ public class CPage {
         return getDriver().findElement(CSHARP_LANGUAGE);
     }
 
-    public void clickCSharpLanguage() {
-
+    public LanguageCSharp1614Page clickCSharpLanguage() {
         getCSharpLanguage().click();
+
+        return new LanguageCSharp1614Page(getDriver());
     }
 }
