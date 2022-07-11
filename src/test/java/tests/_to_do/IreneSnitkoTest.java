@@ -9,18 +9,12 @@ import pages.browse_languages.languages.LanguageJavascript1948Page;
 import pages.browse_languages.letters.JPage;
 import pages.guestbook.GuestbookV2Page;
 import pages.guestbook.SignV2Page;
-import pages.start.InfoPage;
-import pages.start.StartPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
-
-import static runner.TestUtils.createBasicCode;
 
 public class IreneSnitkoTest extends BaseTest {
 
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
-
-
 
     @Test
     public void testCountNumberOfProgrammingLanguagesOnJPage() {
@@ -65,24 +59,6 @@ public class IreneSnitkoTest extends BaseTest {
         js1948.clickWikiLink();
 
         Assert.assertTrue(getDriver().findElement(By.xpath("//div[@id='content']/h1")).isDisplayed());
-    }
-
-    @Test
-    public void testVerifyAttributesSrcOfMessageIcons () {
-
-        getDriver().get(BASE_URL);
-
-        MainPage mp = new MainPage(getDriver());
-
-        mp.clickGuestbookV2Menu();
-
-        GuestbookV2Page gb = new GuestbookV2Page(getDriver());
-
-        gb.clickSignV2();
-
-        SignV2Page sv2 = new SignV2Page(getDriver());
-
-        Assert.assertEquals(sv2.getAttributesSrcOfImg(), sv2.createAttributesSrcOfImg());
     }
 
     @Test

@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
+import static runner.TestUtils.createAttributesSrcOfImg;
+
 public class SignV2Test extends BaseTest {
 
     @Test
@@ -73,4 +75,17 @@ public class SignV2Test extends BaseTest {
         Assert.assertEquals(actualStyle, expectedStyle);
     }
 
+    @Test
+    public void testAttributesSrcOfMessageIcons() {
+
+        String expectedAttributesSrcOfMessageIcons = createAttributesSrcOfImg();
+
+        String actualAttributesSrcOfMessageIcons =
+                openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .getAttributesSrcOfImg();
+
+        Assert.assertEquals(expectedAttributesSrcOfMessageIcons, actualAttributesSrcOfMessageIcons);
+    }
 }

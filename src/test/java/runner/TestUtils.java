@@ -167,4 +167,24 @@ public final class TestUtils {
 
         return basicCode.toString();
     }
+
+    protected static String createSrc(String value) {
+
+        return "images/bb/bb".concat(value).concat(".gif");
+    }
+
+    public static String createAttributesSrcOfImg() {
+
+        String ln = "\n";
+
+        return createSrc("url")
+                .concat(ln)
+                .concat(createSrc("email"))
+                .concat(ln)
+                .concat(createSrc("bold"))
+                .concat(ln)
+                .concat(createSrc("italic"))
+                .concat(ln)
+                .concat(createSrc("underline"));
+    }
 }
