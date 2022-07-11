@@ -78,5 +78,6 @@ public class NavigationTest extends BaseTest {
                 .clickSubmitNewLanguageMenu();
 
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
-        Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"))
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
+   }
 }
