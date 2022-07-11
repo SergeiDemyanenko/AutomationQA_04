@@ -44,7 +44,7 @@ public class KononirinIrinaShTest extends BaseTest {
 
         KPage title = new KPage(getDriver());
 
-        String actualResult = title.getH2PageKText();
+        String actualResult = title.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

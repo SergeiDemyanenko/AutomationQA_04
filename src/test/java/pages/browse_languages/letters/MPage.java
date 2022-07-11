@@ -2,48 +2,23 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class MPage {
-
-    private WebDriver driver;
+public class MPage extends _LettersPage {
 
     private final By MATHEMATICA_PAGE = By.xpath("//a[@href='language-mathematica-1090.html']");
-    private final By LANGUAGE_MYSQL = By.xpath("//a[@href='language-mysql-1252.html']");
-    private final By LANGUAGE_MACROX =  By.xpath("//a[@href='language-macrox-371.html']");
+    private final By LANGUAGE_MACROX = By.xpath("//a[@href='language-macrox-371.html']");
 
-    public MPage(WebDriver existingDriver) {
+    public MPage(WebDriver driver) {
 
-        this.driver = existingDriver;
+        super(driver);
     }
 
-    protected WebDriver getDriver() {
-
-        return driver;
-    }
-
-    public WebElement mathematicaPage() {
-
-        return getDriver().findElement(MATHEMATICA_PAGE);
-    }
-
-    public WebElement getLastLanguageInM() {
-
-        return getDriver().findElement(LANGUAGE_MYSQL);
-    }
-
-    public String getLastLanguageInMText() {
-
-        return getLastLanguageInM().getText();
-    }
-
-    public WebElement getLanguageMacroX() {
-
-        return getDriver().findElement(LANGUAGE_MACROX);
+    public void clickMathematicaPage() {
+        clickWebElement(findElement(MATHEMATICA_PAGE));
     }
 
     public String getlanguageMacroXVerify() {
 
-        return getLanguageMacroX().getText();
+        return getText(findElement(LANGUAGE_MACROX));
     }
 }

@@ -20,7 +20,7 @@ public class AuthorOfMathematicaLanguageTest extends BaseTest {
         AbcPage ab = new AbcPage(getDriver());
 
         ab.clickMSubmenu();
-        mp.mathematicaPage().click();
+        mp.clickMathematicaPage();
         String actualResult = lm.getTdTableBrentonBostick().getText();
 
         Assert.assertEquals(actualResult, expectedResult);
