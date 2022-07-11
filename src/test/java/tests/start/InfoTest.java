@@ -21,4 +21,16 @@ public class InfoTest extends BaseTest {
 
         Assert.assertEquals(actualCodeOfBasicOnInfoPage, expectedCodeOfBasicOnInfoPage);
     }
+
+    @Test
+    public void testH2HeaderText() {
+        final String expectedH2HeaderText = "History";
+
+        String actualH2HeaderText= openBaseURL()
+                .clickStartMenu()
+                .clickInfoSubmenu()
+                .getH2HeaderText();
+
+        Assert.assertEquals(actualH2HeaderText,expectedH2HeaderText);
+    }
 }
