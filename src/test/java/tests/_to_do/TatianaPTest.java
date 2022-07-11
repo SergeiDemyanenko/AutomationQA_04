@@ -161,7 +161,7 @@ public class TatianaPTest extends BaseTest {
 
         NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
 
-        Assert.assertEquals(newCommentsPage.getTextH2Main(), expectedResult);
+        Assert.assertEquals(newCommentsPage.getH2HeaderText(), expectedResult);
     }
 
     @Test
