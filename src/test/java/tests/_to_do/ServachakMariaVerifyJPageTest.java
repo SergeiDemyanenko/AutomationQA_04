@@ -50,7 +50,7 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         main.clickBrowseLanguagesMenu();
         abc.clickJSubmenu();
 
-        Assert.assertEquals(j.getTextThTags().trim(), expectedResult);
+        Assert.assertEquals(j.getStringTextThTags().trim(), expectedResult);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         main.clickBrowseLanguagesMenu();
         abc.clickJSubmenu();
 
-        for (WebElement a : j.getAllLanguages()) {
+        for (WebElement a : j.getWebElementsTDLinks()) {
 
             Assert.assertTrue(a
                     .getText()
@@ -87,7 +87,7 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         main.clickBrowseLanguagesMenu();
         abc.clickJSubmenu();
 
-        Assert.assertEquals(j.getAllLanguages().size(), expectedResult);
+        Assert.assertEquals(j.getWebElementsTDLinks().size(), expectedResult);
     }
 
     @Test
@@ -102,7 +102,7 @@ public class ServachakMariaVerifyJPageTest extends BaseTest {
         abc.clickJSubmenu();
 
         String url = getDriver().getCurrentUrl();
-        j.getAllLanguages().get(j.randomLanguage() - 1).click();
+        j.getWebElementsTDLinks().get(j.randomLanguage() - 1).click();
 
 
         Assert.assertNotEquals(getDriver().getCurrentUrl(), url);

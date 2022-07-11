@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 public class TopListTopHitsPage {
 
     private final By H2_TABLE_NAME_TOP_HITS = By.xpath("//div[@id='main']/h2");
+    private final By SHAKESPEARE_LANGUAGE = By.xpath("//a[@href='language-shakespeare-664.html']");
 
     private WebDriver driver;
 
@@ -28,5 +29,10 @@ public class TopListTopHitsPage {
     public String getH2TableTopHitsName() {
 
         return getH2TableTopHits().getText();
+    }
+
+    public WebElement getShakespeareLanguage() {
+
+        return getDriver().findElement(SHAKESPEARE_LANGUAGE);
     }
 }

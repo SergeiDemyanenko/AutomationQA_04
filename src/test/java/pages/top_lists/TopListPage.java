@@ -64,9 +64,10 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(TOPHITS_SUBMENU);
     }
 
-    public void clickTopHitsSubmenu() {
-
+    public TopListTopHitsPage clickTopHitsSubmenu() {
         getTopHitsSubmenu().click();
+
+        return new TopListTopHitsPage(getDriver());
     }
 
     public String getTextTopHitsSubmenu() {
@@ -114,5 +115,4 @@ public class TopListPage extends BasePage {
         }
         return textOfLinks;
     }
-
 }
