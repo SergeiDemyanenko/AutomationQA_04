@@ -3,12 +3,9 @@ package pages.browse_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.browse_languages.letters.SPage;
+import pages.browse_languages.letters.*;
 import pages.BasePage;
-import pages.browse_languages.letters.RPage;
-import pages.browse_languages.letters.XPage;
-import pages.browse_languages.letters.YPage;
-import pages.browse_languages.letters.JPage;
+
 import java.util.List;
 
 public class AbcPage extends BasePage {
@@ -80,9 +77,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(C_SUBMENU);
     }
 
-    public void clickCSubmenu() {
-
+    public CPage clickCSubmenu() {
         getCSubmenu().click();
+
+        return new CPage(getDriver());
     }
 
     public WebElement getZeroSubmenu() {
@@ -95,6 +93,10 @@ public class AbcPage extends BasePage {
         return getText(getZeroSubmenu());
     }
 
+    public void clickZeroSubmenu() {
+        getZeroSubmenu().click();
+    }
+
     public List<WebElement> getAllSubmenu() {
 
         return getDriver().findElements(ALL_SUBMENU);
@@ -105,9 +107,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(P_SUBMENU);
     }
 
-    public void clickPSubmenu() {
-
+    public PPage clickPSubmenu() {
         getPSubmenu().click();
+
+        return new PPage(getDriver());
     }
 
     public WebElement getRSubmenu() {
@@ -142,7 +145,7 @@ public class AbcPage extends BasePage {
         return new SPage(getDriver());
     }
 
-    public WebElement getUSubmenu(){
+    public WebElement getUSubmenu() {
 
         return getDriver().findElement(U_SUBMENU);
     }
@@ -152,7 +155,7 @@ public class AbcPage extends BasePage {
         getUSubmenu().click();
     }
 
-    public String getUSubmenuText(){
+    public String getUSubmenuText() {
 
         return getText(getUSubmenu());
     }
@@ -166,17 +169,17 @@ public class AbcPage extends BasePage {
             stringTitle.append(t.getText()).append(", ");
         }
         actualResult = stringTitle.toString()
-                .substring(0,stringTitle.length()-2);
+                .substring(0, stringTitle.length() - 2);
 
         return actualResult;
     }
 
-    public WebElement getSubmenu(){
+    public WebElement getSubmenu() {
 
         return getDriver().findElement(SUBMENU);
     }
 
-    public WebElement getASubmenu(){
+    public WebElement getASubmenu() {
 
         return getDriver().findElement(A_SUBMENU);
     }
@@ -186,7 +189,7 @@ public class AbcPage extends BasePage {
         getASubmenu().click();
     }
 
-    public String getASubmenuText(){
+    public String getASubmenuText() {
 
         return getText(getASubmenu());
     }
@@ -198,7 +201,7 @@ public class AbcPage extends BasePage {
 
     public void clickDSubmenu() {
         getDSubmenu().click();
-    }   
+    }
 
     public WebElement getKSubmenu() {
 
@@ -209,6 +212,7 @@ public class AbcPage extends BasePage {
 
         getKSubmenu().click();
     }
+
     public WebElement getISubmenu() {
 
         return getDriver().findElement(I_SUBMENU);

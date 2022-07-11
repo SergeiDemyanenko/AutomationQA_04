@@ -3,24 +3,18 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class LanguagePerl737Page {
-
-    private WebDriver driver;
+public class LanguagePerl737Page extends BasePage {
 
     private final By PERL_LANGUAGE = By.xpath("//div[@id='main']/h2");
     private final By DATE = By.xpath("//tbody/tr/td[text()='06/04/05']");
     private final By AUTHOR = By.xpath("//tbody/tr/td[text()='Andrew Savige']");
     private final By COMMENTS = By.xpath("//tbody/tr/td[text()='76']");
 
-    public LanguagePerl737Page(WebDriver existingDriver) {
+    public LanguagePerl737Page(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getPerlLanguage() {
@@ -58,7 +52,7 @@ public class LanguagePerl737Page {
         return getDriver().findElement(COMMENTS);
     }
 
-    public String getPerlLanguageCommentsNumberText() {
+    public String getPerlLanguageNumberOfCommentsText() {
 
         return getPerlLanguageComments().getText();
     }

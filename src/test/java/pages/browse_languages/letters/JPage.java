@@ -3,6 +3,7 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import pages.browse_languages.languages.LanguageJava3Page;
 
 import java.util.ArrayList;
@@ -27,6 +28,13 @@ public class JPage extends _LettersPage {
     public void clickLanguageJavascript1948() {
 
         findElement(By.linkText(getLanguageFromTDLinks("JavaScript"))).click();
+    }
+
+    public List<String> getH2HeaderAndPTagText(){
+
+        List<String> list = List.of(getH2HeaderText(), getPTagText());
+
+        return list;
     }
 
     public int randomLanguage() {

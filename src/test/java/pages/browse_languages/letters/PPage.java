@@ -2,30 +2,20 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import pages.browse_languages.languages.LanguagePython808Page;
 
-public class PPage {
-
-    private final WebDriver driver;
+public class PPage extends _LettersPage {
 
     private final By PYTHON_LANGUAGE = By.xpath("//a[@href='language-python-808.html']");
 
-    public PPage(WebDriver existingDriver) {
+    public PPage(WebDriver driver) {
 
-        this.driver = existingDriver;
+        super(driver);
     }
 
-    protected WebDriver getDriver() {
+    public LanguagePython808Page clickPythonLanguage() {
+        clickWebElement(findElement(PYTHON_LANGUAGE));
 
-        return driver;
-    }
-    public WebElement getPythonLanguage() {
-
-        return getDriver().findElement(PYTHON_LANGUAGE);
-    }
-
-    public void clickPythonLanguage() {
-
-        getPythonLanguage().click();
+        return new LanguagePython808Page(getDriver());
     }
 }

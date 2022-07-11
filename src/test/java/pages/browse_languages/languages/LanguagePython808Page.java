@@ -3,21 +3,16 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class LanguagePython808Page {
-
-    private WebDriver driver;
+public class LanguagePython808Page extends BasePage {
 
     private final By PYTHON_LANGUAGE_INFO_LINK = By.xpath("//a[@href='http://www.python.org/']");
 
-    public LanguagePython808Page(WebDriver existingDriver) {
 
-        this.driver = existingDriver;
-    }
+    public LanguagePython808Page(WebDriver driver) {
 
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getPythonLanguageInfoLink() {
@@ -25,8 +20,9 @@ public class LanguagePython808Page {
         return getDriver().findElement(PYTHON_LANGUAGE_INFO_LINK);
     }
 
-    public void clickPythonLanguageInfoLink() {
+    public LanguagePython808Page clickPythonLanguageInfoLink() {
+        getPythonLanguageInfoLink().click();
 
-       getPythonLanguageInfoLink().click();
+        return new LanguagePython808Page(getDriver());
     }
 }

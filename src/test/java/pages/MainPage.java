@@ -23,6 +23,7 @@ public class MainPage extends BasePage {
     private final By FOOTER_BAR = By.id("footer");
     private final By FOOTER_SUBMIT_NEW_LANGUAGE = By.xpath("//div[@id='footer']//a[@href='/submitnewlanguage.html']");
     private final By FOOTER_SEARCH = By.xpath("//div[@id='footer']/p/a[@href='/search.html']");
+    private final By FOOTER_TOP_LIST = By.xpath("//p/a[@href='/toplist.html']");
     private final By FOOTER_BROWSE_LANGUAGES = By.xpath("//p/a[@href='/abc.html']");
     private final By ONLOAD_SETTINGS = By.xpath("//body[@onload]");
 
@@ -163,15 +164,27 @@ public class MainPage extends BasePage {
         return new SubmitNewLanguagePage(getDriver());
     }
 
-    public void clickFooterSearchButton(){
+    public SearchPage clickFooterSearchButton(){
         getFooterSearch().click();
+
+        return new SearchPage(getDriver());
     }
     public WebElement getFooterBrowseLanguage() {
 
         return getDriver().findElement(FOOTER_BROWSE_LANGUAGES);
     }
-    public void clickFooterBrowseLanguage(){
+    public AbcPage clickFooterBrowseLanguage(){
         getFooterBrowseLanguage().click();
+
+        return new AbcPage(getDriver());
+    }
+    public WebElement getFooterTopList(){
+        return getDriver().findElement(FOOTER_TOP_LIST);
+    }
+    public TopListPage clickFooterTopList(){
+        getFooterTopList().click();
+
+        return new TopListPage(getDriver());
     }
 
     public WebElement getOnloadSettings() {

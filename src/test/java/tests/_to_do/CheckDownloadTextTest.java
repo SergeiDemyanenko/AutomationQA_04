@@ -3,6 +3,7 @@ package tests._to_do;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.LPage;
 import pages.MainPage;
 import runner.BaseTest;
@@ -20,10 +21,10 @@ public class CheckDownloadTextTest extends BaseTest {
 
         MP.clickBrowseLanguagesMenu();
 
+        AbcPage abc = new AbcPage(getDriver());
+        abc.clickLSubmenu();
+
         LPage LP = new LPage(getDriver());
-
-        LP.clickLSubmenu();
-
         LP.clickLanguageL33t();
 
         Assert.assertEquals(

@@ -171,26 +171,6 @@ public class SignV2Page extends BasePage {
         return getAttribute(getErrorMessage(), "style");
     }
 
-    protected String createSrc(String value) {
-
-        return "images/bb/bb".concat(value).concat(".gif");
-    }
-
-    public String createAttributesSrcOfImg() {
-
-        String ln = "\n";
-
-        return createSrc("url")
-                .concat(ln)
-                .concat(createSrc("email"))
-                .concat(ln)
-                .concat(createSrc("bold"))
-                .concat(ln)
-                .concat(createSrc("italic"))
-                .concat(ln)
-                .concat(createSrc("underline"));
-    }
-
     protected String getAttributeName(String cssSelector) {
 
         return getDriver().findElement(
@@ -200,22 +180,19 @@ public class SignV2Page extends BasePage {
 
     public String getAttributesSrcOfImg() {
 
-        String url = "https://www.99-bottles-of-beer.net/";
+        String url = "http://www.99-bottles-of-beer.net/";
         String ln = "\n";
 
-        StringBuilder att = new StringBuilder();
-        att
-                .append(getAttributeName("Web Address"))
-                .append(ln)
-                .append(getAttributeName("Email Address"))
-                .append(ln)
-                .append(getAttributeName("Bold Text"))
-                .append(ln)
-                .append(getAttributeName("Italic Text"))
-                .append(ln)
-                .append(getAttributeName("Underlined Text"));
-
-        return att.toString().replace(url, "");
+        return getAttributeName("Web Address")
+                .concat(ln)
+                .concat(getAttributeName("Email Address"))
+                .concat(ln)
+                .concat(getAttributeName("Bold Text"))
+                .concat(ln)
+                .concat(getAttributeName("Italic Text"))
+                .concat(ln)
+                .concat(getAttributeName("Underlined Text"))
+                .replace(url, "");
     }
 
     public WebElement getImgCaptcha() {

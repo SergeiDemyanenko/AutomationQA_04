@@ -2,6 +2,7 @@ package tests.main;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.AbcPage;
 import pages.start.StartPage;
 import runner.BaseTest;
 
@@ -34,7 +35,22 @@ public class NavigationTest extends BaseTest {
     }
 
     @Test
-    public void testMenuSubmitNewLanguageText() {
+    public void testNavigationZeroSubmenu() {
+        AbcPage abc = new AbcPage(getDriver());
+
+        openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickZeroSubmenu();
+
+        String currentUrl = getDriver().getCurrentUrl();
+
+        Assert.assertTrue(abc.getZeroSubmenu().isEnabled());
+        Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
+        Assert.assertTrue(currentUrl.contains("0.html"));
+    }
+    
+     @Test
+     public void testMenuSubmitNewLanguageText() {
         final String expectedMenuText = "SUBMIT NEW LANGUAGE";
 
         String actualMenuText =
@@ -62,6 +78,5 @@ public class NavigationTest extends BaseTest {
                 .clickSubmitNewLanguageMenu();
 
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
-        Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
-    }
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"))
 }

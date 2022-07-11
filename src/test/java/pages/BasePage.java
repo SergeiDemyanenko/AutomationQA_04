@@ -24,6 +24,10 @@ public abstract class BasePage {
         return element.getText();
     }
 
+    public void clickWebElement(WebElement element) {
+        element.click();
+    }
+
     public WebElement findElement(By element) {
 
         return getDriver().findElement(element);

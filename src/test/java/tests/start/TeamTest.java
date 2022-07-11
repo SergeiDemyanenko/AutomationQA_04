@@ -8,28 +8,38 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static pages.start.TeamPage.getTeamPageWebsitesLinksTitles;
+import static pages.start.TeamPage.getTeamPageETasteOrgLinkTitle;
+import static pages.start.TeamPage.getTeamPageLsLaNetLinkTitle;
 
 public class TeamTest extends BaseTest {
 
     @Test
-    public void testClickabilityOfWebsiteLinks() {
+    public void testClickabilityOfTeamPageLsLaNetLink() {
 
-        String expectedTeamPageWebsitesLinksTitles = getTeamPageWebsitesLinksTitles();
+        String expectedTeamPageLsLaNetLink = getTeamPageLsLaNetLinkTitle();
 
-        String actualTeamPageWebsitesLinksTitles = openBaseURL()
+        String actualTeamPageLsLaNetLink = openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
                 .clickOliverSchadeLink()
-                .getDriver().getTitle()
-                + openBaseURL()
+                .getDriver().getTitle();
+
+        Assert.assertEquals(actualTeamPageLsLaNetLink, expectedTeamPageLsLaNetLink);
+    }
+
+    @Test
+    public void testClickabilityOfTeamPageETasteOrgLink() {
+
+        String expectedTeamPageETasteOrgLink = getTeamPageETasteOrgLinkTitle();
+
+        String actualTeamPageETasteOrgLink = openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
                 .clickGregorScheithauerLink()
                 .getDriver()
                 .getTitle();
 
-        Assert.assertEquals(actualTeamPageWebsitesLinksTitles, expectedTeamPageWebsitesLinksTitles);
+        Assert.assertEquals(actualTeamPageETasteOrgLink, expectedTeamPageETasteOrgLink);
     }
 
     @Test
