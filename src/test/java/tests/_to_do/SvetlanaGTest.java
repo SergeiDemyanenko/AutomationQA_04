@@ -58,7 +58,7 @@ public class SvetlanaGTest extends BaseTest {
 
         RPage r = new RPage(getDriver());
 
-        Assert.assertEquals(r.countLanguages(), 44);
+        Assert.assertEquals(r.getCountTrTags(), 44);
     }
 
     @Test
@@ -75,8 +75,8 @@ public class SvetlanaGTest extends BaseTest {
         abc.clickRSubmenu();
 
         RPage r = new RPage(getDriver());
-        String actualHeader = r.getTitleH2Text();
-        String actualText = r.getP1TagText();
+        String actualHeader = r.getH2HeaderText();
+        String actualText = r.getPTagText();
 
         Assert.assertEquals(actualHeader, expectedHeader);
         Assert.assertEquals(actualText, expectedText);
@@ -103,6 +103,6 @@ public class SvetlanaGTest extends BaseTest {
 
         RPage r = new RPage(getDriver());
 
-        Assert.assertEquals(r.getThTagsText(), expectedResult);
+        Assert.assertEquals(r.getTextListThTags(), expectedResult);
     }
 }

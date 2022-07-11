@@ -15,6 +15,7 @@ public abstract class _LettersPage extends BasePage {
     private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
     private final By TH_TAGS = By.xpath("//table[@id='category']/tbody/tr/th");
     private final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a");
+    private final By TD_LANGUAGE_NAMES = By.xpath("//table[@id='category']//tr/td[1]");
 
     public _LettersPage(WebDriver driver) {
 
@@ -36,12 +37,22 @@ public abstract class _LettersPage extends BasePage {
         return findElements(TR_TAGS);
     }
 
+    public int getCountTrTags() {
+
+        return getTrTags().size();
+    }
+
     public List<WebElement> getWebElementsTDLinks() {
 
         return findElements(TD_LINKS);
     }
 
-    public int getQuantityTDLinks() {
+    public List<WebElement> getWebElementsTDLanguageNames() {
+
+        return getDriver().findElements(TD_LANGUAGE_NAMES);
+    }
+
+    public int getCountTDLinks() {
 
         return getWebElementsTDLinks().size();
     }
@@ -78,7 +89,7 @@ public abstract class _LettersPage extends BasePage {
         return findElements(TH_TAGS);
     }
 
-    public String getStringTextThTags() {
+    public String getTextStringThTags() {
 
         StringBuilder result = new StringBuilder();
 
@@ -86,10 +97,21 @@ public abstract class _LettersPage extends BasePage {
             result.append(getText(th)).append(" ");
         }
 
-        return result.toString();
+        return result.toString().trim();
     }
 
-    public List<String> getTrTagsText() {
+    public List<String> getTextListThTags() {
+
+        List<String> allTh = new ArrayList<>();
+
+        for (WebElement th : getThTags()) {
+            allTh.add(th.getText());
+        }
+
+        return allTh;
+    }
+
+    public List<String> getTextListTrTags() {
 
         List<String> allTrs = new ArrayList<>();
 

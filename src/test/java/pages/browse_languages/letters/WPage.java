@@ -2,17 +2,10 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.WebDriver;
 
-public class WPage {
+public class WPage extends _LettersPage {
 
-    private WebDriver driver;
+    public WPage(WebDriver driver) {
 
-    public WPage(WebDriver existingDriver) {
-
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 }

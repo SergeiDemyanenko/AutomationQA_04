@@ -5,25 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.languages.LanguageShakespearePage;
 
-public class SPage {
-
-    private WebDriver driver;
+public class SPage extends _LettersPage {
 
     private final By SHAKESPEARE_LANGUAGE = By.xpath("//a[@href='language-shakespeare-664.html']");
 
-    public SPage(WebDriver existingDriver) {
+    public SPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getShakespeareLanguage() {
 
-        return getDriver().findElement(SHAKESPEARE_LANGUAGE);
+        return findElement(SHAKESPEARE_LANGUAGE);
     }
 
     public LanguageShakespearePage clickShakespeareLanguage() {

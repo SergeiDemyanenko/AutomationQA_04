@@ -32,7 +32,7 @@ public class RTest extends BaseTest {
 
         RPage rPage = openBaseURL().clickBrowseLanguagesMenu().clickRSubmenu();
 
-        for (WebElement tr : rPage.getAllTR()) {
+        for (WebElement tr : rPage.getTrTags()) {
             if (tr.getText().contains(languageExpected)) {
                 actualInformationAboutLanguageRPGIVFreeForm.add(tr.getText());
             }

@@ -95,7 +95,7 @@ public class ViktroriiaKTest extends BaseTest {
 
         UPage uPage = new UPage(getDriver());
 
-        Assert.assertEquals(uPage.countLanguagesU(),expectedResult);
+        Assert.assertEquals(uPage.getCountTrTags(),expectedResult);
     }
 
     @Test
@@ -111,7 +111,7 @@ public class ViktroriiaKTest extends BaseTest {
 
         UPage title = new UPage(getDriver());
 
-        String actualResult= title.getH2PageUText();
+        String actualResult= title.getH2HeaderText();
 
         Assert.assertEquals(actualResult,expectedResult);
     }

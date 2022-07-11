@@ -31,7 +31,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
         clickZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
-        String actualResult = zSubmenu.getH2Text();
+        String actualResult = zSubmenu.getH2HeaderText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -45,7 +45,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
         clickZSubmenu();
 
         ZPage zSubmenu = new ZPage(getDriver());
-        String actualResult = zSubmenu.getPTagsText();
+        String actualResult = zSubmenu.getPTagText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -58,7 +58,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
         clickZSubmenu();
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
-        String actualResult = zSubmenuHeaders.getCategoryText();
+        String actualResult = zSubmenuHeaders.getTextStringThTags();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -90,7 +90,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
 
         ZPage zSubmenuHeaders = new ZPage(getDriver());
         String actualResult = zSubmenuHeaders.getNamesText();
-        int actualResultCount = zSubmenuHeaders.getNamesOfLanguageZ().size();
+        int actualResultCount = zSubmenuHeaders.getWebElementsTDLanguageNames().size();
 
         Assert.assertEquals(actualResultCount, expectedResultCount);
         Assert.assertEquals(actualResult, expectedResult);
