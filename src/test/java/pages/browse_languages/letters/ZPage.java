@@ -9,8 +9,6 @@ import java.util.List;
 
 public class ZPage extends _LettersPage {
 
-    private final By MAIN_TABLE_HEADING = By.xpath("//table[@id='category']/tbody/tr/th");
-
     public ZPage(WebDriver driver) {
 
         super(driver);

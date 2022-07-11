@@ -15,6 +15,7 @@ public abstract class _LettersPage extends BasePage {
     public final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
     public final By TH_TAGS = By.xpath("//table[@id='category']//th");
     public final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a");
+    public final By MAIN_TABLE_HEADING = By.xpath("//table[@id='category']/tbody/tr/th");
 
     public _LettersPage(WebDriver driver) {
 
