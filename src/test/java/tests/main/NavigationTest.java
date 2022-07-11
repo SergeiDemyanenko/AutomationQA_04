@@ -42,10 +42,10 @@ public class NavigationTest extends BaseTest {
                 .clickBrowseLanguagesMenu()
                 .clickZeroSubmenu();
 
-        String newUrl = getDriver().getCurrentUrl();
+        String currentUrl = getDriver().getCurrentUrl();
 
         Assert.assertTrue(abc.getZeroSubmenu().isEnabled());
         Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
-        Assert.assertTrue(newUrl.contains("0.html"));
+        Assert.assertTrue(currentUrl.contains("0.html"));
     }
 }

@@ -88,13 +88,13 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(ZERO_SUBMENU);
     }
 
-    public void clickZeroSubmenu() {
-        getZeroSubmenu().click();
-    }
-
     public String getZeroSubmenuText() {
 
         return getText(getZeroSubmenu());
+    }
+
+    public void clickZeroSubmenu() {
+        getZeroSubmenu().click();
     }
 
     public List<WebElement> getAllSubmenu() {
