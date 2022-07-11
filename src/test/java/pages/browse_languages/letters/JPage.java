@@ -32,9 +32,7 @@ public class JPage extends _LettersPage {
 
     public List<String> getH2HeaderAndPTagText(){
 
-        List<String> list = List.of(getH2HeaderText(), getPTagText());
-
-        return list;
+        return List.of(getH2HeaderText(), getPTagText());
     }
 
     public int randomLanguage() {
@@ -52,6 +50,11 @@ public class JPage extends _LettersPage {
        return getTrTags().get(randomIndex());
     }
 
+    public WebElement getRandomTDLinks(){
+
+        return getWebElementsTDLinks().get(randomIndex());
+    }
+
      public String getTrText(String languageName) {
         StringBuilder actualResult = new StringBuilder();
 
@@ -59,20 +62,6 @@ public class JPage extends _LettersPage {
             if(tr.contains(languageName)){
 
                return actualResult.append(tr).toString();
-            }
-        }
-
-        return null;
-    }
-
-    public String getExpectedResult(String languageName) {
-        List<String> languageInformation = new ArrayList<>();
-        languageInformation.add("Joy inforichland 07/05/09 0");
-        for(String language : languageInformation){
-            String name = language.split(" ")[0];
-            if(name.equals(languageName)){
-
-                return language;
             }
         }
 

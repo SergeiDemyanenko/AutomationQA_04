@@ -187,4 +187,18 @@ public final class TestUtils {
                 .concat(ln)
                 .concat(createSrc("underline"));
     }
+
+    public static String getTrWithRequiredLanguage(String languageName) {
+        List<String> languageInformation = new ArrayList<>();
+        languageInformation.add("Joy inforichland 07/05/09 0");
+        for(String language : languageInformation){
+            String name = language.split(" ")[0];
+            if(name.equals(languageName)){
+
+                return language;
+            }
+        }
+
+        return null;
+    }
 }
