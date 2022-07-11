@@ -1,10 +1,10 @@
-package tests._to_do;
+package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class VerifyPythonInfoLinkTest extends BaseTest {
+public class LanguagePythonTest extends BaseTest {
 
     @Test
     public void testPythonInfoLink(){
