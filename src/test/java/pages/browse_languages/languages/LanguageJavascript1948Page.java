@@ -3,24 +3,16 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class LanguageJavascript1948Page {
-
-    private WebDriver driver;
+public class LanguageJavascript1948Page extends _LanguagesPage {
 
     private final By ALL_A_LINKS = By.xpath("//a[@href]");
 
-    public LanguageJavascript1948Page(WebDriver existingDriver) {
+    public LanguageJavascript1948Page(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     protected String getTextWikiLink() {
