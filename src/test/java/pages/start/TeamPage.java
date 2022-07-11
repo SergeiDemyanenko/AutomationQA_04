@@ -89,13 +89,15 @@ public class TeamPage extends BasePage {
         return new TeamPage(getDriver());
     }
 
-    public static String getTeamPageWebsitesLinksTitles() {
-        StringBuilder expectedR = new StringBuilder();
-        String TeamPageWebsitesLinksTitles = expectedR
-                .append("Index of /")
-                .append("Ce domaine a été enregistré par Youdot.io")
-                .toString();
+    public static String getTeamPageLsLaNetLinkTitle() {
+        String TeamPageLsLaNetLinkTitle = "Index of /";
 
-        return TeamPageWebsitesLinksTitles;
+        return TeamPageLsLaNetLinkTitle;
+    }
+
+    public static String getTeamPageETasteOrgLinkTitle() {
+        String TeamPageETasteOrgLinkTitle = "Ce domaine a été enregistré par Youdot.io";
+
+        return TeamPageETasteOrgLinkTitle;
     }
 }

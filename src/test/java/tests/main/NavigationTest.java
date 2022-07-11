@@ -2,6 +2,7 @@ package tests.main;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.AbcPage;
 import pages.start.StartPage;
 import runner.BaseTest;
 
@@ -31,5 +32,20 @@ public class NavigationTest extends BaseTest {
                 .getH2MainHeaderText();
 
         Assert.assertEquals(expectedTextH2MainHeader, actualTextH2MainHeader);
+    }
+
+    @Test
+    public void testNavigationZeroSubmenu() {
+        AbcPage abc = new AbcPage(getDriver());
+
+        openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickZeroSubmenu();
+
+        String currentUrl = getDriver().getCurrentUrl();
+
+        Assert.assertTrue(abc.getZeroSubmenu().isEnabled());
+        Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
+        Assert.assertTrue(currentUrl.contains("0.html"));
     }
 }

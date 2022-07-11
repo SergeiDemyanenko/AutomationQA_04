@@ -10,12 +10,12 @@ import java.util.List;
 
 public abstract class _LettersPage extends BasePage {
 
-    public final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
-    public final By H2_HEADER = By.xpath("//div[@id='main']/h2");
-    public final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
-    public final By TH_TAGS = By.xpath("//table[@id='category']//th");
-    public final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a");
-    public final By MAIN_TABLE_HEADING = By.xpath("//table[@id='category']/tbody/tr/th");
+    private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
+    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
+    private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
+    private final By TH_TAGS = By.xpath("//table[@id='category']/tbody/tr/th");
+    private final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a");
+    private final By MAIN_TABLE_HEADING = By.xpath("//table[@id='category']/tbody/tr/th");
 
     public _LettersPage(WebDriver driver) {
 

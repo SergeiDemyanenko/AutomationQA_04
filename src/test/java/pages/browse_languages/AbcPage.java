@@ -93,6 +93,10 @@ public class AbcPage extends BasePage {
         return getText(getZeroSubmenu());
     }
 
+    public void clickZeroSubmenu() {
+        getZeroSubmenu().click();
+    }
+
     public List<WebElement> getAllSubmenu() {
 
         return getDriver().findElements(ALL_SUBMENU);

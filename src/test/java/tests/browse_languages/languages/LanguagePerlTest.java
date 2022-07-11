@@ -1,11 +1,11 @@
-package tests._to_do;
+package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.languages.LanguagePerl737Page;
 import runner.BaseTest;
 
-public class VerifyPerlLanguageFeaturesTest extends BaseTest {
+public class LanguagePerlTest extends BaseTest {
 
     @Test
     public void testPerlLanguageFeatures() {

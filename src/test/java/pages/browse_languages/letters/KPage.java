@@ -1,31 +1,11 @@
 package pages.browse_languages.letters;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class KPage {
-    private final WebDriver driver;
+public class KPage extends _LettersPage {
 
-    private final By H2_TITLE_K = By.xpath("//div[@id='main']/h2");
+    public KPage(WebDriver driver) {
 
-    public KPage(WebDriver existingDriver) {
-
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
-    }
-
-    public WebElement getH2PageK() {
-
-        return getDriver().findElement(H2_TITLE_K);
-    }
-
-    public String getH2PageKText() {
-
-        return getH2PageK().getText();
+        super(driver);
     }
 }
