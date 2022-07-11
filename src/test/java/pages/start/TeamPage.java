@@ -17,6 +17,7 @@ public class TeamPage extends BasePage {
     private final By OLIVER_SCHADE_LINK = By.xpath("//a[@href='http://www.ls-la.net/']");
     private final By ALL_TEAM_LINKS = By.xpath("//div[@id='main']/p/a");
     private final By GREGOR_SCHEITHAUER_LINK = By.xpath("//a[@href='http://www.e-taste.org']");
+    private final By STEFAN_SCHELER_LINK = By.xpath("//a[@href='http://sts.synflood.de/']");
 
     public TeamPage(WebDriver driver) {
 
@@ -99,5 +100,23 @@ public class TeamPage extends BasePage {
         String TeamPageETasteOrgLinkTitle = "Ce domaine a été enregistré par Youdot.io";
 
         return TeamPageETasteOrgLinkTitle;
+    }
+
+    public WebElement getStefanSchelerLink() {
+
+        return getDriver().findElement(STEFAN_SCHELER_LINK);
+    }
+
+    public TeamPage clickStefanSchelerLink() {
+
+        getStefanSchelerLink().click();
+
+        return new TeamPage(getDriver());
+    }
+
+    public static String getTeamPageStsSynfloodDeLinkTitle() {
+        String TeamPageStsSynfloodDeLinkTitle = "sts.synflood.de";
+
+        return TeamPageStsSynfloodDeLinkTitle;
     }
 }
