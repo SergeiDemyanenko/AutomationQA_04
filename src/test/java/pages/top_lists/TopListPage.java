@@ -64,9 +64,10 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(TOPHITS_SUBMENU);
     }
 
-    public void clickTopHitsSubmenu() {
-
+    public TopListTopHitsPage clickTopHitsSubmenu() {
         getTopHitsSubmenu().click();
+
+        return new TopListTopHitsPage(getDriver());
     }
 
     public String getTextTopHitsSubmenu() {
@@ -89,9 +90,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(NEW_COMMENTS_SUBMENU);
     }
 
-    public void clickNewCommentsSubmenu() {
+    public NewCommentsPage clickNewCommentsSubmenu() {
 
         getNewCommentsSubmenu().click();
+
+        return new NewCommentsPage(getDriver());
     }
 
     public Integer getCountTableLinks() {
@@ -114,5 +117,4 @@ public class TopListPage extends BasePage {
         }
         return textOfLinks;
     }
-
 }

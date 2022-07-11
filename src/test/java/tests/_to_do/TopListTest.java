@@ -143,7 +143,7 @@ public class TopListTest extends BaseTest {
         topListPage.clickNewCommentsSubmenu();
 
         NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
-        String actualResult = newCommentsPage.getTextH2Main();
+        String actualResult = newCommentsPage.getH2HeaderText();
 
         Assert.assertEquals(actualResult,expectedResult);
     }

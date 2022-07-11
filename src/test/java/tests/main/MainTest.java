@@ -28,4 +28,16 @@ public class MainTest extends BaseTest {
 
         Assert.assertEquals(actualH2HeaderText, expectedH2HeaderText);
     }
+
+    @Test
+    public void testOnloadSettings() {
+        final String expectedOnloadSettings = "off('addcomments');";
+
+        String actualOnloadSettings =
+                openBaseURL()
+                        .getOnloadSettings()
+                        .getAttribute("onload");
+
+        Assert.assertEquals(actualOnloadSettings, expectedOnloadSettings);
+    }
 }

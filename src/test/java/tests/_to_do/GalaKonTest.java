@@ -51,7 +51,7 @@ public class GalaKonTest extends BaseTest {
 
         mainP.clickBrowseLanguagesMenu();
         abc.getJSubmenu().click();
-        jp.getLinkLanguageJava3().click();
+        jp.clickLinkLanguageJava3();
 
         Assert.assertEquals(expectedResult, ljp.getCountOfCommentsHeaders());
     }

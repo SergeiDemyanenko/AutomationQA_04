@@ -14,23 +14,13 @@ import pages.start.StartPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import runner.BaseTest;
 
+import static runner.TestUtils.createBasicCode;
+
 public class IreneSnitkoTest extends BaseTest {
 
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
-    @Test
-    public void testCodeOfBasicOnHistoryPage() {
 
-        getDriver().get(BASE_URL);
-
-        StartPage start = new StartPage(getDriver());
-
-        start.clickInfoSubmenu();
-
-        InfoPage history = new InfoPage(getDriver());
-
-        Assert.assertEquals(history.getCodeOfLanguageBasic(), history.createBasicCode());
-    }
 
     @Test
     public void testCountNumberOfProgrammingLanguagesOnJPage() {
@@ -49,7 +39,7 @@ public class IreneSnitkoTest extends BaseTest {
 
         JPage j = new JPage(getDriver());
 
-        Assert.assertEquals(j.getQuantityALinks(), expectedResult);
+        Assert.assertEquals(j.getQuantityTDLinks(), expectedResult);
     }
 
     @Test

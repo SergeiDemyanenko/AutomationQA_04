@@ -104,7 +104,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         DPage dPage = new DPage(getDriver());
 
-        Assert.assertEquals(dPage.getDescriptionText(),
+        Assert.assertEquals(dPage.getPTagText(),
                 "All languages starting with the letter D are shown, sorted by Language.");
     }
 }

@@ -3,21 +3,16 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class NewCommentsPage {
-    private WebDriver driver;
+public class NewCommentsPage extends BasePage {
 
-    private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
+    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By MAIN_P = By.xpath("//h2[text()='New Comments']/following-sibling::p[1]");
 
-    public NewCommentsPage(WebDriver existingDriver) {
+    public NewCommentsPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super (driver);
     }
 
     public String getText(WebElement element) {
@@ -35,13 +30,13 @@ public class NewCommentsPage {
         return getText(getMainP());
     }
 
-    public WebElement getH2Main() {
+    public WebElement getH2Header() {
 
-        return getDriver().findElement(H2_MAIN);
+        return getDriver().findElement(H2_HEADER);
     }
 
-    public String getTextH2Main() {
+    public String getH2HeaderText() {
 
-        return getText(getH2Main());
+        return getText(getH2Header());
     }
 }
