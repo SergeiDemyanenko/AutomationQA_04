@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.AbcPage;
 import pages.MainPage;
-import pages.browse_languages.languages.LanguagesBeginWithZ;
+import pages.browse_languages.languages.LanguagesBeginWithZPage;
 import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
@@ -100,7 +100,7 @@ public class BrowseLanguagesZSubmenuTest extends BaseTest {
     public void testCheckingRandomLanguage() {
 
         ZPage languageZ = new ZPage(getDriver());
-        LanguagesBeginWithZ h2Header = new LanguagesBeginWithZ(getDriver());
+        LanguagesBeginWithZPage h2Header = new LanguagesBeginWithZPage(getDriver());
 
         clickZSubmenu();
 

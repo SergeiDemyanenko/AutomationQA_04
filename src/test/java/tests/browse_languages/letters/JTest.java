@@ -8,6 +8,8 @@ import runner.BaseTest;
 import java.util.ArrayList;
 import java.util.List;
 
+import static runner.TestUtils.getTrWithRequiredLanguage;
+
 public class JTest extends BaseTest {
 
     @Test
@@ -71,5 +73,51 @@ public class JTest extends BaseTest {
                     .substring(0, 1)
                     .contains(expectedFirstLetter.toLowerCase()));
         }
+    }
+
+    @Test
+    public void testLinkInTableIsClickable() {
+        JPage j = new JPage(getDriver());
+
+        String oldUrl =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickJSubmenu()
+                        .getDriver()
+                        .getCurrentUrl();
+
+        j.getRandomTDLinks().click();
+
+        String newUrl = getDriver().getCurrentUrl();
+
+        Assert.assertNotEquals(newUrl, oldUrl);
+    }
+
+    @Test
+    public void testAuthorDataCommentsForRequiredLanguage() {
+        final String languageName = "Joy";
+
+        String expectedTrWithRequiredLanguage = getTrWithRequiredLanguage(languageName);
+
+        String actualTrWithRequiredLanguage =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickJSubmenu()
+                        .getTrText(languageName);
+
+        Assert.assertEquals(actualTrWithRequiredLanguage, expectedTrWithRequiredLanguage);
+    }
+
+    @Test
+    public void testRandomTrIsDisplayedIsEnabledNotEmpty() {
+        JPage j = new JPage(getDriver());
+
+        openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickJSubmenu();
+
+        Assert.assertTrue(j.getRandomTr().isDisplayed());
+        Assert.assertTrue(j.getRandomTr().isEnabled());
+        Assert.assertFalse(j.getRandomTr().getText().isEmpty());
     }
 }

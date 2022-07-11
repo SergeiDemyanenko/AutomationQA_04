@@ -3,14 +3,12 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LanguageJava3Page extends BasePage {
+public class LanguageJava3Page extends _LanguagesPage {
 
     private final By ALTERNATIVE_VERSIONS = By.xpath("//table[@id='category']//tr[@onmouseover]");
     private final By MAIN_VERSION = By.xpath("//div[@id='main']/p[text()='(object-oriented version)']");
