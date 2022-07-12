@@ -70,6 +70,16 @@ public class SubmitNewLanguageTest extends BaseTest {
                         .getErrorMessageInvalidSecCodeText();
 
         Assert.assertEquals(actuallyErrorMessageInvalidSecCode,expectedResult);
+    }
 
+    @Test
+    public void testAttributeSrcCaptcha() {
+
+        String expectedAttributeSrcCaptcha = "/captcha.php";
+
+        String actualAttributeSrcCaptcha =
+                openBaseURL().clickSubmitNewLanguageMenu().getAttributeSrcOfCaptcha();
+
+        Assert.assertEquals(actualAttributeSrcCaptcha, expectedAttributeSrcCaptcha);
     }
 }
