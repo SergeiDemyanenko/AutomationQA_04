@@ -14,11 +14,10 @@ public class JTest extends BaseTest {
 
     @Test
     public void testH2HeaderAndPTagText() {
-
-        List<String> expectedH2HeaderAndPTagText = new ArrayList<>();
-        expectedH2HeaderAndPTagText.add("Category J");
-        expectedH2HeaderAndPTagText.add("All languages starting with the " +
-                "letter J are shown, sorted by Language.");
+        final List<String> expectedH2HeaderAndPTagText = List.of(
+                "Category J",
+                "All languages starting with the letter J are shown, sorted by Language."
+        );
 
         List<String> actualH2HeaderAndPTagText =
                 openBaseURL()
@@ -31,8 +30,7 @@ public class JTest extends BaseTest {
 
     @Test
     public void testTableHeaderText() {
-
-        String expectedTableHeaderText = "Language Author Date Comments Rate";
+        final String expectedTableHeaderText = "Language Author Date Comments Rate";
 
         String actualTableHeaderText =
                 openBaseURL()
@@ -45,7 +43,7 @@ public class JTest extends BaseTest {
 
     @Test
     public void testHowManyLanguagesOnJPage() {
-        int expectedQuantity = 22;
+        final int expectedQuantity = 22;
 
         int actualQuantity =
                 openBaseURL()
@@ -58,11 +56,10 @@ public class JTest extends BaseTest {
 
     @Test
     public void testAreAllLanguagesOnJPageStartWithTheLetterJ() {
-        String expectedFirstLetter = "j";
+        String expectedFirstLetter = "J";
 
-        JPage j = new JPage(getDriver());
-
-        openBaseURL()
+        JPage j =
+                openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickJSubmenu();
 
@@ -77,7 +74,6 @@ public class JTest extends BaseTest {
 
     @Test
     public void testLinkInTableIsClickable() {
-        JPage j = new JPage(getDriver());
 
         String oldUrl =
                 openBaseURL()
@@ -85,6 +81,8 @@ public class JTest extends BaseTest {
                         .clickJSubmenu()
                         .getDriver()
                         .getCurrentUrl();
+
+        JPage j = new JPage(getDriver());
 
         j.getRandomTDLinks().click();
 
@@ -110,9 +108,8 @@ public class JTest extends BaseTest {
 
     @Test
     public void testRandomTrIsDisplayedIsEnabledNotEmpty() {
-        JPage j = new JPage(getDriver());
-
-        openBaseURL()
+        JPage j =
+                openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickJSubmenu();
 
