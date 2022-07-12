@@ -34,7 +34,7 @@ public class HelenVelTest extends BaseTest {
         category_m.clickMSubmenu();
 
         MPage language_macroX = new MPage(getDriver());
-        String actualResult = language_macroX.getlanguageMacroXVerify();
+        String actualResult = language_macroX.getLanguageMacroXVerify();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

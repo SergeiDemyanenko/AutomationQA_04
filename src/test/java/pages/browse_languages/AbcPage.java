@@ -57,9 +57,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(M_SUBMENU);
     }
 
-    public void clickMSubmenu() {
-
+    public MPage clickMSubmenu() {
         getMSubmenu().click();
+
+        return new MPage(getDriver());
     }
 
     public WebElement getLSubmenu() {

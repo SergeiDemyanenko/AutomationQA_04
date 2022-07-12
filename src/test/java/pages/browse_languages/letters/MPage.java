@@ -7,6 +7,7 @@ public class MPage extends _LettersPage {
 
     private final By MATHEMATICA_PAGE = By.xpath("//a[@href='language-mathematica-1090.html']");
     private final By LANGUAGE_MACROX = By.xpath("//a[@href='language-macrox-371.html']");
+    private final By LANGUAGE_MySQL = By.xpath("//a[@href='language-mysql-1252.html']");
 
     public MPage(WebDriver driver) {
 
@@ -17,8 +18,13 @@ public class MPage extends _LettersPage {
         clickWebElement(findElement(MATHEMATICA_PAGE));
     }
 
-    public String getlanguageMacroXVerify() {
+    public String getLanguageMacroXVerify() {
 
         return getText(findElement(LANGUAGE_MACROX));
+    }
+
+    public String getLanguageMySQLText() {
+
+        return getText(findElement(LANGUAGE_MySQL));
     }
 }
