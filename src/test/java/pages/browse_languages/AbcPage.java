@@ -151,9 +151,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(U_SUBMENU);
     }
 
-    public void clickUSubmenu() {
-
+    public UPage clickUSubmenu() {
         getUSubmenu().click();
+
+        return new UPage(getDriver());
     }
 
     public String getUSubmenuText() {

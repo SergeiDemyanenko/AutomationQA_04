@@ -16,4 +16,16 @@ public class UTest extends BaseTest {
 
         Assert.assertEquals(actualSubMenuCategoryU,expectedSubMenuCategoryU);
     }
+
+    @Test
+    public void testNumberLanguagesU() {
+        final int expectedNumberLanguagesU = 25;
+
+        int actualNumberLanguagesU = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickUSubmenu()
+                .getCountTrTags();
+
+        Assert.assertEquals(actualNumberLanguagesU, expectedNumberLanguagesU);
+    }
 }
