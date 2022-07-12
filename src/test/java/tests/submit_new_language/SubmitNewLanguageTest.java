@@ -75,7 +75,7 @@ public class SubmitNewLanguageTest extends BaseTest {
     @Test
     public void testAttributeSrcCaptcha() {
 
-        String expectedAttributeSrcCaptcha = "/captcha.php";
+        String expectedAttributeSrcCaptcha = "http://www.99-bottles-of-beer.net/captcha.php";
 
         String actualAttributeSrcCaptcha =
                 openBaseURL()
