@@ -3,12 +3,10 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class LanguageCSharp1614Page extends BasePage {
+public class LanguageCSharp1614Page extends _LanguagesPage {
 
     private final By A_LINKS = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
 

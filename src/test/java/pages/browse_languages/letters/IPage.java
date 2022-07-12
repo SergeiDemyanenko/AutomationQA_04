@@ -20,9 +20,8 @@ public class IPage extends _LettersPage {
 
     public List<String> getActualResult(List<WebElement> allTableLinks, List<String> actualResult) {
         for (int j = 1; j <= allTableLinks.size(); j++) {
-            getDriver().findElement(
-                            By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]"))
-                    .click();
+            getDriver()
+                    .findElement(By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]")).click();
             actualResult.add(getDriver().getCurrentUrl());
             getDriver().navigate().back();
         }
@@ -31,10 +30,9 @@ public class IPage extends _LettersPage {
 
     public List<String> getExpectedResult(String attribute, List<String> expectedResult) {
 
-        for (int j = 1; j <= getQuantityTDLinks(); j++) {
-            expectedResult.add(getDriver().findElement(
-                            By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]"))
-                    .getAttribute("href"));
+        for (int j = 1; j <= getCountTDLinks(); j++) {
+            expectedResult.add(getDriver()
+                    .findElement(By.xpath("//div[@id='main']/table[@id='category']/tbody/tr[@onmouseover][" + j + "]/td/a[@href]")).getAttribute("href"));
         }
         return expectedResult;
     }

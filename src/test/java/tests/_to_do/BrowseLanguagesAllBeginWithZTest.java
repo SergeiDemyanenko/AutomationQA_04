@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.browse_languages.AbcPage;
-import pages.browse_languages.languages.LanguagesBeginWithZ;
+import pages.browse_languages.languages.LanguagesBeginWithZPage;
 import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
@@ -37,7 +37,7 @@ public class BrowseLanguagesAllBeginWithZTest extends BaseTest {
 
         clickAnyLanguageBeginWithZ();
 
-        LanguagesBeginWithZ anyH2 = new LanguagesBeginWithZ(getDriver());
+        LanguagesBeginWithZPage anyH2 = new LanguagesBeginWithZPage(getDriver());
 
         String actualResultLanguage = anyH2.getH2Text().substring(0, 8);
         String actualResultVoting = anyH2.getH2VotingText();

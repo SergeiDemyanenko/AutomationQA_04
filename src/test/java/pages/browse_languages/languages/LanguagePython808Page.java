@@ -3,9 +3,8 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
 
-public class LanguagePython808Page extends BasePage {
+public class LanguagePython808Page extends _LanguagesPage {
 
     private final By PYTHON_LANGUAGE_INFO_LINK = By.xpath("//a[@href='http://www.python.org/']");
 

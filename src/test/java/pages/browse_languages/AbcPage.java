@@ -208,9 +208,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(K_SUBMENU);
     }
 
-    public void clickKSubmenu() {
-
+    public KPage clickKSubmenu() {
         getKSubmenu().click();
+
+        return new KPage(getDriver());
     }
 
     public WebElement getISubmenu() {

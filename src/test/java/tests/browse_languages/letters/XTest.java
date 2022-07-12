@@ -14,7 +14,7 @@ public class XTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickXSubmenu()
-                        .getNumberOfLanguages();
+                        .getCountTrTags();
 
         Assert.assertEquals(actualNumberOfXLanguages, expectedNumberOfXLanguages);
     }

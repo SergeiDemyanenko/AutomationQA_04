@@ -14,7 +14,7 @@ public class YTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickYSubmenu()
-                        .getNumberOfLanguages();
+                        .getCountTrTags();
 
         Assert.assertEquals(actualNumberOfYLanguages, expectedNumberOfYLanguages);
     }
