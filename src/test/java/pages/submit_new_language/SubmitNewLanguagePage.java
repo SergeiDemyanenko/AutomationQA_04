@@ -5,10 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import tests.submit_new_language.SubmitNewLanguageTest;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+import static runner.TestUtils.getRandomStr;
 
 public class SubmitNewLanguagePage extends BasePage {
 
@@ -70,9 +73,11 @@ public class SubmitNewLanguagePage extends BasePage {
         return getDriver().findElement(CATEGORY_NAME);
     }
 
-    public void clickCategoryName() {
+    public SubmitNewLanguagePage clickCategoryName() {
 
         getCategoryName().click();
+
+        return new SubmitNewLanguagePage(getDriver());
     }
 
     public WebElement getTitleH2() {
@@ -115,6 +120,13 @@ public class SubmitNewLanguagePage extends BasePage {
         return getDriver().findElement(ASSEMBLYLANGUAGE_NAME_CATEGORY);
     }
 
+    public SubmitNewLanguagePage clickCategoryAssemblyLanguage(){
+
+        getCategoryAssemblyLanguage().click();
+
+        return new SubmitNewLanguagePage(getDriver());
+    }
+
     public WebElement getErrorMessageInvalidSecCode() {
 
         return getDriver().findElement(ERROR_MESSAGE_INVALID_SEC_COD);
@@ -122,7 +134,8 @@ public class SubmitNewLanguagePage extends BasePage {
 
     public String getErrorMessageInvalidSecCodeText() {
 
-        return getErrorMessageInvalidSecCode().getText();
+
+        return  getErrorMessageInvalidSecCode().getText();
     }
 
     public String getAttributeSrcOfCaptcha() {
@@ -153,11 +166,41 @@ public class SubmitNewLanguagePage extends BasePage {
         return text;
     }
 
-    public static String getRandomStr(int length) {
+    public SubmitNewLanguagePage fillLunguageName(){
 
-        return RandomStringUtils.random(length,
-                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+        getLanguageName().sendKeys(getRandomStr(5));
+
+        return new SubmitNewLanguagePage(getDriver());
     }
+
+    public SubmitNewLanguagePage fillAutorName(){
+
+        getAuthorName().sendKeys(getRandomStr(5));
+
+        return new SubmitNewLanguagePage(getDriver());
+    }
+
+    public SubmitNewLanguagePage fillEmailName(){
+
+        getEmailName().sendKeys(getRandomStr(5));
+
+        return new SubmitNewLanguagePage(getDriver());
+    }
+    public SubmitNewLanguagePage fillSecutityCode(){
+
+        getSecurityCodeName().sendKeys("5555");
+
+        return new SubmitNewLanguagePage(getDriver());
+    }
+
+    public SubmitNewLanguagePage fillCodeName(){
+
+        getCodeName().sendKeys(getRandomStr(5));
+
+        return new SubmitNewLanguagePage(getDriver());
+    }
+
+
 
 
 }

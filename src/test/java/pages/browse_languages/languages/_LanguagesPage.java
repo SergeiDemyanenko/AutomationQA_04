@@ -117,10 +117,6 @@ public abstract class _LanguagesPage extends BasePage {
         return getDriver().findElement(DEL_ICIO_US_ICON);
     }
 
-    public void clickDelicio() {
-        getDelIcio().click();
-    }
-
     public List<String> getCategoryTableLinkTexts() {
 
         List<WebElement> aHrefs = getDriver().findElements(A_LINKS);
