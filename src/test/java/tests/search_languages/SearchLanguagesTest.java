@@ -1,5 +1,6 @@
 package tests.search_languages;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.search_languages.SearchPage;
@@ -52,5 +53,19 @@ public class SearchLanguagesTest extends BaseTest {
         Assert.assertEquals(actualJavaSearch, expectedResult);
     }
 
+    @Test
+    public void testSubmitSearchRefreshedWhenSubmitSearchClicked() {
+        WebElement submitSearch = openBaseURL()
+                .clickSearchMenu()
+                .getSubmitSearch();
 
+        SearchPage search = new SearchPage(getDriver());
+        WebElement secondSearchSubmit = search.getSubmitSearch();
+        Assert.assertEquals(submitSearch, secondSearchSubmit);
+
+        search.clickSubmitSearch();
+        WebElement newSubmitSearch = search.getSubmitSearch();
+
+        Assert.assertNotEquals(submitSearch, newSubmitSearch);
+    }
 }
