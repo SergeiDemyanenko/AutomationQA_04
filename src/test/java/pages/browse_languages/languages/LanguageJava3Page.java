@@ -40,7 +40,7 @@ public class LanguageJava3Page extends _LanguagesPage {
         return getDriver().findElement(MAIN_VERSION_COMMENTS);
     }
 
-    public Map<Integer, String> getAllVersionsNameAndComment() {
+    private Map<Integer, String> getAllVersionsNameAndComment() {
         Map<Integer, String> allVersionsNameAndComment = new HashMap<>();
 
         int mainVersionComments = Integer.parseInt(getMainVersionComments().getText());
