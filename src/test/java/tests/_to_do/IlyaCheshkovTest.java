@@ -29,26 +29,6 @@ public class IlyaCheshkovTest extends BaseTest {
     }
 
     @Test
-    public void testIPageLanguagesCount() {
-
-        int expectedResult = 44;
-
-        MainPage main = new MainPage(getDriver());
-        AbcPage abc = new AbcPage(getDriver());
-        IPage i = new IPage(getDriver());
-
-        getDriver().get(URL);
-        main.clickBrowseLanguagesMenu();
-        abc.clickISubmenu();
-
-        List<WebElement> allTRs = i.getTrTags();
-
-        int actualResult = allTRs.size();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
     public void testCheckAllTableLinksClickable() {
 
         MainPage main = new MainPage(getDriver());
