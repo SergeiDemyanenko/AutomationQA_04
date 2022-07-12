@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
 import pages.browse_languages.languages.LanguagePerl737Page;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class SearchPage extends BasePage {
 
     private final By SEARCH_BOX = By.xpath("//input[@name='search']");
 
-    private final By SEARCH_SUBMIT = By.name("submitsearch");
+    private final By SUBMIT_SEARCH = By.name("submitsearch");
 
     private final By PERL_LANGUAGE = By.linkText("Perl (bottled by Acme::EyeDrops)");
 
@@ -68,14 +67,15 @@ public class SearchPage extends BasePage {
         return new SearchPage(getDriver());
     }
 
-    public WebElement getSearchSubmit() {
+    public WebElement getSubmitSearch() {
 
-        return getDriver().findElement(SEARCH_SUBMIT);
+        return getDriver().findElement(SUBMIT_SEARCH);
     }
 
     public SearchPage clickSubmitSearch() {
 
-        getSearchSubmit().click();
+        getSubmitSearch().click();
+
         return new SearchPage(getDriver());
     }
 

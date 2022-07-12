@@ -209,6 +209,6 @@ public class SignV2Page extends BasePage {
         inputComment(getRandomStr(40));
         clickButtonSubmit();
 
-        return new SignV2Page(getDriver());
+        return this;
     }
 }

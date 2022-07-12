@@ -57,7 +57,7 @@ public class TeamTest extends BaseTest {
 
     @Test
     public void testClickabilityOfTeamPageStsSynfloodDeLink() {
-        final String expectedTeamPageStsSynfloodDeLink = "http://sts.synflood.de";
+        final String expectedTeamPageStsSynfloodDeLink = "http://sts.synflood.de/";
 
         String actualTeamPageStsSynfloodDeLink = openBaseURL()
                 .clickStartMenu()

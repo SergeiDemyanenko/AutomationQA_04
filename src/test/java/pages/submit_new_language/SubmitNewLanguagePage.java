@@ -140,9 +140,9 @@ public class SubmitNewLanguagePage extends BasePage {
 
     public String getAttributeSrcOfCaptcha() {
 
-        String c = getDriver().findElement(IMG_CAPTCHA).getAttribute("src");
-
-        return c.replace("https://www.99-bottles-of-beer.net", "");
+        return getDriver()
+                .findElement(IMG_CAPTCHA)
+                .getAttribute("src");
     }
 
     public WebElement getTitleH3() {
@@ -199,8 +199,4 @@ public class SubmitNewLanguagePage extends BasePage {
 
         return new SubmitNewLanguagePage(getDriver());
     }
-
-
-
-
 }

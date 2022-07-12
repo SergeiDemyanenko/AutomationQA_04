@@ -35,7 +35,7 @@ public class SubmitNewLanguageTest extends BaseTest {
                 expectedResultErrorMessageSubmitLanguageButtonError);
     }
     @Test
-    public void testIncludesNewLanguageCategory(){
+    public void testIncludesNewLanguageCategory() {
 
         List<String> expectedResult = new ArrayList<>();
         expectedResult.add("real language");
@@ -52,7 +52,7 @@ public class SubmitNewLanguageTest extends BaseTest {
     }
 
     @Test
-    public void testErrorMessageInvalidSecCode() throws InterruptedException{
+    public void testErrorMessageInvalidSecCode() {
 
         String expectedResult = "Error: Invalid security code.";
 
@@ -70,6 +70,18 @@ public class SubmitNewLanguageTest extends BaseTest {
                         .getErrorMessageInvalidSecCodeText();
 
         Assert.assertEquals(actuallyErrorMessageInvalidSecCode,expectedResult);
+    }
 
+    @Test
+    public void testAttributeSrcCaptcha() {
+
+        String expectedAttributeSrcCaptcha = "http://www.99-bottles-of-beer.net/captcha.php";
+
+        String actualAttributeSrcCaptcha =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .getAttributeSrcOfCaptcha();
+
+        Assert.assertEquals(actualAttributeSrcCaptcha, expectedAttributeSrcCaptcha);
     }
 }
