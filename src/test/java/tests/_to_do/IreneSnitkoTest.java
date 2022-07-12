@@ -17,26 +17,6 @@ public class IreneSnitkoTest extends BaseTest {
     private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testCountNumberOfProgrammingLanguagesOnJPage() {
-
-        int expectedResult = 22;
-
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-
-        abc.clickJSubmenu();
-
-        JPage j = new JPage(getDriver());
-
-        Assert.assertEquals(j.getCountTDLinks(), expectedResult);
-    }
-
-    @Test
     public void testVerifyLinkToWikipediaFromJavascriptPage1() {
 
         getDriver().get(BASE_URL);
@@ -59,20 +39,6 @@ public class IreneSnitkoTest extends BaseTest {
         js1948.clickWikiLink();
 
         Assert.assertTrue(getDriver().findElement(By.xpath("//div[@id='content']/h1")).isDisplayed());
-    }
-
-    @Test
-    public void testVerifyAttributeSrcCaptchaOnSubmitNewLanguagePage() {
-
-        getDriver().get(BASE_URL);
-
-        MainPage mp = new MainPage(getDriver());
-
-        mp.clickSubmitNewLanguageMenu();
-
-        SubmitNewLanguagePage snl = new SubmitNewLanguagePage(getDriver());
-
-        Assert.assertEquals(snl.getAttributeSrcOfCaptcha(), "/captcha.php");
     }
 
     @Test
