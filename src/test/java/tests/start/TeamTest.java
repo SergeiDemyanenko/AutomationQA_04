@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static pages.start.TeamPage.getTeamPageETasteOrgLinkTitle;
-import static pages.start.TeamPage.getTeamPageLsLaNetLinkTitle;
+import static pages.start.TeamPage.*;
 
 public class TeamTest extends BaseTest {
 
@@ -54,5 +53,19 @@ public class TeamTest extends BaseTest {
                         .getListH3TeamName();
 
         Assert.assertEquals(actualH3TeamNamesText, expectedH3TeamNamesText);
+    }
+
+    @Test
+    public void testClickabilityOfTeamPageStsSynfloodDeLink() {
+
+        String expectedTeamPageStsSynfloodDeLink = getTeamPageStsSynfloodDeLinkTitle();
+
+        String actualTeamPageStsSynfloodDeLink = openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .clickStefanSchelerLink()
+                .getDriver().getTitle();
+
+        Assert.assertEquals(actualTeamPageStsSynfloodDeLink, expectedTeamPageStsSynfloodDeLink);
     }
 }
