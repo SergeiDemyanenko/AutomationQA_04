@@ -10,6 +10,7 @@ import java.util.List;
 
 import static pages.start.TeamPage.*;
 
+
 public class TeamTest extends BaseTest {
 
     @Test
