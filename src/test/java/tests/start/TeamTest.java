@@ -57,14 +57,13 @@ public class TeamTest extends BaseTest {
 
     @Test
     public void testClickabilityOfTeamPageStsSynfloodDeLink() {
-
-        String expectedTeamPageStsSynfloodDeLink = getTeamPageStsSynfloodDeLinkTitle();
+        final String expectedTeamPageStsSynfloodDeLink = "http://sts.synflood.de";
 
         String actualTeamPageStsSynfloodDeLink = openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
                 .clickStefanSchelerLink()
-                .getDriver().getTitle();
+                .getDriver().getCurrentUrl();
 
         Assert.assertEquals(actualTeamPageStsSynfloodDeLink, expectedTeamPageStsSynfloodDeLink);
     }
