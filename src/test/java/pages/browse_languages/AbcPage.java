@@ -129,9 +129,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(Z_SUBMENU);
     }
 
-    public void clickZSubmenu() {
-
+    public ZPage clickZSubmenu() {
         getZSubmenu().click();
+
+        return new ZPage(getDriver()) ;
     }
 
     public WebElement getSSubmenu() {
