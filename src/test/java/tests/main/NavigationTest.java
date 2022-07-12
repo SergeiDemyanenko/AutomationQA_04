@@ -51,11 +51,12 @@ public class NavigationTest extends BaseTest {
     
      @Test
      public void testMenuSubmitNewLanguageText() {
-        final String expectedMenuText = "SUBMIT NEW LANGUAGE";
+        final String expectedMenuText = "Submit new Language".toLowerCase();
 
         String actualMenuText =
                 openBaseURL()
-                        .getSubmitNewLanguageMenuText();
+                        .getSubmitNewLanguageMenuText().
+                        toLowerCase();
 
         Assert.assertEquals(actualMenuText, expectedMenuText);
     }
