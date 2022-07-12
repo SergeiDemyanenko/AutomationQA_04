@@ -84,6 +84,10 @@ public abstract class _LettersPage extends BasePage {
         return null;
     }
 
+    public void clickLanguageFromTDLinks(String nameLanguage) {
+        findElement(By.linkText(getLanguageFromTDLinks(nameLanguage))).click();
+    }
+
     public List<WebElement> getThTags() {
 
         return findElements(TH_TAGS);

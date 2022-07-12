@@ -51,7 +51,7 @@ public class IreneSnitkoTest extends BaseTest {
 
         JPage j = new JPage(getDriver());
 
-        j.clickLanguageJavascript1948();
+        j.clickLanguageFromTDLinks("JavaScript");
 
         LanguageJavascript1948Page js1948
                 = new LanguageJavascript1948Page(getDriver());
