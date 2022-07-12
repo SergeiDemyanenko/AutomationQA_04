@@ -3,20 +3,15 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class TopListNewLanguagesThisMonthPage {
+public class TopListNewLanguagesThisMonthPage extends BasePage {
 
     private final By H2_TABLE_NAME_NEW_LANGUAGES = By.xpath("//div[@id='main']/h2");
 
-    private WebDriver driver;
+    public TopListNewLanguagesThisMonthPage(WebDriver driver) {
 
-    public TopListNewLanguagesThisMonthPage(WebDriver existingDriver) {
-
-        this.driver = existingDriver;
-    }
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getH2TableNewLanguages() {

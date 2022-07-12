@@ -15,46 +15,37 @@ public class TopListTest extends BaseTest {
     public void testGoToTheTopRated() {
         String expectedResult = "Top Rated";
 
-        getDriver().get(BASE_URL);
+        String actualResult =
+                openBaseURL().
+                        clickTopListMenu().
+                        getNameH2HeaderTopList();
 
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        String actualResult = getDriver().findElement(By.xpath("//div[@id='main']/h2")).getText();
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testCountOfLanguagesInTopRated() {
         int expectedResult = 25;
 
-        getDriver().get(BASE_URL);
+        int actualResult =
+                openBaseURL().
+                        clickTopListMenu().
+                        getCountTableLinks();
 
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        TopListPage topListPage = new TopListPage(getDriver());
-        int actualResult = topListPage.getCountTableLinks();
-
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testGoToTheTopRatedRealLanguages() {
         String expectedResult = "Top Rated Real Languages";
 
-        getDriver().get(BASE_URL);
+        String actualResult =
+                openBaseURL().
+                        clickTopListMenu().
+                        clickTopListRealSubmenu().
+                        getTextH2Header();
 
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickTopListRealSubmenu();
-
-        TopListRealPage topListRealPage = new TopListRealPage(getDriver());
-        String actualResult = topListRealPage.getTextH2Header();
-
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
@@ -72,7 +63,7 @@ public class TopListTest extends BaseTest {
         TopListEsotericPage topListEsotericPage = new TopListEsotericPage(getDriver());
         String actualResult = topListEsotericPage.getH2TableEsotericName();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
@@ -90,7 +81,7 @@ public class TopListTest extends BaseTest {
         TopListAssemblyPage topListAssemblyPage = new TopListAssemblyPage(getDriver());
         String actualResult = topListAssemblyPage.getH2TableAssemblyName();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
@@ -108,7 +99,7 @@ public class TopListTest extends BaseTest {
         TopListTopHitsPage topListTopHitsPage = new TopListTopHitsPage(getDriver());
         String actualResult = topListTopHitsPage.getH2TableTopHitsName();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
@@ -127,7 +118,7 @@ public class TopListTest extends BaseTest {
                 new TopListNewLanguagesThisMonthPage(getDriver());
         String actualResult = topListNewLanguagesThisMonthPage.getH2TableNewLanguagesName();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
@@ -145,6 +136,6 @@ public class TopListTest extends BaseTest {
         NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
         String actualResult = newCommentsPage.getH2HeaderText();
 
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }

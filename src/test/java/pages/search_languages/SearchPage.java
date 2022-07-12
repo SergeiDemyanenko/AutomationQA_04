@@ -90,27 +90,59 @@ public class SearchPage extends BasePage {
         return new LanguagePerl737Page(getDriver());
     }
 
-    public List<String> getOnlyJavaLanguages() {
+    public List<WebElement> getJavaATags() {
 
-        List<WebElement> javaLanguages = getDriver().findElements(JAVA_LANGUAGES);
+        return findElements(JAVA_LANGUAGES);
+    }
 
-        List<String> allJavaLanguages = new ArrayList<>();
+    public List<String> getOnlyJavaSearchAText() {
+        List<String> allJavaATags = new ArrayList<>();
 
-        for (WebElement name : javaLanguages) {
-            allJavaLanguages.add(name.getText());
+        for (WebElement javaSearchATag : getJavaATags()) {
+            allJavaATags.add(getText(javaSearchATag));
         }
 
-        return allJavaLanguages;
+        return allJavaATags;
     }
 
-    public List<WebElement> getTableJavaSearchLanguages(){
+    public String getStringTextFromJavaSearch() {
+        StringBuilder actualResult = new StringBuilder();
+        for (String javaSearchATag : getOnlyJavaSearchAText()) {
+            actualResult.append(javaSearchATag).toString();
+        }
 
-        return  getDriver().findElements(TABLE_JAVA_SEARCH_LANGUAGES);
+        return actualResult.toString();
     }
 
-    public int countLanguagesJavaSearch(){
+    public List<WebElement> getTableJavaSearchLanguages() {
+
+        return getDriver().findElements(TABLE_JAVA_SEARCH_LANGUAGES);
+    }
+
+    public int countLanguagesJavaSearch() {
 
         return getTableJavaSearchLanguages().size() - 1;
     }
 
+    public SearchPage sendKeyToSearchBox(String name) {
+        getSearchBox().sendKeys(name);
+
+        return new SearchPage(getDriver());
+    }
+
+    public String getExpectedResult(String languageName) {
+        List<String> languages = new ArrayList<>();
+        languages.add("Java (object-oriented version)JavaJava (exception oriented)" +
+                "Java (bytecode-version with loader)" +
+                "Java (Java 5.0 object-oriented version)Java (Singing with Java Speech API)");
+        for (String language : languages) {
+            String name = language.split(" ")[0];
+            if (name.equals(languageName)) {
+
+                return language;
+            }
+        }
+
+        return null;
+    }
 }

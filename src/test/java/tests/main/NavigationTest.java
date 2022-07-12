@@ -105,4 +105,17 @@ public class NavigationTest extends BaseTest {
 
         Assert.assertEquals(actualMenuStartLinkText, expectedMenuStartLinkText);
     }
+    
+    @Test
+    public void testMenuStartNavigation() {
+        final String expectedMenuStartNavigation = "http://www.99-bottles-of-beer.net/";
+
+        openBaseURL()
+                .clickStartMenu();
+
+        String actualMenuStartNavigation = getDriver().getCurrentUrl();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+        Assert.assertEquals(actualMenuStartNavigation, expectedMenuStartNavigation);
+    }
 }

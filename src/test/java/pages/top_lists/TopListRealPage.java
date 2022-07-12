@@ -3,20 +3,15 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class TopListRealPage {
-
-    private WebDriver driver;
+public class TopListRealPage extends BasePage {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
 
-    public TopListRealPage(WebDriver existingDriver) {
+    public TopListRealPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getH2Header() {

@@ -17,6 +17,7 @@ public class StartPage extends BasePage {
     private final By LAST_P_MAIN_START = By.xpath("//div[@id='main']/p[last()]");
     private final By IMPRESSUM_SUBMENU = By.xpath("//a[@href = 'impressum.html']");
     private final By H2_HEADER = By.xpath("//div[@id='header']/h2");
+    private final By H2_HEADER_MAIN = By.xpath("//div[@id='main']/h2");
 
     @FindBy(xpath = "//a[@href='./info.html']")
     private WebElement historicInformationLink;
@@ -209,5 +210,15 @@ public class StartPage extends BasePage {
     public void clickTeamMembersLink() {
 
         teamMembersLink.click();
+    }
+
+    public WebElement getH2HeaderMain() {
+
+        return getDriver().findElement(H2_HEADER_MAIN);
+    }
+
+    public String getH2HeaderMainText() {
+
+        return getText(getH2HeaderMain());
     }
 }

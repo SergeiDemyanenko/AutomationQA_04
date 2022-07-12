@@ -3,21 +3,15 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class TopListAssemblyPage {
-
-    private WebDriver driver;
+public class TopListAssemblyPage extends BasePage {
 
     private final By H2_TABLE_NAME_ASSEMBLY = By.xpath("//div[@id='main']/h2");
 
-    public TopListAssemblyPage(WebDriver existingDriver) {
+    public TopListAssemblyPage(WebDriver driver) {
 
-        this.driver = existingDriver;
-    }
-
-    protected WebDriver getDriver() {
-
-        return driver;
+        super(driver);
     }
 
     public WebElement getH2TableAssembly() {

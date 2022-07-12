@@ -8,6 +8,8 @@ import java.util.List;
 
 public class IPage extends _LettersPage {
 
+    private final By ALL_TR_I_LANGUAGES = By.xpath("//tr[@onmouseover]");
+
     public IPage(WebDriver driver) {
 
         super(driver);
@@ -16,6 +18,16 @@ public class IPage extends _LettersPage {
     public String getCurrentUrl() {
 
         return getDriver().getCurrentUrl();
+    }
+
+    public List<WebElement> getAllTrs() {
+
+        return getDriver().findElements(ALL_TR_I_LANGUAGES);
+    }
+
+    public int getNumberOfLanguages() {
+
+        return getAllTrs().size();
     }
 
     public List<String> getActualResult(List<WebElement> allTableLinks, List<String> actualResult) {

@@ -10,6 +10,7 @@ import java.util.List;
 
 public class TopListPage extends BasePage {
 
+    private final By H2_TABLE_NAME_TOP_LIST = By.xpath("//div[@id='main']/h2");
     private final By TOP_LIST_REAL_SUBMENU = By.linkText("Top Rated Real");
     private final By TOP_LIST_ESOTERIC_SUBMENU = By.xpath("//a[@href='./toplist_esoteric.html']");
     private final By TOP_LIST_ASSEMBLY_SUBMENU = By.xpath("//a[@href='./toplist_assembly.html']");
@@ -116,5 +117,10 @@ public class TopListPage extends BasePage {
             textOfLinks.add(n.getText());
         }
         return textOfLinks;
+    }
+
+    public String getNameH2HeaderTopList() {
+
+        return getDriver().findElement(H2_TABLE_NAME_TOP_LIST).getText();
     }
 }
