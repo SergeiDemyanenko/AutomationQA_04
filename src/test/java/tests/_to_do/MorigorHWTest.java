@@ -11,12 +11,7 @@ import static java.lang.Integer.parseInt;
 
 public class MorigorHWTest extends BaseTest {
 
-    private final String baseURL = "http://www.99-bottles-of-beer.net/";
     private final String browseLangURL = "https://www.99-bottles-of-beer.net/abc.html";
-
-
-
-
 
     @Test
     public void testLanguagesWithFigureFirst() {
@@ -40,7 +35,6 @@ public class MorigorHWTest extends BaseTest {
 
         Assert.assertEquals(numberOfLanguages, 10);
     }
-
 
     @Test
     public void testIfIconRedditWorks() {
@@ -73,7 +67,7 @@ public class MorigorHWTest extends BaseTest {
         String language = "Shakespeare";
         boolean expectedResult = true;
 
-        getDriver().get(baseURL);
+        openBaseURL();
 
         getDriver().findElement(
                         By.xpath("//ul[@id='menu']/li/a[@href='/toplist.html']"))
