@@ -2,6 +2,7 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.browse_languages.languages.LanguageMathematicaPage;
 
 public class MPage extends _LettersPage {
 
@@ -13,8 +14,10 @@ public class MPage extends _LettersPage {
         super(driver);
     }
 
-    public void clickMathematicaPage() {
+    public LanguageMathematicaPage clickMathematicaPage() {
         clickWebElement(findElement(MATHEMATICA_PAGE));
+
+        return new LanguageMathematicaPage(getDriver());
     }
 
     public String getlanguageMacroXVerify() {

@@ -17,75 +17,48 @@ public class GalaKonTest extends BaseTest {
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testCheckTheNameOfMathematicaLanguageAuthor() {
+    public void testTheNameOfMathematicaLanguageAuthor() {
 
-        String expectedResult = "Brenton Bostick";
+        String expectedTheNameOfMathematicaLanguageAuthor = "Brenton Bostick";
 
-        getDriver().get(BASE_URL);
+        String actualTheNameOfMathematicaLanguageAuthor = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickMSubmenu()
+                .clickMathematicaPage()
+                .getBrentonBostickText();
 
-        MainPage mainP = new MainPage(getDriver());
-        AbcPage abc = new AbcPage(getDriver());
-        MPage mp = new MPage(getDriver());
-        LanguageMathematicaPage lmp = new LanguageMathematicaPage(getDriver());
-
-        mainP.clickBrowseLanguagesMenu();
-        abc.getMSubmenu().click();
-        mp.clickMathematicaPage();
-        lmp.getTdTableBrentonBostick();
-
-        String actualResult = lmp.getTdTableBrentonBostick().getText();
-
-        Assert.assertEquals(expectedResult, actualResult);
+        Assert.assertEquals(expectedTheNameOfMathematicaLanguageAuthor, actualTheNameOfMathematicaLanguageAuthor);
     }
 
     @Test
-    public void testConfirmObjectOrientedVersionHasTheLargestNumberOfComments() {
-        int expectedResult = 33;
+    public void testJavaObjectOrientedVersionHasTheLargestNumberOfComments() {
+        int expectedObjectOrientedVersionHasTheLargestNumberOfComments = 33;
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainP = new MainPage(getDriver());
-        AbcPage abc = new AbcPage(getDriver());
-        JPage jp = new JPage(getDriver());
-        LanguageJava3Page ljp = new LanguageJava3Page(getDriver());
-
-        mainP.clickBrowseLanguagesMenu();
-        abc.getJSubmenu().click();
-        jp.clickLinkLanguageJava3();
-
-        Assert.assertEquals(expectedResult, ljp.getCountOfCommentsHeaders());
+        Assert.assertEquals(expectedObjectOrientedVersionHasTheLargestNumberOfComments, openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickJSubmenu()
+                .clickLinkLanguageJava3()
+                .getCountOfCommentsHeaders());
     }
 
     @Test
-    public void testVerifyBrowseLanguagesSubmenuText() {
+    public void testBrowseLanguagesSubmenuText() {
 
-        String expectedResult = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String expectedBrowseLanguagesSubmenuText = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainP = new MainPage(getDriver());
-        AbcPage abc = new AbcPage(getDriver());
-
-        mainP.getBrowseLanguagesMenu().click();
-
-        String actualResult = abc.getSubmenu().getText();
-
-        Assert.assertEquals(expectedResult, actualResult);
+        Assert.assertEquals(expectedBrowseLanguagesSubmenuText, openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getSubmenu()
+                .getText());
     }
 
     @Test
-    public void testVerifyTwoImagesOfTeamMembers() {
-        int expectedResult = 2;
+    public void testTwoImagesOfTeamMembers() {
+        int expectedTwoImagesOfTeamMembers = 2;
 
-        getDriver().get(BASE_URL);
-
-        StartPage startP = new StartPage(getDriver());
-        TeamPage teamP = new TeamPage(getDriver());
-
-        startP.getTeamSubmenu().click();
-
-        Assert.assertEquals(expectedResult, teamP.getAmmountOfImages());
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .getAmmountOfImages(), expectedTwoImagesOfTeamMembers);
     }
-
-
 }
