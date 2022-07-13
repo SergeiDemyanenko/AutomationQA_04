@@ -1,8 +1,13 @@
 package tests.browse_languages.letters;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.letters.IPage;
 import runner.BaseTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Test
 public class ITest extends BaseTest {
@@ -66,5 +71,25 @@ public class ITest extends BaseTest {
                 .getTextStringThTags();
 
         Assert.assertEquals(actualIPageTableHeaderText, expectedIPageTableHeaderText);
+    }
+
+    @Test
+    public void testCheckAllTableLinksClickable() {
+        List<String> expectedAllTableLinks = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickISubmenu()
+                .getListStringTDLinks();
+
+        IPage i = new IPage(getDriver());
+
+        List<String> actualCheckedTableLinks = new ArrayList<>();
+
+        for (String langName : expectedAllTableLinks) {
+            getDriver().findElement(By.linkText(langName)).click();
+            actualCheckedTableLinks.add(i.getH2HeaderText().substring(9));
+            getDriver().navigate().back();
+        }
+
+        Assert.assertEquals(actualCheckedTableLinks, expectedAllTableLinks);
     }
 }
