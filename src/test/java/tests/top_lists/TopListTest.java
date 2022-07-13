@@ -8,7 +8,7 @@ public class TopListTest extends BaseTest {
 
     @Test
     public void testGoToTheTopRated() {
-        String expectedResult = "Top Rated";
+        final String expectedResult = "Top Rated";
 
         String actualResult =
                 openBaseURL().
@@ -20,7 +20,7 @@ public class TopListTest extends BaseTest {
 
     @Test
     public void testCountOfLanguagesInTopRated() {
-        int expectedResult = 25;
+        final int expectedResult = 25;
 
         int actualResult =
                 openBaseURL().

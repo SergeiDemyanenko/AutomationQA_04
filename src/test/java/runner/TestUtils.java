@@ -169,23 +169,31 @@ public final class TestUtils {
     }
 
     protected static String createSrc(String value) {
+        StringBuilder sb = new StringBuilder();
 
-        return "images/bb/bb".concat(value).concat(".gif");
+        return sb
+                .append("http://www.99-bottles-of-beer.net/")
+                .append("images/bb/bb")
+                .append(value)
+                .append(".gif")
+                .toString();
     }
 
     public static String createAttributesSrcOfImg() {
-
+        StringBuilder sb = new StringBuilder();
         String ln = "\n";
 
-        return createSrc("url")
-                .concat(ln)
-                .concat(createSrc("email"))
-                .concat(ln)
-                .concat(createSrc("bold"))
-                .concat(ln)
-                .concat(createSrc("italic"))
-                .concat(ln)
-                .concat(createSrc("underline"));
+        return sb
+                .append(createSrc("url"))
+                .append(ln)
+                .append(createSrc("email"))
+                .append(ln)
+                .append(createSrc("bold"))
+                .append(ln)
+                .append(createSrc("italic"))
+                .append(ln)
+                .append(createSrc("underline"))
+                .toString();
     }
 
     public static String getTrWithRequiredLanguage(String languageName) {

@@ -8,7 +8,7 @@ public class NewCommentsTest extends BaseTest {
 
     @Test
     public void testH2HeaderText() {
-        String expectedH2HeaderText = "New Comments";
+        final String expectedH2HeaderText = "New Comments";
 
         String actualH2HeaderText = openBaseURL()
                 .clickTopListMenu()

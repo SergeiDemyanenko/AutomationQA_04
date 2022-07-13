@@ -45,9 +45,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(TOP_LIST_ESOTERIC_SUBMENU);
     }
 
-    public void clickTopListEsotericSubmenu() {
+    public TopListEsotericPage clickTopListEsotericSubmenu() {
 
         getTopListEsotericSubmenu().click();
+
+        return new TopListEsotericPage(getDriver());
     }
 
     public WebElement getTopListAssemblySubmenu() {
@@ -55,9 +57,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(TOP_LIST_ASSEMBLY_SUBMENU);
     }
 
-    public void clickTopListAssemblySubmenu() {
+    public TopListAssemblyPage clickTopListAssemblySubmenu() {
 
         getTopListAssemblySubmenu().click();
+
+        return new TopListAssemblyPage(getDriver());
     }
 
     public WebElement getTopHitsSubmenu() {
@@ -81,9 +85,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_SUBMENU);
     }
 
-    public void clickNewLanguagesThisMonthSubmenu() {
+    public TopListNewLanguagesThisMonthPage clickNewLanguagesThisMonthSubmenu() {
 
         getNewLanguagesThisMonthSubmenu().click();
+
+        return new TopListNewLanguagesThisMonthPage(getDriver());
     }
 
     public WebElement getNewCommentsSubmenu() {

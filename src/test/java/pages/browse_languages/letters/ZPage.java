@@ -3,6 +3,7 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.languages.LanguagesBeginWithZPage;
 
 public class ZPage extends _LettersPage {
 
@@ -29,5 +30,11 @@ public class ZPage extends _LettersPage {
         return getDriver()
                 .findElement(By.xpath(
                         "//table[@id='category']/tbody/tr[@onmouseover][" + index + "]/td/a"));
+    }
+
+    public LanguagesBeginWithZPage clickRandomNameOfZ() {
+        getRandomNameOfZ().click();
+
+        return new LanguagesBeginWithZPage(getDriver());
     }
 }

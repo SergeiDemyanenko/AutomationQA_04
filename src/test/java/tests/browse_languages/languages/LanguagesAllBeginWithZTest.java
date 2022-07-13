@@ -1,29 +1,11 @@
-package tests._to_do;
+package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.languages.LanguagesBeginWithZPage;
-import pages.browse_languages.letters.ZPage;
 import runner.BaseTest;
 
-public class BrowseLanguagesAllBeginWithZTest extends BaseTest {
-
-    private final String BASE_URL = "http://www.99-bottles-of-beer.net/abc.html";
-
-    protected void clickAnyLanguageBeginWithZ() {
-
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        AbcPage abc = new AbcPage(getDriver());
-        ZPage languageZ = new ZPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-        abc.clickZSubmenu();
-        languageZ.getRandomNameOfZ().click();
-    }
+public class LanguagesAllBeginWithZTest extends BaseTest {
 
     @Test
     public void testVerifyAllHeaders() {
@@ -35,7 +17,10 @@ public class BrowseLanguagesAllBeginWithZTest extends BaseTest {
         final String expectedResultAlternatives = "Alternative Versions";
         final String expectedResultComments = "Comments";
 
-        clickAnyLanguageBeginWithZ();
+        openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickZSubmenu()
+                .clickRandomNameOfZ();
 
         LanguagesBeginWithZPage anyH2 = new LanguagesBeginWithZPage(getDriver());
 
