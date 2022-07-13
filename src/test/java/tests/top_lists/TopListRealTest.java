@@ -2,7 +2,10 @@ package tests.top_lists;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.top_lists.TopListRealPage;
 import runner.BaseTest;
+
+import java.util.List;
 
 public class TopListRealTest extends BaseTest {
 
@@ -32,5 +35,36 @@ public class TopListRealTest extends BaseTest {
                         .getCssValue("color");
 
         Assert.assertEquals(actualColor,expectedColor);
+    }
+
+    @Test
+    public void testTableHeaderText(){
+        final String expectedTableHeaderText = "# Language Author Date Comments Rate";
+
+        String actualTableHeaderText =
+                openBaseURL()
+                        .clickTopListMenu()
+                        .clickTopListRealSubmenu()
+                        .getTextStringThTags();
+
+        Assert.assertEquals(actualTableHeaderText, expectedTableHeaderText);
+    }
+
+    @Test
+    public void testFirstThreeLanguagesInTheTable(){
+        final List<String> expectedLanguages = List.of(
+                "1. Express Lori Smallwood 04/20/05 0",
+                "2. REBOL Anonymous 04/20/05 1",
+                "3. NetLogo (Some kind of logo for Multi Agent System) Antoine Cervoise 07/16/10 0"
+        );
+
+        TopListRealPage realPage =
+                openBaseURL()
+                        .clickTopListMenu()
+                        .clickTopListRealSubmenu();
+
+        Assert.assertEquals(realPage.getTextOneElementFromListTrs(0), expectedLanguages.get(0));
+        Assert.assertEquals(realPage.getTextOneElementFromListTrs(1), expectedLanguages.get(1));
+        Assert.assertEquals(realPage.getTextOneElementFromListTrs(2), expectedLanguages.get(2));
     }
 }
