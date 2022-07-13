@@ -19,4 +19,17 @@ public class LanguageJava3Test extends BaseTest {
 
         Assert.assertEquals(actualJavaVersionName, expectedJavaVersionName);
     }
+
+    @Test
+    public void testNumberOfVersions() {
+        final int expectedNumberOfVersions = 6;
+
+        int actualNumberOfVersions =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickJSubmenu()
+                        .clickLinkLanguageJava3().numberOfVersions();
+
+        Assert.assertEquals(actualNumberOfVersions, expectedNumberOfVersions);
+    }
 }

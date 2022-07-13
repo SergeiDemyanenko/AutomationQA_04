@@ -46,7 +46,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         LanguageJava3Page java = new LanguageJava3Page(getDriver());
 
         List<WebElement> javaVersions = java.getAlternativeVersions();
-        javaVersions.add(java.getMainVersion());
+        javaVersions.add(java.getObjectOrientedVersion());
 
         Assert.assertEquals(javaVersions.size(), 6);
     }
