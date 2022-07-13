@@ -28,7 +28,8 @@ public class SignV2Test extends BaseTest {
         String actualErrorText = openBaseURL()
                 .clickGuestbookV2Menu()
                 .clickSignV2()
-                .fillAllFieldsAndClickButtonSubmit()
+                .fillAllFields()
+                .clickButtonSubmit()
                 .getErrorMessageText();
 
         Assert.assertEquals(actualErrorText, expectedErrorText);
@@ -55,7 +56,8 @@ public class SignV2Test extends BaseTest {
         String actualFont = openBaseURL()
                 .clickGuestbookV2Menu()
                 .clickSignV2()
-                .fillAllFieldsAndClickButtonSubmit()
+                .fillAllFields()
+                .clickButtonSubmit()
                 .getErrorMessageTagFont();
 
         Assert.assertEquals(actualFont, expectedFont);
@@ -69,7 +71,8 @@ public class SignV2Test extends BaseTest {
         String actualStyle = openBaseURL()
                 .clickGuestbookV2Menu()
                 .clickSignV2()
-                .fillAllFieldsAndClickButtonSubmit()
+                .fillAllFields()
+                .clickButtonSubmit()
                 .getErrorMessageAttributeStyle();
 
         Assert.assertEquals(actualStyle, expectedStyle);

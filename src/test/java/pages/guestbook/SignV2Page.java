@@ -53,7 +53,7 @@ public class SignV2Page extends BasePage {
     public SignV2Page clickButtonSubmit() {
         getButtonSubmit().click();
 
-        return new SignV2Page(getDriver());
+        return this;
     }
 
     public WebElement getErrorMessage() {
@@ -200,14 +200,13 @@ public class SignV2Page extends BasePage {
         return getDriver().findElement(IMG_CAPTCHA_PHP);
     }
 
-    public SignV2Page fillAllFieldsAndClickButtonSubmit() {
+    public SignV2Page fillAllFields() {
         inputName(getRandomStr(3));
         inputLocation(getRandomStr(6));
         inputEmail(getRandomStr(8));
         inputHomepage(getRandomStr(4));
         inputCaptcha(3);
         inputComment(getRandomStr(40));
-        clickButtonSubmit();
 
         return this;
     }
