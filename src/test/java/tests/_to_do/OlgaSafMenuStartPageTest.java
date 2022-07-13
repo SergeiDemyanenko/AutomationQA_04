@@ -138,22 +138,4 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
                 By.xpath("//td[@bgcolor='#efefef']/a[text()='Algol60']")).getText();
         Assert.assertEquals(actualResult, expectedResult);
     }
-
-    @Test
-    public void testClickAllLinksTeamPage() {
-
-        List<String> expectedResult = new ArrayList<>();
-        expectedResult.add("ls-la.net");
-        expectedResult.add("E-Taste.org");
-        expectedResult.add("sts.synflood.de");
-
-        getDriver().get(URL);
-
-        StartPage start = new StartPage(getDriver());
-        TeamPage actualResult = new TeamPage(getDriver());
-
-        start.clickTeamSubmenu();
-
-        Assert.assertEquals(actualResult.getAllLinks(), expectedResult);
-    }
 }
