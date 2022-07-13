@@ -172,27 +172,32 @@ public class SignV2Page extends BasePage {
     }
 
     protected String getAttributeName(String cssSelector) {
+        StringBuilder sb = new StringBuilder();
+        sb
+                .append("img[alt='")
+                .append(cssSelector)
+                .append("']");
 
-        return getDriver().findElement(
-                        By.cssSelector("img[alt='".concat(cssSelector).concat("']")))
+        return getDriver()
+                .findElement(By.cssSelector(sb.toString()))
                 .getAttribute("src");
     }
 
     public String getAttributesSrcOfImg() {
-
-        String url = "http://www.99-bottles-of-beer.net/";
         String ln = "\n";
+        StringBuilder sb = new StringBuilder();
 
-        return getAttributeName("Web Address")
-                .concat(ln)
-                .concat(getAttributeName("Email Address"))
-                .concat(ln)
-                .concat(getAttributeName("Bold Text"))
-                .concat(ln)
-                .concat(getAttributeName("Italic Text"))
-                .concat(ln)
-                .concat(getAttributeName("Underlined Text"))
-                .replace(url, "");
+        return sb
+                .append(getAttributeName("Web Address"))
+                .append(ln)
+                .append(getAttributeName("Email Address"))
+                .append(ln)
+                .append(getAttributeName("Bold Text"))
+                .append(ln)
+                .append(getAttributeName("Italic Text"))
+                .append(ln)
+                .append(getAttributeName("Underlined Text"))
+                .toString();
     }
 
     public WebElement getImgCaptcha() {
