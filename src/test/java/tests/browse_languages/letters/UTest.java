@@ -7,14 +7,14 @@ import runner.BaseTest;
 public class UTest extends BaseTest {
 
     @Test
-    public void testSubMenuCategoryU(){
-       final String expectedSubMenuCategoryU = "U";
+    public void testSubMenuCategoryU() {
+        final String expectedSubMenuCategoryU = "U";
 
-       String actualSubMenuCategoryU = openBaseURL()
-               .clickBrowseLanguagesMenu()
-               .getUSubmenuText();
+        String actualSubMenuCategoryU = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getUSubmenuText();
 
-        Assert.assertEquals(actualSubMenuCategoryU,expectedSubMenuCategoryU);
+        Assert.assertEquals(actualSubMenuCategoryU, expectedSubMenuCategoryU);
     }
 
     @Test
@@ -39,5 +39,18 @@ public class UTest extends BaseTest {
                 .getH2HeaderText();
 
         Assert.assertEquals(actualTitleUPage, expectedTitleUPage);
+    }
+
+    @Test
+    public void testUSubmenuDescription() {
+
+        final String expectedUSubmenuDescription =
+                "All languages starting with the letter U are shown, sorted by Language.";
+        String actualUSubmenuDescription = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickUSubmenu()
+                .getPTagText();
+
+        Assert.assertEquals(actualUSubmenuDescription, expectedUSubmenuDescription);
     }
 }
