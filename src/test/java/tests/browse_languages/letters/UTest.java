@@ -28,4 +28,16 @@ public class UTest extends BaseTest {
 
         Assert.assertEquals(actualNumberLanguagesU, expectedNumberLanguagesU);
     }
+
+    @Test
+    public void testTitleUPage() {
+        final String expectedTitleUPage = "Category U";
+
+        String actualTitleUPage = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickUSubmenu()
+                .getH2HeaderText();
+
+        Assert.assertEquals(actualTitleUPage, expectedTitleUPage);
+    }
 }
