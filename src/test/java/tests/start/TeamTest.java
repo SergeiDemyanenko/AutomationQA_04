@@ -67,4 +67,21 @@ public class TeamTest extends BaseTest {
 
         Assert.assertEquals(actualTeamPageStsSynfloodDeLink, expectedTeamPageStsSynfloodDeLink);
     }
+
+    @Test
+    public void testAllLinksTeamPage() {
+
+        List<String> expectedAllLinks = new ArrayList<>();
+        expectedAllLinks.add("ls-la.net");
+        expectedAllLinks.add("E-Taste.org");
+        expectedAllLinks.add("sts.synflood.de");
+
+        List<String> actualAllLinks =
+                openBaseURL()
+                        .clickStartMenu()
+                        .clickTeamSubmenu()
+                        .getAllLinks();
+
+        Assert.assertEquals(actualAllLinks, expectedAllLinks);
+    }
 }

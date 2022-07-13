@@ -105,21 +105,38 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
     }
 
 
-    @Test
-    public void testClickAllLinksTeamPage() {
-
-        List<String> expectedResult = new ArrayList<>();
-        expectedResult.add("ls-la.net");
-        expectedResult.add("E-Taste.org");
-        expectedResult.add("sts.synflood.de");
+   
+    public void testSubmenuAbcTitle()  {
+        String expectedResult = "A";
 
         getDriver().get(URL);
 
-        StartPage start = new StartPage(getDriver());
-        TeamPage actualResult = new TeamPage(getDriver());
+        MainPage main = new MainPage(getDriver());
 
-        start.clickTeamSubmenu();
+        main.clickBrowseLanguagesMenu();
 
-        Assert.assertEquals(actualResult.getAllLinks(), expectedResult);
+        AbcPage abcA = new AbcPage(getDriver());
+
+        String actualResult = abcA.getASubmenu().getText();
+
+          Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testVerifyLanguageAlgol60() {
+        String expectedResult = "Algol60";
+
+        getDriver().get(URL);
+
+        MainPage bl = new MainPage(getDriver());
+        bl.clickBrowseLanguagesMenu();
+
+        AbcPage abcPage = new AbcPage(getDriver());
+        abcPage.clickASubmenu();
+
+        String actualResult = getDriver().findElement(
+                By.xpath("//td[@bgcolor='#efefef']/a[text()='Algol60']")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
+        
     }
 }
