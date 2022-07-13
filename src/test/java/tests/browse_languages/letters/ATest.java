@@ -1,10 +1,8 @@
 package tests.browse_languages.letters;
 
-import org.openqa.selenium.By;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.browse_languages.AbcPage;
 import runner.BaseTest;
 
 import static runner.TestUtils.getTrWithRequiredLanguage;

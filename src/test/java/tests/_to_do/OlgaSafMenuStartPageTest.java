@@ -17,44 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OlgaSafMenuStartPageTest extends BaseTest {
+
     private static final String URL = "http://www.99-bottles-of-beer.net/";
-
-    @Test
-    public void testSubMenuCategoryC() {
-
-        String expectedResult = "C";
-
-        getDriver().get(URL);
-
-        MainPage bl = new MainPage(getDriver());
-        bl.clickBrowseLanguagesMenu();
-
-        AbcPage abcC = new AbcPage(getDriver());
-
-        String actualResult = abcC.getCSubmenu().getText();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testTitleCPage(){
-
-        String expectedResult = "Category C";
-
-        getDriver().get(URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage c = new AbcPage(getDriver());
-        c.clickCSubmenu();
-
-        CPage title = new CPage(getDriver());
-
-        String actualResult = title.getH2HeaderText();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
 
     @Test
     public void testTopRatedAssemblyLanguagesText() {
@@ -102,41 +66,5 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         }
 
         Assert.assertEquals(actualResult, expectedResult);
-    }
-
-
-   
-    public void testSubmenuAbcTitle()  {
-        String expectedResult = "A";
-
-        getDriver().get(URL);
-
-        MainPage main = new MainPage(getDriver());
-
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abcA = new AbcPage(getDriver());
-
-        String actualResult = abcA.getASubmenu().getText();
-
-          Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testVerifyLanguageAlgol60() {
-        String expectedResult = "Algol60";
-
-        getDriver().get(URL);
-
-        MainPage bl = new MainPage(getDriver());
-        bl.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickASubmenu();
-
-        String actualResult = getDriver().findElement(
-                By.xpath("//td[@bgcolor='#efefef']/a[text()='Algol60']")).getText();
-        Assert.assertEquals(actualResult, expectedResult);
-        
     }
 }
