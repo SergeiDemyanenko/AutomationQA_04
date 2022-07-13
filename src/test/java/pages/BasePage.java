@@ -37,4 +37,9 @@ public abstract class BasePage {
 
         return getDriver().findElements(element);
     }
+
+    public String getTitle() {
+
+        return getDriver().getTitle();
+    }
 }
