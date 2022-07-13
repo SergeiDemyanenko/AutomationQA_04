@@ -1,7 +1,9 @@
 package tests.browse_languages.letters;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.languages.LanguagesBeginWithZPage;
 import runner.BaseTest;
 
 public class ZTest extends BaseTest {
@@ -82,5 +84,23 @@ public class ZTest extends BaseTest {
                 .getNamesText();
 
         Assert.assertEquals(actualResultallNamesZ, expectedResultallNamesZ);
+    }
+
+    @Test
+    public void testRandomNameBeforeAndAfterClicking() {
+
+        WebElement identicalRandomNameOfZ = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickZSubmenu().getRandomNameOfZ();
+
+        final String expectedResult = "Language "
+                .concat(identicalRandomNameOfZ.getText());
+
+        identicalRandomNameOfZ.click();
+
+        LanguagesBeginWithZPage h2Header = new LanguagesBeginWithZPage(getDriver());
+        String actualResult = h2Header.getH2Text();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
