@@ -24,82 +24,78 @@ public class TopListPage extends BasePage {
        super(driver);
     }
 
-    public void clickSubmenu(WebElement element) {
-        element.click();
-    }
-
     public WebElement getTopListRealSubmenu() {
 
-        return getDriver().findElement(TOP_LIST_REAL_SUBMENU);
+        return findElement(TOP_LIST_REAL_SUBMENU);
     }
 
     public TopListRealPage clickTopListRealSubmenu() {
 
-        clickSubmenu(getTopListRealSubmenu());
+        clickWebElement(getTopListRealSubmenu());
 
         return new TopListRealPage(getDriver());
     }
 
     public WebElement getTopListEsotericSubmenu() {
 
-        return getDriver().findElement(TOP_LIST_ESOTERIC_SUBMENU);
+        return findElement(TOP_LIST_ESOTERIC_SUBMENU);
     }
 
     public TopListEsotericPage clickTopListEsotericSubmenu() {
 
-        getTopListEsotericSubmenu().click();
+        clickWebElement(getTopListEsotericSubmenu());
 
         return new TopListEsotericPage(getDriver());
     }
 
     public WebElement getTopListAssemblySubmenu() {
 
-        return getDriver().findElement(TOP_LIST_ASSEMBLY_SUBMENU);
+        return findElement(TOP_LIST_ASSEMBLY_SUBMENU);
     }
 
     public TopListAssemblyPage clickTopListAssemblySubmenu() {
 
-        getTopListAssemblySubmenu().click();
+        clickWebElement(getTopListAssemblySubmenu());
 
         return new TopListAssemblyPage(getDriver());
     }
 
     public WebElement getTopHitsSubmenu() {
 
-        return getDriver().findElement(TOPHITS_SUBMENU);
+        return findElement(TOPHITS_SUBMENU);
     }
 
     public TopListTopHitsPage clickTopHitsSubmenu() {
-        getTopHitsSubmenu().click();
+        clickWebElement(getTopHitsSubmenu());
 
         return new TopListTopHitsPage(getDriver());
     }
 
     public String getTextTopHitsSubmenu() {
 
-        return getTopHitsSubmenu().getText();
+        return getText(getTopHitsSubmenu());
     }
 
     public WebElement getNewLanguagesThisMonthSubmenu() {
 
-        return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_SUBMENU);
+        return findElement(NEW_LANGUAGES_THIS_MONTH_SUBMENU);
     }
 
     public TopListNewLanguagesThisMonthPage clickNewLanguagesThisMonthSubmenu() {
 
-        getNewLanguagesThisMonthSubmenu().click();
+        clickWebElement(getNewLanguagesThisMonthSubmenu());
 
         return new TopListNewLanguagesThisMonthPage(getDriver());
     }
 
     public WebElement getNewCommentsSubmenu() {
 
-        return getDriver().findElement(NEW_COMMENTS_SUBMENU);
+        return findElement(NEW_COMMENTS_SUBMENU);
     }
 
     public NewCommentsPage clickNewCommentsSubmenu() {
 
-        getNewCommentsSubmenu().click();
+        clickWebElement(getNewCommentsSubmenu());
 
         return new NewCommentsPage(getDriver());
     }
@@ -125,8 +121,8 @@ public class TopListPage extends BasePage {
         return textOfLinks;
     }
 
-    public String getNameH2HeaderTopList() {
+    public String getTextH2Header() {
 
-        return getDriver().findElement(H2_TABLE_NAME_TOP_LIST).getText();
+        return getText(findElement(H2_TABLE_NAME_TOP_LIST));
     }
 }

@@ -14,7 +14,7 @@ public class ToplistAssemblyTest extends BaseTest {
                 openBaseURL()
                         .clickTopListMenu()
                         .clickTopListAssemblySubmenu()
-                        .getH2TableAssemblyName();
+                        .getTextH2Header();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

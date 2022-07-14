@@ -1,6 +1,8 @@
 package tests.top_lists;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.top_lists.TopListRealPage;
 import runner.BaseTest;
@@ -31,7 +33,7 @@ public class TopListRealTest extends BaseTest {
                 openBaseURL()
                         .clickTopListMenu()
                         .clickTopListRealSubmenu()
-                        .getH2Header()
+                        .findElementH2Header()
                         .getCssValue("color");
 
         Assert.assertEquals(actualColor, expectedColor);
