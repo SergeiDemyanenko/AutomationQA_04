@@ -15,9 +15,14 @@ public class LanguageCSharp1614Page extends _LanguagesPage {
         super(driver);
     }
 
+    public List<WebElement> getALinksTable() {
+
+        return getDriver().findElements(A_LINKS);
+    }
+
     public List<String> getCSharpLanguageALinks() {
 
-        List<WebElement> aHrefs = getDriver().findElements(A_LINKS);
+        List<WebElement> aHrefs = getALinksTable();
         List<String> listOfVersions = new ArrayList<>();
 
         for (WebElement a : aHrefs) {

@@ -2,10 +2,8 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
 
-
-public class AlphaBetaPage extends BasePage{
+public class AlphaBetaPage extends _LanguagesPage {
 
     private final By ALPHABETA_LINK = By.linkText("AlphaBeta");
 

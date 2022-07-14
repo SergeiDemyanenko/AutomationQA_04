@@ -56,7 +56,7 @@ public class ITest extends BaseTest {
         String actualISubmenuDescription = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickISubmenu()
-                .getPTagText();
+                .getTextPTag();
 
         Assert.assertEquals(actualISubmenuDescription, expectedISubmenuDescription);
     }

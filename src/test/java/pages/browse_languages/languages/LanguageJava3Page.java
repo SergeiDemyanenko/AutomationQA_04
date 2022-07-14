@@ -41,6 +41,11 @@ public class LanguageJava3Page extends _LanguagesPage {
         return getDriver().findElement(MAIN_VERSION_COMMENTS);
     }
 
+    public WebElement getStandardVersion() {
+
+        return getDriver().findElement(STANDARD_VERSION);
+    }
+
     private Map<Integer, String> getAllVersionsNameAndComment() {
         Map<Integer, String> allVersionsNameAndComment = new HashMap<>();
 
@@ -68,7 +73,7 @@ public class LanguageJava3Page extends _LanguagesPage {
     }
 
     public LanguageJava4Page clickStandardVersionPage() {
-        clickWebElement(findElement(STANDARD_VERSION));
+        getStandardVersion().click();
 
         return new LanguageJava4Page(getDriver());
     }

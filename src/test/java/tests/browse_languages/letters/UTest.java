@@ -49,7 +49,7 @@ public class UTest extends BaseTest {
         String actualUSubmenuDescription = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickUSubmenu()
-                .getPTagText();
+                .getTextPTag();
 
         Assert.assertEquals(actualUSubmenuDescription, expectedUSubmenuDescription);
     }

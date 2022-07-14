@@ -33,7 +33,7 @@ public class TopListRealTest extends BaseTest {
                 openBaseURL()
                         .clickTopListMenu()
                         .clickTopListRealSubmenu()
-                        .findElementH2Header()
+                        .getH2Header()
                         .getCssValue("color");
 
         Assert.assertEquals(actualColor, expectedColor);

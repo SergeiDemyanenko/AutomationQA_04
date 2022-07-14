@@ -16,7 +16,7 @@ public class SPage extends _LettersPage {
 
     public WebElement getShakespeareLanguage() {
 
-        return findElement(SHAKESPEARE_LANGUAGE);
+        return getDriver().findElement(SHAKESPEARE_LANGUAGE);
     }
 
     public LanguageShakespearePage clickShakespeareLanguage() {

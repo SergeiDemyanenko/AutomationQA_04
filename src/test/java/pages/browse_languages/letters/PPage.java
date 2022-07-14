@@ -2,6 +2,7 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.browse_languages.languages.LanguagePython808Page;
 
 public class PPage extends _LettersPage {
@@ -12,9 +13,13 @@ public class PPage extends _LettersPage {
 
         super(driver);
     }
+    public WebElement getPythonLanguage() {
+
+        return getDriver().findElement(PYTHON_LANGUAGE);
+    }
 
     public LanguagePython808Page clickPythonLanguage() {
-        clickWebElement(findElement(PYTHON_LANGUAGE));
+        getPythonLanguage().click();
 
         return new LanguagePython808Page(getDriver());
     }

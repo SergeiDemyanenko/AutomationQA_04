@@ -16,16 +16,21 @@ public class JPage extends _LettersPage {
         super(driver);
     }
 
+    public WebElement getLinkLanguageJava3() {
+
+        return getDriver().findElement(lINK_LANGUAGE_JAVA_3);
+    }
+
     public LanguageJava3Page clickLinkLanguageJava3() {
 
-        findElement(lINK_LANGUAGE_JAVA_3).click();
+        getLinkLanguageJava3().click();
 
         return new LanguageJava3Page(getDriver());
     }
 
     public List<String> getH2HeaderAndPTagText() {
 
-        return List.of(getH2HeaderText(), getPTagText());
+        return List.of(getH2HeaderText(), getTextPTag());
     }
 
     public int randomLanguage() {

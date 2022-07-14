@@ -80,7 +80,7 @@ public class RTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickRSubmenu()
-                        .getPTagText();
+                        .getTextPTag();
 
         Assert.assertEquals(actualText, expectedText);
     }

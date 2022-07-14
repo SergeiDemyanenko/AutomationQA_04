@@ -13,12 +13,12 @@ private final By LINK_SHAKESPEARE_LANGUAGE_SITE =
         super(driver);
     }
 
-    public WebElement getShakespeareLanguageSite() {
+    public WebElement getShakespeareLanguageSiteLink() {
 
         return getDriver().findElement(LINK_SHAKESPEARE_LANGUAGE_SITE);
     }
 
     public void clickShakespeareLanguageSite() {
-        getShakespeareLanguageSite().click();
+        getShakespeareLanguageSiteLink().click();
     }
 }

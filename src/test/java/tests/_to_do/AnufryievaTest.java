@@ -24,7 +24,7 @@ public class AnufryievaTest extends BaseTest {
         Abc.clickJSubmenu();
 
         JPage j = new JPage(getDriver());
-        String actualResult = j.getPTagText();
+        String actualResult = j.getTextPTag();
 
 
         Assert.assertEquals(actualResult, expectedResult);
