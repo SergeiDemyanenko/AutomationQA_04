@@ -110,22 +110,22 @@ public class NavigationTest extends BaseTest {
     
     @Test
     public void testMenuStartNavigation() {
-        final String expectedMenuStartNavigationLink = "http://www.99-bottles-of-beer.net/";
-
-        WebElement originalStartMenu = openBaseURL().getStartMenu();
-
         MainPage main = new MainPage(getDriver());
-        WebElement pageStartMenu = main.getStartMenu();
 
-        Assert.assertEquals(originalStartMenu, pageStartMenu);
+        WebElement oldStartMenu = openBaseURL().getStartMenu();
+        WebElement sameStartMenu = main.getStartMenu();
 
+        Assert.assertEquals(oldStartMenu, sameStartMenu);
+
+        String oldCurrentUrl = getDriver().getCurrentUrl();
         main.clickStartMenu();
+        String newCurrentUrl = getDriver().getCurrentUrl();
 
-        WebElement startMenuAfterClick = main.getStartMenu();
-        String actualMenuStartNavigationLink = getDriver().getCurrentUrl();
+        Assert.assertEquals(newCurrentUrl, oldCurrentUrl);
 
-        Assert.assertNotEquals(originalStartMenu, startMenuAfterClick);
-        Assert.assertEquals(actualMenuStartNavigationLink, expectedMenuStartNavigationLink);
+        WebElement newStartMenuAfterClick = main.getStartMenu();
+
+        Assert.assertNotEquals(oldStartMenu, newStartMenuAfterClick);
     }
 
     @Test
