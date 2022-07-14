@@ -55,4 +55,17 @@ public class AbcTest extends BaseTest {
 
         Assert.assertEquals(actualTableTitles, expectedTableTitles);
     }
+
+    @Test
+    public void testAllNamesOfSubmenu() {
+
+        final String expectedResultAllNamesOfSubmenu = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        String actualResultAllNamesOfSubmenu = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getAllNamesOfSubmenu();
+
+        Assert.assertEquals(
+                actualResultAllNamesOfSubmenu, expectedResultAllNamesOfSubmenu);
+    }
 }

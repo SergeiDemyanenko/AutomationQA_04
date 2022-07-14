@@ -192,4 +192,41 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertEquals(actualMenuSearchNavigation, expectedMenuSearchNavigation);
     }
+
+    @Test
+    public void testMenuTopListText() {
+        final String expectedMenuTopListText = "Top Lists".toUpperCase();
+
+        String actualMenuTopListText =
+                openBaseURL()
+                        .getTopListMenu()
+                        .getText();
+
+        Assert.assertEquals(actualMenuTopListText, expectedMenuTopListText);
+    }
+
+    @Test
+    public void testMenuTopListLinkText() {
+        final String expectedMenuTopListLinkText = "http://www.99-bottles-of-beer.net/toplist.html";
+
+        String actualMenuTopListLinkText =
+                openBaseURL()
+                        .getTopListMenu()
+                        .getAttribute("href");
+
+        Assert.assertEquals(actualMenuTopListLinkText, expectedMenuTopListLinkText);
+    }
+
+    @Test
+    public void testMenuTopListNavigation() {
+        final String expectedMenuTopListNavigation = "http://www.99-bottles-of-beer.net/toplist.html";
+
+        openBaseURL()
+                .clickTopListMenu();
+
+        String actualMenuTopListNavigation = getDriver().getCurrentUrl();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+        Assert.assertEquals(actualMenuTopListNavigation, expectedMenuTopListNavigation);
+    }
 }

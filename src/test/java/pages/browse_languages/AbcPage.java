@@ -136,7 +136,7 @@ public class AbcPage extends BasePage {
     public ZPage clickZSubmenu() {
         getZSubmenu().click();
 
-        return new ZPage(getDriver()) ;
+        return new ZPage(getDriver());
     }
 
     public WebElement getSSubmenu() {
@@ -256,5 +256,15 @@ public class AbcPage extends BasePage {
         getXSubmenu().click();
 
         return new XPage(getDriver());
+    }
+
+    public String getAllNamesOfSubmenu() {
+        StringBuilder result = new StringBuilder();
+                List<WebElement> liAll = getAllSubmenu();
+        for (WebElement li : liAll) {
+           result.append(li.getText());
+        }
+
+        return  result.toString();
     }
 }
