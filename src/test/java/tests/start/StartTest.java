@@ -8,7 +8,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testInfoSubmenuText() {
-        String expectedInfoSubmenuText = "History";
+        final String expectedInfoSubmenuText = "History";
 
         String actualInfoSubmenuText = openBaseURL()
                 .getText(openBaseURL()
@@ -20,7 +20,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testInfoSubmenuLinkText() {
-        String expectedInfoSubmenuLinkText = "http://www.99-bottles-of-beer.net/info.html";
+        final String expectedInfoSubmenuLinkText = "http://www.99-bottles-of-beer.net/info.html";
 
         String actualInfoSubmenuLinkText = openBaseURL()
                 .clickStartMenu()
@@ -33,7 +33,7 @@ public class StartTest extends BaseTest {
     @Test
     public void testH2Header() {
 
-        String expectedH2Header = "Welcome to 99 Bottles of Beer";
+        final String expectedH2Header = "Welcome to 99 Bottles of Beer";
 
         String actualH2Header = openBaseURL()
                 .clickStartMenu()
@@ -44,7 +44,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testHistoricInformationLinkText() {
-        String expectedHistoricInformationLinkText = "historic information";
+        final String expectedHistoricInformationLinkText = "historic information";
 
         String actualHistoricInformationLinkText =
                 openBaseURL()
@@ -56,7 +56,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testHistoricInformationLink() {
-        String expectedHistoricInformationLinkTitle = "99 Bottles of Beer | Background and historic information";
+        final String expectedHistoricInformationLinkTitle = "99 Bottles of Beer | Background and historic information";
 
         String actualHistoricInformationLinkTitl =
                 openBaseURL()
@@ -69,7 +69,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testHereLinkText() {
-        String expectedHereLinkText = "here";
+        final String expectedHereLinkText = "here";
 
         String actualHereLinkTextText =
                 openBaseURL()
@@ -81,7 +81,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testHereLink() {
-        String expectedHereLinkTitle = "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer";
+        final String expectedHereLinkTitle = "99 Bottles of Beer | The lyrics to the song 99 Bottles of Beer";
 
         String actualHereLinkTitle =
                 openBaseURL()
@@ -94,7 +94,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testSubmitYourOwnPieceOfCodeLinkText() {
-        String expectedSubmitYourOwnPieceOfCodeLinkText = "submit your own piece of code";
+        final String expectedSubmitYourOwnPieceOfCodeLinkText = "submit your own piece of code";
 
         String actualSubmitYourOwnPieceOfCodeLinkText =
                 openBaseURL()
@@ -106,7 +106,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testSubmitYourOwnPieceOfCodeLink() {
-        String expectedSubmitYourOwnPieceOfCodeLinkTitle = "99 Bottles of Beer | Submit new Language";
+        final String expectedSubmitYourOwnPieceOfCodeLinkTitle = "99 Bottles of Beer | Submit new Language";
 
         String actualSubmitYourOwnPieceOfCodeLinkTitle =
                 openBaseURL()
@@ -119,7 +119,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testGuestbookLinkText() {
-        String expectedGuestbookLinkText = "guestbook";
+        final String expectedGuestbookLinkText = "guestbook";
 
         String actualGuestbookLinkText =
                 openBaseURL()
@@ -131,7 +131,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testGuestbookLink() {
-        String expectedGuestbookLinkTitle = "99 Bottles of Beer | Guestbook";
+        final String expectedGuestbookLinkTitle = "99 Bottles of Beer | Guestbook";
 
         String actualGuestbookLinkTitle =
                 openBaseURL()
@@ -144,7 +144,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testTeamMembersLinkText() {
-        String expectedTeamMembersLinkText = "team members";
+        final String expectedTeamMembersLinkText = "team members";
 
         String actualTeamMembersLinkText =
                 openBaseURL()
@@ -156,7 +156,7 @@ public class StartTest extends BaseTest {
 
     @Test
     public void testTeamMembersLink() {
-        String expectedTeamMembersLinkTitle = "99 Bottles of Beer | The Team";
+        final String expectedTeamMembersLinkTitle = "99 Bottles of Beer | The Team";
 
         String actualTeamMembersLinkTitle =
                 openBaseURL()
