@@ -81,9 +81,11 @@ public class SignV2Page extends BasePage {
         return getDriver().findElement(INPUT_NAME);
     }
 
-    public void setInputName(String name) {
+    public SignV2Page setInputName(String name) {
         getInputName().click();
         getInputName().sendKeys(name);
+
+        return this;
     }
 
     public void inputName(String name) {
@@ -156,9 +158,11 @@ public class SignV2Page extends BasePage {
         inputText(getInputComment(), comment);
     }
 
-    public void setInputComment(String comment) {
+    public SignV2Page setInputComment(String comment) {
         getInputComment().click();
         getInputComment().sendKeys(comment);
+
+        return this;
     }
 
     public String getErrorMessageTagFont() {
