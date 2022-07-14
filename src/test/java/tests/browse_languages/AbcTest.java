@@ -56,4 +56,14 @@ public class AbcTest extends BaseTest {
         Assert.assertEquals(actualTableTitles, expectedTableTitles);
     }
 
+    @Test
+    public void testBrowseLanguagesSubmenuText() {
+
+        String expectedBrowseLanguagesSubmenuText = "0-9ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        Assert.assertEquals(expectedBrowseLanguagesSubmenuText, openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .getSubmenu()
+                .getText());
+    }
 }

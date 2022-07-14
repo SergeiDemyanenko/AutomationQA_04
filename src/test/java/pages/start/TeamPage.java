@@ -113,10 +113,4 @@ public class TeamPage extends BasePage {
 
         return new TeamPage(getDriver());
     }
-
-    public static String getTeamPageStsSynfloodDeLinkTitle() {
-        String TeamPageStsSynfloodDeLinkTitle = "sts.synflood.de";
-
-        return TeamPageStsSynfloodDeLinkTitle;
-    }
 }
