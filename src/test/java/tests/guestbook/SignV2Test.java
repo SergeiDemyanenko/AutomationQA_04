@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import runner.BaseTest;
 
 import static runner.TestUtils.createAttributesSrcOfImg;
+import static runner.TestUtils.createTextFromPromptsUsingAlgorithm;
 
 public class SignV2Test extends BaseTest {
 
@@ -107,5 +108,20 @@ public class SignV2Test extends BaseTest {
                         .getErrorMessageText();
 
         Assert.assertEquals(actualErrorMessage, expectectedErrorMessage);
+    }
+
+    @Test
+    public void testTextFromPrompts() {
+
+        final String expectedTextFromPrompts =
+                createTextFromPromptsUsingAlgorithm();
+
+        String actualTextFromPrompts =
+                openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .getTextFromPrompts();
+
+        Assert.assertEquals(actualTextFromPrompts, expectedTextFromPrompts);
     }
 }
