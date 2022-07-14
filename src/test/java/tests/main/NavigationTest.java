@@ -1,7 +1,9 @@
 package tests.main;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.MainPage;
 import pages.browse_languages.AbcPage;
 import pages.start.StartPage;
 import runner.BaseTest;
@@ -108,15 +110,22 @@ public class NavigationTest extends BaseTest {
     
     @Test
     public void testMenuStartNavigation() {
-        final String expectedMenuStartNavigation = "http://www.99-bottles-of-beer.net/";
+        final String expectedMenuStartNavigationLink = "http://www.99-bottles-of-beer.net/";
 
-        openBaseURL()
-                .clickStartMenu();
+        WebElement originalStartMenu = openBaseURL().getStartMenu();
 
-        String actualMenuStartNavigation = getDriver().getCurrentUrl();
+        MainPage main = new MainPage(getDriver());
+        WebElement pageStartMenu = main.getStartMenu();
 
-        Assert.assertFalse(getDriver().getPageSource().isEmpty());
-        Assert.assertEquals(actualMenuStartNavigation, expectedMenuStartNavigation);
+        Assert.assertEquals(originalStartMenu, pageStartMenu);
+
+        main.clickStartMenu();
+
+        WebElement startMenuAfterClick = main.getStartMenu();
+        String actualMenuStartNavigationLink = getDriver().getCurrentUrl();
+
+        Assert.assertNotEquals(originalStartMenu, startMenuAfterClick);
+        Assert.assertEquals(actualMenuStartNavigationLink, expectedMenuStartNavigationLink);
     }
 
     @Test
