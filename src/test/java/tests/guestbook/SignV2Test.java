@@ -1,5 +1,6 @@
 package tests.guestbook;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
@@ -90,5 +91,21 @@ public class SignV2Test extends BaseTest {
                         .getAttributesSrcOfImg();
 
         Assert.assertEquals(expectedAttributesSrcOfMessageIcons, actualAttributesSrcOfMessageIcons);
+    }
+    @Test
+    public void testInputFieldNameWithMaxSymbolsAndGetErrorMessage() {
+        String expectectedErrorMessage = "Error: Please enter at least a message, your email address and the security code.";
+        String guestbookComment = "QA tests";
+        String nameField = RandomStringUtils.randomAlphanumeric(100);
+
+        String actualErrorMessage = openBaseURL()
+                        .clickGuestbookV2Menu()
+                        .clickSignV2()
+                        .setInputName(nameField)
+                        .clickButtonSubmit()
+                        .setInputComment(guestbookComment)
+                        .getErrorMessageText();
+
+        Assert.assertEquals(actualErrorMessage, expectectedErrorMessage);
     }
 }
