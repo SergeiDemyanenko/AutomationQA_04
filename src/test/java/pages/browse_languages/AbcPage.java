@@ -256,13 +256,13 @@ public class AbcPage extends BasePage {
         return new XPage(getDriver());
     }
 
-    public StringBuilder getAllNamesOfSubmenu() {
+    public String getAllNamesOfSubmenu() {
         StringBuilder result = new StringBuilder();
                 List<WebElement> liAll = getAllSubmenu();
         for (WebElement li : liAll) {
            result.append(li.getText());
         }
 
-        return  result;
+        return  result.toString();
     }
 }

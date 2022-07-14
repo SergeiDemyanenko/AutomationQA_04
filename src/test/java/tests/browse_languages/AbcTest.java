@@ -63,8 +63,7 @@ public class AbcTest extends BaseTest {
 
         String actualResultAllNamesOfSubmenu = openBaseURL()
                 .clickBrowseLanguagesMenu()
-                .getAllNamesOfSubmenu()
-                .toString();
+                .getAllNamesOfSubmenu();
 
         Assert.assertEquals(
                 actualResultAllNamesOfSubmenu, expectedResultAllNamesOfSubmenu);
