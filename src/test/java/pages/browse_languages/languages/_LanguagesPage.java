@@ -23,6 +23,7 @@ public abstract class _LanguagesPage extends BasePage {
     private final By REDDIT_ICON = By.xpath("//a[@title='reddit']");
 
     public _LanguagesPage(WebDriver driver) {
+    
         super(driver);
     }
 
