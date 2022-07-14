@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -41,5 +42,11 @@ public abstract class BasePage {
     public String getTitle() {
 
         return getDriver().getTitle();
+    }
+
+    public WebDriverWait getWait() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 2000);
+
+        return wait;
     }
 }

@@ -1,11 +1,14 @@
 package pages.guestbook;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 import runner.TestUtils;
 
+import static runner.TestUtils.createStringBuilder;
 import static runner.TestUtils.getRandomStr;
 
 public class SignV2Page extends BasePage {
@@ -218,5 +221,78 @@ public class SignV2Page extends BasePage {
         inputComment(getRandomStr(40));
 
         return this;
+    }
+
+    protected WebElement getPrompt(String type) {
+
+        return getDriver().findElement(By.xpath(
+                createStringBuilder()
+                        .append("//img[@src='/images/bb/bb")
+                        .append(type)
+                        .append(".gif']")
+                        .toString()));
+    }
+
+    protected String getTextPrompt() {
+        Alert alert = getWait().until(ExpectedConditions.alertIsPresent());
+
+        String a = alert.getText();
+
+        alert.dismiss();
+
+        return a;
+    }
+
+    protected String getTextFromPrompt1() {
+        getPrompt("url").click();
+
+        Alert alert = getWait().until(ExpectedConditions.alertIsPresent());
+
+        String a = alert.getText();
+
+        alert.dismiss();
+        alert.dismiss();
+
+        return a;
+    }
+
+    protected String getTextFromPrompt2() {
+        getPrompt("email").click();
+
+        return getTextPrompt();
+    }
+
+    protected String getTextFromPrompt3() {
+        getPrompt("bold").click();
+
+        return getTextPrompt();
+    }
+
+    protected String getTextFromPrompt4() {
+        getPrompt("italic").click();
+
+        return getTextPrompt();
+    }
+
+    protected String getTextFromPrompt5() {
+        getPrompt("underline").click();
+
+        return getTextPrompt();
+    }
+
+    public String getTextFromPrompts() {
+        String ln ="\n";
+
+        return createStringBuilder()
+                .append(getTextFromPrompt1())
+                .append(ln)
+                .append(getTextFromPrompt2())
+                .append(ln)
+                .append(getTextFromPrompt3())
+                .append(ln)
+                .append(getTextFromPrompt4())
+                .append(ln)
+                .append(getTextFromPrompt5())
+                .toString();
     }
 }

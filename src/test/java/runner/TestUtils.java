@@ -209,4 +209,47 @@ public final class TestUtils {
 
         return null;
     }
+
+    public static StringBuilder createStringBuilder() {
+        StringBuilder sb = new StringBuilder();
+
+        return sb;
+    }
+
+    protected static String createTextFromPrompts1(String s) {
+
+        return createStringBuilder()
+                .append("Enter the ")
+                .append(s)
+                .append(" you want to add.")
+                .toString();
+    }
+
+    protected static String createTextFromPrompts2(String s) {
+
+        return createStringBuilder()
+                .append("Enter the text that you want to make ")
+                .append(s)
+                .append(".")
+                .toString();
+    }
+
+    public static String createTextFromPromptsUsingAlgorithm() {
+        String ln = "\n";
+
+        return createStringBuilder()
+                .append(createTextFromPrompts1("URL for the link"))
+                .append(ln)
+                .append(createTextFromPrompts1("email address"))
+                .append(ln)
+                .append(createTextFromPrompts2("bold"))
+                .append(ln)
+                .append(createTextFromPrompts2("italic"))
+                .append(ln)
+                .append(
+                        createTextFromPrompts2("undelined")
+                                .replace("make ", "be ")
+                )
+                .toString();
+    }
 }
