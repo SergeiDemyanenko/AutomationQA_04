@@ -12,9 +12,9 @@ public class ToplistEsotericTest extends BaseTest {
 
         String actualResult =
                 openBaseURL().
-                        clickTopListMenu().
-                        clickTopListEsotericSubmenu().
-                        getH2TableEsotericName();
+                        clickTopListMenu()
+                        .clickTopListEsotericSubmenu()
+                        .getTextH2Header();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

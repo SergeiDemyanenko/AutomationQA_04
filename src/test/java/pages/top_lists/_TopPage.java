@@ -20,19 +20,19 @@ public abstract class _TopPage extends BasePage {
         super (driver);
     }
 
-    public WebElement findElementH2Header() {
+    public WebElement getH2Header() {
 
-        return findElement(H2_HEADER);
+        return getDriver().findElement(H2_HEADER);
     }
 
     public String getTextH2Header() {
 
-        return getText(findElement(H2_HEADER));
+        return getText(getH2Header());
     }
 
     public List<WebElement> getThTags() {
 
-        return findElements(TH_TAGS);
+        return getDriver().findElements(TH_TAGS);
     }
 
     public String getTextStringThTags() {
@@ -48,7 +48,7 @@ public abstract class _TopPage extends BasePage {
 
     public List<WebElement> getTrTags() {
 
-        return findElements(TR_TAGS);
+        return getDriver().findElements(TR_TAGS);
     }
 
     public int getCountTrTags() {

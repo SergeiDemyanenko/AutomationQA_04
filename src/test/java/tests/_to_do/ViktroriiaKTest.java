@@ -129,7 +129,7 @@ public class ViktroriiaKTest extends BaseTest {
         abcPage.clickUSubmenu();
 
         UPage description = new UPage(getDriver());
-        String actualResult = description.getPTagText();
+        String actualResult = description.getTextPTag();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

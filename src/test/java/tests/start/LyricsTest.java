@@ -2,6 +2,7 @@ package tests.start;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 import static runner.TestUtils.createSongLyricsTextUsingAlgorithm;

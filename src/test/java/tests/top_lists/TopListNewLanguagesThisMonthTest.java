@@ -14,7 +14,7 @@ public class TopListNewLanguagesThisMonthTest extends BaseTest {
                 openBaseURL()
                         .clickTopListMenu()
                         .clickNewLanguagesThisMonthSubmenu()
-                        .getH2TableNewLanguagesName();
+                                .getTextH2Header();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

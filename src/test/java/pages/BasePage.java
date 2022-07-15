@@ -1,11 +1,7 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public abstract class BasePage {
 
@@ -25,28 +21,13 @@ public abstract class BasePage {
         return element.getText();
     }
 
-    public void clickWebElement(WebElement element) {
-        element.click();
-    }
-
-    public WebElement findElement(By element) {
-
-        return getDriver().findElement(element);
-    }
-
-    public List<WebElement> findElements(By element) {
-
-        return getDriver().findElements(element);
-    }
-
     public String getTitle() {
 
         return getDriver().getTitle();
     }
 
-    public WebDriverWait getWait() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 2000);
+    public String getURL() {
 
-        return wait;
+        return getDriver().getCurrentUrl();
     }
 }

@@ -229,4 +229,26 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertEquals(actualMenuTopListNavigation, expectedMenuTopListNavigation);
     }
+
+    @Test
+    public void testMenuGuestbookV2Text() {
+        final String expectedMenuGuestbookV2Text = "Guestbook".toUpperCase();
+
+        String actualMenuGuestbookV2Text = openBaseURL()
+                .getGuestbookV2Menu()
+                .getText();
+
+        Assert.assertEquals(actualMenuGuestbookV2Text, expectedMenuGuestbookV2Text);
+    }
+
+    @Test
+    public void testMenuGuestbookV2LinkText() {
+        final String expectedMenuGuestbookV2LinkText = "http://www.99-bottles-of-beer.net/guestbookv2.html";
+
+        String actualMenuGuestbookV2LinkText = openBaseURL()
+                .getGuestbookV2Menu()
+                .getAttribute("href");
+
+        Assert.assertEquals(actualMenuGuestbookV2LinkText, expectedMenuGuestbookV2LinkText);
+    }
 }

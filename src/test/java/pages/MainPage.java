@@ -32,19 +32,9 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    public String getText(WebElement element) {
-
-        return element.getText();
-    }
-
     public WebElement getH1Header() {
 
         return getDriver().findElement(H1_HEADER);
-    }
-
-    public String getH1HeaderText() {
-
-        return getText(getH1Header());
     }
 
     public WebElement getFooterBar() {
@@ -52,20 +42,9 @@ public class MainPage extends BasePage {
         return getDriver().findElement(FOOTER_BAR);
     }
 
-    public String getFooterBarText() {
-
-        return getText(getFooterBar());
-    }
-
     public WebElement getBrowseLanguagesMenu() {
 
         return getDriver().findElement(ABC_MENU);
-    }
-
-    public AbcPage clickBrowseLanguagesMenu() {
-        getBrowseLanguagesMenu().click();
-
-        return new AbcPage(getDriver());
     }
 
     public WebElement getSubmitNewLanguageMenu() {
@@ -73,19 +52,9 @@ public class MainPage extends BasePage {
         return getDriver().findElement(SUBMIT_NEW_LANGUAGE_MENU);
     }
 
-    public String getSubmitNewLanguageMenuText() {
-
-        return getText(getSubmitNewLanguageMenu());
-    }
-
     public WebElement getH2Header() {
 
         return getDriver().findElement(H2_HEADER);
-    }
-
-    public String getH2HeaderText() {
-
-        return getText(getH2Header());
     }
 
     public WebElement getSearchMenu() {
@@ -93,9 +62,80 @@ public class MainPage extends BasePage {
         return getDriver().findElement(SEARCH_MENU);
     }
 
+    public WebElement getFooterSearch() {
+
+        return getDriver().findElement(FOOTER_SEARCH);
+    }
+
+    public WebElement getStartMenu() {
+
+        return getDriver().findElement(START_MENU);
+    }
+
+    public WebElement getTopListMenu(){
+
+        return getDriver().findElement(TOP_LIST_MENU);
+    }
+
+    public WebElement getGuestbookV2Menu() {
+
+        return getDriver().findElement(GUESTBOOK_V2_MENU);
+    }
+
+    public WebElement getFooterSubmitNewLanguage() {
+
+        return getDriver().findElement(FOOTER_SUBMIT_NEW_LANGUAGE);
+    }
+
+    public WebElement getFooterBrowseLanguage() {
+
+        return getDriver().findElement(FOOTER_BROWSE_LANGUAGES);
+    }
+
+    public WebElement getFooterTopList(){
+
+        return getDriver().findElement(FOOTER_TOP_LIST);
+    }
+
+    public WebElement getOnloadSettings() {
+
+        return getDriver().findElement(ONLOAD_SETTINGS);
+    }
+
+    public String getH1HeaderText() {
+
+        return getText(getH1Header());
+    }
+
     public String getSearchMenuText() {
 
         return getText(getSearchMenu());
+    }
+
+    public String getFooterBarText() {
+
+        return getText(getFooterBar());
+    }
+
+    public String getSubmitNewLanguageMenuText() {
+
+        return getText(getSubmitNewLanguageMenu());
+    }
+
+    public String getH2HeaderText() {
+
+        return getText(getH2Header());
+    }
+
+    public String getFooterSearchText() {
+
+        return getText(getFooterSearch());
+    }
+
+    public AbcPage clickBrowseLanguagesMenu() {
+        getBrowseLanguagesMenu().click();
+
+        return new AbcPage(getDriver());
     }
 
     public SearchPage clickSearchMenu() {
@@ -110,52 +150,23 @@ public class MainPage extends BasePage {
         return new SubmitNewLanguagePage(getDriver());
     }
 
-    public WebElement getFooterSearch() {
-
-        return getDriver().findElement(FOOTER_SEARCH);
-    }
-
-    public String getFooterSearchText() {
-
-        return getText(getFooterSearch());
-    }
-
-    public WebElement getStartMenu() {
-
-        return getDriver().findElement(START_MENU);
-    }
-
     public StartPage clickStartMenu(){
         getStartMenu().click();
 
         return new StartPage(getDriver());
     }
 
-    public WebElement getTopListMenu(){
-
-        return getDriver().findElement(TOP_LIST_MENU);
-    }
-
     public TopListPage clickTopListMenu(){
+
         getTopListMenu().click();
 
         return new TopListPage(getDriver());
-    }
-
-    public WebElement getGuestbookV2Menu() {
-
-        return getDriver().findElement(GUESTBOOK_V2_MENU);
     }
 
     public GuestbookV2Page clickGuestbookV2Menu(){
         getGuestbookV2Menu().click();
 
         return new GuestbookV2Page(getDriver());
-    }
-
-    public WebElement getFooterSubmitNewLanguage() {
-
-        return getDriver().findElement(FOOTER_SUBMIT_NEW_LANGUAGE);
     }
 
     public SubmitNewLanguagePage clickFooterSubmitNewLanguage() {
@@ -169,26 +180,16 @@ public class MainPage extends BasePage {
 
         return new SearchPage(getDriver());
     }
-    public WebElement getFooterBrowseLanguage() {
 
-        return getDriver().findElement(FOOTER_BROWSE_LANGUAGES);
-    }
     public AbcPage clickFooterBrowseLanguage(){
         getFooterBrowseLanguage().click();
 
         return new AbcPage(getDriver());
     }
-    public WebElement getFooterTopList(){
-        return getDriver().findElement(FOOTER_TOP_LIST);
-    }
+
     public TopListPage clickFooterTopList(){
         getFooterTopList().click();
 
         return new TopListPage(getDriver());
-    }
-
-    public WebElement getOnloadSettings() {
-
-        return getDriver().findElement(ONLOAD_SETTINGS);
     }
 }

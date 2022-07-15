@@ -11,9 +11,9 @@ public class TopListTest extends BaseTest {
         final String expectedResult = "Top Rated";
 
         String actualResult =
-                openBaseURL().
-                        clickTopListMenu().
-                        getTextH2Header();
+                openBaseURL()
+                        .clickTopListMenu()
+                                .getTextH2Header();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -23,9 +23,9 @@ public class TopListTest extends BaseTest {
         final int expectedResult = 25;
 
         int actualResult =
-                openBaseURL().
-                        clickTopListMenu().
-                        getCountTableLinks();
+                openBaseURL()
+                        .clickTopListMenu()
+                        .getCountTableLinks();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

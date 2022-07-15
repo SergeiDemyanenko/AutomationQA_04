@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
 import runner.TestUtils;
 
@@ -24,9 +25,16 @@ public class SignV2Page extends BasePage {
     private final By BUTTON_SUBMIT = By.xpath("//input[@type='submit']");
     private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
 
+    WebDriverWait wait = new WebDriverWait(getDriver(), 500);
+
     public SignV2Page(WebDriver driver) {
 
         super(driver);
+    }
+
+    WebDriverWait getWait() {
+
+        return wait;
     }
 
     public String getText(WebElement element) {

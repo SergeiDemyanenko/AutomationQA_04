@@ -32,4 +32,15 @@ public class LanguageJava3Test extends BaseTest {
 
         Assert.assertEquals(actualNumberOfVersions, expectedNumberOfVersions);
     }
+
+    @Test
+    public void testJavaObjectOrientedVersionHasTheLargestNumberOfComments() {
+        int expectedObjectOrientedVersionHasTheLargestNumberOfComments = 33;
+
+        Assert.assertEquals(expectedObjectOrientedVersionHasTheLargestNumberOfComments, openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickJSubmenu()
+                .clickLinkLanguageJava3()
+                .getCountOfCommentsHeaders());
+    }
 }

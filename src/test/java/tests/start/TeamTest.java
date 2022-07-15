@@ -84,4 +84,14 @@ public class TeamTest extends BaseTest {
 
         Assert.assertEquals(actualAllLinks, expectedAllLinks);
     }
+
+    @Test
+    public void testTwoImagesOfTeamMembers() {
+        int expectedTwoImagesOfTeamMembers = 2;
+
+        Assert.assertEquals(openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .getAmmountOfImages(), expectedTwoImagesOfTeamMembers);
+    }
 }

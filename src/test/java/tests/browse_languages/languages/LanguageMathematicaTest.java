@@ -28,4 +28,18 @@ public class LanguageMathematicaTest extends BaseTest {
         Assert.assertEquals(actualDate, expectedDate);
         Assert.assertEquals(actualNumberOfComments, expectedNumberOfComments);
     }
+
+    @Test
+    public void testTheNameOfMathematicaLanguageAuthor() {
+
+        String expectedTheNameOfMathematicaLanguageAuthor = "Brenton Bostick";
+
+        String actualTheNameOfMathematicaLanguageAuthor = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickMSubmenu()
+                .clickMathematicaPage()
+                .getBrentonBostickText();
+
+        Assert.assertEquals(expectedTheNameOfMathematicaLanguageAuthor, actualTheNameOfMathematicaLanguageAuthor);
+    }
 }

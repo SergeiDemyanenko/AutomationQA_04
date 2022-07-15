@@ -15,11 +15,12 @@ public abstract class _LanguagesPage extends BasePage {
     private final By H2_BOOKMARKING = By.xpath("//div[@id='voting']/h2[3]");
     private final By H2_ALTERNATIVES = By.xpath("//div[@id='alternatives']/h2");
     private final By H2_COMMENTS = By.xpath("//div[@id='comments']/h2");
-    private final By A_LINKS = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
+    private final By A_LINKS_TABLE = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
     private final By DIIGO_ICON = By.xpath("//a[@title='diigo']");
     private final By MAGNOLIA_ICON  = By.xpath("//a[@title='magnolia']");
-    private final By DIIGG_ICON = By.xpath("//a[@title='digg']");
+    private final By DIGG_ICON = By.xpath("//a[@title='digg']");
     private final By DEL_ICIO_US_ICON = By.xpath("//a[@title='del_icio_us']");
+    private final By REDDIT_ICON = By.xpath("//a[@title='reddit']");
 
     public _LanguagesPage(WebDriver driver) {
         super(driver);
@@ -28,6 +29,16 @@ public abstract class _LanguagesPage extends BasePage {
     public WebElement getH2Header() {
 
         return getDriver().findElement(H2_HEADER);
+    }
+
+    public WebElement getRedditIcon() {
+
+        return getDriver().findElement(REDDIT_ICON);
+    }
+
+    public List<WebElement> getALinksTable() {
+
+        return getDriver().findElements(A_LINKS_TABLE);
     }
 
     public String getH2Text() {
@@ -103,29 +114,39 @@ public abstract class _LanguagesPage extends BasePage {
         getMagnoliaIcon().click();
     }
 
-    public WebElement getDiiggIcon() {
+    public WebElement getDiggIcon() {
 
-        return getDriver().findElement(DIIGG_ICON);
+        return getDriver().findElement(DIGG_ICON);
     }
 
     public void clickDiiggIcon() {
-        getDiiggIcon().click();
+        getDiggIcon().click();
     }
 
-    public WebElement getDelIcio() {
+    public WebElement getDelIcon() {
 
         return getDriver().findElement(DEL_ICIO_US_ICON);
     }
 
     public List<String> getCategoryTableLinkTexts() {
 
-        List<WebElement> aHrefs = getDriver().findElements(A_LINKS);
+        List<WebElement> aLinks = getALinksTable();
         List<String> listOfVersions = new ArrayList<>();
 
-        for (WebElement a : aHrefs) {
+        for (WebElement a : aLinks) {
             listOfVersions.add(a.getText());
         }
 
         return listOfVersions;
+    }
+
+    public void clickRedditIcon() {
+
+        getRedditIcon().click();
+    }
+
+    public String getRedditIconURL() {
+
+        return getRedditIcon().getAttribute("href");
     }
 }

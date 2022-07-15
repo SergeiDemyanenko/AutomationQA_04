@@ -92,7 +92,7 @@ public class SearchPage extends BasePage {
 
     public List<WebElement> getJavaATags() {
 
-        return findElements(JAVA_LANGUAGES);
+        return getDriver().findElements(JAVA_LANGUAGES);
     }
 
     public List<String> getOnlyJavaSearchAText() {

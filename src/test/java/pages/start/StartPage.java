@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.BasePage;
+import pages.guestbook.GuestbookV2Page;
+import pages.submit_new_language.SubmitNewLanguagePage;
 
 public class StartPage extends BasePage {
 
@@ -147,9 +149,11 @@ public class StartPage extends BasePage {
         return getHistoricInformationLink().getText();
     }
 
-    public void clickHistoricInformationLink() {
+    public InfoPage clickHistoricInformationLink() {
 
         historicInformationLink.click();
+
+        return new InfoPage(getDriver());
     }
 
     public WebElement getHereLink() {
@@ -162,9 +166,10 @@ public class StartPage extends BasePage {
         return getHereLink().getText();
     }
 
-    public void clickHereLink() {
-
+    public LyricsPage clickHereLink() {
         hereLink.click();
+
+        return new LyricsPage(getDriver());
     }
 
     public WebElement getSubmitYourOwnPieceOfCodeLink() {
@@ -177,9 +182,10 @@ public class StartPage extends BasePage {
         return getSubmitYourOwnPieceOfCodeLink().getText();
     }
 
-    public void clickSubmitYourOwnPieceOfCodeLink() {
-
+    public SubmitNewLanguagePage clickSubmitYourOwnPieceOfCodeLink() {
         submitYourOwnPieceOfCodeLink.click();
+
+        return new SubmitNewLanguagePage(getDriver());
     }
 
     public WebElement getGuestbookLink() {
@@ -192,9 +198,10 @@ public class StartPage extends BasePage {
         return getGuestbookLink().getText();
     }
 
-    public void clickGuestbookLink() {
-
+    public GuestbookV2Page clickGuestbookLink() {
         guestbookLink.click();
+
+        return new GuestbookV2Page(getDriver());
     }
 
     public WebElement getTeamMembersLink() {
@@ -207,9 +214,10 @@ public class StartPage extends BasePage {
         return getTeamMembersLink().getText();
     }
 
-    public void clickTeamMembersLink() {
-
+    public TeamPage clickTeamMembersLink() {
         teamMembersLink.click();
+
+        return new TeamPage(getDriver());
     }
 
     public WebElement getH2HeaderMain() {
@@ -220,5 +228,10 @@ public class StartPage extends BasePage {
     public String getH2HeaderMainText() {
 
         return getText(getH2HeaderMain());
+    }
+
+    public String getLyricsSubmenuText() {
+
+        return getText(getLyricsSubmenu());
     }
 }

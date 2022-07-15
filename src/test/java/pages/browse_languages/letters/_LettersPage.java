@@ -10,46 +10,66 @@ import java.util.List;
 
 public abstract class _LettersPage extends BasePage {
 
-    private final By P_TAG_TEXT = By.xpath("//div[@id='main']/p[text()]");
+    private final By P_TAG_WITH_TEXT = By.xpath("//table[@id='category']/preceding-sibling::p");
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
     private final By TH_TAGS = By.xpath("//table[@id='category']/tbody/tr/th");
     private final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a");
     private final By TD_LANGUAGE_NAMES = By.xpath("//table[@id='category']//tr/td[1]");
 
-    public _LettersPage(WebDriver driver) {
+    protected _LettersPage(WebDriver driver) {
 
         super(driver);
     }
 
-    public String getPTagText() {
+    public List<WebElement> getTDLanguageNames() {
 
-        return getText(findElement(P_TAG_TEXT));
+        return getDriver().findElements(TD_LANGUAGE_NAMES);
     }
 
-    public String getH2HeaderText() {
+    public WebElement getPTagWithText() {
 
-        return getText(findElement(H2_HEADER));
+        return getDriver().findElement(P_TAG_WITH_TEXT);
+    }
+
+    public WebElement getH2Header() {
+
+        return getDriver().findElement(H2_HEADER);
     }
 
     public List<WebElement> getTrTags() {
 
-        return findElements(TR_TAGS);
+        return getDriver().findElements(TR_TAGS);
+    }
+
+    public List<WebElement> getWebElementsTDLinks() {
+
+        return getDriver().findElements(TD_LINKS);
+    }
+
+    public List<WebElement> getThTags() {
+
+        return getDriver().findElements(TH_TAGS);
+    }
+
+    public WebElement getLanguage(String languageName) {
+
+        return getDriver().findElement(By.linkText(getLanguageFromTDLinks(languageName)));
+    }
+
+    public String getH2HeaderText() {
+
+        return getText(getH2Header());
+    }
+
+    public String getTextPTag() {
+
+        return getText(getPTagWithText());
     }
 
     public int getCountTrTags() {
 
         return getTrTags().size();
-    }
-
-    public List<WebElement> getWebElementsTDLinks() {
-
-        return findElements(TD_LINKS);
-    }
-
-    public List<WebElement> getWebElementsTDLanguageNames() {
-
-        return getDriver().findElements(TD_LANGUAGE_NAMES);
     }
 
     public int getCountTDLinks() {
@@ -85,12 +105,7 @@ public abstract class _LettersPage extends BasePage {
     }
 
     public void clickLanguageFromTDLinks(String nameLanguage) {
-        findElement(By.linkText(getLanguageFromTDLinks(nameLanguage))).click();
-    }
-
-    public List<WebElement> getThTags() {
-
-        return findElements(TH_TAGS);
+        getLanguage(nameLanguage).click();
     }
 
     public String getTextStringThTags() {
