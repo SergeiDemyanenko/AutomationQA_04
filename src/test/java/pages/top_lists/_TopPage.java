@@ -76,7 +76,7 @@ public abstract class _TopPage extends BasePage {
         StringBuilder result = new StringBuilder();
 
         for (WebElement th : getThTags()) {
-            result.append(th.getText());
+            result.append(th.getText()).append(" ");
         }
 
         return result.toString().trim();
