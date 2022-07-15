@@ -69,4 +69,23 @@ public class TopListRealTest extends BaseTest {
         Assert.assertEquals(realPage.getTextOneElementFromListTrs(1), expectedLanguages.get(1));
         Assert.assertEquals(realPage.getTextOneElementFromListTrs(2), expectedLanguages.get(2));
     }
+
+    @Test
+    public void testRandomLinkInTableIsClickable() {
+
+        String oldUrl =
+                openBaseURL()
+                        .clickTopListMenu()
+                        .clickTopListRealSubmenu()
+                        .getDriver()
+                        .getCurrentUrl();
+
+        TopListRealPage realPage = new TopListRealPage(getDriver());
+
+        realPage.getRandomTdLink().click();
+
+        String newUrl = getDriver().getCurrentUrl();
+
+        Assert.assertNotEquals(newUrl, oldUrl);
+    }
 }
