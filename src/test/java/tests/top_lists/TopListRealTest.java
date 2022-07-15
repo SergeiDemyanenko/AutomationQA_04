@@ -40,7 +40,7 @@ public class TopListRealTest extends BaseTest {
     }
 
     @Test
-    public void testTableHeaderText(){
+    public void testTableHeaderText() {
         final String expectedTableHeaderText = "# Language Author Date Comments Rate";
 
         String actualTableHeaderText =
@@ -53,7 +53,7 @@ public class TopListRealTest extends BaseTest {
     }
 
     @Test
-    public void testFirstThreeLanguagesInTheTable(){
+    public void testFirstThreeLanguagesInTheTable() {
         final List<String> expectedLanguages = List.of(
                 "1. Express Lori Smallwood 04/20/05 0",
                 "2. REBOL Anonymous 04/20/05 1",
@@ -68,5 +68,24 @@ public class TopListRealTest extends BaseTest {
         Assert.assertEquals(realPage.getTextOneElementFromListTrs(0), expectedLanguages.get(0));
         Assert.assertEquals(realPage.getTextOneElementFromListTrs(1), expectedLanguages.get(1));
         Assert.assertEquals(realPage.getTextOneElementFromListTrs(2), expectedLanguages.get(2));
+    }
+
+    @Test
+    public void testRandomLinkInTableIsClickable() {
+
+        String oldUrl =
+                openBaseURL()
+                        .clickTopListMenu()
+                        .clickTopListRealSubmenu()
+                        .getDriver()
+                        .getCurrentUrl();
+
+        TopListRealPage realPage = new TopListRealPage(getDriver());
+
+        realPage.getRandomTdLink().click();
+
+        String newUrl = getDriver().getCurrentUrl();
+
+        Assert.assertNotEquals(newUrl, oldUrl);
     }
 }
