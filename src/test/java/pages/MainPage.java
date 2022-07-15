@@ -192,4 +192,14 @@ public class MainPage extends BasePage {
 
         return new TopListPage(getDriver());
     }
+
+    public String  getAttributeSearchMenu() {
+
+        return getSearchMenu().getAttribute("href");
+    }
+
+    public String  getAttributeFooterSearch() {
+
+        return getFooterSearch().getAttribute("href");
+    }
 }

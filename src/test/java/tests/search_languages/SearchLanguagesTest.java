@@ -68,4 +68,33 @@ public class SearchLanguagesTest extends BaseTest {
 
         Assert.assertNotEquals(submitSearch, newSubmitSearch);
     }
+
+    @Test
+    public void testTextMenuAndFooterOfSearch() {
+
+        final String expectedResultSearchMenu = "SEARCH LANGUAGES";
+        final String expectedResultFooterSearch = "Search Languages";
+
+        String actualResultSearchMenu = openBaseURL()
+                .getSearchMenuText();
+        String actualResultFooterSearch = openBaseURL()
+                .getFooterSearchText();
+
+        Assert.assertEquals(actualResultSearchMenu, expectedResultSearchMenu);
+        Assert.assertEquals(actualResultFooterSearch, expectedResultFooterSearch);
+    }
+
+    @Test
+    public void testLinkMenuAndFooterOfSearch() {
+
+        final String expectedResultSearch = "http://www.99-bottles-of-beer.net/search.html";
+
+        String actualResultHeader = openBaseURL()
+                .getAttributeSearchMenu();
+        String actualResultFooter = openBaseURL()
+                .getAttributeFooterSearch();
+
+        Assert.assertEquals(actualResultHeader, expectedResultSearch);
+        Assert.assertEquals(actualResultFooter, expectedResultSearch);
+    }
 }
