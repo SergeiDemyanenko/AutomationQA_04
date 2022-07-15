@@ -251,4 +251,15 @@ public class NavigationTest extends BaseTest {
 
         Assert.assertEquals(actualMenuGuestbookV2LinkText, expectedMenuGuestbookV2LinkText);
     }
+
+    @Test
+    public void testMenuGuestbookV2Navigation() {
+        final String expectedMenuGuestbookV2Navigation = "guestbookv2.html";
+
+        openBaseURL().clickGuestbookV2Menu();
+
+        Assert.assertTrue(getDriver()
+                .getCurrentUrl()
+                .contains(expectedMenuGuestbookV2Navigation));
+    }
 }
