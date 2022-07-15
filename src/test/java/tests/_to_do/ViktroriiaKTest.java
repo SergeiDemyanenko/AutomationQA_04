@@ -38,7 +38,7 @@ public class ViktroriiaKTest extends BaseTest {
 
         MainPage mainPage = new MainPage(getDriver());
 
-        mainPage.clickTopListMenu();
+        mainPage.clickTopListsMenu();
 
         TopListPage hits = new TopListPage(getDriver());
         hits.clickTopHitsSubmenu();

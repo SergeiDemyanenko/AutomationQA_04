@@ -12,7 +12,7 @@ public class TopListNewLanguagesThisMonthTest extends BaseTest {
 
         String actualResult =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickNewLanguagesThisMonthSubmenu()
                                 .getTextH2Header();
 

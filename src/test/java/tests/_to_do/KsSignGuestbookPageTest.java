@@ -22,7 +22,7 @@ public class KsSignGuestbookPageTest extends BaseTest {
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
 
         getDriver().get(BASE_URL);
-        mainPage.clickGuestbookV2Menu();
+        mainPage.clickGuestbookMenu();
         guestbookV2Page.clickSignV2();
 
         getDriver().findElement(By.xpath

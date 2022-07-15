@@ -16,7 +16,7 @@ public class SearchLanguagesTest extends BaseTest {
 
         String actualH2HeaderText =
                 openBaseURL()
-                        .clickSearchMenu()
+                        .clickSearchLanguagesMenu()
                         .clickSearchSubmenu()
                         .getH2MainText();
 
@@ -28,7 +28,7 @@ public class SearchLanguagesTest extends BaseTest {
         final int expectedNumberOfJavaSearch = 14;
 
         int actualNumberOfJavaSearch = openBaseURL()
-                .clickSearchMenu()
+                .clickSearchLanguagesMenu()
                 .clickSearchSubmenu()
                 .sendKeyToSearchBox(LANGUAGE_TO_SEARCH)
                 .clickSubmitSearch()
@@ -44,7 +44,7 @@ public class SearchLanguagesTest extends BaseTest {
         final String expectedResult = search.getExpectedResult(LANGUAGE_TO_SEARCH);
 
         String actualJavaSearch = openBaseURL()
-                .clickSearchMenu()
+                .clickSearchLanguagesMenu()
                 .clickSubmitSearch()
                 .sendKeyToSearchBox(LANGUAGE_TO_SEARCH)
                 .clickSubmitSearch()
@@ -56,7 +56,7 @@ public class SearchLanguagesTest extends BaseTest {
     @Test
     public void testSubmitSearchRefreshedWhenSubmitSearchClicked() {
         WebElement submitSearch = openBaseURL()
-                .clickSearchMenu()
+                .clickSearchLanguagesMenu()
                 .getSubmitSearch();
 
         SearchPage search = new SearchPage(getDriver());
@@ -90,9 +90,9 @@ public class SearchLanguagesTest extends BaseTest {
         final String expectedResultSearch = "http://www.99-bottles-of-beer.net/search.html";
 
         String actualResultHeader = openBaseURL()
-                .getAttributeSearchMenu();
+                .getFullLinkSearchLanguagesMenu();
         String actualResultFooter = openBaseURL()
-                .getAttributeFooterSearch();
+                .getFullLinkFooterSearchLanguages();
 
         Assert.assertEquals(actualResultHeader, expectedResultSearch);
         Assert.assertEquals(actualResultFooter, expectedResultSearch);

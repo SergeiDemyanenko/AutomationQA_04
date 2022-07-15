@@ -12,7 +12,7 @@ public class GuestbookV2Test extends BaseTest {
 
         String actuallVerifyLinkTextGuestbookV2Page =
                          openBaseURL()
-                        .clickGuestbookV2Menu()
+                        .clickGuestbookMenu()
                         .getPage2Text();
 
         Assert.assertEquals(actuallVerifyLinkTextGuestbookV2Page,expecResNum);

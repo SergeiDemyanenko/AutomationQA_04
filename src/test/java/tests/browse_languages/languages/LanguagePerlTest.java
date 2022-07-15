@@ -15,7 +15,7 @@ public class LanguagePerlTest extends BaseTest {
         final String expectedPerlLanguageComments = "76";
 
         openBaseURL()
-                .clickSearchMenu()
+                .clickSearchLanguagesMenu()
                 .getSearchBoxSendKey("Perl")
                 .clickSubmitSearch()
                 .clickPerlLanguage()

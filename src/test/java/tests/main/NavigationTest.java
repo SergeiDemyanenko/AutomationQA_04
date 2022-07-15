@@ -125,7 +125,7 @@ public class NavigationTest extends BaseTest {
 
         String actualMenuAbcText =
                 openBaseURL()
-                        .getBrowseLanguagesMenu()
+                        .getABCMenu()
                         .getText();
 
         Assert.assertEquals(actualMenuAbcText, expectedMenuAbcText);
@@ -137,7 +137,7 @@ public class NavigationTest extends BaseTest {
 
         String actualMenuAbcLinkText =
                 openBaseURL()
-                        .getBrowseLanguagesMenu()
+                        .getABCMenu()
                         .getAttribute("href");
 
         Assert.assertEquals(actualMenuAbcLinkText, expectedMenuAbcLinkText);
@@ -185,7 +185,7 @@ public class NavigationTest extends BaseTest {
         final String expectedMenuSearchNavigation = "http://www.99-bottles-of-beer.net/search.html";
 
         openBaseURL()
-                .clickSearchMenu();
+                .clickSearchLanguagesMenu();
 
         String actualMenuSearchNavigation = getDriver().getCurrentUrl();
 
@@ -222,7 +222,7 @@ public class NavigationTest extends BaseTest {
         final String expectedMenuTopListNavigation = "http://www.99-bottles-of-beer.net/toplist.html";
 
         openBaseURL()
-                .clickTopListMenu();
+                .clickTopListsMenu();
 
         String actualMenuTopListNavigation = getDriver().getCurrentUrl();
 
@@ -256,7 +256,7 @@ public class NavigationTest extends BaseTest {
     public void testMenuGuestbookV2Navigation() {
         final String expectedMenuGuestbookV2Navigation = "guestbookv2.html";
 
-        openBaseURL().clickGuestbookV2Menu();
+        openBaseURL().clickGuestbookMenu();
 
         Assert.assertTrue(getDriver()
                 .getCurrentUrl()

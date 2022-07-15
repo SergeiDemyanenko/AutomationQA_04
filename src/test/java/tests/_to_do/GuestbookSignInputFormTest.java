@@ -25,7 +25,7 @@ public class GuestbookSignInputFormTest extends BaseTest {
 
         MainPage mp = new MainPage(getDriver());
 
-        mp.clickGuestbookV2Menu();
+        mp.clickGuestbookMenu();
 
         GuestbookV2Page gb = new GuestbookV2Page(getDriver());
 

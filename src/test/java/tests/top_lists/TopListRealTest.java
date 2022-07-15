@@ -1,8 +1,6 @@
 package tests.top_lists;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.top_lists.TopListRealPage;
 import runner.BaseTest;
@@ -17,7 +15,7 @@ public class TopListRealTest extends BaseTest {
 
         String actualText =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListRealSubmenu()
                         .getTextH2Header()
                         .trim();
@@ -31,7 +29,7 @@ public class TopListRealTest extends BaseTest {
 
         String actualColor =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListRealSubmenu()
                         .getH2Header()
                         .getCssValue("color");
@@ -45,7 +43,7 @@ public class TopListRealTest extends BaseTest {
 
         String actualTableHeaderText =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListRealSubmenu()
                         .getTextStringThTags();
 
@@ -62,7 +60,7 @@ public class TopListRealTest extends BaseTest {
 
         TopListRealPage realPage =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListRealSubmenu();
 
         Assert.assertEquals(realPage.getTextOneElementFromListTrs(0), expectedLanguages.get(0));
@@ -75,7 +73,7 @@ public class TopListRealTest extends BaseTest {
 
         String oldUrl =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListRealSubmenu()
                         .getDriver()
                         .getCurrentUrl();

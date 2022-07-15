@@ -12,7 +12,7 @@ public class ToplistEsotericTest extends BaseTest {
 
         String actualResult =
                 openBaseURL().
-                        clickTopListMenu()
+                        clickTopListsMenu()
                         .clickTopListEsotericSubmenu()
                         .getTextH2Header();
 

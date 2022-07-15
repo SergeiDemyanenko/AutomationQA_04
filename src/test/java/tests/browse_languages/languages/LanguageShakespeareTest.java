@@ -17,7 +17,7 @@ public class LanguageShakespeareTest extends BaseTest {
 
         String actualCompareShakespeareLanguageLinkFromTwoPages =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopHitsSubmenu()
                         .getShakespeareLanguage()
                         .getAttribute("href");

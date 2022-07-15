@@ -12,7 +12,7 @@ public class ToplistAssemblyTest extends BaseTest {
 
         String actualResult =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListAssemblySubmenu()
                         .getTextH2Header();
 

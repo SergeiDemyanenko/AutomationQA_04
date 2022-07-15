@@ -22,7 +22,7 @@ public class Guestbook_ReadGuestbook_LastPage_08AlimDuiL_Test extends BaseTest {
         getDriver().get(BASE_URL);
 
         MainPage main = new MainPage(getDriver());
-        main.clickGuestbookV2Menu();
+        main.clickGuestbookMenu();
 
         GuestbookV2Page readGuestbookV2Page = new GuestbookV2Page(getDriver());
         readGuestbookV2Page.getGuestbookV2().click();

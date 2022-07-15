@@ -12,7 +12,7 @@ public class TophitsTest extends BaseTest {
 
         String actualResult =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopHitsSubmenu()
                         .getTextH2Header();
 

@@ -11,7 +11,7 @@ public class NewCommentsTest extends BaseTest {
         final String expectedH2HeaderText = "New Comments";
 
         String actualH2HeaderText = openBaseURL()
-                .clickTopListMenu()
+                .clickTopListsMenu()
                 .clickNewCommentsSubmenu()
                 .getH2HeaderText();
 
@@ -23,7 +23,7 @@ public class NewCommentsTest extends BaseTest {
         final String expectedNewComments = "";
 
         String actualNewComments = openBaseURL()
-                .clickTopListMenu()
+                .clickTopListsMenu()
                 .clickNewCommentsSubmenu()
                 .getTextMainP();
 

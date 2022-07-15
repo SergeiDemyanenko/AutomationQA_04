@@ -20,7 +20,7 @@ public class FooterMenuButtonsTest extends BaseTest {
         String expectedAbcPageUrl ="http://www.99-bottles-of-beer.net/abc.html";
 
         String  actualAbcPageUrl = openBaseURL()
-                .clickFooterBrowseLanguage()
+                .clickFooterBrowseLanguages()
                 .getDriver()
                 .getCurrentUrl();
 
@@ -32,7 +32,7 @@ public class FooterMenuButtonsTest extends BaseTest {
         String expectedSearchPageUrl = "http://www.99-bottles-of-beer.net/search.html";
 
         String actualSearchPageUrl = openBaseURL()
-                .clickFooterSearchButton()
+                .clickFooterSearchLanguages()
                .getDriver()
                .getCurrentUrl();
 
@@ -44,7 +44,7 @@ public class FooterMenuButtonsTest extends BaseTest {
             String expectedTopListPageUrl = "http://www.99-bottles-of-beer.net/toplist.html";
 
             String actualTopListPageUrl = openBaseURL()
-                    .clickFooterTopList()
+                    .clickFooterTopLists()
                     .getDriver()
                     .getCurrentUrl();
             Assert.assertEquals(actualTopListPageUrl, expectedTopListPageUrl);
