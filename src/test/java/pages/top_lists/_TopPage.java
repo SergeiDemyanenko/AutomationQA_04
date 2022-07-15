@@ -25,25 +25,9 @@ public abstract class _TopPage extends BasePage {
         return getDriver().findElement(H2_HEADER);
     }
 
-    public String getTextH2Header() {
-
-        return getText(getH2Header());
-    }
-
     public List<WebElement> getThTags() {
 
         return getDriver().findElements(TH_TAGS);
-    }
-
-    public String getTextStringThTags() {
-
-        StringBuilder result = new StringBuilder();
-
-        for (WebElement th : getThTags()) {
-            result.append(getText(th)).append(" ");
-        }
-
-        return result.toString().trim();
     }
 
     public List<WebElement> getTrTags() {
@@ -51,9 +35,29 @@ public abstract class _TopPage extends BasePage {
         return getDriver().findElements(TR_TAGS);
     }
 
-    public int getCountTrTags() {
+    public List<WebElement> getTdLinks() {
+
+        return getDriver().findElements(TD_LINKS);
+    }
+
+    public WebElement getRandomTdLink(){
+
+        return getTdLinks().get(randomIndex());
+    }
+
+    public int countTdLinks() {
+
+        return getTdLinks().size();
+    }
+
+    public int countTrTags() {
 
         return getTrTags().size();
+    }
+
+    public String getTextH2Header() {
+
+        return getText(getH2Header());
     }
 
     public List<String> getTextListTrTags() {
@@ -67,9 +71,29 @@ public abstract class _TopPage extends BasePage {
         return allTrs;
     }
 
+    public String getTextStringThTags() {
+
+        StringBuilder result = new StringBuilder();
+
+        for (WebElement th : getThTags()) {
+            result.append(th.getText());
+        }
+
+        return result.toString().trim();
+    }
+
     public String getTextOneElementFromListTrs(int index){
 
         return getTextListTrTags().get(index);
     }
 
+    public int randomLanguage() {
+
+        return (int) (Math.random() * countTdLinks()) + 1;
+    }
+
+    public int randomIndex() {
+
+        return randomLanguage() - 1;
+    }
 }
