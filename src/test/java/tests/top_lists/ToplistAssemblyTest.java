@@ -18,4 +18,17 @@ public class ToplistAssemblyTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testNumberOfLanguages() {
+        final int expectedNumberOfLanguages = 25;
+
+        int actualNumberOfLanguages =
+                openBaseURL()
+                        .clickTopListMenu()
+                        .clickTopListAssemblySubmenu()
+                        .countTrTags();
+
+        Assert.assertEquals(actualNumberOfLanguages, expectedNumberOfLanguages);
+    }
 }
