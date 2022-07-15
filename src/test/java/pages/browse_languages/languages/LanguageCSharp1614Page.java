@@ -8,7 +8,7 @@ import java.util.List;
 
 public class LanguageCSharp1614Page extends _LanguagesPage {
 
-    private final By A_LINKS = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
+    private final By A_LINKS_TABLE = By.xpath("//table[@id='category']/tbody/tr/td/a");
 
     public LanguageCSharp1614Page(WebDriver driver) {
 
@@ -17,22 +17,22 @@ public class LanguageCSharp1614Page extends _LanguagesPage {
 
     public List<WebElement> getALinksTable() {
 
-        return getDriver().findElements(A_LINKS);
+        return getDriver().findElements(A_LINKS_TABLE);
     }
 
     public List<String> getCSharpLanguageALinks() {
 
-        List<WebElement> aHrefs = getALinksTable();
+        List<WebElement> aLinks = getALinksTable();
         List<String> listOfVersions = new ArrayList<>();
 
-        for (WebElement a : aHrefs) {
+        for (WebElement a : aLinks) {
             listOfVersions.add(a.getText());
         }
 
         return listOfVersions;
     }
 
-    public int getCSharpLanguageNumberOfVersions() {
+    public int countNumberOfVersions() {
 
         return getCSharpLanguageALinks().size();
     }

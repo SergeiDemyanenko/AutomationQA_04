@@ -15,7 +15,7 @@ public class LanguageCSharpTest extends BaseTest {
                 .clickBrowseLanguagesMenu()
                 .clickCSubmenu()
                 .clickCSharpLanguage()
-                .getCSharpLanguageNumberOfVersions();
+                .countNumberOfVersions();
 
         Assert.assertEquals(actualNumberOfCSharpLanguageVersions,expectedNumberOfCSharpLanguageVersions);
     }
