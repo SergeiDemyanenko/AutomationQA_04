@@ -15,7 +15,7 @@ public abstract class _LanguagesPage extends BasePage {
     private final By H2_BOOKMARKING = By.xpath("//div[@id='voting']/h2[3]");
     private final By H2_ALTERNATIVES = By.xpath("//div[@id='alternatives']/h2");
     private final By H2_COMMENTS = By.xpath("//div[@id='comments']/h2");
-    private final By A_LINKS_TABLE = By.xpath("//table[@id='category']/tbody/tr/td/a[@href]");
+    private final By A_LINKS_TABLE = By.xpath("//table[@id='category']/tbody/tr/td/a");
     private final By DIIGO_ICON = By.xpath("//a[@title='diigo']");
     private final By MAGNOLIA_ICON  = By.xpath("//a[@title='magnolia']");
     private final By DIGG_ICON = By.xpath("//a[@title='digg']");
