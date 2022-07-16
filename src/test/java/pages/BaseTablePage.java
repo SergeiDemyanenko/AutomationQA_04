@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseTablePage extends MainPage {
+public abstract class BaseTablePage<LangPage> extends MainPage {
 
     private final By P_TAG_WITH_TEXT = By.xpath("//table[@id='category']/preceding-sibling::p");
     private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
@@ -93,8 +93,13 @@ public abstract class BaseTablePage extends MainPage {
         return null;
     }
 
-    public void clickLanguageFromTDLinks(String nameLanguage) {
+    protected abstract LangPage createLangPage();
+
+    public LangPage clickLanguage(String nameLanguage) {
+
         getLanguage(nameLanguage).click();
+
+        return createLangPage();
     }
 
     public String getTextStringThTags() {

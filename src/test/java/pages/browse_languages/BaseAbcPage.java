@@ -8,7 +8,7 @@ import pages.browse_languages.letters.*;
 
 import java.util.List;
 
-public abstract class BaseAbcPage extends BaseTablePage {
+public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
 
     private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
 

@@ -13,7 +13,7 @@ public class LanguageJavascript1948Test extends BaseTest {
         openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickJSubmenu()
-                .clickLanguageFromTDLinks("JavaScript");
+                .clickLanguage("JavaScript");
 
         LanguageJavascript1948Page js = new LanguageJavascript1948Page(getDriver());
 
