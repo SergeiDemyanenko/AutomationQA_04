@@ -1,9 +1,10 @@
 package tests.main;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.letters.APage;
-import pages.browse_languages.letters._LettersPage;
+import pages.start.StartPage;
 import runner.BaseTest;
 
 public class NavigationTest extends BaseTest {
@@ -15,7 +16,7 @@ public class NavigationTest extends BaseTest {
         String actualNavigationInfoSubmenu = openBaseURL()
                 .clickStartMenu()
                 .clickHistorySubmenu()
-                .getH2HeaderText();
+                .getH2MainText();
 
         Assert.assertEquals(actualNavigationInfoSubmenu, expectedNavigationInfoSubmenu);
     }
@@ -108,15 +109,22 @@ public class NavigationTest extends BaseTest {
     
     @Test
     public void testMenuStartNavigation() {
-        final String expectedMenuStartNavigation = "http://www.99-bottles-of-beer.net/";
+        StartPage start = new StartPage(getDriver());
 
-        openBaseURL()
-                .clickStartMenu();
+        WebElement oldStartMenu = openBaseURL().getStartMenu();
+        WebElement sameStartMenu = start.getStartMenu();
 
-        String actualMenuStartNavigation = getDriver().getCurrentUrl();
+        Assert.assertEquals(oldStartMenu, sameStartMenu);
 
-        Assert.assertFalse(getDriver().getPageSource().isEmpty());
-        Assert.assertEquals(actualMenuStartNavigation, expectedMenuStartNavigation);
+        String oldCurrentUrl = getDriver().getCurrentUrl();
+        start.clickStartMenu();
+        String newCurrentUrl = getDriver().getCurrentUrl();
+
+        Assert.assertEquals(newCurrentUrl, oldCurrentUrl);
+
+        WebElement newStartMenuAfterClick = start.getStartMenu();
+
+        Assert.assertNotEquals(oldStartMenu, newStartMenuAfterClick);
     }
 
     @Test
