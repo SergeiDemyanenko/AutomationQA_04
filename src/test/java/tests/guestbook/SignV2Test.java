@@ -3,6 +3,7 @@ package tests.guestbook;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.guestbook.SignV2Page;
 import runner.BaseTest;
 
 import static runner.TestUtils.createAttributesSrcOfImg;
@@ -123,5 +124,17 @@ public class SignV2Test extends BaseTest {
                         .getTextFromPrompts();
 
         Assert.assertEquals(actualTextFromPrompts, expectedTextFromPrompts);
+    }
+
+    @Test
+    public void testTheDisplayOfCaptcha() {
+
+        openBaseURL()
+                .clickGuestbookMenu()
+                .clickSignV2();
+
+        SignV2Page s = new SignV2Page(getDriver());
+
+        Assert.assertTrue(s.isImgCaptchaDisplayed());
     }
 }
