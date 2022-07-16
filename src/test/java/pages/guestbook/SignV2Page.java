@@ -12,7 +12,7 @@ import runner.TestUtils;
 import static runner.TestUtils.createStringBuilder;
 import static runner.TestUtils.getRandomStr;
 
-public class SignV2Page extends BasePage {
+public class SignV2Page extends BaseGuestbookPage {
 
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
     private final By ERROR_MESSAGE_TAG_FONT = By.xpath("//div[@id='main']/p/b");

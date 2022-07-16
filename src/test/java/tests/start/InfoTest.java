@@ -10,14 +10,15 @@ public class InfoTest extends BaseTest {
 
     @Test
     public void testCodeOfBasicOnInfoPage() {
+        final String LANG_VERSION = "REM BASIC";
 
         String expectedCodeOfBasicOnInfoPage = createBasicCode();
 
         String actualCodeOfBasicOnInfoPage =
                 openBaseURL()
                         .clickStartMenu()
-                        .clickInfoSubmenu()
-                        .getCodeOfLanguageBasic();
+                        .clickHistorySubmenu()
+                        .getLanguageBasicCode(LANG_VERSION);
 
         Assert.assertEquals(actualCodeOfBasicOnInfoPage, expectedCodeOfBasicOnInfoPage);
     }
@@ -28,8 +29,8 @@ public class InfoTest extends BaseTest {
 
         String actualH2HeaderText= openBaseURL()
                 .clickStartMenu()
-                .clickInfoSubmenu()
-                .getH2HeaderText();
+                .clickHistorySubmenu()
+                .getH2MainText();
 
         Assert.assertEquals(actualH2HeaderText,expectedH2HeaderText);
     }

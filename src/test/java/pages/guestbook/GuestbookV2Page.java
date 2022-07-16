@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
 
-public class GuestbookV2Page extends BasePage {
+public class GuestbookV2Page extends BaseGuestbookPage {
 
     private final By GUESTBOOK_V2_SUBMENU = By.xpath("//a[@href='./guestbookv2.html']");
     private final By SIGN_V2_SUBMENU = By.xpath("//a[@href='./signv2.html']");

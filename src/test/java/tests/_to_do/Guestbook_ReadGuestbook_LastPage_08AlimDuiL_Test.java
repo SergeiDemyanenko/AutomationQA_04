@@ -19,10 +19,7 @@ public class Guestbook_ReadGuestbook_LastPage_08AlimDuiL_Test extends BaseTest {
 
         final String expectedResult = "Guestbook";
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickGuestbookMenu();
+        openBaseURL().clickGuestbookMenu();
 
         GuestbookV2Page readGuestbookV2Page = new GuestbookV2Page(getDriver());
         readGuestbookV2Page.getGuestbookV2().click();

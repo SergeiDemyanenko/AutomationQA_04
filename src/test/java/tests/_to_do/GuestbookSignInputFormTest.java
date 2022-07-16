@@ -21,11 +21,7 @@ public class GuestbookSignInputFormTest extends BaseTest {
         final String comment = "Test passed if you get an error";
 
 
-        getDriver().get(BASE_URL);
-
-        MainPage mp = new MainPage(getDriver());
-
-        mp.clickGuestbookMenu();
+        openBaseURL().clickGuestbookMenu();
 
         GuestbookV2Page gb = new GuestbookV2Page(getDriver());
 

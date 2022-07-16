@@ -2,9 +2,8 @@ package tests._to_do;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.ZeroPage;
+import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class SabinaSaadZeroPageTest extends BaseTest {
@@ -14,13 +13,7 @@ public class SabinaSaadZeroPageTest extends BaseTest {
     public void testH2HeaderText(){
         String expectedResult = "Category 0-9";
 
-        getDriver().get(URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.getZeroSubmenu().click();
+        openBaseURL().clickBrowseLanguagesMenu().getZeroSubmenu().click();
 
         ZeroPage zeroPage = new ZeroPage(getDriver());
 

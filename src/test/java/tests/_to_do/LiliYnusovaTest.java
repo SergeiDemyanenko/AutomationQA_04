@@ -2,9 +2,8 @@ package tests._to_do;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.LPage;
-import pages.MainPage;
+import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class LiliYnusovaTest extends BaseTest {
@@ -14,15 +13,11 @@ public class LiliYnusovaTest extends BaseTest {
     public void testSubmitNewLanguageCategoryL(){
         final String expectedResult = "Category L";
 
-        getDriver().get(BASE_URL);
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-        abc.clickLSubmenu();
-
-        LPage l = new LPage(getDriver());
-        String actualResult = l.getH2HeaderText();
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickLSubmenu()
+                        .getH2HeaderText();
 
         Assert.assertEquals(actualResult,expectedResult);
 

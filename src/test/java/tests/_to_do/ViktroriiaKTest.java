@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
-import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.AbcPage;
 import pages.browse_languages.letters.UPage;
+import pages.browse_languages.letters._LettersPage;
 import pages.start.StartPage;
 import pages.top_lists.TopListPage;
 import runner.BaseTest;
@@ -34,11 +34,7 @@ public class ViktroriiaKTest extends BaseTest {
 
         String expectedResult = "Top Hits";
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-
-        mainPage.clickTopListsMenu();
+        openBaseURL().clickTopListsMenu();
 
         TopListPage hits = new TopListPage(getDriver());
         hits.clickTopHitsSubmenu();
@@ -57,7 +53,7 @@ public class ViktroriiaKTest extends BaseTest {
 
         StartPage startPage = new StartPage(getDriver());
 
-        startPage.clickInfoSubmenu();
+        startPage.clickHistorySubmenu();
 
         getDriver().findElement(By.xpath("//div[@id='main']/p/a/img[@src='/images/history1_small.png']")).click();
 
@@ -68,85 +64,66 @@ public class ViktroriiaKTest extends BaseTest {
     @Test
     public void testSubMenuCategoryU() {
 
-        getDriver().get(BASE_URL);
-
         String expectedResult = "U";
 
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        String actualResult = abcPage.getUSubmenuText();
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getUSubmenuText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testCountLanguagesU() {
-
         int expectedResult = 25;
-        getDriver().get(BASE_URL);
 
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
+        int actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickUSubmenu()
+                        .getCountTrTags();
 
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickUSubmenu();
-
-        UPage uPage = new UPage(getDriver());
-
-        Assert.assertEquals(uPage.getCountTrTags(),expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
-    public void testTitleUPage(){
+    public void testTitleUPage() {
         String expectedResult = "Category U";
-        getDriver().get(BASE_URL);
 
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickUSubmenu()
+                        .getH2HeaderText();
 
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickUSubmenu();
-
-        UPage title = new UPage(getDriver());
-
-        String actualResult= title.getH2HeaderText();
-
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testUSubmenuDescription() {
+        final String expectedResult = "All languages starting with the letter U are shown, sorted by Language.";
 
-        String expectedResult = "All languages starting with the letter U are shown, sorted by Language.";
-        getDriver().get(BASE_URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickUSubmenu();
-
-        UPage description = new UPage(getDriver());
-        String actualResult = description.getTextPTag();
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickUSubmenu()
+                        .getTextPTag();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void testIsTableHeader() {
-        List<String> expectedResult = new ArrayList<>();
+        final List<String> expectedResult = new ArrayList<>();
         expectedResult.add("Language");
         expectedResult.add("Author");
         expectedResult.add("Date");
         expectedResult.add("Comments");
         expectedResult.add("Rate");
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
+        openBaseURL()
+                .clickBrowseLanguagesMenu();
 
         AbcPage abcPage = new AbcPage(getDriver());
         abcPage.clickUSubmenu();

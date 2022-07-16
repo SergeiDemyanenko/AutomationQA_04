@@ -2,8 +2,8 @@ package tests.main;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.AbcPage;
-import pages.start.StartPage;
+import pages.browse_languages.letters.APage;
+import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class NavigationTest extends BaseTest {
@@ -14,7 +14,7 @@ public class NavigationTest extends BaseTest {
 
         String actualNavigationInfoSubmenu = openBaseURL()
                 .clickStartMenu()
-                .clickInfoSubmenu()
+                .clickHistorySubmenu()
                 .getH2HeaderText();
 
         Assert.assertEquals(actualNavigationInfoSubmenu, expectedNavigationInfoSubmenu);
@@ -24,29 +24,29 @@ public class NavigationTest extends BaseTest {
     public void testTextH2MainHeader() {
         String expectedTextH2MainHeader = "The Team";
 
-        StartPage startPage = new StartPage(getDriver());
-
         String actualTextH2MainHeader = openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .getH2MainHeaderText();
+                .getH2MainText();
 
         Assert.assertEquals(expectedTextH2MainHeader, actualTextH2MainHeader);
     }
 
     @Test
     public void testNavigationZeroSubmenu() {
-        AbcPage abc = new AbcPage(getDriver());
+        final String text = "0.html";
 
-        openBaseURL()
+        String currentUrl =
+                openBaseURL()
                 .clickBrowseLanguagesMenu()
-                .clickZeroSubmenu();
+                .clickZeroSubmenu()
+                .getURL();
 
-        String currentUrl = getDriver().getCurrentUrl();
+        APage a = new APage(getDriver());
 
-        Assert.assertTrue(abc.getZeroSubmenu().isEnabled());
-        Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
-        Assert.assertTrue(currentUrl.contains("0.html"));
+        Assert.assertTrue(a.getZeroSubmenu().isEnabled());
+        Assert.assertTrue(a.getZeroSubmenu().isDisplayed());
+        Assert.assertTrue(currentUrl.contains(text));
     }
     
      @Test

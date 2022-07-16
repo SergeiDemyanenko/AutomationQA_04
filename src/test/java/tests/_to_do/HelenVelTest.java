@@ -4,9 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.letters.MPage;
+import pages.browse_languages.letters._LettersPage;
 import pages.start.InfoPage;
 import pages.start.StartPage;
 import pages.start.TeamPage;
@@ -22,19 +21,13 @@ public class HelenVelTest extends BaseTest {
 
     @Test
     public void testBrowseLanguagesCheckInCategoryMLanguageMacroX() {
+        final String expectedResult = "MacroX";
 
-        String expectedResult = "MacroX";
-
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage category_m = new AbcPage(getDriver());
-        category_m.clickMSubmenu();
-
-        MPage language_macroX = new MPage(getDriver());
-        String actualResult = language_macroX.getLanguageMacroXVerify();
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickMSubmenu()
+                        .getLanguageMacroXVerify();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -47,7 +40,7 @@ public class HelenVelTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage historyLink = new StartPage(getDriver());
-        historyLink.clickInfoMain();
+        historyLink.clickHistoricInformationLink();
 
         InfoPage H2Header = new InfoPage(getDriver());
         String actualResult = H2Header.getH2HeaderText();
@@ -67,7 +60,7 @@ public class HelenVelTest extends BaseTest {
         TeamPage teamPage = new TeamPage(getDriver());
 
         List<String> actualResult = new ArrayList<>();
-        for (WebElement namesTeam : teamPage.getListH3Header()) {
+        for (WebElement namesTeam : teamPage.getH3Main()) {
             actualResult.add(namesTeam.getText());
         }
         Assert.assertEquals(actualResult, expectedResult);

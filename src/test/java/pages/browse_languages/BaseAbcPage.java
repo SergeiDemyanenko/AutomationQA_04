@@ -3,12 +3,12 @@ package pages.browse_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.MainPage;
 import pages.browse_languages.letters.*;
-import pages.BasePage;
 
 import java.util.List;
 
-public class AbcPage extends BasePage {
+public abstract class BaseAbcPage extends MainPage {
 
     private final By ZERO_SUBMENU = By.xpath("//a[@href='0.html']");
     private final By J_SUBMENU = By.xpath("//a[@href='j.html']");
@@ -22,22 +22,15 @@ public class AbcPage extends BasePage {
     private final By U_SUBMENU = By.xpath("//a[@href='u.html']");
     private final By A_SUBMENU = By.xpath("//a[@href='a.html']");
     private final By K_SUBMENU = By.xpath("//a[@href='k.html']");
-    private final By TITLES_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
-    private final By SUBMENU = By.id("submenu");
-    private final By ALL_SUBMENU = By.xpath("//ul[@id='submenu']//a");
     private final By D_SUBMENU = By.xpath("//a[@href='d.html']");
     private final By I_SUBMENU = By.xpath("//a[@href='i.html']");
     private final By Y_SUBMENU = By.xpath("//a[@href='y.html']");
     private final By X_SUBMENU = By.xpath("//a[@href='x.html']");
+    private final By SUBMENU = By.id("submenu");
+    private final By ALL_SUBMENU = By.xpath("//ul[@id='submenu']//a");
 
-    public AbcPage(WebDriver driver) {
-
+    public BaseAbcPage(WebDriver driver) {
         super(driver);
-    }
-
-    public String getText(WebElement element) {
-
-        return element.getText();
     }
 
     public WebElement getJSubmenu() {
@@ -69,9 +62,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(L_SUBMENU);
     }
 
-    public void clickLSubmenu() {
-
+    public LPage clickLSubmenu() {
         getLSubmenu().click();
+
+        return new LPage(getDriver());
     }
 
     public WebElement getCSubmenu() {
@@ -166,20 +160,6 @@ public class AbcPage extends BasePage {
         return getText(getUSubmenu());
     }
 
-    public String getTitlesTable() {
-        StringBuilder stringTitle = new StringBuilder();
-        String actualResult;
-
-        List<WebElement> titles = getDriver().findElements(TITLES_TABLE);
-        for (WebElement t : titles) {
-            stringTitle.append(t.getText()).append(", ");
-        }
-        actualResult = stringTitle.toString()
-                .substring(0, stringTitle.length() - 2);
-
-        return actualResult;
-    }
-
     public WebElement getSubmenu() {
 
         return getDriver().findElement(SUBMENU);
@@ -260,9 +240,9 @@ public class AbcPage extends BasePage {
 
     public String getAllNamesOfSubmenu() {
         StringBuilder result = new StringBuilder();
-                List<WebElement> liAll = getAllSubmenu();
+        List<WebElement> liAll = getAllSubmenu();
         for (WebElement li : liAll) {
-           result.append(li.getText());
+            result.append(li.getText());
         }
 
         return  result.toString();

@@ -25,9 +25,19 @@ public abstract class BaseTest {
         return driver;
     }
 
-    public MainPage openBaseURL() {
+    public StartPage openBaseURL() {
         getDriver().get(BASE_URL);
 
-        return new MainPage(getDriver());
+        return new StartPage(getDriver());
+    }
+
+    public String getExternalPageTitle() {
+
+        return getDriver().getTitle();
+    }
+
+    public String getExternalPageURL() {
+
+        return getDriver().getCurrentUrl();
     }
 }

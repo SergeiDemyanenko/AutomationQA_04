@@ -8,37 +8,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static pages.start.TeamPage.*;
-
 public class TeamTest extends BaseTest {
 
     @Test
     public void testClickabilityOfTeamPageLsLaNetLink() {
 
-        String expectedTeamPageLsLaNetLink = getTeamPageLsLaNetLinkTitle();
+        String expectedTeamPageLsLaNetLink = "Index of /";
 
-        String actualTeamPageLsLaNetLink = openBaseURL()
+        openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickOliverSchadeLink()
-                .getDriver().getTitle();
+                .clickOliverSchadeWebsiteLink();
 
-        Assert.assertEquals(actualTeamPageLsLaNetLink, expectedTeamPageLsLaNetLink);
+                Assert.assertEquals(getExternalPageURL(), expectedTeamPageLsLaNetLink);
     }
 
     @Test
     public void testClickabilityOfTeamPageETasteOrgLink() {
 
-        String expectedTeamPageETasteOrgLink = getTeamPageETasteOrgLinkTitle();
+        String expectedTeamPageETasteOrgLink = "Ce domaine a été enregistré par Youdot.io";
 
-        String actualTeamPageETasteOrgLink = openBaseURL()
+        openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickGregorScheithauerLink()
-                .getDriver()
-                .getTitle();
+                .clickGregorScheithauerLink();
 
-        Assert.assertEquals(actualTeamPageETasteOrgLink, expectedTeamPageETasteOrgLink);
+        Assert.assertEquals(getExternalPageTitle(), expectedTeamPageETasteOrgLink);
     }
 
     @Test
@@ -50,7 +45,7 @@ public class TeamTest extends BaseTest {
                 openBaseURL()
                         .clickStartMenu()
                         .clickTeamSubmenu()
-                        .getListH3TeamName();
+                        .getTeamNames();
 
         Assert.assertEquals(actualH3TeamNamesText, expectedH3TeamNamesText);
     }
@@ -59,13 +54,12 @@ public class TeamTest extends BaseTest {
     public void testClickabilityOfTeamPageStsSynfloodDeLink() {
         final String expectedTeamPageStsSynfloodDeLink = "http://sts.synflood.de/";
 
-        String actualTeamPageStsSynfloodDeLink = openBaseURL()
+        openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickStefanSchelerLink()
-                .getDriver().getCurrentUrl();
+                .clickStefanSchelerLink();
 
-        Assert.assertEquals(actualTeamPageStsSynfloodDeLink, expectedTeamPageStsSynfloodDeLink);
+        Assert.assertEquals(getExternalPageTitle(), expectedTeamPageStsSynfloodDeLink);
     }
 
     @Test
@@ -92,6 +86,6 @@ public class TeamTest extends BaseTest {
         Assert.assertEquals(openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .getAmmountOfImages(), expectedTwoImagesOfTeamMembers);
+                .countAllImages(), expectedTwoImagesOfTeamMembers);
     }
 }

@@ -1,9 +1,9 @@
 package tests._to_do;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.languages.LanguageMathematicaPage;
 import pages.browse_languages.letters.MPage;
+import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class AuthorOfMathematicaLanguageTest extends BaseTest {
@@ -12,16 +12,15 @@ public class AuthorOfMathematicaLanguageTest extends BaseTest {
 
     @Test
     public void checkAuthorOfMathematicaLanguageTest (){
+        final String expectedResult = "Brenton Bostick";
 
-        String expectedResult = "Brenton Bostick";
-        getDriver().get(BASE_URL);
-        MPage mp = new MPage(getDriver());
-        LanguageMathematicaPage lm = new LanguageMathematicaPage(getDriver());
-        AbcPage ab = new AbcPage(getDriver());
-
-        ab.clickMSubmenu();
-        mp.clickMathematicaPage();
-        String actualResult = lm.getTdTableBrentonBostick().getText();
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickMSubmenu()
+                        .clickMathematicaPage()
+                        .getTdTableBrentonBostick()
+                        .getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

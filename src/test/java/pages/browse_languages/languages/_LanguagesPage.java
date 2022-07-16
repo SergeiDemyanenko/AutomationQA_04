@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.BaseAbcPage;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class _LanguagesPage extends BasePage {
+public abstract class _LanguagesPage extends BaseAbcPage {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By H2_VOTING = By.xpath("//div[@id='voting']/h2[1]");

@@ -15,12 +15,12 @@ public class CheckLocalCopyLinkTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage startPage = new StartPage(getDriver());
-        startPage.clickInfoSubmenu();
+        startPage.clickHistorySubmenu();
 
-        InfoPage infoPage = new InfoPage(getDriver());
-        infoPage.getLinkMirrors1().click();
+        String actualResult = new InfoPage(getDriver())
+                .clickLocalCopyLink()
+                .getURL();
 
-        String actualResult = getDriver().getCurrentUrl();
         Assert.assertEquals(actualResult, expectedResult);
     }
 }

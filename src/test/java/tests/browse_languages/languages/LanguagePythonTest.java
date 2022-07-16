@@ -11,13 +11,13 @@ public class LanguagePythonTest extends BaseTest {
 
         final String expectedPythonInfoLink = "https://www.python.org/";
 
-        String actualPythonInfoLink =
-                openBaseURL()
+        openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickPSubmenu()
                 .clickPythonLanguage()
-                .clickPythonLanguageInfoLink()
-                .getURL();
+                .clickPythonLanguageInfoLink();
+
+        String actualPythonInfoLink = getExternalPageURL();
 
         Assert.assertEquals(actualPythonInfoLink,expectedPythonInfoLink);
     }

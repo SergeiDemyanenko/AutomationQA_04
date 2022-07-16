@@ -12,10 +12,7 @@ public class WarningImportantInSubmitNewLanguagePageTest extends BaseTest {
 
     @Test
     public void testWarningImportantSubmitNewLanguagePage() {
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.getSubmitNewLanguageMenu().click();
+        openBaseURL().getSubmitNewLanguageMenu().click();
 
         SubmitNewLanguagePage submitNewLanguage = new SubmitNewLanguagePage(getDriver());
         String actualResult = submitNewLanguage.getSpanImportant().getText();

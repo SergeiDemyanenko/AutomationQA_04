@@ -16,13 +16,10 @@ public class StartPageWishesTeamTest extends BaseTest {
         final String expectedResult = "Have a lot of fun,\n" +
                 "Oliver, Gregor and Stefan";
 
-        getDriver().get(BASE_URL);
-
-        MainPage startButton = new MainPage(getDriver());
-        startButton.clickStartMenu();
+        openBaseURL().clickStartMenu();
 
         StartPage start = new StartPage(getDriver());
-        String actualResult = start.getLastPMainStartText();
+        String actualResult = start.getLastParagraphText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

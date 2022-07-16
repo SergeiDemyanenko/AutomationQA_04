@@ -3,9 +3,8 @@ package tests._to_do;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.AbcPage;
-import pages.MainPage;
 import pages.browse_languages.letters.SPage;
+import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class CountCommentOfLanguageShakespeareTest extends BaseTest {
@@ -17,16 +16,7 @@ public class CountCommentOfLanguageShakespeareTest extends BaseTest {
 
         int expectedResult = 6;
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickSSubmenu();
-
-        SPage sPage = new SPage(getDriver());
-        sPage.clickShakespeareLanguage();
+        openBaseURL().clickBrowseLanguagesMenu().clickSSubmenu().clickShakespeareLanguage();
 
         String[] result = new String[7];
         int countComment = 0;

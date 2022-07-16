@@ -18,11 +18,10 @@ public class KsSignGuestbookPageTest extends BaseTest {
         String expectedResult = "Error: Error: Invalid security code.";
 
         SignV2Page signV2Page = new SignV2Page(getDriver());
-        MainPage mainPage = new MainPage(getDriver());
+
         GuestbookV2Page guestbookV2Page = new GuestbookV2Page(getDriver());
 
-        getDriver().get(BASE_URL);
-        mainPage.clickGuestbookMenu();
+        openBaseURL().clickGuestbookMenu();
         guestbookV2Page.clickSignV2();
 
         getDriver().findElement(By.xpath

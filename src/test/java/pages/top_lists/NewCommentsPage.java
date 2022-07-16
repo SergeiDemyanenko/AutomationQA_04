@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
 
-public class NewCommentsPage extends BasePage {
+public class NewCommentsPage extends _TopPage {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By MAIN_P = By.xpath("//h2[text()='New Comments']/following-sibling::p[1]");

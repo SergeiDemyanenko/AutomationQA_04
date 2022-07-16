@@ -3,114 +3,88 @@ package pages.start;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
-import pages.MainPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamPage extends BasePage {
+public class TeamPage extends BaseStartPage {
 
-    private final By H3_HEADER = By.xpath("//div[@id = 'main']/h3");
-    private final By ALL_TEAM_IMAGES = By.xpath("//img[@src]");
-    private final By H2_MAIN_HEADER = By.xpath("//div[@id='main']/h2");
-    private final By OLIVER_SCHADE_LINK = By.xpath("//a[@href='http://www.ls-la.net/']");
-    private final By ALL_TEAM_LINKS = By.xpath("//div[@id='main']/p/a");
-    private final By GREGOR_SCHEITHAUER_LINK = By.xpath("//a[@href='http://www.e-taste.org']");
-    private final By STEFAN_SCHELER_LINK = By.xpath("//a[@href='http://sts.synflood.de/']");
+    private final By H3_MAIN = By.xpath("//div[@id='main']/h3");
+    private final By ALL_TEAM_IMAGES = By.xpath("//div[@id='main']/p/img[@src]");
+
+    private final String WEBSITE_LINKS_BASE_PATH = "//div[@id='main']/p/a";
+    private final By OLIVER_SCHADE_WEBSITE_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://www.ls-la.net/']");
+    private final By GREGOR_SCHEITHAUER_WEBSITE_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://www.e-taste.org']");
+    private final By STEFAN_SCHELER_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://sts.synflood.de/']");
+    private final By ALL_P_LINKS = By.xpath(WEBSITE_LINKS_BASE_PATH);
 
     public TeamPage(WebDriver driver) {
 
         super(driver);
     }
 
-    public List<WebElement> getListH3Header() {
+    public List<WebElement> getH3Main() {
 
-        return getDriver().findElements(H3_HEADER);
+        return getDriver().findElements(H3_MAIN);
     }
 
-    public List<String> getListH3TeamName() {
+    public List<WebElement> getAllTeamImages () {
 
-        List<String> h3TeamName = new ArrayList<>();
-        for (WebElement name : getListH3Header()) {
-            h3TeamName.add(name.getText());
-        }
-
-        return h3TeamName;
+        return getDriver().findElements(ALL_TEAM_IMAGES);
     }
 
-    public int getAmmountOfImages() {
+    public WebElement getOliverSchadeWebsiteLink() {
 
-        List<WebElement> getListTeamImages;
-        getListTeamImages = getDriver().findElements(ALL_TEAM_IMAGES);
-
-        int count = getListTeamImages.size();
-
-        return count;
+        return getDriver().findElement(OLIVER_SCHADE_WEBSITE_LINK);
     }
 
-    public WebElement getH2MainHeader() {
+    public WebElement getGregorScheithauerWebsiteLink() {
 
-        return getDriver().findElement(H2_MAIN_HEADER);
+        return getDriver().findElement(GREGOR_SCHEITHAUER_WEBSITE_LINK);
     }
 
-    public String getH2MainHeaderText() {
-
-        return getH2MainHeader().getText();
-    }
-
-    public WebElement getOliverSchadeLink() {
-
-        return getDriver().findElement(OLIVER_SCHADE_LINK);
-    }
-
-    public TeamPage clickOliverSchadeLink(){
-        getOliverSchadeLink().click();
-
-        return new TeamPage(getDriver());
-    }
-
-    public List<String> getAllLinks() {
-        List<String> actualResult = new ArrayList<>();
-        for(WebElement br: getDriver().findElements(ALL_TEAM_LINKS)) {
-            actualResult.add(br.getText());
-        }
-
-        return actualResult;
-    }
-
-    public WebElement getGregorScheithauerLink() {
-
-        return getDriver().findElement(GREGOR_SCHEITHAUER_LINK);
-    }
-
-    public TeamPage clickGregorScheithauerLink(){
-        getGregorScheithauerLink().click();
-
-        return new TeamPage(getDriver());
-    }
-
-    public static String getTeamPageLsLaNetLinkTitle() {
-        String TeamPageLsLaNetLinkTitle = "Index of /";
-
-        return TeamPageLsLaNetLinkTitle;
-    }
-
-    public static String getTeamPageETasteOrgLinkTitle() {
-        String TeamPageETasteOrgLinkTitle = "Ce domaine a été enregistré par Youdot.io";
-
-        return TeamPageETasteOrgLinkTitle;
-    }
-
-    public WebElement getStefanSchelerLink() {
+    public WebElement getStefanSchelerWebsiteLink() {
 
         return getDriver().findElement(STEFAN_SCHELER_LINK);
     }
 
-    public TeamPage clickStefanSchelerLink() {
+    public List<WebElement> getAllPLinks() {
 
-        getStefanSchelerLink().click();
+        return getDriver().findElements(ALL_P_LINKS);
+    }
 
-        return new TeamPage(getDriver());
+    public List<String> getAllLinks() {
+        List<String> allLinksText = new ArrayList<>();
+        for(WebElement br: getAllPLinks()) {
+            allLinksText.add(br.getText());
+        }
+
+        return allLinksText;
+    }
+
+    public List<String> getTeamNames() {
+        List<String> teamNames = new ArrayList<>();
+        for (WebElement name : getH3Main()) {
+            teamNames.add(name.getText());
+        }
+
+        return teamNames;
+    }
+
+    public int countAllImages() {
+
+        return getAllTeamImages().size();
+    }
+
+    public void clickOliverSchadeWebsiteLink(){
+        getOliverSchadeWebsiteLink().click();
+    }
+
+    public void clickGregorScheithauerLink(){
+        getGregorScheithauerWebsiteLink().click();
+    }
+
+    public void clickStefanSchelerLink() {
+        getStefanSchelerWebsiteLink().click();
     }
 }

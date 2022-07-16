@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.MainPage;
 import tests.submit_new_language.SubmitNewLanguageTest;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
 
 import static runner.TestUtils.getRandomStr;
 
-public class SubmitNewLanguagePage extends BasePage {
+public class SubmitNewLanguagePage extends MainPage {
 
     private final By SPAN_IMPORTANT = By.xpath("//div[@id='main']/ul/li/span/b");
     private final By BUTTON_SUBMIT_LANGUAGE = By.xpath("//div/div/form[@id='addlanguage']/p/input[@type='submit']");
@@ -30,7 +31,6 @@ public class SubmitNewLanguagePage extends BasePage {
     private final By IMG_CAPTCHA = By.xpath("//input[@name='captcha']/following-sibling::img");
     private final By TEXT_H3 = By.xpath("//div[@id='main']/h3");
     private final By CATEGORY_LIST = By.xpath("//select[@name='category']/option");
-
 
     public SubmitNewLanguagePage(WebDriver driver) {
 

@@ -2,7 +2,6 @@ package tests.start;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.start.StartPage;
 import runner.BaseTest;
 
 import static runner.TestUtils.createSongLyricsTextUsingAlgorithm;
@@ -16,7 +15,7 @@ public class LyricsTest extends BaseTest {
         String actualSongLyricsText =
                 openBaseURL()
                         .clickStartMenu()
-                        .clickLyricsSubmenu()
+                        .clickSongLyricsSubmenu()
                         .getSongLyricsText();
 
         Assert.assertEquals(actualSongLyricsText, expectedSongLyricsText);

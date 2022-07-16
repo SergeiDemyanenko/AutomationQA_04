@@ -37,7 +37,7 @@ public class StartTest extends BaseTest {
 
         String actualH2Header = openBaseURL()
                 .clickStartMenu()
-                .getH2HeaderMainText();
+                .getH2MainText();
 
         Assert.assertEquals(actualH2Header, expectedH2Header);
     }

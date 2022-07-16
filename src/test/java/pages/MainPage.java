@@ -3,14 +3,15 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.browse_languages.AbcPage;
+import pages.browse_languages.letters.AbcPage;
+import pages.browse_languages.letters._LettersPage;
 import pages.guestbook.GuestbookV2Page;
 import pages.search_languages.SearchPage;
 import pages.start.StartPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import pages.top_lists.TopListPage;
 
-public class MainPage extends BasePage {
+public abstract class MainPage extends BasePage {
 
     private final By ONLOAD_SETTINGS = By.xpath("//body[@onload]");
     private final By H1_HEADER = By.xpath("//div[@id='header']/h1");
@@ -148,7 +149,7 @@ public class MainPage extends BasePage {
         return getText(getFooterBar());
     }
 
-    public StartPage clickStartMenu(){
+    public StartPage clickStartMenu() {
         getStartMenu().click();
 
         return new StartPage(getDriver());

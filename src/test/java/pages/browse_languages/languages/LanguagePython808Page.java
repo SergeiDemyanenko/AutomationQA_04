@@ -19,9 +19,7 @@ public class LanguagePython808Page extends _LanguagesPage {
         return getDriver().findElement(PYTHON_LANGUAGE_INFO_LINK);
     }
 
-    public LanguagePython808Page clickPythonLanguageInfoLink() {
+    public void clickPythonLanguageInfoLink() {
         getPythonLanguageInfoLink().click();
-
-        return new LanguagePython808Page(getDriver());
     }
 }

@@ -17,7 +17,7 @@ public class CheckSubmenuPrivacyTest extends BaseTest {
 
         StartPage startPage = new StartPage(getDriver());
 
-        String actualResult = startPage.getImpressumSubmenuText();
+        String actualResult = startPage.getPrivacySubmenuText();
 
         Assert.assertEquals(actualResult,expectedResult);
     }
