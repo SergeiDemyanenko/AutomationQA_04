@@ -95,7 +95,7 @@ public class ViktroriiaKTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickUSubmenu()
-                        .getH2HeaderText();
+                        .getH2MainText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

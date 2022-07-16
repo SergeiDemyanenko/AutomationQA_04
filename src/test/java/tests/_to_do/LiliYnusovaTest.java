@@ -17,7 +17,7 @@ public class LiliYnusovaTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickLSubmenu()
-                        .getH2HeaderText();
+                        .getH2MainText();
 
         Assert.assertEquals(actualResult,expectedResult);
 

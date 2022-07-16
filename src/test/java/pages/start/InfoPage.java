@@ -11,7 +11,7 @@ import java.util.List;
 public class InfoPage extends BaseStartPage {
 
     private final By PRE_ELEMENTS = By.xpath("//div[@id='main']/pre");
-    private static final By MIRRORS_1 = By.xpath("////div[@id='main']/p/a[@href='/mirrors/1/']");
+    private static final By MIRRORS_1 = By.xpath("//div[@id='main']/p/a[@href='/mirrors/1/']");
 
     public InfoPage(WebDriver driver){
 

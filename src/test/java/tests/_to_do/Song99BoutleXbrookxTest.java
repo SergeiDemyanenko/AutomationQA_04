@@ -6,7 +6,6 @@ import pages.browse_languages.languages.LanguageJava3Page;
 import pages.browse_languages.letters.APage;
 import pages.browse_languages.letters.DPage;
 import pages.browse_languages.letters.JPage;
-import pages.browse_languages.letters._LettersPage;
 import pages.start.ImpressumPage;
 import pages.start.StartPage;
 import runner.BaseTest;
@@ -63,7 +62,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         ImpressumPage impressumPage = new ImpressumPage(getDriver());
 
         Assert.assertTrue(getDriver().getCurrentUrl().contains("impressum.html"));
-        Assert.assertEquals(impressumPage.getH2HeaderText(), "Privacy");
+        Assert.assertEquals(impressumPage.getH2MainText(), "Privacy");
     }
 
     @Test
@@ -73,7 +72,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         DPage dPage = new DPage(getDriver());
 
-        Assert.assertEquals(dPage.getH2HeaderText(), "Category D");
+        Assert.assertEquals(dPage.getH2MainText(), "Category D");
     }
 
     @Test

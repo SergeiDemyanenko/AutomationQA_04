@@ -17,7 +17,7 @@ public class SabinaSaadZeroPageTest extends BaseTest {
 
         ZeroPage zeroPage = new ZeroPage(getDriver());
 
-        String actualResult = zeroPage.getH2HeaderText();
+        String actualResult = zeroPage.getH2MainText();
 
         Assert.assertEquals(actualResult,expectedResult);
     }
