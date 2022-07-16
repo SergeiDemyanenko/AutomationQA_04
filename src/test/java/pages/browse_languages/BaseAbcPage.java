@@ -15,6 +15,7 @@ public abstract class BaseAbcPage extends MainPage {
     private final String SUBMENU_BASE_PATH = "//ul[@id='submenu']/li/a[@href=";
     private final By ZERO_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'0.html']");
     private final By A_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'a.html']");
+    private final By B_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'b.html']");
     private final By C_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'c.html']");
     private final By D_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'d.html']");
     private final By I_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'i.html']");
@@ -50,6 +51,11 @@ public abstract class BaseAbcPage extends MainPage {
     public WebElement getASubmenu() {
 
         return getDriver().findElement(A_SUBMENU);
+    }
+
+    public WebElement getBSubmenu() {
+
+        return getDriver().findElement(B_SUBMENU);
     }
 
     public WebElement getCSubmenu() {
@@ -181,6 +187,11 @@ public abstract class BaseAbcPage extends MainPage {
     public void clickASubmenu() {
 
         getASubmenu().click();
+    }
+
+    public void clickBSubmenu() {
+
+        getBSubmenu().click();
     }
 
     public CPage clickCSubmenu() {
