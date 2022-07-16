@@ -6,13 +6,13 @@ import pages.browse_languages.languages.LanguagesPage;
 
 public class BPage extends BaseAbcPage<LanguagesPage> {
 
-    protected BPage(WebDriver driver) {
+    public BPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     protected LanguagesPage createLangPage() {
-
-        return new LanguagesPage(getDriver());
+    
+        return null;
     }
 }
