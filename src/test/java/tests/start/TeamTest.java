@@ -13,7 +13,7 @@ public class TeamTest extends BaseTest {
     @Test
     public void testClickabilityOfTeamPageLsLaNetLink() {
 
-        String expectedTeamPageLsLaNetLink = "Index of /";
+        String expectedTeamPageLsLaNetLink = "http://www.ls-la.net/";
 
         openBaseURL()
                 .clickStartMenu()
@@ -26,14 +26,14 @@ public class TeamTest extends BaseTest {
     @Test
     public void testClickabilityOfTeamPageETasteOrgLink() {
 
-        String expectedTeamPageETasteOrgLink = "Ce domaine a été enregistré par Youdot.io";
+        String expectedTeamPageETasteOrgLink = "http://www.e-taste.org/";
 
         openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
                 .clickGregorScheithauerLink();
 
-        Assert.assertEquals(getExternalPageTitle(), expectedTeamPageETasteOrgLink);
+        Assert.assertEquals(getExternalPageURL(), expectedTeamPageETasteOrgLink);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class TeamTest extends BaseTest {
                 .clickTeamSubmenu()
                 .clickStefanSchelerLink();
 
-        Assert.assertEquals(getExternalPageTitle(), expectedTeamPageStsSynfloodDeLink);
+        Assert.assertEquals(getExternalPageURL(), expectedTeamPageStsSynfloodDeLink);
     }
 
     @Test

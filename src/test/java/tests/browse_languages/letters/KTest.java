@@ -9,12 +9,12 @@ public class KTest extends BaseTest {
     @Test
     public void testH2HeaderKPage() {
 
-        String expectedH2Header = "Category K";
+        final String expectedH2Header = "Category K";
 
-        String actualH2Header = openBaseURL().
-                clickBrowseLanguagesMenu().
-                clickKSubmenu().
-                getH2HeaderText();
+        String actualH2Header = openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickKSubmenu()
+                .getH2MainText();
 
         Assert.assertEquals(actualH2Header, expectedH2Header);
     }

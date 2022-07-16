@@ -43,7 +43,7 @@ public class ITest extends BaseTest {
         String actualTitleIPage = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickISubmenu()
-                .getH2HeaderText();
+                .getH2MainText();
 
         Assert.assertEquals(actualTitleIPage, expectedTitleIPage);
     }
@@ -86,7 +86,7 @@ public class ITest extends BaseTest {
 
         for (String langName : expectedAllTableLinks) {
             getDriver().findElement(By.linkText(langName)).click();
-            actualCheckedTableLinks.add(i.getH2HeaderText().substring(9));
+            actualCheckedTableLinks.add(i.getH2Main().getText().substring(9));
             getDriver().navigate().back();
         }
 

@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import pages.browse_languages.letters.JPage;
 import runner.BaseTest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static runner.TestUtils.getTrWithRequiredLanguage;
@@ -23,7 +22,7 @@ public class JTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickJSubmenu()
-                        .getH2HeaderAndPTagText();
+                        .getH2MainAndPTagText();
 
         Assert.assertEquals(actualH2HeaderAndPTagText, expectedH2HeaderAndPTagText);
     }

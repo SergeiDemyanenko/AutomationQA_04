@@ -28,9 +28,9 @@ public class JPage extends _LettersPage {
         return new LanguageJava3Page(getDriver());
     }
 
-    public List<String> getH2HeaderAndPTagText() {
+    public List<String> getH2MainAndPTagText() {
 
-        return List.of(getH2HeaderText(), getTextPTag());
+        return List.of(getH2MainText(), getTextPTag());
     }
 
     public int randomLanguage() {

@@ -65,7 +65,7 @@ public class RTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickRSubmenu()
-                        .getH2HeaderText();
+                        .getH2MainText();
 
         Assert.assertEquals(actualHeader, expectedHeader);
     }

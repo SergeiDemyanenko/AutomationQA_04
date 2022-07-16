@@ -14,8 +14,7 @@ public class CTest extends BaseTest {
         String actualCSubMenu =
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
-                        .getCSubmenu()
-                        .getText();
+                        .getCSubmenuText();
 
         Assert.assertEquals(actualCSubMenu, expectedCSubMenu);
     }
@@ -29,7 +28,7 @@ public class CTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickCSubmenu()
-                        .getH2HeaderText();
+                        .getH2MainText();
 
         Assert.assertEquals(actualCPageTitle, expectedCPageTitle);
     }

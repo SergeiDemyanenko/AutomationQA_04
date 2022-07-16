@@ -15,7 +15,8 @@ public class ZTest extends BaseTest {
         String actualResult = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickZSubmenu()
-                .getH2HeaderText();
+                .getH2Main()
+                .getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

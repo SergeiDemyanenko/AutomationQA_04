@@ -36,7 +36,7 @@ public class UTest extends BaseTest {
         String actualTitleUPage = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickUSubmenu()
-                .getH2HeaderText();
+                .getH2MainText();
 
         Assert.assertEquals(actualTitleUPage, expectedTitleUPage);
     }

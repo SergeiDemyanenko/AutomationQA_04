@@ -11,7 +11,6 @@ import java.util.List;
 public abstract class _LettersPage extends BaseAbcPage {
 
     private final By P_TAG_WITH_TEXT = By.xpath("//table[@id='category']/preceding-sibling::p");
-    private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
     private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
     private final By TH_TAGS = By.xpath("//table[@id='category']/tbody/tr/th");
     private final By TD_LINKS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]/td/a");
@@ -31,11 +30,6 @@ public abstract class _LettersPage extends BaseAbcPage {
     public WebElement getPTagWithText() {
 
         return getDriver().findElement(P_TAG_WITH_TEXT);
-    }
-
-    public WebElement getH2Main() {
-
-        return getDriver().findElement(H2_MAIN);
     }
 
     public List<WebElement> getTrTags() {
@@ -58,10 +52,6 @@ public abstract class _LettersPage extends BaseAbcPage {
         return getDriver().findElement(By.linkText(getLanguageFromTDLinks(languageName)));
     }
 
-    public String getH2HeaderText() {
-
-        return getText(getH2Header());
-    }
 
     public String getTextPTag() {
 
