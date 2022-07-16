@@ -12,6 +12,7 @@ public class TopListEsotericPage extends _TopPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 }

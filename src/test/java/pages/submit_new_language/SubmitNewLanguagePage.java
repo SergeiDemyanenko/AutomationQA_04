@@ -1,15 +1,11 @@
 package pages.submit_new_language;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
 import pages.MainPage;
-import tests.submit_new_language.SubmitNewLanguageTest;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import static runner.TestUtils.getRandomStr;

@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.BasePage;
 import runner.TestUtils;
 
 import java.util.List;
@@ -112,7 +111,6 @@ public class SignV2Page extends BaseGuestbookPage {
 
     public void inputLocation(String location) {
         inputText(getInputLocation(), location);
-
     }
 
     public void setInputLocation(String location) {
@@ -135,6 +133,7 @@ public class SignV2Page extends BaseGuestbookPage {
     }
 
     public void inputHomepage(String homepage) {
+
         inputText(getInputHomepage(), homepage);
     }
 

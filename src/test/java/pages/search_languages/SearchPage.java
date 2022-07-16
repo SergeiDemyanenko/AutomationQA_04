@@ -13,18 +13,12 @@ import java.util.List;
 public class SearchPage extends BaseTablePage<LanguagesPage> {
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
-
     private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
-
     private final By SEARCH_BOX = By.xpath("//input[@name='search']");
-
     private final By SUBMIT_SEARCH = By.name("submitsearch");
-
     private final By PERL_LANGUAGE = By.linkText("Perl (bottled by Acme::EyeDrops)");
-
     private final By JAVA_LANGUAGES =
             By.xpath("//td/a[contains(@href, 'language')and (text()='Java' or contains(text(), 'Java ('))]");
-
     private final By TABLE_JAVA_SEARCH_LANGUAGES = By.xpath("//tbody/tr");
 
     public SearchPage(WebDriver driver) {
@@ -34,12 +28,8 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
-    }
-
-    public String getText(WebElement element) {
-
-        return element.getText();
     }
 
     public WebElement getSearchSubmenu() {
@@ -50,7 +40,7 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
     public SearchPage clickSearchSubmenu() {
         getSearchSubmenu().click();
 
-        return new SearchPage(getDriver());
+        return this;
     }
 
     public WebElement getH2Main() {
@@ -71,7 +61,7 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
     public SearchPage getSearchBoxSendKey(String name) {
         getSearchBox().sendKeys(name);
 
-        return new SearchPage(getDriver());
+        return this;
     }
 
     public WebElement getSubmitSearch() {
@@ -83,7 +73,7 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
 
         getSubmitSearch().click();
 
-        return new SearchPage(getDriver());
+        return this;
     }
 
     public WebElement getPerlLanguage() {

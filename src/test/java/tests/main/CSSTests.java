@@ -1,11 +1,10 @@
-package tests._to_do;
+package tests.main;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class AuthorOfMathematicaLanguageTest extends BaseTest {
-
-    private static final String BASE_URL = "http://www.99-bottles-of-beer.net/abc.html";
+public class CSSTests extends BaseTest {
 
     @Test
     public void checkAuthorOfMathematicaLanguageTest (){
@@ -22,7 +21,3 @@ public class AuthorOfMathematicaLanguageTest extends BaseTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 }
-
-
-
-

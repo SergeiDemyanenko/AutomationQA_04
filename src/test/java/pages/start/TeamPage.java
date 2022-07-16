@@ -15,7 +15,7 @@ public class TeamPage extends BaseStartPage {
     private final String WEBSITE_LINKS_BASE_PATH = "//div[@id='main']/p/a";
     private final By OLIVER_SCHADE_WEBSITE_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://www.ls-la.net/']");
     private final By GREGOR_SCHEITHAUER_WEBSITE_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://www.e-taste.org']");
-    private final By STEFAN_SCHELER_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://sts.synflood.de/']");
+    private final By STEFAN_SCHELER_WEBSITE_LINK = By.xpath(WEBSITE_LINKS_BASE_PATH + "[@href='http://sts.synflood.de/']");
     private final By ALL_P_LINKS = By.xpath(WEBSITE_LINKS_BASE_PATH);
 
     public TeamPage(WebDriver driver) {
@@ -45,7 +45,7 @@ public class TeamPage extends BaseStartPage {
 
     public WebElement getStefanSchelerWebsiteLink() {
 
-        return getDriver().findElement(STEFAN_SCHELER_LINK);
+        return getDriver().findElement(STEFAN_SCHELER_WEBSITE_LINK);
     }
 
     public List<WebElement> getAllPLinks() {
@@ -80,11 +80,11 @@ public class TeamPage extends BaseStartPage {
         getOliverSchadeWebsiteLink().click();
     }
 
-    public void clickGregorScheithauerLink(){
+    public void clickGregorScheithauerWebsiteLink(){
         getGregorScheithauerWebsiteLink().click();
     }
 
-    public void clickStefanSchelerLink() {
+    public void clickStefanSchelerWebsiteLink() {
         getStefanSchelerWebsiteLink().click();
     }
 }

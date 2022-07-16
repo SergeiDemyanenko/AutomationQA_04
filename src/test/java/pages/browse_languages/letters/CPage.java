@@ -14,6 +14,7 @@ public class CPage extends BaseAbcPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return new LanguagesPage(getDriver());
     }
 }

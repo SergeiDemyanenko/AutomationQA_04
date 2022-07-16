@@ -16,6 +16,7 @@ public class TopListTopHitsPage extends _TopPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 

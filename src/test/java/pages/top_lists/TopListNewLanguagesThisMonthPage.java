@@ -12,6 +12,7 @@ public class TopListNewLanguagesThisMonthPage extends _TopPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 }

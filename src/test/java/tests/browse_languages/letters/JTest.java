@@ -116,4 +116,17 @@ public class JTest extends BaseTest {
         Assert.assertTrue(j.getRandomTr().isEnabled());
         Assert.assertFalse(j.getRandomTr().getText().isEmpty());
     }
+
+    @Test
+    public void testIsBrowseLanguagesSubMenuJ() {
+        final String expectedResult = "All languages starting with the letter J are shown, sorted by Language.";
+
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickJSubmenu()
+                        .getTextPTag();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }

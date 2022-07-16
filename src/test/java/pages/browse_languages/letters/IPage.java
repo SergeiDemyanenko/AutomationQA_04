@@ -22,11 +22,6 @@ public class IPage extends BaseAbcPage<LanguagesPage> {
         return null;
     }
 
-    public String getCurrentUrl() {
-
-        return getDriver().getCurrentUrl();
-    }
-
     public List<WebElement> getAllTrs() {
 
         return getDriver().findElements(ALL_TR_I_LANGUAGES);
