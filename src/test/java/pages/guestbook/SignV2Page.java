@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
 import runner.TestUtils;
 
+import java.util.List;
+
 import static runner.TestUtils.createStringBuilder;
 import static runner.TestUtils.getRandomStr;
 
@@ -215,9 +217,21 @@ public class SignV2Page extends BaseGuestbookPage {
                 .toString();
     }
 
-    public WebElement getImgCaptcha() {
+    protected List<WebElement> getListImgCaptcha() {
 
-        return getDriver().findElement(IMG_CAPTCHA_PHP);
+        return getDriver().findElements(IMG_CAPTCHA_PHP);
+    }
+
+    public boolean isImgCaptchaDisplayed() {
+
+        if (getListImgCaptcha().size() != 0) {
+
+            return getListImgCaptcha().get(0).isDisplayed();
+
+        } else {
+
+            return false;
+        }
     }
 
     public SignV2Page fillAllFields() {
