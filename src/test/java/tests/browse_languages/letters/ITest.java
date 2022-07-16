@@ -18,8 +18,7 @@ public class ITest extends BaseTest {
 
         int actualResult = openBaseURL().
                 clickBrowseLanguagesMenu().
-                clickISubmenu().
-                getNumberOfLanguages();
+                clickISubmenu().getCountTDLinks();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

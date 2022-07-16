@@ -6,18 +6,11 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LanguageCSharp1614Page extends _LanguagesPage {
+public class CLanguagesPage extends BaseLanguagePage<CLanguagesPage> {
 
-    private final By A_LINKS_TABLE = By.xpath("//table[@id='category']/tbody/tr/td/a");
-
-    public LanguageCSharp1614Page(WebDriver driver) {
+    public CLanguagesPage(WebDriver driver) {
 
         super(driver);
-    }
-
-    public List<WebElement> getALinksTable() {
-
-        return getDriver().findElements(A_LINKS_TABLE);
     }
 
     public List<String> getCSharpLanguageALinks() {
@@ -30,10 +23,5 @@ public class LanguageCSharp1614Page extends _LanguagesPage {
         }
 
         return listOfVersions;
-    }
-
-    public int countNumberOfVersions() {
-
-        return getCSharpLanguageALinks().size();
     }
 }

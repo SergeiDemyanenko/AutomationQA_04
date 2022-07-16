@@ -2,7 +2,7 @@ package tests._to_do;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.LanguageJava3Page;
+import pages.browse_languages.languages.Java3Page;
 import pages.browse_languages.letters.APage;
 import pages.browse_languages.letters.DPage;
 import pages.browse_languages.letters.JPage;
@@ -33,7 +33,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         JPage j = new JPage(getDriver());
         j.clickLinkLanguageJava3();
 
-        LanguageJava3Page java = new LanguageJava3Page(getDriver());
+        Java3Page java = new Java3Page(getDriver());
 
         List<WebElement> javaVersions = java.getAlternativeVersions();
         javaVersions.add(java.getObjectOrientedVersion());

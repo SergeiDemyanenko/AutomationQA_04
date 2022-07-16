@@ -3,9 +3,8 @@ package pages.search_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
 import pages.MainPage;
-import pages.browse_languages.languages.LanguagePerl737Page;
+import pages.browse_languages.languages.Perl737Page;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,10 +84,10 @@ public class SearchPage extends MainPage {
         return getDriver().findElement(PERL_LANGUAGE);
     }
 
-    public LanguagePerl737Page clickPerlLanguage() {
+    public Perl737Page clickPerlLanguage() {
         getPerlLanguage().click();
 
-        return new LanguagePerl737Page(getDriver());
+        return new Perl737Page(getDriver());
     }
 
     public List<WebElement> getJavaATags() {

@@ -1,27 +1,18 @@
 package pages.browse_languages.letters;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import pages.browse_languages.languages.LanguageCSharp1614Page;
+import pages.browse_languages.languages.CLanguagesPage;
 
-public class CPage extends _LettersPage {
-
-    private final By CSHARP_LANGUAGE = By.linkText("C#");
+public class CPage extends BaseLetterPage<CLanguagesPage> {
 
     public CPage(WebDriver driver) {
 
         super(driver);
     }
 
-    public WebElement getCSharpLanguage() {
+    @Override
+    public CLanguagesPage createLangPage() {
 
-        return getDriver().findElement(CSHARP_LANGUAGE);
-    }
-
-    public LanguageCSharp1614Page clickCSharpLanguage() {
-        getCSharpLanguage().click();
-
-        return new LanguageCSharp1614Page(getDriver());
+        return new CLanguagesPage(getDriver());
     }
 }

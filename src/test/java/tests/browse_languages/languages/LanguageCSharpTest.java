@@ -8,14 +8,15 @@ public class LanguageCSharpTest extends BaseTest {
 
     @Test
     public void testNumberOfCSharpLanguageVersions() {
+        final String CSHARP_LANGUAGE = "C#";
 
         final int expectedNumberOfCSharpLanguageVersions = 7;
 
         int actualNumberOfCSharpLanguageVersions = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickCSubmenu()
-                .clickCSharpLanguage()
-                .countNumberOfVersions();
+                .clickLanguage(CSHARP_LANGUAGE)
+                .countVersions();
 
         Assert.assertEquals(actualNumberOfCSharpLanguageVersions,expectedNumberOfCSharpLanguageVersions);
     }

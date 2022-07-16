@@ -3,12 +3,18 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BaseTablePage;
 
-public class ZPage extends _LettersPage {
+public class ZPage extends BaseLetterPage {
 
     public ZPage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected BaseLetterPage createLangPage() {
+        return null;
     }
 
     public String getNamesText() {

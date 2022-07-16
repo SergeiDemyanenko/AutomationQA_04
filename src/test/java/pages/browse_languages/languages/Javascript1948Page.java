@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LanguageJavascript1948Page extends _LanguagesPage {
+public class Javascript1948Page extends BaseLanguagePage<Javascript1948Page> {
 
     private final By WIKI_JAVA_SCRIPT_LINK = By.linkText("http://en.wikipedia.org/wiki/Javascript");
 
-    public LanguageJavascript1948Page(WebDriver driver) {
+    public Javascript1948Page(WebDriver driver) {
 
         super(driver);
     }

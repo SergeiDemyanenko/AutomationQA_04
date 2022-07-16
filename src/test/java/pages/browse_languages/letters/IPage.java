@@ -3,31 +3,22 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BaseTablePage;
+import pages.browse_languages.languages.BaseLanguagePage;
+import pages.browse_languages.languages.CLanguagesPage;
 
 import java.util.List;
 
-public class IPage extends _LettersPage {
-
-    private final By ALL_TR_I_LANGUAGES = By.xpath("//tr[@onmouseover]");
+public class IPage extends BaseLetterPage {
 
     public IPage(WebDriver driver) {
 
         super(driver);
     }
 
-    public String getCurrentUrl() {
-
-        return getDriver().getCurrentUrl();
-    }
-
-    public List<WebElement> getAllTrs() {
-
-        return getDriver().findElements(ALL_TR_I_LANGUAGES);
-    }
-
-    public int getNumberOfLanguages() {
-
-        return getAllTrs().size();
+    @Override
+    protected BaseLanguagePage createLangPage() {
+        return null;
     }
 
     public List<String> getActualResult(List<WebElement> allTableLinks, List<String> actualResult) {

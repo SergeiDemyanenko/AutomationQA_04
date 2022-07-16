@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.letters.MPage;
-import pages.browse_languages.letters._LettersPage;
 import pages.start.InfoPage;
 import pages.start.StartPage;
 import pages.start.TeamPage;

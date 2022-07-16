@@ -2,7 +2,7 @@ package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.LanguageJavascript1948Page;
+import pages.browse_languages.languages.Javascript1948Page;
 import runner.BaseTest;
 
 public class LanguageJavascript1948Test extends BaseTest {
@@ -13,9 +13,9 @@ public class LanguageJavascript1948Test extends BaseTest {
         openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .clickJSubmenu()
-                .clickLanguageFromTDLinks("JavaScript");
+                .clickLanguage("JavaScript");
 
-        LanguageJavascript1948Page js = new LanguageJavascript1948Page(getDriver());
+        Javascript1948Page js = new Javascript1948Page(getDriver());
 
         String JavaScriptTitle = js.getTitle();
 

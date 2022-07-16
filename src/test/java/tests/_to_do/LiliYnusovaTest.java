@@ -2,8 +2,6 @@ package tests._to_do;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.letters.LPage;
-import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class LiliYnusovaTest extends BaseTest {

@@ -4,14 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LanguagePerl737Page extends _LanguagesPage {
+public class Perl737Page extends BaseLanguagePage {
 
     private final By PERL_LANGUAGE = By.xpath("//div[@id='main']/h2");
     private final By DATE = By.xpath("//tbody/tr/td[text()='06/04/05']");
     private final By AUTHOR = By.xpath("//tbody/tr/td[text()='Andrew Savige']");
     private final By COMMENTS = By.xpath("//tbody/tr/td[text()='76']");
 
-    public LanguagePerl737Page(WebDriver driver) {
+    public Perl737Page(WebDriver driver) {
 
         super(driver);
     }

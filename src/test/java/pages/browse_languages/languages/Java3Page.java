@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LanguageJava3Page extends _LanguagesPage {
+public class Java3Page extends BaseLanguagePage {
 
     private final By ALTERNATIVE_VERSIONS = By.xpath("//table[@id='category']//tr[@onmouseover]");
     private final By OBJECT_ORIENTED_VERSION = By.xpath("//div[@id='main']/p[text()='(object-oriented version)']");
@@ -16,7 +16,7 @@ public class LanguageJava3Page extends _LanguagesPage {
     private final By COMMENTS_HEADER = By.xpath("//p[@class='commentheader']");
     private final By STANDARD_VERSION = By.xpath("//a[@href='language-java-4.html']");
 
-    public LanguageJava3Page(WebDriver driver) {
+    public Java3Page(WebDriver driver) {
 
         super(driver);
     }
@@ -72,10 +72,10 @@ public class LanguageJava3Page extends _LanguagesPage {
                                 .keySet()));
     }
 
-    public LanguageJava4Page clickStandardVersionPage() {
+    public Java4Page clickStandardVersionPage() {
         getStandardVersion().click();
 
-        return new LanguageJava4Page(getDriver());
+        return new Java4Page(getDriver());
     }
 
     public int numberOfVersions () {

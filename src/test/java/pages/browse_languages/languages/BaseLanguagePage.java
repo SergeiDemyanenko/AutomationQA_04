@@ -3,13 +3,12 @@ package pages.browse_languages.languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
 import pages.browse_languages.BaseAbcPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class _LanguagesPage extends BaseAbcPage {
+public class BaseLanguagePage<LangPage> extends BaseAbcPage {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By H2_VOTING = By.xpath("//div[@id='voting']/h2[1]");
@@ -24,7 +23,7 @@ public abstract class _LanguagesPage extends BaseAbcPage {
     private final By DEL_ICIO_US_ICON = By.xpath("//a[@title='del_icio_us']");
     private final By REDDIT_ICON = By.xpath("//a[@title='reddit']");
 
-    public _LanguagesPage(WebDriver driver) {
+    public BaseLanguagePage(WebDriver driver) {
         super(driver);
     }
 
@@ -150,5 +149,10 @@ public abstract class _LanguagesPage extends BaseAbcPage {
     public String getRedditIconURL() {
 
         return getRedditIcon().getAttribute("href");
+    }
+
+    public int countVersions() {
+
+        return getALinksTable().size();
     }
 }

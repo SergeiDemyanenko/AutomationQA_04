@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LanguageShakespearePage extends _LanguagesPage {
+public class ShakespearePage extends BaseLanguagePage {
 
 private final By LINK_SHAKESPEARE_LANGUAGE_SITE =
             By.xpath("//a[@href='http://shakespearelang.sourceforge.net/']");
 
-    public LanguageShakespearePage(WebDriver driver) {
+    public ShakespearePage(WebDriver driver) {
         super(driver);
     }
 

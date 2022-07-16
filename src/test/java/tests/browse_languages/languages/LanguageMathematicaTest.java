@@ -2,7 +2,7 @@ package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.LanguageMathematicaPage;
+import pages.browse_languages.languages.MathematicaPage;
 import runner.BaseTest;
 
 public class LanguageMathematicaTest extends BaseTest {
@@ -18,7 +18,7 @@ public class LanguageMathematicaTest extends BaseTest {
                 clickMSubmenu().
                 clickMathematicaPage();
 
-        LanguageMathematicaPage mathematica = new LanguageMathematicaPage(getDriver());
+        MathematicaPage mathematica = new MathematicaPage(getDriver());
 
         String actualAuthorName = mathematica.textOfAuthor();
         String actualDate = mathematica.getDateOfLanguage();
