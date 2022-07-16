@@ -4,12 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
+import pages.browse_languages.languages.LanguagesPage;
 
-public class ZPage extends BaseAbcPage {
+public class ZPage extends BaseAbcPage<LanguagesPage> {
 
     public ZPage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public String getNamesText() {

@@ -1,15 +1,18 @@
 package pages.browse_languages.letters;
 
-import org.openqa.selenium.WebDriver;
 
-public class AbcPage extends BaseAbcPage<LangPage> {
+import org.openqa.selenium.WebDriver;
+import pages.browse_languages.BaseAbcPage;
+import pages.browse_languages.languages.LanguagesPage;
+
+public class AbcPage extends BaseAbcPage<LanguagesPage> {
 
     public AbcPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
-    protected LangPage createLangPage() {
+    protected LanguagesPage createLangPage() {
         return null;
     }
 }

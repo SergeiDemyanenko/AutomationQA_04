@@ -8,7 +8,7 @@ import pages.BasePage;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class _TopPage extends BaseTopListPage {
+public abstract class _TopPage<LangPage> extends BaseTopListPage<LangPage> {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");

@@ -9,7 +9,7 @@ import pages.browse_languages.BaseAbcPage;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseLanguagesPage extends BaseAbcPage {
+public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By H2_VOTING = By.xpath("//div[@id='voting']/h2[1]");

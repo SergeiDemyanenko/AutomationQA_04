@@ -4,9 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.languages.LanguageShakespearePage;
+import pages.browse_languages.languages.ShakespearePage;
+import pages.browse_languages.languages.LanguagesPage;
 
-public class SPage extends BaseAbcPage {
+public class SPage extends BaseAbcPage<LanguagesPage> {
 
     private final By SHAKESPEARE_LANGUAGE = By.xpath("//a[@href='language-shakespeare-664.html']");
 
@@ -15,14 +16,19 @@ public class SPage extends BaseAbcPage {
         super(driver);
     }
 
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
+    }
+
     public WebElement getShakespeareLanguage() {
 
         return getDriver().findElement(SHAKESPEARE_LANGUAGE);
     }
 
-    public LanguageShakespearePage clickShakespeareLanguage() {
+    public ShakespearePage clickShakespeareLanguage() {
         getShakespeareLanguage().click();
 
-        return new LanguageShakespearePage(getDriver());
+        return new ShakespearePage(getDriver());
     }
 }

@@ -47,7 +47,7 @@ public abstract class BaseTablePage<LangPage> extends MainPage {
 
     public WebElement getLanguage(String languageName) {
 
-        return getDriver().findElement(By.linkText(getLanguageFromTDLinks(languageName)));
+        return getDriver().findElement(By.linkText(languageName));
     }
 
 

@@ -5,14 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
 import pages.browse_languages.languages.AlphaBetaPage;
+import pages.browse_languages.languages.LanguagesPage;
 
-public class APage extends BaseAbcPage {
+public class APage extends BaseAbcPage<LanguagesPage> {
 
     private final By ALPHABETA_LINK = By.linkText("AlphaBeta");
 
     public APage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public WebElement getAlphaBeta() {

@@ -4,16 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
+import pages.browse_languages.languages.LanguagesPage;
 
 import java.util.List;
 
-public class IPage extends BaseAbcPage {
+public class IPage extends BaseAbcPage<LanguagesPage> {
 
     private final By ALL_TR_I_LANGUAGES = By.xpath("//tr[@onmouseover]");
 
     public IPage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public String getCurrentUrl() {

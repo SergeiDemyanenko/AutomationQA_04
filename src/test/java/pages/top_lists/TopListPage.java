@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.languages.LanguagesPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TopListPage extends _TopPage {
+public class TopListPage extends _TopPage<LanguagesPage> {
 
     private final By H2_TABLE_NAME_TOP_LIST = By.xpath("//div[@id='main']/h2");
     private final By TOP_LIST_REAL_SUBMENU = By.linkText("Top Rated Real");
@@ -22,6 +23,11 @@ public class TopListPage extends _TopPage {
     public TopListPage(WebDriver driver) {
 
        super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public WebElement getTopListRealSubmenu() {

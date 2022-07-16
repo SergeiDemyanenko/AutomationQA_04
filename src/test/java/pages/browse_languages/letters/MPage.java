@@ -4,9 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.languages.LanguageMathematicaPage;
+import pages.browse_languages.languages.MathematicaPage;
+import pages.browse_languages.languages.LanguagesPage;
 
-public class MPage extends BaseAbcPage {
+public class MPage extends BaseAbcPage<LanguagesPage> {
 
     private final By MATHEMATICA_LINK = By.xpath("//a[@href='language-mathematica-1090.html']");
     private final By LANGUAGE_MACROX = By.xpath("//a[@href='language-macrox-371.html']");
@@ -15,6 +16,11 @@ public class MPage extends BaseAbcPage {
     public MPage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public WebElement getMathematicaLink() {
@@ -32,10 +38,10 @@ public class MPage extends BaseAbcPage {
         return getDriver().findElement(LANGUAGE_MySQL);
     }
 
-    public LanguageMathematicaPage clickMathematicaPage() {
+    public MathematicaPage clickMathematicaPage() {
         getMathematicaLink().click();
 
-        return new LanguageMathematicaPage(getDriver());
+        return new MathematicaPage(getDriver());
     }
 
     public String getLanguageMacroXVerify() {

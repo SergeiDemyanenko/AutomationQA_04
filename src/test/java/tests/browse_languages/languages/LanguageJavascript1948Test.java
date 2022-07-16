@@ -2,7 +2,8 @@ package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.LanguageJavascript1948Page;
+import pages.browse_languages.languages.Javascript1948Page;
+import pages.browse_languages.languages.LanguagesPage;
 import runner.BaseTest;
 
 public class LanguageJavascript1948Test extends BaseTest {
@@ -15,14 +16,10 @@ public class LanguageJavascript1948Test extends BaseTest {
                 .clickJSubmenu()
                 .clickLanguage("JavaScript");
 
-        LanguageJavascript1948Page js = new LanguageJavascript1948Page(getDriver());
-
+        LanguagesPage js = new LanguagesPage(getDriver());
         String JavaScriptTitle = js.getTitle();
+        js.clickInfoLink();
 
-        js.clickWikiLink();
-
-        String WikipediaTitle = js.getTitle();
-
-        Assert.assertNotEquals(JavaScriptTitle, WikipediaTitle);
+        Assert.assertNotEquals(JavaScriptTitle, getExternalPageURL());
     }
 }

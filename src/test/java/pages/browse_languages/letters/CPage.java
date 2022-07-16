@@ -5,10 +5,15 @@ import pages.browse_languages.BaseAbcPage;
 
 import pages.browse_languages.languages.LanguagesPage;
 
-public class CPage extends BaseAbcPage<LangPage> {
+public class CPage extends BaseAbcPage<LanguagesPage> {
 
     public CPage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return new LanguagesPage(getDriver());
     }
 }

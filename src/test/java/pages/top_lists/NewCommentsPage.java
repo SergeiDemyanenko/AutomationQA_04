@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.languages.LanguagesPage;
 
 public class NewCommentsPage extends _TopPage {
 
@@ -15,9 +16,9 @@ public class NewCommentsPage extends _TopPage {
         super (driver);
     }
 
-    public String getText(WebElement element) {
-
-        return element.getText();
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public WebElement getMainP() {

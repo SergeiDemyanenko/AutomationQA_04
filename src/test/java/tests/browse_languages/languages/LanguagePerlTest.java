@@ -2,7 +2,7 @@ package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.LanguagePerl737Page;
+import pages.browse_languages.languages.Perl737Page;
 import runner.BaseTest;
 
 public class LanguagePerlTest extends BaseTest {
@@ -21,7 +21,7 @@ public class LanguagePerlTest extends BaseTest {
                 .clickPerlLanguage()
                 .getPerlLanguageText();
 
-        LanguagePerl737Page lp = new LanguagePerl737Page(getDriver());
+        Perl737Page lp = new Perl737Page(getDriver());
 
         String actualPerlLanguageDate = lp.getPerlLanguageDataText();
         String actualPerlLanguageAuthor = lp.getAuthorAndrewSavigeText();

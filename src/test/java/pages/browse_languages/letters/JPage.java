@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.languages.LanguageJava3Page;
+import pages.browse_languages.languages.Java3Page;
+import pages.browse_languages.languages.LanguagesPage;
 
 import java.util.List;
 
-public class JPage extends BaseAbcPage {
+public class JPage extends BaseAbcPage<LanguagesPage> {
 
     private final By lINK_LANGUAGE_JAVA_3 = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
 
@@ -17,16 +18,21 @@ public class JPage extends BaseAbcPage {
         super(driver);
     }
 
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
+    }
+
     public WebElement getLinkLanguageJava3() {
 
         return getDriver().findElement(lINK_LANGUAGE_JAVA_3);
     }
 
-    public LanguageJava3Page clickLinkLanguageJava3() {
+    public Java3Page clickLinkLanguageJava3() {
 
         getLinkLanguageJava3().click();
 
-        return new LanguageJava3Page(getDriver());
+        return new Java3Page(getDriver());
     }
 
     public List<String> getH2MainAndPTagText() {
