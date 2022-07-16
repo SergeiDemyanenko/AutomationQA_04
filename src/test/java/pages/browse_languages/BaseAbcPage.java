@@ -3,12 +3,12 @@ package pages.browse_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.MainPage;
+import pages.BaseTablePage;
 import pages.browse_languages.letters.*;
 
 import java.util.List;
 
-public abstract class BaseAbcPage extends MainPage {
+public abstract class BaseAbcPage extends BaseTablePage {
 
     private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
 

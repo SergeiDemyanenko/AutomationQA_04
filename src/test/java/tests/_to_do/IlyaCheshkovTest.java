@@ -3,9 +3,7 @@ package tests._to_do;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.letters.APage;
 import pages.browse_languages.letters.IPage;
-import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 import java.util.ArrayList;

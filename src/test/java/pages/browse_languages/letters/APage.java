@@ -3,9 +3,10 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.BaseAbcPage;
 import pages.browse_languages.languages.AlphaBetaPage;
 
-public class APage extends _LettersPage {
+public class APage extends BaseAbcPage {
 
     private final By ALPHABETA_LINK = By.linkText("AlphaBeta");
 

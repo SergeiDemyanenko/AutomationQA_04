@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LanguageMathematicaPage extends _LanguagesPage {
+public class LanguageMathematicaPage extends BaseLanguagesPage {
 
     private final By TD_TABLE_BRENTON_BOSTICK = By.xpath("//table[@style='margin: 7px; padding: 0;;']/tbody[1]/tr[2]/td[2]");
     private final By TD_TABLE_DATE = By.xpath("//table[@style='margin: 7px; padding: 0;;']/tbody/tr[1]/td[last()]");

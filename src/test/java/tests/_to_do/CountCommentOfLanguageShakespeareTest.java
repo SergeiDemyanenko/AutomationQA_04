@@ -3,8 +3,6 @@ package tests._to_do;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.letters.SPage;
-import pages.browse_languages.letters._LettersPage;
 import runner.BaseTest;
 
 public class CountCommentOfLanguageShakespeareTest extends BaseTest {

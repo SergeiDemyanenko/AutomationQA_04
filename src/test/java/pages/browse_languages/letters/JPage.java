@@ -3,11 +3,12 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.BaseAbcPage;
 import pages.browse_languages.languages.LanguageJava3Page;
 
 import java.util.List;
 
-public class JPage extends _LettersPage {
+public class JPage extends BaseAbcPage {
 
     private final By lINK_LANGUAGE_JAVA_3 = By.xpath("//table[@id='category']//a[@href='language-java-3.html']");
 

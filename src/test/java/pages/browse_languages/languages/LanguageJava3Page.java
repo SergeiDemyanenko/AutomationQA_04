@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LanguageJava3Page extends _LanguagesPage {
+public class LanguageJava3Page extends BaseLanguagesPage {
 
     private final By ALTERNATIVE_VERSIONS = By.xpath("//table[@id='category']//tr[@onmouseover]");
     private final By OBJECT_ORIENTED_VERSION = By.xpath("//div[@id='main']/p[text()='(object-oriented version)']");

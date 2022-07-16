@@ -9,7 +9,7 @@ import pages.browse_languages.BaseAbcPage;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class _LanguagesPage extends BaseAbcPage {
+public abstract class BaseLanguagesPage extends BaseAbcPage {
 
     private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By H2_VOTING = By.xpath("//div[@id='voting']/h2[1]");
@@ -24,7 +24,7 @@ public abstract class _LanguagesPage extends BaseAbcPage {
     private final By DEL_ICIO_US_ICON = By.xpath("//a[@title='del_icio_us']");
     private final By REDDIT_ICON = By.xpath("//a[@title='reddit']");
 
-    public _LanguagesPage(WebDriver driver) {
+    public BaseLanguagesPage(WebDriver driver) {
         super(driver);
     }
 

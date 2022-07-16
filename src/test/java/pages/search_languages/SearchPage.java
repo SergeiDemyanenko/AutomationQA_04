@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.BaseTablePage;
 import pages.MainPage;
 import pages.browse_languages.languages.LanguagePerl737Page;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage extends MainPage {
+public class SearchPage extends BaseTablePage {
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
 

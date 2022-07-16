@@ -3,8 +3,9 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.BaseAbcPage;
 
-public class ZPage extends _LettersPage {
+public class ZPage extends BaseAbcPage {
 
     public ZPage(WebDriver driver) {
 

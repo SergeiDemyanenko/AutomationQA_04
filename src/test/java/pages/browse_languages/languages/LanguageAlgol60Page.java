@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LanguageAlgol60Page extends _LanguagesPage {
+public class LanguageAlgol60Page extends BaseLanguagesPage {
 
     private final By LINK_ALGOL_60_LANGUAGE_SITE = By.xpath("//a[@href='language-algol60-1367.html']");
 

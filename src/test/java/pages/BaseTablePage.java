@@ -1,14 +1,13 @@
-package pages.browse_languages.letters;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.browse_languages.BaseAbcPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class _LettersPage extends BaseAbcPage {
+public abstract class BaseTablePage extends MainPage {
 
     private final By P_TAG_WITH_TEXT = By.xpath("//table[@id='category']/preceding-sibling::p");
     private final By TR_TAGS = By.xpath("//table[@id='category']/tbody/tr[@onmouseover]");
@@ -17,8 +16,7 @@ public abstract class _LettersPage extends BaseAbcPage {
     private final By TD_LANGUAGE_NAMES = By.xpath("//table[@id='category']//tr/td[1]");
     private final By TITLES_TABLE = By.xpath("//table[@id='category']/tbody/tr/th");
 
-    protected _LettersPage(WebDriver driver) {
-
+    public BaseTablePage(WebDriver driver) {
         super(driver);
     }
 

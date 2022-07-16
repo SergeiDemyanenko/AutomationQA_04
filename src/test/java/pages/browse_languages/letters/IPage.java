@@ -3,10 +3,11 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.BaseAbcPage;
 
 import java.util.List;
 
-public class IPage extends _LettersPage {
+public class IPage extends BaseAbcPage {
 
     private final By ALL_TR_I_LANGUAGES = By.xpath("//tr[@onmouseover]");
 

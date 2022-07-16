@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LanguagePerl737Page extends _LanguagesPage {
+public class LanguagePerl737Page extends BaseLanguagesPage {
 
     private final By PERL_LANGUAGE = By.xpath("//div[@id='main']/h2");
     private final By DATE = By.xpath("//tbody/tr/td[text()='06/04/05']");

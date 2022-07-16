@@ -1,8 +1,9 @@
 package pages.browse_languages.letters;
 
 import org.openqa.selenium.WebDriver;
+import pages.browse_languages.BaseAbcPage;
 
-public class RPage extends _LettersPage {
+public class RPage extends BaseAbcPage {
 
     public RPage(WebDriver driver) {
 

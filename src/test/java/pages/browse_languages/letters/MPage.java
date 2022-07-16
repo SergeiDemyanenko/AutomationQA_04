@@ -3,9 +3,10 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.BaseAbcPage;
 import pages.browse_languages.languages.LanguageMathematicaPage;
 
-public class MPage extends _LettersPage {
+public class MPage extends BaseAbcPage {
 
     private final By MATHEMATICA_LINK = By.xpath("//a[@href='language-mathematica-1090.html']");
     private final By LANGUAGE_MACROX = By.xpath("//a[@href='language-macrox-371.html']");

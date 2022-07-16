@@ -148,6 +148,16 @@ public abstract class MainPage extends BasePage {
         return getText(getFooterBar());
     }
 
+    public String getFullLinkSearchLanguagesMenu() {
+
+        return getSearchMenu().getAttribute("href");
+    }
+
+    public String getFullLinkFooterSearchLanguages() {
+
+        return getFooterSearch().getAttribute("href");
+    }
+
     public StartPage clickStartMenu() {
         getStartMenu().click();
 
@@ -207,15 +217,5 @@ public abstract class MainPage extends BasePage {
         getFooterSubmitNewLanguage().click();
 
         return new SubmitNewLanguagePage(getDriver());
-    }
-
-    public String getFullLinkSearchLanguagesMenu() {
-
-        return getSearchMenu().getAttribute("href");
-    }
-
-    public String getFullLinkFooterSearchLanguages() {
-
-        return getFooterSearch().getAttribute("href");
     }
 }

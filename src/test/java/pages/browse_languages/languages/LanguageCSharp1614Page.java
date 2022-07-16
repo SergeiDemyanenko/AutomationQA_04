@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LanguageCSharp1614Page extends _LanguagesPage {
+public class LanguageCSharp1614Page extends BaseLanguagesPage {
 
     private final By A_LINKS_TABLE = By.xpath("//table[@id='category']/tbody/tr/td/a");
 

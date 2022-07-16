@@ -3,9 +3,10 @@ package pages.browse_languages.letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.browse_languages.BaseAbcPage;
 import pages.browse_languages.languages.LanguagePython808Page;
 
-public class PPage extends _LettersPage {
+public class PPage extends BaseAbcPage {
 
     private final By PYTHON_LANGUAGE = By.xpath("//a[@href='language-python-808.html']");
 

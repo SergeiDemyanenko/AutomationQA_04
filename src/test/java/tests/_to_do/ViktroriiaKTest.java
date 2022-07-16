@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.letters.AbcPage;
-import pages.browse_languages.letters.UPage;
-import pages.browse_languages.letters._LettersPage;
 import pages.start.StartPage;
 import pages.top_lists.TopListPage;
 import runner.BaseTest;
