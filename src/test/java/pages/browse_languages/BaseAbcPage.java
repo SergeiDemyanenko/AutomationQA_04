@@ -189,9 +189,10 @@ public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
         getASubmenu().click();
     }
 
-    public void clickBSubmenu() {
-
+    public BPage clickBSubmenu() {
         getBSubmenu().click();
+
+        return new BPage(getDriver());
     }
 
     public CPage clickCSubmenu() {
