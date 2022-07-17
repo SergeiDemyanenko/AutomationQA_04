@@ -37,10 +37,10 @@ public class SubmitNewLanguageTest extends BaseTest {
     @Test
     public void testIncludesNewLanguageCategory() {
 
-        List<String> expectedResult = new ArrayList<>();
-        expectedResult.add("real language");
-        expectedResult.add("esoteric language");
-        expectedResult.add("assembly language");
+       final List<String> expectedIncludesNewLanguageCategory = new ArrayList<>();
+        expectedIncludesNewLanguageCategory.add("real language");
+        expectedIncludesNewLanguageCategory.add("esoteric language");
+        expectedIncludesNewLanguageCategory.add("assembly language");
 
       List <String> actualIncludesNewLanguageCategory =
                        openBaseURL()
@@ -48,36 +48,36 @@ public class SubmitNewLanguageTest extends BaseTest {
                       .clickCategoryName()
                       .getCategoryText();
 
-        Assert.assertEquals(actualIncludesNewLanguageCategory,expectedResult);
+        Assert.assertEquals(actualIncludesNewLanguageCategory,expectedIncludesNewLanguageCategory);
     }
 
     @Test
     public void testErrorMessageInvalidSecCode() {
 
-        String expectedResult = "Error: Invalid security code.";
+       final String expectedErrorMessageInvalidSecCode = "Error: Invalid security code.";
 
         String actuallyErrorMessageInvalidSecCode =
                 openBaseURL()
                         .clickSubmitNewLanguageMenu()
-                        .fillAutorName()
-                        .fillLunguageName()
+                        .fillAuthorName()
+                        .fillLanguageName()
                         .fillEmailName()
                         .clickCategoryName()
                         .clickCategoryAssemblyLanguage()
-                        .fillSecutityCode()
+                        .fillSecurityCode()
                         .fillCodeName()
                         .clickButtonSubmitLanguage()
                         .getErrorMessageInvalidSecCodeText();
 
-        Assert.assertEquals(actuallyErrorMessageInvalidSecCode,expectedResult);
+        Assert.assertEquals(actuallyErrorMessageInvalidSecCode,expectedErrorMessageInvalidSecCode);
     }
 
     @Test
     public void testAttributeSrcCaptcha() {
 
-        String expectedAttributeSrcCaptcha = "http://www.99-bottles-of-beer.net/captcha.php";
+       final String expectedAttributeSrcCaptcha = "http://www.99-bottles-of-beer.net/captcha.php";
 
-        String actualAttributeSrcCaptcha =
+       String actualAttributeSrcCaptcha =
                 openBaseURL()
                         .clickSubmitNewLanguageMenu()
                         .getAttributeSrcOfCaptcha();
