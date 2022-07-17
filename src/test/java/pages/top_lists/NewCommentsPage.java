@@ -3,12 +3,10 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
 import pages.browse_languages.languages.LanguagesPage;
 
-public class NewCommentsPage extends _TopPage {
+public class NewCommentsPage extends BaseTopListPage<LanguagesPage> {
 
-    private final By H2_HEADER = By.xpath("//div[@id='main']/h2");
     private final By MAIN_P = By.xpath("//h2[text()='New Comments']/following-sibling::p[1]");
 
     public NewCommentsPage(WebDriver driver) {
@@ -18,6 +16,7 @@ public class NewCommentsPage extends _TopPage {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 
@@ -29,15 +28,5 @@ public class NewCommentsPage extends _TopPage {
     public String getTextMainP() {
 
         return getText(getMainP());
-    }
-
-    public WebElement getH2Header() {
-
-        return getDriver().findElement(H2_HEADER);
-    }
-
-    public String getH2HeaderText() {
-
-        return getText(getH2Header());
     }
 }

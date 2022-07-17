@@ -4,9 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.letters.JPage;
 import runner.BaseTest;
-
 import java.util.List;
-
 import static runner.TestUtils.getTrWithRequiredLanguage;
 
 public class JTest extends BaseTest {
@@ -83,7 +81,7 @@ public class JTest extends BaseTest {
 
         JPage j = new JPage(getDriver());
 
-        j.getRandomTDLinks().click();
+        j.getRandomTdLink().click();
 
         String newUrl = getDriver().getCurrentUrl();
 
