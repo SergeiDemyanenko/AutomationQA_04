@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.TestUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static runner.TestUtils.createStringBuilder;
@@ -15,16 +16,22 @@ import static runner.TestUtils.getRandomStr;
 
 public class SignV2Page extends BaseGuestbookPage {
 
-    private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
-    private final By ERROR_MESSAGE_TAG_FONT = By.xpath("//div[@id='main']/p/b");
-    private final By INPUT_HOMEPAGE = By.xpath("//input[@name='homepage']");
-    private final By INPUT_NAME = By.xpath("//input[@name='name']");
-    private final By INPUT_LOCATION = By.xpath("//input[@name='location']");
-    private final By INPUT_EMAIL = By.xpath("//input[@name='email']");
-    private final By INPUT_CAPTCHA = By.xpath("//input[@name='captcha']");
+    private final String INPUT_PATH = "//input[@name=";
+    private final By INPUT_HOMEPAGE = By.xpath(INPUT_PATH + "'homepage']");
+    private final By INPUT_NAME = By.xpath(INPUT_PATH + "'name']");
+    private final By INPUT_LOCATION = By.xpath(INPUT_PATH + "'location']");
+    private final By INPUT_EMAIL = By.xpath(INPUT_PATH + "'email']");
+    private final By INPUT_CAPTCHA = By.xpath(INPUT_PATH+ "'captcha']");
+
+    private final String ERROR_PATH = "//div[@id='main']/p";
+    private final By ERROR_MESSAGE = By.xpath(ERROR_PATH);
+    private final By ERROR_MESSAGE_TAG_FONT = By.xpath(ERROR_PATH + "/b");
+
     private final By INPUT_COMMENT = By.xpath("//textarea[@name='comment']");
     private final By BUTTON_SUBMIT = By.xpath("//input[@type='submit']");
     private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
+    private final By P_ADDENTRY = By.xpath("//form[@id='addentry']/p/strong");
+
 
     WebDriverWait wait = new WebDriverWait(getDriver(), 500);
 
@@ -38,34 +45,19 @@ public class SignV2Page extends BaseGuestbookPage {
         return wait;
     }
 
-    public String getText(WebElement element) {
-
-        return element.getText();
-    }
-
-    public String getAttribute(WebElement element, String attribute) {
-
-        return element.getAttribute(attribute);
-    }
-
-    public void inputText(WebElement element, String inputText) {
-        element.sendKeys(inputText);
-    }
-
-    public String getTagName(WebElement element) {
-
-        return element.getTagName();
-    }
-
     public WebElement getButtonSubmit() {
 
         return getDriver().findElement(BUTTON_SUBMIT);
     }
 
-    public SignV2Page clickButtonSubmit() {
-        getButtonSubmit().click();
+    protected WebElement getInputHomepage2() {
 
-        return this;
+        return getDriver().findElement(INPUT_HOMEPAGE);
+    }
+
+    protected WebElement getInputCaptcha() {
+
+        return getDriver().findElement(INPUT_CAPTCHA);
     }
 
     public WebElement getErrorMessage() {
@@ -78,9 +70,59 @@ public class SignV2Page extends BaseGuestbookPage {
         return getText(getErrorMessage());
     }
 
-    public WebElement getInputHomepage() {
+    protected WebElement getInputHomepage() {
 
         return getDriver().findElement(INPUT_HOMEPAGE);
+    }
+
+    protected WebElement getInputName() {
+
+        return getDriver().findElement(INPUT_NAME);
+    }
+
+    protected WebElement getInputLocation() {
+
+        return getDriver().findElement(INPUT_LOCATION);
+    }
+
+    protected WebElement getInputEmail() {
+
+        return getDriver().findElement(INPUT_EMAIL);
+    }
+
+    protected WebElement getInputComment() {
+
+        return getDriver().findElement(INPUT_COMMENT);
+    }
+
+    protected String getTagName(WebElement element) {
+
+        return element.getTagName();
+    }
+
+    public String getErrorMessageTagFont() {
+
+        return getTagName(getDriver().findElement(ERROR_MESSAGE_TAG_FONT));
+    }
+
+    protected List<WebElement> getListImgCaptcha() {
+
+        return getDriver().findElements(IMG_CAPTCHA_PHP);
+    }
+
+    protected List<WebElement> getListPAddentry(){
+
+        return getDriver().findElements(P_ADDENTRY);
+    }
+
+    public String getText(WebElement element) {
+
+        return element.getText();
+    }
+
+    protected String getAttribute(WebElement element, String attribute) {
+
+        return element.getAttribute(attribute);
     }
 
     public String getInputHomepageAttribute() {
@@ -88,9 +130,14 @@ public class SignV2Page extends BaseGuestbookPage {
         return getAttribute(getInputHomepage(), "value");
     }
 
-    public WebElement getInputName() {
+    protected void inputText(WebElement element, String inputText) {
+        element.sendKeys(inputText);
+    }
 
-        return getDriver().findElement(INPUT_NAME);
+    public SignV2Page clickButtonSubmit() {
+        getButtonSubmit().click();
+
+        return this;
     }
 
     public SignV2Page setInputName(String name) {
@@ -104,11 +151,6 @@ public class SignV2Page extends BaseGuestbookPage {
         inputText(getInputName(), name);
     }
 
-    public WebElement getInputLocation() {
-
-        return getDriver().findElement(INPUT_LOCATION);
-    }
-
     public void inputLocation(String location) {
         inputText(getInputLocation(), location);
     }
@@ -116,11 +158,6 @@ public class SignV2Page extends BaseGuestbookPage {
     public void setInputLocation(String location) {
         getInputLocation().click();
         getInputLocation().sendKeys(location);
-    }
-
-    public WebElement getInputEmail() {
-
-        return getDriver().findElement(INPUT_EMAIL);
     }
 
     public void inputEmail(String email) {
@@ -137,19 +174,9 @@ public class SignV2Page extends BaseGuestbookPage {
         inputText(getInputHomepage(), homepage);
     }
 
-    public WebElement getInputHomepage2() {
-
-        return getDriver().findElement(INPUT_HOMEPAGE);
-    }
-
     public void setInputHomepage(String homepage) {
         getInputHomepage2().click();
         getInputHomepage2().sendKeys(homepage);
-    }
-
-    public WebElement getInputCaptcha() {
-
-        return getDriver().findElement(INPUT_CAPTCHA);
     }
 
     public void inputCaptcha(int length) {
@@ -161,11 +188,6 @@ public class SignV2Page extends BaseGuestbookPage {
         getInputCaptcha().sendKeys(capcha);
     }
 
-    public WebElement getInputComment() {
-
-        return getDriver().findElement(INPUT_COMMENT);
-    }
-
     public void inputComment(String comment) {
         inputText(getInputComment(), comment);
     }
@@ -175,11 +197,6 @@ public class SignV2Page extends BaseGuestbookPage {
         getInputComment().sendKeys(comment);
 
         return this;
-    }
-
-    public String getErrorMessageTagFont() {
-
-        return getTagName(getDriver().findElement(ERROR_MESSAGE_TAG_FONT));
     }
 
     public String getErrorMessageAttributeStyle() {
@@ -216,17 +233,10 @@ public class SignV2Page extends BaseGuestbookPage {
                 .toString();
     }
 
-    protected List<WebElement> getListImgCaptcha() {
-
-        return getDriver().findElements(IMG_CAPTCHA_PHP);
-    }
-
     public boolean isImgCaptchaDisplayed() {
-
         if (getListImgCaptcha().size() != 0) {
 
             return getListImgCaptcha().get(0).isDisplayed();
-
         } else {
 
             return false;
@@ -315,5 +325,17 @@ public class SignV2Page extends BaseGuestbookPage {
                 .append(ln)
                 .append(getTextFromPrompt5())
                 .toString();
+    }
+
+    public String getTextFromFields() {
+        List<String> list = new ArrayList<>();
+
+        for (WebElement p : getListPAddentry()) {
+            list.add(p.getText());
+        }
+
+        return list.toString()
+                .replace("[", "")
+                .replace("]" ,"");
     }
 }
