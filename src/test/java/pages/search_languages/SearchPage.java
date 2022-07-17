@@ -12,20 +12,13 @@ import java.util.List;
 
 public class SearchPage extends BaseTablePage<LanguagesPage> {
 
-    private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
-
+    private final By NEW_SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
     private final By H2_MAIN = By.xpath("//div[@id='main']/h2");
-
-    private final By SEARCH_BOX = By.xpath("//input[@name='search']");
-
-    private final By SUBMIT_SEARCH = By.name("submitsearch");
-
+    private final By SEARCH_FIELD = By.xpath("//input[@name='search']");
+    private final By SUBMIT_SEARCH_BUTTON = By.name("submitsearch");
     private final By PERL_LANGUAGE = By.linkText("Perl (bottled by Acme::EyeDrops)");
-
     private final By JAVA_LANGUAGES =
             By.xpath("//td/a[contains(@href, 'language')and (text()='Java' or contains(text(), 'Java ('))]");
-
-    private final By TABLE_JAVA_SEARCH_LANGUAGES = By.xpath("//tbody/tr");
 
     public SearchPage(WebDriver driver) {
 
@@ -37,20 +30,9 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
         return null;
     }
 
-    public String getText(WebElement element) {
+    public WebElement getNewSearchSubmenu() {
 
-        return element.getText();
-    }
-
-    public WebElement getSearchSubmenu() {
-
-        return getDriver().findElement(SEARCH_SUBMENU);
-    }
-
-    public SearchPage clickSearchSubmenu() {
-        getSearchSubmenu().click();
-
-        return new SearchPage(getDriver());
+        return getDriver().findElement(NEW_SEARCH_SUBMENU);
     }
 
     public WebElement getH2Main() {
@@ -58,32 +40,14 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
         return getDriver().findElement(H2_MAIN);
     }
 
-    public String getH2MainText() {
+    public WebElement getSearchField() {
 
-        return getText(getH2Main());
+        return getDriver().findElement(SEARCH_FIELD);
     }
 
-    public WebElement getSearchBox() {
+    public WebElement getSubmitSearchButton() {
 
-        return getDriver().findElement(SEARCH_BOX);
-    }
-
-    public SearchPage getSearchBoxSendKey(String name) {
-        getSearchBox().sendKeys(name);
-
-        return new SearchPage(getDriver());
-    }
-
-    public WebElement getSubmitSearch() {
-
-        return getDriver().findElement(SUBMIT_SEARCH);
-    }
-
-    public SearchPage clickSubmitSearch() {
-
-        getSubmitSearch().click();
-
-        return new SearchPage(getDriver());
+        return getDriver().findElement(SUBMIT_SEARCH_BUTTON);
     }
 
     public WebElement getPerlLanguage() {
@@ -91,21 +55,20 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
         return getDriver().findElement(PERL_LANGUAGE);
     }
 
-    public Perl737Page clickPerlLanguage() {
-        getPerlLanguage().click();
-
-        return new Perl737Page(getDriver());
-    }
-
-    public List<WebElement> getJavaATags() {
+    public List<WebElement> getJavaLanguages() {
 
         return getDriver().findElements(JAVA_LANGUAGES);
+    }
+
+    public String getH2MainText() {
+
+        return getText(getH2Main());
     }
 
     public List<String> getOnlyJavaSearchAText() {
         List<String> allJavaATags = new ArrayList<>();
 
-        for (WebElement javaSearchATag : getJavaATags()) {
+        for (WebElement javaSearchATag : getJavaLanguages()) {
             allJavaATags.add(getText(javaSearchATag));
         }
 
@@ -119,22 +82,6 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
         }
 
         return actualResult.toString();
-    }
-
-    public List<WebElement> getTableJavaSearchLanguages() {
-
-        return getDriver().findElements(TABLE_JAVA_SEARCH_LANGUAGES);
-    }
-
-    public int countLanguagesJavaSearch() {
-
-        return getTableJavaSearchLanguages().size() - 1;
-    }
-
-    public SearchPage sendKeyToSearchBox(String name) {
-        getSearchBox().sendKeys(name);
-
-        return new SearchPage(getDriver());
     }
 
     public String getExpectedResult(String languageName) {
@@ -151,5 +98,30 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
         }
 
         return null;
+    }
+
+    public SearchPage enterTextSearchField(String name) {
+        getSearchField().sendKeys(name);
+
+        return this;
+    }
+
+    public SearchPage clickNewSearchSubmenu() {
+        getNewSearchSubmenu().click();
+
+        return this;
+    }
+
+    public SearchPage clickSubmitSearchButton() {
+
+        getSubmitSearchButton().click();
+
+        return this;
+    }
+
+    public Perl737Page clickPerlLanguage() {
+        getPerlLanguage().click();
+
+        return new Perl737Page(getDriver());
     }
 }

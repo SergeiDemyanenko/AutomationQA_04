@@ -17,7 +17,7 @@ public class SearchLanguagesTest extends BaseTest {
         String actualH2HeaderText =
                 openBaseURL()
                         .clickSearchLanguagesMenu()
-                        .clickSearchSubmenu()
+                        .clickNewSearchSubmenu()
                         .getH2MainText();
 
         Assert.assertEquals(actualH2HeaderText, expectedH2HeaderText);
@@ -29,10 +29,10 @@ public class SearchLanguagesTest extends BaseTest {
 
         int actualNumberOfJavaSearch = openBaseURL()
                 .clickSearchLanguagesMenu()
-                .clickSearchSubmenu()
-                .sendKeyToSearchBox(LANGUAGE_TO_SEARCH)
-                .clickSubmitSearch()
-                .countLanguagesJavaSearch();
+                .clickNewSearchSubmenu()
+                .enterTextSearchField(LANGUAGE_TO_SEARCH)
+                .clickSubmitSearchButton()
+                .getCountTrTags();
 
         Assert.assertEquals(actualNumberOfJavaSearch, expectedNumberOfJavaSearch);
     }
@@ -45,9 +45,9 @@ public class SearchLanguagesTest extends BaseTest {
 
         String actualJavaSearch = openBaseURL()
                 .clickSearchLanguagesMenu()
-                .clickSubmitSearch()
-                .sendKeyToSearchBox(LANGUAGE_TO_SEARCH)
-                .clickSubmitSearch()
+                .clickSubmitSearchButton()
+                .enterTextSearchField(LANGUAGE_TO_SEARCH)
+                .clickSubmitSearchButton()
                 .getStringTextFromJavaSearch();
 
         Assert.assertEquals(actualJavaSearch, expectedResult);
@@ -57,14 +57,14 @@ public class SearchLanguagesTest extends BaseTest {
     public void testSubmitSearchRefreshedWhenSubmitSearchClicked() {
         WebElement submitSearch = openBaseURL()
                 .clickSearchLanguagesMenu()
-                .getSubmitSearch();
+                .getSubmitSearchButton();
 
         SearchPage search = new SearchPage(getDriver());
-        WebElement secondSearchSubmit = search.getSubmitSearch();
+        WebElement secondSearchSubmit = search.getSubmitSearchButton();
         Assert.assertEquals(submitSearch, secondSearchSubmit);
 
-        search.clickSubmitSearch();
-        WebElement newSubmitSearch = search.getSubmitSearch();
+        search.clickSubmitSearchButton();
+        WebElement newSubmitSearch = search.getSubmitSearchButton();
 
         Assert.assertNotEquals(submitSearch, newSubmitSearch);
     }

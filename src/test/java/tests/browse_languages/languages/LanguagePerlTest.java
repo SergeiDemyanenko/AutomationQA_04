@@ -16,8 +16,8 @@ public class LanguagePerlTest extends BaseTest {
 
         openBaseURL()
                 .clickSearchLanguagesMenu()
-                .getSearchBoxSendKey("Perl")
-                .clickSubmitSearch()
+                .enterTextSearchField("Perl")
+                .clickSubmitSearchButton()
                 .clickPerlLanguage()
                 .getPerlLanguageText();
 
