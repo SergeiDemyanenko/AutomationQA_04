@@ -13,7 +13,7 @@ public class NewCommentsTest extends BaseTest {
         String actualH2HeaderText = openBaseURL()
                 .clickTopListsMenu()
                 .clickNewCommentsSubmenu()
-                .getH2HeaderText();
+                .getTextH2Main();
 
         Assert.assertEquals(actualH2HeaderText, expectedH2HeaderText);
     }

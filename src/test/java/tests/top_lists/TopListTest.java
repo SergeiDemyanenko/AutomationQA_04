@@ -13,7 +13,7 @@ public class TopListTest extends BaseTest {
         String actualResult =
                 openBaseURL()
                         .clickTopListsMenu()
-                                .getTextH2Header();
+                                .getTextH2Main();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -25,7 +25,7 @@ public class TopListTest extends BaseTest {
         int actualResult =
                 openBaseURL()
                         .clickTopListsMenu()
-                        .getCountTableLinks();
+                        .getCountTDLinks();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

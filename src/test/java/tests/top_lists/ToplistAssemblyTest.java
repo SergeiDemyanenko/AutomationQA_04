@@ -14,7 +14,7 @@ public class ToplistAssemblyTest extends BaseTest {
                 openBaseURL()
                         .clickTopListsMenu()
                         .clickTopListAssemblySubmenu()
-                        .getTextH2Header();
+                        .getTextH2Main();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -27,7 +27,7 @@ public class ToplistAssemblyTest extends BaseTest {
                 openBaseURL()
                         .clickTopListsMenu()
                         .clickTopListAssemblySubmenu()
-                        .countTrTags();
+                        .getCountTrTags();
 
         Assert.assertEquals(actualNumberOfLanguages, expectedNumberOfLanguages);
     }

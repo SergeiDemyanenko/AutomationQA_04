@@ -35,7 +35,7 @@ public abstract class BaseTablePage<LangPage> extends MainPage {
         return getDriver().findElements(TR_TAGS);
     }
 
-    public List<WebElement> getWebElementsTDLinks() {
+    public List<WebElement> getTDLinks() {
 
         return getDriver().findElements(TD_LINKS);
     }
@@ -63,12 +63,12 @@ public abstract class BaseTablePage<LangPage> extends MainPage {
 
     public int getCountTDLinks() {
 
-        return getWebElementsTDLinks().size();
+        return getTDLinks().size();
     }
 
     public List<String> getListStringTDLinks() {
 
-        List<WebElement> tDLink = getWebElementsTDLinks();
+        List<WebElement> tDLink = getTDLinks();
 
         List<String> listOfLanguages = new ArrayList<>();
 
@@ -91,6 +91,26 @@ public abstract class BaseTablePage<LangPage> extends MainPage {
         }
 
         return null;
+    }
+
+    public WebElement getRandomTdLink(){
+
+        return getTDLinks().get(randomIndex());
+    }
+
+    public WebElement getRandomTr() {
+
+        return getTrTags().get(randomIndex());
+    }
+
+    public int randomLanguage() {
+
+        return (int) (Math.random() * getCountTDLinks()) + 1;
+    }
+
+    public int randomIndex() {
+
+        return randomLanguage() - 1;
     }
 
     protected abstract LangPage createLangPage();
@@ -133,6 +153,11 @@ public abstract class BaseTablePage<LangPage> extends MainPage {
         }
 
         return allTrs;
+    }
+
+    public String getTextOneElementFromListTrs(int index){
+
+        return getTextListTrTags().get(index);
     }
 
     public String getTitlesTable() {

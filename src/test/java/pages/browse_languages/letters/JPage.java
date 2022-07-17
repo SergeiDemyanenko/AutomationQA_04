@@ -40,27 +40,7 @@ public class JPage extends BaseAbcPage<LanguagesPage> {
         return List.of(getH2MainText(), getTextPTag());
     }
 
-    public int randomLanguage() {
-
-        return (int) (Math.random() * getCountTDLinks()) + 1;
-    }
-
-    public int randomIndex() {
-
-        return randomLanguage() - 1;
-    }
-
-    public WebElement getRandomTr() {
-
-        return getTrTags().get(randomIndex());
-    }
-
-    public WebElement getRandomTDLinks(){
-
-        return getWebElementsTDLinks().get(randomIndex());
-    }
-
-     public String getTrText(String languageName) {
+    public String getTrText(String languageName) {
         StringBuilder actualResult = new StringBuilder();
 
         for (String tr : getTextListTrTags()) {

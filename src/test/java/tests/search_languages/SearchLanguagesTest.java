@@ -97,4 +97,20 @@ public class SearchLanguagesTest extends BaseTest {
         Assert.assertEquals(actualResultHeader, expectedResultSearch);
         Assert.assertEquals(actualResultFooter, expectedResultSearch);
     }
+
+    @Test
+    public void test1CEnterprizeSearch() {
+        final int expectedNumberOf1CEnterprize = 1;
+
+        int actualNumberOf1CEnterprize =
+                openBaseURL()
+                        .clickSearchLanguagesMenu()
+                        .clickSearchSubmenu()
+                        .sendKeyToSearchBox("1C Enterprize")
+                        .clickSubmitSearch()
+                        .getCountTrTags();
+
+        Assert.assertEquals(actualNumberOf1CEnterprize, expectedNumberOf1CEnterprize);
+
+    }
 }

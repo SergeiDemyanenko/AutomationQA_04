@@ -3,7 +3,7 @@ package pages.top_lists;
 import org.openqa.selenium.WebDriver;
 import pages.browse_languages.languages.LanguagesPage;
 
-public class TopListNewLanguagesThisMonthPage extends _TopPage<LanguagesPage> {
+public class TopListNewLanguagesThisMonthPage extends BaseTopListPage<LanguagesPage> {
 
     public TopListNewLanguagesThisMonthPage(WebDriver driver) {
 

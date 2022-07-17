@@ -25,7 +25,6 @@ public class APage extends BaseAbcPage<LanguagesPage> {
 
         return getDriver().findElement(ALPHABETA_LINK);
     }
-
     public AlphaBetaPage clickAlphaBeta() {
         getAlphaBeta().click();
 
