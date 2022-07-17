@@ -18,4 +18,18 @@ public class TophitsTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testTextTopHitsSubmenu() {
+
+        String expectedTextTopHitsSubmenu = "Top Hits";
+
+        String actualTextTopHitsSubmenu =
+                openBaseURL()
+                        .clickTopListsMenu()
+                        .clickTopHitsSubmenu()
+                        .getTextTopHitsSubmenu();
+
+        Assert.assertEquals(actualTextTopHitsSubmenu, expectedTextTopHitsSubmenu);
+    }
 }

@@ -34,4 +34,16 @@ public class InfoTest extends BaseTest {
 
         Assert.assertEquals(actualH2HeaderText,expectedH2HeaderText);
     }
+
+    @Test
+    public void testImage1Link() {
+
+        String expectedUrl = "http://www.99-bottles-of-beer.net/images/history1_full.png";
+
+        openBaseURL()
+                .clickHistorySubmenu()
+                .clickImageHistory1();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
+    }
 }

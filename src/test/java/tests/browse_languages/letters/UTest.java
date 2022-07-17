@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
+import java.util.List;
+
 public class UTest extends BaseTest {
 
     @Test
@@ -52,5 +54,24 @@ public class UTest extends BaseTest {
                 .getTextPTag();
 
         Assert.assertEquals(actualUSubmenuDescription, expectedUSubmenuDescription);
+    }
+
+    @Test
+    public void testTableHeader() {
+        final List<String> expectedTableHeader = List.of(
+                "Language",
+                "Author",
+                "Date",
+                "Comments",
+                "Rate"
+        );
+
+        List<String> actualTableHeader =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickUSubmenu()
+                        .getTextListThTags();
+
+        Assert.assertEquals(actualTableHeader, expectedTableHeader);
     }
 }

@@ -12,6 +12,7 @@ public class InfoPage extends BaseStartPage {
 
     private final By PRE_ELEMENTS = By.xpath("//div[@id='main']/pre");
     private static final By MIRRORS_1 = By.xpath("//div[@id='main']/p/a[@href='/mirrors/1/']");
+    private final By IMAGE_HISTORY1 = By.xpath("//div[@id='main']/p/a/img[@src='/images/history1_small.png']");
 
     public InfoPage(WebDriver driver){
 
@@ -28,6 +29,11 @@ public class InfoPage extends BaseStartPage {
         return getDriver().findElement(MIRRORS_1);
     }
 
+    public WebElement getImageHistory1() {
+
+        return getDriver().findElement(IMAGE_HISTORY1);
+    }
+    
     public String getLanguageBasicCode(String languageVersion) {
         List<String> listPreText = new ArrayList<>();
 
@@ -50,5 +56,9 @@ public class InfoPage extends BaseStartPage {
         getMirrors1().click();
 
         return new Mirrors1Page(getDriver());
+    }
+
+    public void clickImageHistory1(){
+        getImageHistory1().click();
     }
 }
