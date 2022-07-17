@@ -105,9 +105,9 @@ public class SearchLanguagesTest extends BaseTest {
         int actualNumberOf1CEnterprize =
                 openBaseURL()
                         .clickSearchLanguagesMenu()
-                        .clickSearchSubmenu()
-                        .sendKeyToSearchBox("1C Enterprize")
-                        .clickSubmitSearch()
+                        .clickNewSearchSubmenu()
+                        .enterTextSearchField("1C Enterprize")
+                        .clickSubmitSearchButton()
                         .getCountTrTags();
 
         Assert.assertEquals(actualNumberOf1CEnterprize, expectedNumberOf1CEnterprize);
