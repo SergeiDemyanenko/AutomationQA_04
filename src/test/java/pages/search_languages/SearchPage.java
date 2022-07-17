@@ -27,6 +27,7 @@ public class SearchPage extends BaseTablePage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 

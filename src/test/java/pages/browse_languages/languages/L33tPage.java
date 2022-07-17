@@ -2,11 +2,10 @@ package pages.browse_languages.languages;
 
 import org.openqa.selenium.WebDriver;
 
+public class L33tPage extends LanguagesPage {
 
-public class AlphaBetaPage extends LanguagesPage {
-
-    public AlphaBetaPage(WebDriver driver) {
-
+    public L33tPage(WebDriver driver) {
         super(driver);
     }
 }
+

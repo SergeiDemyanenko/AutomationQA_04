@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.languages.LanguagesPage;
 
-public class TopListTopHitsPage extends _TopPage<LanguagesPage> {
+public class TopListTopHitsPage extends BaseTopListPage<LanguagesPage> {
 
     private final By SHAKESPEARE_LANGUAGE = By.xpath("//a[@href='language-shakespeare-664.html']");
 
@@ -16,6 +16,7 @@ public class TopListTopHitsPage extends _TopPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 

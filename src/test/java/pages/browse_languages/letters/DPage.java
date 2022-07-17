@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import pages.browse_languages.BaseAbcPage;
 import pages.browse_languages.languages.LanguagesPage;
 
-
 public class DPage extends BaseAbcPage<LanguagesPage> {
 
     public DPage(WebDriver driver) {
@@ -14,6 +13,7 @@ public class DPage extends BaseAbcPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 }

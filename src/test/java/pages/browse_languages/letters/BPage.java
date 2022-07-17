@@ -12,6 +12,7 @@ public class BPage extends BaseAbcPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+    
         return null;
     }
 }

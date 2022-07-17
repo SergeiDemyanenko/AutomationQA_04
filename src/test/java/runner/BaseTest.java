@@ -2,7 +2,6 @@ package runner;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import pages.MainPage;
 import pages.start.StartPage;
 
 public abstract class BaseTest {

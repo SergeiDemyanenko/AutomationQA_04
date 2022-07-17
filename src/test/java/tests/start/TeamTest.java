@@ -31,7 +31,7 @@ public class TeamTest extends BaseTest {
         openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickGregorScheithauerLink();
+                .clickGregorScheithauerWebsiteLink();
 
         Assert.assertEquals(getExternalPageURL(), expectedTeamPageETasteOrgLink);
     }
@@ -57,7 +57,7 @@ public class TeamTest extends BaseTest {
         openBaseURL()
                 .clickStartMenu()
                 .clickTeamSubmenu()
-                .clickStefanSchelerLink();
+                .clickStefanSchelerWebsiteLink();
 
         Assert.assertEquals(getExternalPageURL(), expectedTeamPageStsSynfloodDeLink);
     }

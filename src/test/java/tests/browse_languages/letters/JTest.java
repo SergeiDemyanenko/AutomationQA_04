@@ -4,9 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.browse_languages.letters.JPage;
 import runner.BaseTest;
-
 import java.util.List;
-
 import static runner.TestUtils.getTrWithRequiredLanguage;
 
 public class JTest extends BaseTest {
@@ -83,7 +81,7 @@ public class JTest extends BaseTest {
 
         JPage j = new JPage(getDriver());
 
-        j.getRandomTDLinks().click();
+        j.getRandomTdLink().click();
 
         String newUrl = getDriver().getCurrentUrl();
 
@@ -115,5 +113,18 @@ public class JTest extends BaseTest {
         Assert.assertTrue(j.getRandomTr().isDisplayed());
         Assert.assertTrue(j.getRandomTr().isEnabled());
         Assert.assertFalse(j.getRandomTr().getText().isEmpty());
+    }
+
+    @Test
+    public void testIsBrowseLanguagesSubMenuJ() {
+        final String expectedResult = "All languages starting with the letter J are shown, sorted by Language.";
+
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickJSubmenu()
+                        .getTextPTag();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }

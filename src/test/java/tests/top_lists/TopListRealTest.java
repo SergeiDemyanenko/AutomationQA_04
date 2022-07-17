@@ -17,7 +17,7 @@ public class TopListRealTest extends BaseTest {
                 openBaseURL()
                         .clickTopListsMenu()
                         .clickTopListRealSubmenu()
-                        .getTextH2Header()
+                        .getTextH2Main()
                         .trim();
 
         Assert.assertEquals(actualText, expectedText);
@@ -31,7 +31,7 @@ public class TopListRealTest extends BaseTest {
                 openBaseURL()
                         .clickTopListsMenu()
                         .clickTopListRealSubmenu()
-                        .getH2Header()
+                        .getH2Main()
                         .getCssValue("color");
 
         Assert.assertEquals(actualColor, expectedColor);

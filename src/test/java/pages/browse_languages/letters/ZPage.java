@@ -15,6 +15,7 @@ public class ZPage extends BaseAbcPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
+
         return null;
     }
 
@@ -103,5 +104,4 @@ public class ZPage extends BaseAbcPage<LanguagesPage> {
 //
 //        return getH2Comments().getCssValue("font-weight");
 //    }
-
 }

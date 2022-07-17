@@ -8,7 +8,6 @@ public class Python808Page extends LanguagesPage {
 
     private final By PYTHON_LANGUAGE_INFO_LINK = By.xpath("//a[@href='http://www.python.org/']");
 
-
     public Python808Page(WebDriver driver) {
 
         super(driver);

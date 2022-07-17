@@ -20,7 +20,7 @@ public class IlyaCheshkovTest extends BaseTest {
 
         openBaseURL().clickBrowseLanguagesMenu().clickISubmenu();
 
-        List<WebElement> allTableLinks = i.getWebElementsTDLinks();
+        List<WebElement> allTableLinks = i.getTDLinks();
 
         List<String> expectedResult = new ArrayList<>();
         List<String> actualResult = new ArrayList<>();
