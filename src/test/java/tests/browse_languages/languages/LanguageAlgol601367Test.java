@@ -2,22 +2,20 @@ package tests.browse_languages.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.browse_languages.languages.LanguagesPage;
 import runner.BaseTest;
-
-import static runner.TestUtils.getTrWithRequiredLanguage;
 
 public class LanguageAlgol601367Test extends BaseTest {
     @Test
     public void testLanguageAlgol601367() {
-        String languageName = "Algol60";
 
-        String expectedLanguageAlgol601367 = getTrWithRequiredLanguage(languageName);
+                openBaseURL()
+                .clickBrowseLanguagesMenu().clickASubmenu().clickLanguage("Algol60");
 
-        String actualLanguageAlgol601367 = openBaseURL()
-                .clickBrowseLanguagesMenu()
-                .clickJSubmenu()
-                .getTrText(languageName);
 
-        Assert.assertEquals(actualLanguageAlgol601367, expectedLanguageAlgol601367);
+        LanguagesPage al601367 = new LanguagesPage(getDriver());
+        String algol601367Title = al601367.getH2VotingText();
+
+        Assert.assertNotEquals(algol601367Title, getExternalPageURL());
     }
 }
