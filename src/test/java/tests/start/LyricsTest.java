@@ -20,4 +20,16 @@ public class LyricsTest extends BaseTest {
 
         Assert.assertEquals(actualSongLyricsText, expectedSongLyricsText);
     }
+
+    @Test
+    public void testH2MainText() {
+        final String expectedSongTitle = "Lyrics of the song 99 Bottles of Beer";
+
+        String actualSongTitle =
+                openBaseURL()
+                        .clickSongLyricsSubmenu()
+                        .getH2MainText();
+
+        Assert.assertEquals(actualSongTitle, expectedSongTitle);
+    }
 }

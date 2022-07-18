@@ -2,7 +2,6 @@ package tests.main;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
 import runner.BaseTest;
 
 public class MainTest extends BaseTest {

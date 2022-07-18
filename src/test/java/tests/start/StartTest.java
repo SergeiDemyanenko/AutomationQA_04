@@ -166,4 +166,14 @@ public class StartTest extends BaseTest {
 
         Assert.assertEquals(actualTeamMembersLinkTitle, expectedTeamMembersLinkTitle);
     }
+
+    @Test
+    public void testPrivacySubmenuText(){
+        final String expectedPrivacySubmenuText = "Privacy";
+
+        String actualPrivacySubmenuText = openBaseURL()
+                .getPrivacySubmenuText();
+
+        Assert.assertEquals(actualPrivacySubmenuText,expectedPrivacySubmenuText);
+    }
 }

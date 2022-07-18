@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class LanguageShakespeareTest extends BaseTest {
+public class ShakespeareTest extends BaseTest {
 
     @Test
     public void testAndCompareShakespeareLanguageLinkFromTwoPages() {
@@ -23,5 +23,18 @@ public class LanguageShakespeareTest extends BaseTest {
                         .getAttribute("href");
 
         Assert.assertEquals(actualCompareShakespeareLanguageLinkFromTwoPages, expectedCompareShakespeareLanguageLinkFromTwoPages);
+    }
+
+    @Test
+    public void testNumberOfComments(){
+        final int expectedResult = 6;
+
+        int actualNumberOfComments =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickSSubmenu()
+                        .clickShakespeareLanguage()
+                                .countComments();
+        Assert.assertEquals(actualNumberOfComments, expectedResult);
     }
 }
