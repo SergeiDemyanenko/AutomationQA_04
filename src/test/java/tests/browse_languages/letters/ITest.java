@@ -13,13 +13,12 @@ import java.util.List;
 public class ITest extends BaseTest {
 
     public void testIPageLanguagesCount() {
-
         final int expectedResult = 44;
 
         int actualResult = openBaseURL().
                 clickBrowseLanguagesMenu().
                 clickISubmenu().
-                getNumberOfLanguages();
+                getCountTrTags();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -28,11 +27,11 @@ public class ITest extends BaseTest {
     public void testSubmenuCategoryI() {
         final String expectedSubmenuCategoryI = "I";
 
-        String actualubmenuCategoryI = openBaseURL()
+        String actualSubmenuCategoryI = openBaseURL()
                 .clickBrowseLanguagesMenu()
                 .getISubmenuText();
 
-        Assert.assertEquals(actualubmenuCategoryI, expectedSubmenuCategoryI);
+        Assert.assertEquals(actualSubmenuCategoryI, expectedSubmenuCategoryI);
 
     }
 
@@ -59,18 +58,6 @@ public class ITest extends BaseTest {
                 .getTextPTag();
 
         Assert.assertEquals(actualISubmenuDescription, expectedISubmenuDescription);
-    }
-
-    @Test
-    public void testIPageTableHeaderText() {
-        final String expectedIPageTableHeaderText = "Language Author Date Comments Rate";
-
-        String actualIPageTableHeaderText = openBaseURL()
-                .clickBrowseLanguagesMenu()
-                .clickISubmenu()
-                .getTextStringThTags();
-
-        Assert.assertEquals(actualIPageTableHeaderText, expectedIPageTableHeaderText);
     }
 
     @Test
