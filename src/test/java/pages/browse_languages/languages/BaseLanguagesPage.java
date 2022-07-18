@@ -22,6 +22,7 @@ public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> 
     private final By DIGG_ICON = By.xpath("//a[@title='digg']");
     private final By DEL_ICIO_US_ICON = By.xpath("//a[@title='del_icio_us']");
     private final By REDDIT_ICON = By.xpath("//a[@title='reddit']");
+    private final By NUMBER_OF_COMMENTS = By.xpath("//div[@id='comments']/p[@class='comment']");
 
     public BaseLanguagesPage(WebDriver driver) {
         super(driver);
@@ -149,5 +150,23 @@ public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> 
     public String getRedditIconURL() {
 
         return getRedditIcon().getAttribute("href");
+    }
+
+    public WebElement getNumberOfCommentsOnThePage(){
+
+        return getDriver().findElement(NUMBER_OF_COMMENTS);
+    }
+
+    public int countComments() {
+        String[] result = new String[7];
+        int countComments = 0;
+
+        for (int i = 1; i < result.length; i++) {
+            if(getNumberOfCommentsOnThePage().isDisplayed()){
+                countComments++;
+            }
+        }
+
+        return countComments++;
     }
 }
