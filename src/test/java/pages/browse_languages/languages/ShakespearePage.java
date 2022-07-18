@@ -18,7 +18,9 @@ private final By LINK_SHAKESPEARE_LANGUAGE_SITE =
         return getDriver().findElement(LINK_SHAKESPEARE_LANGUAGE_SITE);
     }
 
-    public void clickShakespeareLanguageSite() {
+    public ShakespearePage clickShakespeareLanguageSite() {
         getShakespeareLanguageSiteLink().click();
+
+        return this;
     }
 }

@@ -26,7 +26,7 @@ public class ShakespeareTest extends BaseTest {
     }
 
     @Test
-    public void testNumberOfComments(){
+    public void testNumberOfComments() {
         final int expectedResult = 6;
 
         int actualNumberOfComments =
@@ -37,5 +37,21 @@ public class ShakespeareTest extends BaseTest {
                         .countComments();
 
         Assert.assertEquals(actualNumberOfComments, expectedResult);
+    }
+
+    @Test
+    public void testTitleShakespeareInfoLink() {
+
+        final String expectedTitle = "The Shakespeare Programming Language";
+
+        String actualTitle =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickSSubmenu()
+                        .clickShakespeareLanguage()
+                        .clickShakespeareLanguageSite()
+                        .getTitle();
+
+        Assert.assertEquals(actualTitle, expectedTitle);
     }
 }
