@@ -84,4 +84,48 @@ public class SubmitNewLanguageTest extends BaseTest {
 
         Assert.assertEquals(actualAttributeSrcCaptcha, expectedAttributeSrcCaptcha);
     }
+
+    @Test
+    public void testTextImportant() {
+        final String actualText =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .getSpanImportant()
+                        .getText();
+
+        Assert.assertEquals(actualText, "IMPORTANT:");
+    }
+
+    @Test
+    public void testImportantTextBackgroundColor(){
+        final String actualBackgroundColor =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .getSpanImportant()
+                        .getCssValue("background-color");
+
+        Assert.assertEquals(actualBackgroundColor, "rgba(0, 0, 0, 0)");
+    }
+
+    @Test
+    public void testImportantTextColor(){
+        final String actualTextColor =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .getSpanImportant()
+                        .getCssValue("color");
+
+        Assert.assertEquals(actualTextColor, "rgba(255, 255, 255, 1)");
+    }
+
+    @Test
+    public void testImportantTextFont(){
+        final String actualTextFont =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .getSpanImportant()
+                        .getCssValue("font-weight");
+
+        Assert.assertEquals(actualTextFont, "700");
+    }
 }

@@ -96,10 +96,6 @@ public class SubmitNewLanguagePage extends MainPage {
 
         return getDriver().findElement(SPAN_IMPORTANT);
     }
-    public String getSpanImportantSCCValue(String value) {
-
-        return getSpanImportant().getCssValue(value);
-    }
 
     public String getAttributeSrcOfCaptcha() {
 
