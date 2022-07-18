@@ -18,4 +18,16 @@ public class MTest extends BaseTest {
 
         Assert.assertEquals(actualNameOfLanguage, expectedNameOfLanguage);
     }
+    @Test
+    public void testNameOfMacroXLanguage() {
+        final String expectedResult = "MacroX";
+
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickMSubmenu()
+                        .getLanguageMacroXVerify();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
