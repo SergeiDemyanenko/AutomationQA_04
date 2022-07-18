@@ -21,7 +21,7 @@ public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> 
     private final By MAGNOLIA_ICON  = By.xpath("//a[@title='magnolia']");
     private final By DIGG_ICON = By.xpath("//a[@title='digg']");
     private final By DEL_ICIO_US_ICON = By.xpath("//a[@title='del_icio_us']");
-    private final By REDDIT_ICON = By.xpath("//a[@title='reddit']");
+    private final By REDDIT_ICON = By.xpath("//div[@id='voting']/p/a[@title='reddit']");
 
     public BaseLanguagesPage(WebDriver driver) {
         super(driver);
