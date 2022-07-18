@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class LanguageCSharpTest extends BaseTest {
+public class CSharpTest extends BaseTest {
 
     @Test
     public void testNumberOfCSharpLanguageVersions() {

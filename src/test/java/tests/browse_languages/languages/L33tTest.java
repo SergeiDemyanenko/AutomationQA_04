@@ -6,7 +6,7 @@ import runner.BaseTest;
 
 import java.util.List;
 
-public class LanguageL33tTest extends BaseTest {
+public class L33tTest extends BaseTest {
 
     @Test
     public void testDownloadSourceLanguageL33t() {

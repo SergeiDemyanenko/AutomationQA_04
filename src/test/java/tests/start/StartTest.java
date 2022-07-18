@@ -175,5 +175,15 @@ public class StartTest extends BaseTest {
                 .getPrivacySubmenuText();
 
         Assert.assertEquals(actualPrivacySubmenuText,expectedPrivacySubmenuText);
+
+    public void testLastParagraphText() {
+        final String expectedLastParagraphText = "Have a lot of fun,\n" +
+                "Oliver, Gregor and Stefan";
+
+        String actualLastParagraphText = openBaseURL()
+                .clickStartMenu()
+                .getLastParagraphText();
+
+        Assert.assertEquals(actualLastParagraphText, expectedLastParagraphText);
     }
 }

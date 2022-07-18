@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.browse_languages.languages.LanguagesPage;
 import runner.BaseTest;
 
-public class LanguageAlgol601367Test extends BaseTest {
+public class Algol601367Test extends BaseTest {
     @Test
     public void testLanguageAlgol601367() {
 

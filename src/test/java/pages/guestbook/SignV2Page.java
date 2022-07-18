@@ -32,7 +32,6 @@ public class SignV2Page extends BaseGuestbookPage {
     private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
     private final By P_ADDENTRY = By.xpath("//form[@id='addentry']/p/strong");
 
-
     WebDriverWait wait = new WebDriverWait(getDriver(), 500);
 
     public SignV2Page(WebDriver driver) {
@@ -327,7 +326,7 @@ public class SignV2Page extends BaseGuestbookPage {
                 .toString();
     }
 
-    public String getTextFromFields() {
+    public String getNamesGeneralFields() {
         List<String> list = new ArrayList<>();
 
         for (WebElement p : getListPAddentry()) {

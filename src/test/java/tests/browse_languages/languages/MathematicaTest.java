@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.browse_languages.languages.MathematicaPage;
 import runner.BaseTest;
 
-public class LanguageMathematicaTest extends BaseTest {
+public class MathematicaTest extends BaseTest {
 
     @Test
     public void testLanguageData() {

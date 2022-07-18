@@ -252,4 +252,22 @@ public final class TestUtils {
                 )
                 .toString();
     }
+
+    public static String createNamesGeneralFieldsUsingAlgorithm() {
+        String ln = ", ";
+
+        return createStringBuilder()
+                .append("Name:")
+                .append(ln)
+                .append("Location:")
+                .append(ln)
+                .append("E-Mail:")
+                .append(ln)
+                .append("Homepage")
+                .append(ln)
+                .append("Security Code:")
+                .append(ln)
+                .append("Message:")
+                .toString();
+    }
 }

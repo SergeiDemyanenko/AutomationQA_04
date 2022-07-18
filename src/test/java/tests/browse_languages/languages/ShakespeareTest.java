@@ -35,6 +35,7 @@ public class ShakespeareTest extends BaseTest {
                         .clickSSubmenu()
                         .clickShakespeareLanguage()
                                 .countComments();
+                                
         Assert.assertEquals(actualNumberOfComments, expectedResult);
     }
 }
