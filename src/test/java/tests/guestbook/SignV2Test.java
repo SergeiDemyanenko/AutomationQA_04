@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
 import pages.guestbook.SignV2Page;
 import runner.BaseTest;
 
-import static runner.TestUtils.createAttributesSrcOfImg;
-import static runner.TestUtils.createTextFromPromptsUsingAlgorithm;
+import static runner.TestUtils.*;
 
 public class SignV2Test extends BaseTest {
 
@@ -136,5 +135,20 @@ public class SignV2Test extends BaseTest {
         SignV2Page s = new SignV2Page(getDriver());
 
         Assert.assertTrue(s.isImgCaptchaDisplayed());
+    }
+
+    @Test
+    public void testNamesGeneralFields() {
+
+        final String expectedTextFields =
+                createNamesGeneralFieldsUsingAlgorithm();
+
+        String actualTextFields =
+                openBaseURL()
+                        .clickGuestbookMenu()
+                        .clickSignV2()
+                        .getNamesGeneralFields();
+
+        Assert.assertEquals(actualTextFields, expectedTextFields);
     }
 }
