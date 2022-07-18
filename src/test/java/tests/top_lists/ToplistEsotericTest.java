@@ -14,7 +14,7 @@ public class ToplistEsotericTest extends BaseTest {
                 openBaseURL().
                         clickTopListsMenu()
                         .clickTopListEsotericSubmenu()
-                        .getTextH2Main();
+                        .getH2MainText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

@@ -98,7 +98,7 @@ public abstract class BaseTopListPage<LangPage> extends BaseTablePage<LangPage> 
         return new NewCommentsPage(getDriver());
     }
 
-    public String getTextH2Main() {
+    public String getH2MainText() {
 
         return getText(getH2Main());
     }

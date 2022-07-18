@@ -13,7 +13,7 @@ public class TopListTest extends BaseTest {
         String actualResult =
                 openBaseURL()
                         .clickTopListsMenu()
-                                .getTextH2Main();
+                                .getH2MainText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

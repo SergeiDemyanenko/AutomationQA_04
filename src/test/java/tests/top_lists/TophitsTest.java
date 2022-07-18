@@ -14,7 +14,7 @@ public class TophitsTest extends BaseTest {
                 openBaseURL()
                         .clickTopListsMenu()
                         .clickTopHitsSubmenu()
-                        .getTextH2Main();
+                        .getH2MainText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }

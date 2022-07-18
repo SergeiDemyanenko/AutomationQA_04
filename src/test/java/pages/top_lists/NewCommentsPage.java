@@ -25,7 +25,7 @@ public class NewCommentsPage extends BaseTopListPage<LanguagesPage> {
         return getDriver().findElement(MAIN_P);
     }
 
-    public String getTextMainP() {
+    public String getMainParagraphText() {
 
         return getText(getMainP());
     }

@@ -8,14 +8,15 @@ public class NewCommentsTest extends BaseTest {
 
     @Test
     public void testH2HeaderText() {
-        final String expectedH2HeaderText = "New Comments";
+        final String expectedH2MainText = "New Comments";
 
-        String actualH2HeaderText = openBaseURL()
-                .clickTopListsMenu()
-                .clickNewCommentsSubmenu()
-                .getTextH2Main();
+        String actualH2MainText =
+                openBaseURL()
+                        .clickTopListsMenu()
+                        .clickNewCommentsSubmenu()
+                        .getH2MainText();
 
-        Assert.assertEquals(actualH2HeaderText, expectedH2HeaderText);
+        Assert.assertEquals(actualH2MainText, expectedH2MainText);
     }
 
     @Test
@@ -25,7 +26,7 @@ public class NewCommentsTest extends BaseTest {
         String actualNewComments = openBaseURL()
                 .clickTopListsMenu()
                 .clickNewCommentsSubmenu()
-                .getTextMainP();
+                .getMainParagraphText();
 
         Assert.assertEquals(actualNewComments, expectedNewComments);
     }

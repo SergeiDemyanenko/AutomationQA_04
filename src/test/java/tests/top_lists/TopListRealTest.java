@@ -17,7 +17,7 @@ public class TopListRealTest extends BaseTest {
                 openBaseURL()
                         .clickTopListsMenu()
                         .clickTopListRealSubmenu()
-                        .getTextH2Main()
+                        .getH2MainText()
                         .trim();
 
         Assert.assertEquals(actualText, expectedText);
