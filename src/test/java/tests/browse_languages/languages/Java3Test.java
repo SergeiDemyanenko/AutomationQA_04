@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class LanguageJava3Test extends BaseTest {
+public class Java3Test extends BaseTest {
 
     @Test
     public void testJavaVersionWithMaxNumberComments() {

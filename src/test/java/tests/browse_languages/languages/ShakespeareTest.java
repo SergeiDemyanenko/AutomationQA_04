@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class LanguageShakespeareTest extends BaseTest {
+public class ShakespeareTest extends BaseTest {
 
     @Test
     public void testAndCompareShakespeareLanguageLinkFromTwoPages() {

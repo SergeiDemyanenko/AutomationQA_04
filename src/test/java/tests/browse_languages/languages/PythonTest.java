@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class LanguagePythonTest extends BaseTest {
+public class PythonTest extends BaseTest {
 
     @Test
     public void testPythonInfoLink(){

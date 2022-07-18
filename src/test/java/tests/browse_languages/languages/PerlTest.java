@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.browse_languages.languages.Perl737Page;
 import runner.BaseTest;
 
-public class LanguagePerlTest extends BaseTest {
+public class PerlTest extends BaseTest {
 
     @Test
     public void testPerlLanguageFeatures() {

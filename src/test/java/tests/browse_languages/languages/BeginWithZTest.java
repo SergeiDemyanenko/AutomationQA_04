@@ -3,7 +3,7 @@ package tests.browse_languages.languages;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class LanguagesAllBeginWithZTest extends BaseTest {
+public class BeginWithZTest extends BaseTest {
 
     @Test
     public void testVerifyAllHeaders() {
