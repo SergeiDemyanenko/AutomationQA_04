@@ -46,4 +46,17 @@ public class InfoTest extends BaseTest {
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
     }
+
+    @Test
+    public void testCheckLocalCopyLink() {
+        String expectedResult = "http://www.99-bottles-of-beer.net/mirrors/1/";
+
+        String actualResult =
+                openBaseURL()
+                        .clickHistorySubmenu()
+                        .clickLocalCopyLink()
+                        .getURL();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }

@@ -2,7 +2,6 @@ package tests.start;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.start.StartPage;
 import runner.BaseTest;
 
 public class ImpressumTest extends BaseTest {
