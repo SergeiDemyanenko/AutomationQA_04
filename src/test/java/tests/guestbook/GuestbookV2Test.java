@@ -1,4 +1,5 @@
 package tests.guestbook;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
@@ -8,13 +9,52 @@ public class GuestbookV2Test extends BaseTest {
     @Test
     public void testVerifyLinkTextGuestbookV2Page() {
 
-        String expecResNum = "2";
+        final String expectedResultResNum = "2";
 
-        String actuallVerifyLinkTextGuestbookV2Page =
-                         openBaseURL()
+        String actualResultVerifyLinkTextGuestbookV2Page =
+                openBaseURL()
                         .clickGuestbookMenu()
+                        .clickGuestbookV2Page()
                         .getPage2Text();
 
-        Assert.assertEquals(actuallVerifyLinkTextGuestbookV2Page,expecResNum);
+        Assert.assertEquals(actualResultVerifyLinkTextGuestbookV2Page, expectedResultResNum);
+    }
+
+    @Test
+    public void testVerifyH2Menu() {
+
+        final String expectedResultH2Menu = "Guestbook";
+
+        String actualResultH2Menu =
+                openBaseURL()
+                .clickGuestbookMenu()
+                .getH2MainText();
+
+        Assert.assertEquals(actualResultH2Menu,expectedResultH2Menu);
+    }
+
+    @Test
+    public void testVerifyColorOfH2Menu() {
+
+        final String expectedResultColorOfH2Menu = "rgba(27, 101, 28, 1)";
+
+        String actualResulColorOftH2Menu =
+                openBaseURL()
+                        .clickGuestbookMenu()
+                        .getH2MainColor();
+
+        Assert.assertEquals(actualResulColorOftH2Menu,expectedResultColorOfH2Menu);
+    }
+    @Test
+    public void testVerifyFontWeightOfH2Menu() {
+
+        final String expectedResultFontWeightOfH2Menu = "700";
+
+        String actualResultFontWeightOfH2Menu =
+                openBaseURL()
+                        .clickGuestbookMenu()
+                        .getH2MainFont_Weight();
+
+        Assert.assertEquals(actualResultFontWeightOfH2Menu,expectedResultFontWeightOfH2Menu);
     }
 }

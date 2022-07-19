@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.letters.AbcPage;
-import pages.guestbook.GuestbookV2Page;
+import pages.guestbook.GuestbookMenuPage;
 import pages.search_languages.SearchPage;
 import pages.start.StartPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
@@ -183,10 +183,10 @@ public abstract class MainPage extends BasePage {
         return new TopListPage(getDriver());
     }
 
-    public GuestbookV2Page clickGuestbookMenu(){
+    public GuestbookMenuPage clickGuestbookMenu(){
         getGuestbookV2Menu().click();
 
-        return new GuestbookV2Page(getDriver());
+        return new GuestbookMenuPage(getDriver());
     }
 
     public SubmitNewLanguagePage clickSubmitNewLanguageMenu() {

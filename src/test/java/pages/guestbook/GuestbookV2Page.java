@@ -6,29 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class GuestbookV2Page extends BaseGuestbookPage {
 
-    private final By GUESTBOOK_V2_SUBMENU = By.xpath("//a[@href='./guestbookv2.html']");
-    private final By SIGN_V2_SUBMENU = By.xpath("//a[@href='./signv2.html']");
     private final By PAGE_2 = By.xpath("//a[@href='./guestbookv2.html?page=2']");
+    private final By PAGE_LAST = By.xpath("//div[@id='main']/p/a[last()]");
 
     public GuestbookV2Page(WebDriver driver) {
 
         super(driver);
-    }
-
-    public WebElement getGuestbookV2() {
-
-        return getDriver().findElement(GUESTBOOK_V2_SUBMENU);
-    }
-
-    public WebElement getSignV2() {
-
-        return getDriver().findElement(SIGN_V2_SUBMENU);
-    }
-
-    public SignV2Page clickSignV2() {
-        getSignV2().click();
-
-        return new SignV2Page(getDriver());
     }
 
     public WebElement getPage2() {
@@ -36,8 +19,17 @@ public class GuestbookV2Page extends BaseGuestbookPage {
         return getDriver().findElement(PAGE_2);
     }
 
+    public WebElement getPageLast() {
+
+        return getDriver().findElement(PAGE_LAST);
+    }
+
     public String getPage2Text() {
 
         return getText(getPage2());
+    }
+
+    public void clickPageLast(){
+        getPageLast().click();
     }
 }
