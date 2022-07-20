@@ -34,6 +34,31 @@ public class NavigationTest extends BaseTest {
     }
 
     @Test
+    public void testTextZeroSubmenu() {
+        final String expectedTextZeroSubmenu = "0-9";
+
+        String actualTextZeroSubmenu =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getZeroSubmenuText();
+
+        Assert.assertEquals(actualTextZeroSubmenu, expectedTextZeroSubmenu);
+    }
+
+    @Test
+    public void testLinkTextZeroSubmenu() {
+        final String expectedLinkTextZeroSubmenu = "http://www.99-bottles-of-beer.net/0.html";
+
+        String actualLinkTextZeroSubmenu =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .getZeroSubmenu()
+                        .getAttribute("href");
+
+        Assert.assertEquals(actualLinkTextZeroSubmenu, expectedLinkTextZeroSubmenu);
+    }
+
+    @Test
     public void testNavigationZeroSubmenu() {
         final String text = "0.html";
 
