@@ -19,17 +19,11 @@ public class SPage extends BaseAbcPage<LanguagesPage> {
     @Override
     protected LanguagesPage createLangPage() {
 
-        return null;
+        return new LanguagesPage(getDriver());
     }
 
     public WebElement getShakespeareLanguage() {
 
         return getDriver().findElement(SHAKESPEARE_LANGUAGE);
-    }
-
-    public ShakespearePage clickShakespeareLanguage() {
-        getShakespeareLanguage().click();
-
-        return new ShakespearePage(getDriver());
     }
 }

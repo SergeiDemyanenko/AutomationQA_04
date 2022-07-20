@@ -33,7 +33,7 @@ public class ShakespeareTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickSSubmenu()
-                        .clickShakespeareLanguage()
+                        .clickLanguage("Shakespeare")
                         .countComments();
 
         Assert.assertEquals(actualNumberOfComments, expectedResult);
@@ -44,14 +44,12 @@ public class ShakespeareTest extends BaseTest {
 
         final String expectedTitle = "The Shakespeare Programming Language";
 
-        String actualTitle =
-                openBaseURL()
-                        .clickBrowseLanguagesMenu()
-                        .clickSSubmenu()
-                        .clickShakespeareLanguage()
-                        .clickShakespeareLanguageSite()
-                        .getTitle();
+        openBaseURL()
+                .clickBrowseLanguagesMenu()
+                .clickSSubmenu()
+                .clickLanguage("Shakespeare")
+                .clickInfoLink();
 
-        Assert.assertEquals(actualTitle, expectedTitle);
+        Assert.assertEquals(getExternalPageTitle(), expectedTitle);
     }
 }
