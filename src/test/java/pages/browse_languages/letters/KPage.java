@@ -19,7 +19,8 @@ public class KPage extends BaseAbcPage<LanguagesPage> {
 
     @Override
     protected LanguagesPage createLangPage() {
-        return null;
+
+        return new LanguagesPage(getDriver());
     }
 
     public List<WebElement> getAllTrs() {

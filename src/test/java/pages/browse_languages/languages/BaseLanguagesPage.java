@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
+import pages.browse_languages.letters.KPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,12 @@ public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> 
     public WebElement getRedditIcon() {
 
         return getDriver().findElement(REDDIT_ICON);
+    }
+
+    public KPage clickRedditIcon() {
+        getRedditIcon().click();
+
+        return new KPage(getDriver());
     }
 
     public List<WebElement> getALinksTable() {
@@ -140,11 +147,6 @@ public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> 
         }
 
         return listOfVersions;
-    }
-
-    public void clickRedditIcon() {
-
-        getRedditIcon().click();
     }
 
     public String getRedditIconURL() {
