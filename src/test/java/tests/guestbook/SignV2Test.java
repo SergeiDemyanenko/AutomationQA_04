@@ -16,7 +16,7 @@ public class SignV2Test extends BaseTest {
 
         String actualDefaultValue =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
                         .clickSignV2()
                         .getInputHomepageAttribute();
 
@@ -28,7 +28,7 @@ public class SignV2Test extends BaseTest {
         final String expectedErrorText = "Error: Error: Invalid security code.";
 
         String actualErrorText = openBaseURL()
-                .clickGuestbookMenu()
+                .clickGuestbookV2Menu()
                 .clickSignV2()
                 .fillAllFields()
                 .clickButtonSubmit()
@@ -43,7 +43,7 @@ public class SignV2Test extends BaseTest {
 
         String actualErrorText =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
                         .clickSignV2()
                         .clickButtonSubmit()
                         .getErrorMessageText();
@@ -56,7 +56,7 @@ public class SignV2Test extends BaseTest {
         final String expectedFont = "b";
 
         String actualFont = openBaseURL()
-                .clickGuestbookMenu()
+                .clickGuestbookV2Menu()
                 .clickSignV2()
                 .fillAllFields()
                 .clickButtonSubmit()
@@ -71,7 +71,7 @@ public class SignV2Test extends BaseTest {
                 "border: 1px solid red; background-color: rgb(255, 224, 224); padding: 5px; margin: 5px 10px;";
 
         String actualStyle = openBaseURL()
-                .clickGuestbookMenu()
+                .clickGuestbookV2Menu()
                 .clickSignV2()
                 .fillAllFields()
                 .clickButtonSubmit()
@@ -87,7 +87,7 @@ public class SignV2Test extends BaseTest {
 
         String actualAttributesSrcOfMessageIcons =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
                         .clickSignV2()
                         .getAttributesSrcOfImg();
 
@@ -100,7 +100,7 @@ public class SignV2Test extends BaseTest {
         String nameField = RandomStringUtils.randomAlphanumeric(100);
 
         String actualErrorMessage = openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
                         .clickSignV2()
                         .setInputName(nameField)
                         .clickButtonSubmit()
@@ -118,7 +118,7 @@ public class SignV2Test extends BaseTest {
 
         String actualTextFromPrompts =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
                         .clickSignV2()
                         .getTextFromPrompts();
 
@@ -129,7 +129,7 @@ public class SignV2Test extends BaseTest {
     public void testTheDisplayOfCaptcha() {
 
         openBaseURL()
-                .clickGuestbookMenu()
+                .clickGuestbookV2Menu()
                 .clickSignV2();
 
         SignV2Page s = new SignV2Page(getDriver());
@@ -145,7 +145,7 @@ public class SignV2Test extends BaseTest {
 
         String actualTextFields =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
                         .clickSignV2()
                         .getNamesGeneralFields();
 

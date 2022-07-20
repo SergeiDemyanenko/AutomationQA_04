@@ -29,7 +29,9 @@ public class GuestbookV2Page extends BaseGuestbookPage {
         return getText(getPage2());
     }
 
-    public void clickPageLast(){
+    public GuestbookV2Page clickPageLast(){
         getPageLast().click();
+
+        return new GuestbookV2Page(getDriver());
     }
 }

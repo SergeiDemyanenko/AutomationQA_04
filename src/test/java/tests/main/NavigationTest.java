@@ -264,7 +264,7 @@ public class NavigationTest extends BaseTest {
     public void testMenuGuestbookV2Navigation() {
         final String expectedMenuGuestbookV2Navigation = "guestbookv2.html";
 
-        openBaseURL().clickGuestbookMenu();
+        openBaseURL().clickGuestbookV2Menu();
 
         Assert.assertTrue(getDriver()
                 .getCurrentUrl()

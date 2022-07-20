@@ -13,8 +13,7 @@ public class GuestbookV2Test extends BaseTest {
 
         String actualResultVerifyLinkTextGuestbookV2Page =
                 openBaseURL()
-                        .clickGuestbookMenu()
-                        .clickGuestbookV2Page()
+                        .clickGuestbookV2Menu()
                         .getPage2Text();
 
         Assert.assertEquals(actualResultVerifyLinkTextGuestbookV2Page, expectedResultResNum);
@@ -27,7 +26,8 @@ public class GuestbookV2Test extends BaseTest {
 
         String actualResultH2Menu =
                 openBaseURL()
-                .clickGuestbookMenu()
+                .clickGuestbookV2Menu()
+                        .clickPageLast()
                 .getH2MainText();
 
         Assert.assertEquals(actualResultH2Menu,expectedResultH2Menu);
@@ -40,7 +40,8 @@ public class GuestbookV2Test extends BaseTest {
 
         String actualResulColorOftH2Menu =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
+                        .clickPageLast()
                         .getH2MainColor();
 
         Assert.assertEquals(actualResulColorOftH2Menu,expectedResultColorOfH2Menu);
@@ -52,7 +53,8 @@ public class GuestbookV2Test extends BaseTest {
 
         String actualResultFontWeightOfH2Menu =
                 openBaseURL()
-                        .clickGuestbookMenu()
+                        .clickGuestbookV2Menu()
+                        .clickPageLast()
                         .getH2MainFont_Weight();
 
         Assert.assertEquals(actualResultFontWeightOfH2Menu,expectedResultFontWeightOfH2Menu);
