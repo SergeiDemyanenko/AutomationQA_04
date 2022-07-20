@@ -39,10 +39,10 @@ public abstract class BaseLanguagesPage<LangPage> extends BaseAbcPage<LangPage> 
         return getDriver().findElement(REDDIT_ICON);
     }
 
-    public KPage clickRedditIcon() {
+    public LanguagesPage clickRedditIcon() {
         getRedditIcon().click();
 
-        return new KPage(getDriver());
+        return new LanguagesPage(getDriver());
     }
 
     public List<WebElement> getALinksTable() {
