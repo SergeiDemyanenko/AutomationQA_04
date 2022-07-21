@@ -5,7 +5,6 @@ import runner.BaseTest;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SubmitNewLanguageTest extends BaseTest {
 
     @Test
@@ -34,27 +33,28 @@ public class SubmitNewLanguageTest extends BaseTest {
         Assert.assertEquals(actualErrorMessageSubmitLanguageButtonError,
                 expectedResultErrorMessageSubmitLanguageButtonError);
     }
+
     @Test
     public void testIncludesNewLanguageCategory() {
 
-       final List<String> expectedIncludesNewLanguageCategory = new ArrayList<>();
+        final List<String> expectedIncludesNewLanguageCategory = new ArrayList<>();
         expectedIncludesNewLanguageCategory.add("real language");
         expectedIncludesNewLanguageCategory.add("esoteric language");
         expectedIncludesNewLanguageCategory.add("assembly language");
 
-      List <String> actualIncludesNewLanguageCategory =
-                       openBaseURL()
-                      .clickSubmitNewLanguageMenu()
-                      .clickCategoryName()
-                      .getCategoryText();
+        List<String> actualIncludesNewLanguageCategory =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .clickCategoryName()
+                        .getCategoryText();
 
-        Assert.assertEquals(actualIncludesNewLanguageCategory,expectedIncludesNewLanguageCategory);
+        Assert.assertEquals(actualIncludesNewLanguageCategory, expectedIncludesNewLanguageCategory);
     }
 
     @Test
     public void testErrorMessageInvalidSecCode() {
 
-       final String expectedErrorMessageInvalidSecCode = "Error: Invalid security code.";
+        final String expectedErrorMessageInvalidSecCode = "Error: Invalid security code.";
 
         String actuallyErrorMessageInvalidSecCode =
                 openBaseURL()
@@ -69,15 +69,15 @@ public class SubmitNewLanguageTest extends BaseTest {
                         .clickButtonSubmitLanguage()
                         .getErrorMessageInvalidSecCodeText();
 
-        Assert.assertEquals(actuallyErrorMessageInvalidSecCode,expectedErrorMessageInvalidSecCode);
+        Assert.assertEquals(actuallyErrorMessageInvalidSecCode, expectedErrorMessageInvalidSecCode);
     }
 
     @Test
     public void testAttributeSrcCaptcha() {
 
-       final String expectedAttributeSrcCaptcha = "http://www.99-bottles-of-beer.net/captcha.php";
+        final String expectedAttributeSrcCaptcha = "http://www.99-bottles-of-beer.net/captcha.php";
 
-       String actualAttributeSrcCaptcha =
+        String actualAttributeSrcCaptcha =
                 openBaseURL()
                         .clickSubmitNewLanguageMenu()
                         .getAttributeSrcOfCaptcha();
@@ -97,7 +97,7 @@ public class SubmitNewLanguageTest extends BaseTest {
     }
 
     @Test
-    public void testImportantTextBackgroundColor(){
+    public void testImportantTextBackgroundColor() {
         final String actualBackgroundColor =
                 openBaseURL()
                         .clickSubmitNewLanguageMenu()
@@ -108,7 +108,7 @@ public class SubmitNewLanguageTest extends BaseTest {
     }
 
     @Test
-    public void testImportantTextColor(){
+    public void testImportantTextColor() {
         final String actualTextColor =
                 openBaseURL()
                         .clickSubmitNewLanguageMenu()
@@ -119,7 +119,7 @@ public class SubmitNewLanguageTest extends BaseTest {
     }
 
     @Test
-    public void testImportantTextFont(){
+    public void testImportantTextFont() {
         final String actualTextFont =
                 openBaseURL()
                         .clickSubmitNewLanguageMenu()
@@ -127,5 +127,48 @@ public class SubmitNewLanguageTest extends BaseTest {
                         .getCssValue("font-weight");
 
         Assert.assertEquals(actualTextFont, "700");
+    }
+
+    @Test
+    public void testSearchCategorySubmit() {
+
+        String expectedSearchCategorySubmit =
+                "real language" + "\n" + "esoteric language" + "\n" + "assembly language";
+
+        String actualSearchCategorySubmit =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .getCategoryName()
+                        .getText();
+
+        System.out.println(actualSearchCategorySubmit);
+
+        Assert.assertEquals(actualSearchCategorySubmit, expectedSearchCategorySubmit);
+    }
+
+    @Test
+    public void testErrorBlankFields() {
+
+        String expectedErrorBlankFields = "Error: Precondition failed - Incomplete Input.";
+
+        String actualErrorBlankFields = openBaseURL()
+                .clickSubmitNewLanguageMenu()
+                .clickButtonSubmitLanguage()
+                .getErrorMessage()
+                .getText();
+
+        Assert.assertEquals(actualErrorBlankFields, expectedErrorBlankFields);
+    }
+
+    @Test
+    public void testTextH3Header() {
+
+        String expectedTextH3Header = "Please note:";
+
+        String actualTextH3Header = openBaseURL()
+                .clickSubmitNewLanguageMenu()
+                .getTitleH3Text();
+
+        Assert.assertEquals(expectedTextH3Header, actualTextH3Header);
     }
 }
