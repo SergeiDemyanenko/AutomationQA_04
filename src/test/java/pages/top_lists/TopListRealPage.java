@@ -13,6 +13,6 @@ public class TopListRealPage extends BaseTopListPage<LanguagesPage> {
     @Override
     protected LanguagesPage createLangPage() {
 
-        return null;
+        return new LanguagesPage(getDriver());
     }
 }
