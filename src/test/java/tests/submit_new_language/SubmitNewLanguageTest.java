@@ -128,4 +128,42 @@ public class SubmitNewLanguageTest extends BaseTest {
 
         Assert.assertEquals(actualTextFont, "700");
     }
+    @Test
+    public void testSearchCategorySubmit() {
+
+        final String expectedSearchCategorySubmit = "real language" + "\n" + "esoteric language" + "\n" + "assembly language";
+
+        String actualSearchCategorySubmit = openBaseURL()
+                .clickSubmitNewLanguageMenu()
+                .getCategoryName()
+                .getText();
+
+        Assert.assertEquals(actualSearchCategorySubmit, expectedSearchCategorySubmit);
+    }
+
+    @Test
+    public void testErrorBlankFieldsSubmitNewLanguage() {
+
+        final String expectedErrorBlankFieldsSubmitNewLanguage = "Error: Precondition failed - Incomplete Input.";
+
+        String actualErrorBlankFieldsSubmitNewLanguage =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu()
+                        .clickButtonSubmitLanguage()
+                        .getErrorMessageInvalidSecCodeText();
+
+        Assert.assertEquals(actualErrorBlankFieldsSubmitNewLanguage, expectedErrorBlankFieldsSubmitNewLanguage);
+    }
+
+    @Test
+    public void testTextH3HeaderSubmitNewLanguage() {
+
+        final String expectedTextH3HeaderSubmitNewLanguage = "Please note:";
+
+        String actualTextH3HeaderSubmitNewLanguage =
+                openBaseURL()
+                        .clickSubmitNewLanguageMenu().getTitleH3Text();
+
+        Assert.assertEquals(actualTextH3HeaderSubmitNewLanguage, expectedTextH3HeaderSubmitNewLanguage);
+    }
 }
