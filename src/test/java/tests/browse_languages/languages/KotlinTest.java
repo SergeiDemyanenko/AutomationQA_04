@@ -1,11 +1,10 @@
-package tests._to_do;
+package tests.browse_languages.languages;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class KatyTBrowseLanguagesTest extends BaseTest {
+public class KotlinTest extends BaseTest {
 
     @Test
     public void testSwitchToLoginPageReddit(){
