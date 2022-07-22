@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import pages.search_languages.SearchPage;
 import runner.BaseTest;
 
+import java.util.List;
+
 public class SearchLanguagesTest extends BaseTest {
 
     final String LANGUAGE_TO_SEARCH = "Java";
@@ -111,6 +113,18 @@ public class SearchLanguagesTest extends BaseTest {
                         .getCountTrTags();
 
         Assert.assertEquals(actualNumberOf1CEnterprize, expectedNumberOf1CEnterprize);
+    }
 
+    @Test
+    public void testEmptySearchReturnsZeroLanguages() {
+        final int expectedQuantity = 0;
+
+        int actualQuantity =
+                openBaseURL()
+                        .clickSearchLanguagesMenu()
+                        .clickSubmitSearchButton()
+                        .getCountTrTags();
+
+        Assert.assertEquals(actualQuantity, expectedQuantity);
     }
 }
