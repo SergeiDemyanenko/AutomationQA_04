@@ -17,6 +17,7 @@ public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
     private final By B_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'b.html']");
     private final By C_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'c.html']");
     private final By D_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'d.html']");
+    private final By G_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'g.html']");
     private final By I_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'i.html']");
     private final By J_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'j.html']");
     private final By K_SUBMENU = By.xpath(SUBMENU_BASE_PATH + "'k.html']");
@@ -65,6 +66,11 @@ public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
     public WebElement getDSubmenu() {
 
         return getDriver().findElement(D_SUBMENU);
+    }
+
+    public WebElement getGSubmenu() {
+
+        return getDriver().findElement(G_SUBMENU);
     }
 
     public WebElement getISubmenu() {
@@ -205,6 +211,12 @@ public abstract class BaseAbcPage<LangPage> extends BaseTablePage<LangPage> {
         getDSubmenu().click();
 
         return new DPage(getDriver());
+    }
+
+    public GPage clickGSubmenu() {
+        getGSubmenu().click();
+
+        return new GPage(getDriver());
     }
 
     public IPage clickISubmenu() {
