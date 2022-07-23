@@ -14,7 +14,7 @@ public class NavigationTest extends BaseTest {
     @Test(
             priority = 2,
             dataProviderClass = TestData.class,
-            dataProvider = "FooterTestData"
+            dataProvider = "MainPageTestData"
     )
     public void testFootersNavigationToUrlAndReturnBackFromBaseURL(
             int index, String footerName, String footerLink, String footerTitle

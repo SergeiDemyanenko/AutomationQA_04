@@ -4,8 +4,8 @@ import org.testng.annotations.DataProvider;
 
 public class TestData {
 
-    @DataProvider(name = "FooterTestData")
-    public static Object[][] footerDataProvider() {
+    @DataProvider(name = "MainPageTestData")
+    public static Object[][] mainDataProvider() {
 
         return new Object[][]{
                 {0, "Start", "http://www.99-bottles-of-beer.net/", "Start"},

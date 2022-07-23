@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="SmokeTestsForNewBuild" >
+        <classes>
+            <class name="tests.main.MainTest"/>
+            <class name="tests.main.FooterTest"/>
+            <class name="tests.main.NavigationTest">
+                <methods>
+                    <include name="testFootersNavigationToUrlAndReturnBackFromBaseURL"/>
+                    <include name="testMenuStartNavigation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

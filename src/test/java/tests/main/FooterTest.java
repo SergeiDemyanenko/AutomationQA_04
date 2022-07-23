@@ -26,7 +26,7 @@ public class FooterTest extends BaseTest {
             priority = 2,
             dependsOnMethods = "testFootersCount",
             dataProviderClass = TestData.class,
-            dataProvider = "FooterTestData"
+            dataProvider = "MainPageTestData"
     )
     public void testFootersTextsAndLinks(int index, String footerName, String footerLink, String footerTitle) {
         MainPage main = openBaseURL();
