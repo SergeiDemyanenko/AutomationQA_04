@@ -1,4 +1,4 @@
-package tests.browse_languages.languages;
+package tests.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

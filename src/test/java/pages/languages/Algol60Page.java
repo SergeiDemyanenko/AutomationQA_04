@@ -1,4 +1,4 @@
-package pages.browse_languages.languages;
+package pages.languages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

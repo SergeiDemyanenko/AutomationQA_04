@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BaseTablePage;
-import pages.browse_languages.languages.Perl737Page;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.Perl737Page;
+import pages.languages.LanguagesPage;
 
 import java.util.ArrayList;
 import java.util.List;

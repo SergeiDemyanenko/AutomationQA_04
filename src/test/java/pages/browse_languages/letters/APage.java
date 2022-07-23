@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.languages.AlphaBetaPage;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.AlphaBetaPage;
+import pages.languages.LanguagesPage;
 
 public class APage extends BaseAbcPage<LanguagesPage> {
 

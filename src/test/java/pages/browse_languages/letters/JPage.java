@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.languages.Java3Page;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.Java3Page;
+import pages.languages.LanguagesPage;
 
 import java.util.List;
 

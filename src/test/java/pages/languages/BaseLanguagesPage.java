@@ -1,10 +1,9 @@
-package pages.browse_languages.languages;
+package pages.languages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.letters.KPage;
 
 import java.util.ArrayList;
 import java.util.List;

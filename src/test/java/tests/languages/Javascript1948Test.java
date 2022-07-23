@@ -1,8 +1,8 @@
-package tests.browse_languages.languages;
+package tests.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.LanguagesPage;
 import runner.BaseTest;
 
 public class Javascript1948Test extends BaseTest {

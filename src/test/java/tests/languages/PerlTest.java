@@ -1,8 +1,8 @@
-package tests.browse_languages.languages;
+package tests.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.Perl737Page;
+import pages.languages.Perl737Page;
 import runner.BaseTest;
 
 public class PerlTest extends BaseTest {

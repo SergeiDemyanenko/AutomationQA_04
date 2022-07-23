@@ -3,7 +3,7 @@ package tests.browse_languages.letters;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.A_Page;
+import pages.languages.A_Page;
 import runner.BaseTest;
 
 public class ATest extends BaseTest {

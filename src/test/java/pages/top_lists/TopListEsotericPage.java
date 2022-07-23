@@ -1,7 +1,7 @@
 package pages.top_lists;
 
 import org.openqa.selenium.WebDriver;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.LanguagesPage;
 
 public class TopListEsotericPage extends BaseTopListPage<LanguagesPage> {
 

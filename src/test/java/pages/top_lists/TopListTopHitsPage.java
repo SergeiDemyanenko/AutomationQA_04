@@ -3,7 +3,7 @@ package pages.top_lists;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.LanguagesPage;
 
 public class TopListTopHitsPage extends BaseTopListPage<LanguagesPage> {
 

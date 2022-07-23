@@ -1,8 +1,8 @@
-package tests.browse_languages.languages;
+package tests.languages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.browse_languages.languages.MathematicaPage;
+import pages.languages.MathematicaPage;
 import runner.BaseTest;
 
 public class MathematicaTest extends BaseTest {

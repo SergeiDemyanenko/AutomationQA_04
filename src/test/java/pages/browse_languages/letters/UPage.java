@@ -2,7 +2,7 @@ package pages.browse_languages.letters;
 
 import org.openqa.selenium.WebDriver;
 import pages.browse_languages.BaseAbcPage;
-import pages.browse_languages.languages.LanguagesPage;
+import pages.languages.LanguagesPage;
 
 public class UPage extends BaseAbcPage<LanguagesPage> {
 
