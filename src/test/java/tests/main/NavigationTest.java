@@ -3,11 +3,67 @@ package tests.main;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.MainPage;
 import pages.browse_languages.letters.APage;
 import pages.start.StartPage;
 import runner.BaseTest;
+import tests.TestData;
 
 public class NavigationTest extends BaseTest {
+
+    @Test(
+            priority = 2,
+            dataProviderClass = TestData.class,
+            dataProvider = "FooterTestData"
+    )
+    public void testFootersNavigationToUrlAndReturnBackFromBaseURL(
+            int index, String footerName, String footerLink, String footerTitle
+    ){
+        MainPage main = openBaseURL();
+        String baseLink = getDriver().getCurrentUrl();
+        String baseTitle = getDriver().getTitle();
+
+        main.clickLink(index);
+        String newLink = getDriver().getCurrentUrl();
+        String newTitle = getDriver().getTitle();
+
+        if(baseTitle.equals(newTitle)) {
+            Assert.assertEquals(newLink, baseLink);
+        } else {
+            Assert.assertNotEquals(newLink, baseLink, ">>>New URL equals previous URL, probably, we are clicking on the same menu<<<");
+        }
+        Assert.assertEquals(newLink, footerLink);
+
+        getDriver().navigate().back();
+        String goBackLink = getDriver().getCurrentUrl();
+
+        Assert.assertNotEquals(newLink, goBackLink);
+        if(baseTitle.equals(newTitle)) {
+            Assert.assertNotEquals(goBackLink, baseLink);
+        } else {
+            Assert.assertEquals(goBackLink, baseLink);
+        }
+    }
+
+    @Test
+    public void testMenuStartNavigation() {
+        StartPage start = new StartPage(getDriver());
+
+        WebElement oldStartMenu = openBaseURL().getStartMenu();
+        WebElement sameStartMenu = start.getStartMenu();
+
+        Assert.assertEquals(oldStartMenu, sameStartMenu);
+
+        String oldCurrentUrl = getDriver().getCurrentUrl();
+        start.clickStartMenu();
+        String newCurrentUrl = getDriver().getCurrentUrl();
+
+        Assert.assertEquals(newCurrentUrl, oldCurrentUrl);
+
+        WebElement newStartMenuAfterClick = start.getStartMenu();
+
+        Assert.assertNotEquals(oldStartMenu, newStartMenuAfterClick);
+    }
 
     @Test
     public void testNavigationInfoSubmenu() {
@@ -22,7 +78,7 @@ public class NavigationTest extends BaseTest {
     }
 
     @Test
-    public void testTextH2MainHeader() {
+    public void testH2TextForTeamSubmenu() {
         String expectedTextH2MainHeader = "The Team";
 
         String actualTextH2MainHeader = openBaseURL()
@@ -132,25 +188,6 @@ public class NavigationTest extends BaseTest {
         Assert.assertEquals(actualMenuStartLinkText, expectedMenuStartLinkText);
     }
     
-    @Test
-    public void testMenuStartNavigation() {
-        StartPage start = new StartPage(getDriver());
-
-        WebElement oldStartMenu = openBaseURL().getStartMenu();
-        WebElement sameStartMenu = start.getStartMenu();
-
-        Assert.assertEquals(oldStartMenu, sameStartMenu);
-
-        String oldCurrentUrl = getDriver().getCurrentUrl();
-        start.clickStartMenu();
-        String newCurrentUrl = getDriver().getCurrentUrl();
-
-        Assert.assertEquals(newCurrentUrl, oldCurrentUrl);
-
-        WebElement newStartMenuAfterClick = start.getStartMenu();
-
-        Assert.assertNotEquals(oldStartMenu, newStartMenuAfterClick);
-    }
 
     @Test
     public void testMenuAbcText() {
