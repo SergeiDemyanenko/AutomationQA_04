@@ -10,6 +10,8 @@ import pages.start.StartPage;
 import pages.submit_new_language.SubmitNewLanguagePage;
 import pages.top_lists.TopListPage;
 
+import java.util.List;
+
 public abstract class MainPage extends BasePage {
 
     private final By ONLOAD_SETTINGS = By.xpath("//body[@onload]");
@@ -32,6 +34,7 @@ public abstract class MainPage extends BasePage {
     private final By FOOTER_GUESTBOOK_V2 = By.xpath(FOOTER_BASE_PATH + "'/guestbookv2.html']");
     private final By FOOTER_SUBMIT_NEW_LANGUAGE = By.xpath(FOOTER_BASE_PATH + "'/submitnewlanguage.html']");
     private final By FOOTER_BAR = By.id("footer");
+    private final By FOOTER_ALL = By.xpath("//div[@id='footer']/p/a");
 
     public MainPage(WebDriver driver) {
 
@@ -116,6 +119,11 @@ public abstract class MainPage extends BasePage {
     public WebElement getFooterBar() {
 
         return getDriver().findElement(FOOTER_BAR);
+    }
+
+    public List<WebElement> getFooterAll() {
+
+        return getDriver().findElements(FOOTER_ALL);
     }
 
     public String getH1HeaderText() {
@@ -217,5 +225,9 @@ public abstract class MainPage extends BasePage {
         getFooterSubmitNewLanguage().click();
 
         return new SubmitNewLanguagePage(getDriver());
+    }
+
+    public void clickLink(int index) {
+        getFooterAll().get(index).click();
     }
 }
