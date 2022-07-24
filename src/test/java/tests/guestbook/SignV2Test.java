@@ -110,20 +110,20 @@ public class SignV2Test extends BaseTest {
         Assert.assertEquals(actualErrorMessage, expectectedErrorMessage);
     }
 
-    @Test
-    public void testTextFromPrompts() {
-
-        final String expectedTextFromPrompts =
-                createTextFromPromptsUsingAlgorithm();
-
-        String actualTextFromPrompts =
-                openBaseURL()
-                        .clickGuestbookV2Menu()
-                        .clickSignV2()
-                        .getTextFromPrompts();
-
-        Assert.assertEquals(actualTextFromPrompts, expectedTextFromPrompts);
-    }
+//    @Test
+//    public void testTextFromPrompts() {
+//
+//        final String expectedTextFromPrompts =
+//                createTextFromPromptsUsingAlgorithm();
+//
+//        String actualTextFromPrompts =
+//                openBaseURL()
+//                        .clickGuestbookV2Menu()
+//                        .clickSignV2()
+//                        .getTextFromPrompts();
+//
+//        Assert.assertEquals(actualTextFromPrompts, expectedTextFromPrompts);
+//    }
 
     @Test
     public void testTheDisplayOfCaptcha() {
