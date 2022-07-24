@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.TestUtils;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,17 +33,17 @@ public class SignV2Page extends BaseGuestbookPage {
     private final By IMG_CAPTCHA_PHP = By.cssSelector("img[src*='captcha']");
     private final By P_ADDENTRY = By.xpath("//form[@id='addentry']/p/strong");
 
-//    WebDriverWait wait = new WebDriverWait(getDriver(), 400);
+    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ZERO);
 
     public SignV2Page(WebDriver driver) {
 
         super(driver);
     }
 
-//    WebDriverWait getWait() {
-//
-//        return wait;
-//    }
+    WebDriverWait getWait() {
+
+        return wait;
+    }
 
     public WebElement getButtonSubmit() {
 
@@ -263,68 +264,68 @@ public class SignV2Page extends BaseGuestbookPage {
                         .toString()));
     }
 
-//    protected String getTextPrompt() {
-//        Alert alert = getWait().until(ExpectedConditions.alertIsPresent());
-//
-//        String a = alert.getText();
-//
-//        alert.dismiss();
-//
-//        return a;
-//    }
+    protected String getTextPrompt() {
+        Alert alert = getWait().until(ExpectedConditions.alertIsPresent());
 
-//    protected String getTextFromPrompt1() {
-//        getPrompt("url").click();
-//
-//        Alert alert = getWait().until(ExpectedConditions.alertIsPresent());
-//
-//        String a = alert.getText();
-//
-//        alert.dismiss();
-//        alert.dismiss();
-//
-//        return a;
-//    }
+        String a = alert.getText();
 
-//    protected String getTextFromPrompt2() {
-//        getPrompt("email").click();
-//
-//        return getTextPrompt();
-//    }
-//
-//    protected String getTextFromPrompt3() {
-//        getPrompt("bold").click();
-//
-//        return getTextPrompt();
-//    }
-//
-//    protected String getTextFromPrompt4() {
-//        getPrompt("italic").click();
-//
-//        return getTextPrompt();
-//    }
-//
-//    protected String getTextFromPrompt5() {
-//        getPrompt("underline").click();
-//
-//        return getTextPrompt();
-//    }
-//
-//    public String getTextFromPrompts() {
-//        String ln ="\n";
-//
-//        return createStringBuilder()
-//                .append(getTextFromPrompt1())
-//                .append(ln)
-//                .append(getTextFromPrompt2())
-//                .append(ln)
-//                .append(getTextFromPrompt3())
-//                .append(ln)
-//                .append(getTextFromPrompt4())
-//                .append(ln)
-//                .append(getTextFromPrompt5())
-//                .toString();
-//    }
+        alert.dismiss();
+
+        return a;
+    }
+
+    protected String getTextFromPrompt1() {
+        getPrompt("url").click();
+
+        Alert alert = getWait().until(ExpectedConditions.alertIsPresent());
+
+        String a = alert.getText();
+
+        alert.dismiss();
+        alert.dismiss();
+
+        return a;
+    }
+
+    protected String getTextFromPrompt2() {
+        getPrompt("email").click();
+
+        return getTextPrompt();
+    }
+
+    protected String getTextFromPrompt3() {
+        getPrompt("bold").click();
+
+        return getTextPrompt();
+    }
+
+    protected String getTextFromPrompt4() {
+        getPrompt("italic").click();
+
+        return getTextPrompt();
+    }
+
+    protected String getTextFromPrompt5() {
+        getPrompt("underline").click();
+
+        return getTextPrompt();
+    }
+
+    public String getTextFromPrompts() {
+        String ln ="\n";
+
+        return createStringBuilder()
+                .append(getTextFromPrompt1())
+                .append(ln)
+                .append(getTextFromPrompt2())
+                .append(ln)
+                .append(getTextFromPrompt3())
+                .append(ln)
+                .append(getTextFromPrompt4())
+                .append(ln)
+                .append(getTextFromPrompt5())
+                .toString();
+    }
 
     public String getNamesGeneralFields() {
         List<String> list = new ArrayList<>();
